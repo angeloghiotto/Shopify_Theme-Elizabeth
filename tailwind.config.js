@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './layout/*.liquid',
@@ -8,7 +7,11 @@ module.exports = {
     './templates/customers/*.liquid'
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '94': '22rem',
+      },
+    },
   },
   plugins: [],
 }
