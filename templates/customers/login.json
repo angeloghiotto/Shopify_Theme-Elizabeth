@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "template": {
+      "type": "template-costumer-login"
+    }
+  },
+  "order": ["template"]
+}
