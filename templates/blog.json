@@ -4,5 +4,7 @@
       "type": "template-blog"
     }
   },
-  "order": ["template"]
+  "order": [
+    "template"
+  ]
 }

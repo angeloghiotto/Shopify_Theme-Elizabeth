@@ -4,5 +4,7 @@
       "type": "template-page"
     }
   },
-  "order": ["template"]
+  "order": [
+    "template"
+  ]
 }

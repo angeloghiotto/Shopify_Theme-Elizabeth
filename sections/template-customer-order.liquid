@@ -20,8 +20,8 @@
             {% if line_item.image %}
               <img
                 class="w-full h-full object-center object-cover"
-                src="{{line_item.image | img_url: "large"}}"
-                alt="{{ line_item.image.alt}}"
+                src="{{ line_item.image | image_url: width: 480, height: 480 }}"
+                alt="{{ line_item.image.alt }}"
               >
             {% else %}
               {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-center object-cover' }}
@@ -78,7 +78,7 @@
             <p class="mb-2">Tracking company: {{ line_item.fulfillment.tracking_company }}</p>
             <p class="mb-2">Tracking number: {{ line_item.fulfillment.tracking_number }}</p>
             <a
-              href="{{line_item.fulfillment.tracking_url}}"
+              href="{{ line_item.fulfillment.tracking_url }}"
               target="_blank"
               class="flex w-max text-small text-white font-medium bg-gray-700 hover:bg-gray-900 px-4 py-1 rounded"
             >
@@ -118,7 +118,7 @@
               {% assign backgound = 'bg-green-700' %}
           {% endcase %}
 
-          <span class="{{backgound}} rounded-full text-sm px-4 py-1 text-white">
+          <span class="{{ backgound }} rounded-full text-sm px-4 py-1 text-white">
             {{ transaction.status_label }}
           </span>
         {% else %}

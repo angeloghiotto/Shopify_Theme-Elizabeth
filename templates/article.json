@@ -28,5 +28,7 @@
       ]
     }
   },
-  "order": ["template"]
+  "order": [
+    "template"
+  ]
 }

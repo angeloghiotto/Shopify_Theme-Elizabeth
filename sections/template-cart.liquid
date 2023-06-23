@@ -4,7 +4,7 @@
       <div class="flex item-end justify-between my-5">
         <h1 class="text-3xl">You cart</h1>
         <a
-          href="{{ routes.all_products_collection_url}}"
+          href="{{ routes.all_products_collection_url }}"
           class="text-blue-500 hover::text-blue-800 font-medium underline"
         >
           Continue shopping</a
@@ -24,11 +24,11 @@
             {% for item in cart.items %}
               <tr class="table-row">
                 <td class="py-4 px-2 flex flex-col justify-center">
-                  <a href="{{item.url}}">
+                  <a href="{{ item.url }}">
                     {% if item.image %}
                       <img
-                        src="{{ item.image | img_url: 'small'}}"
-                        alt="{{ item.title | escape}}"
+                        src="{{ item.image | image_url: width: 100, height: 100 }}"
+                        alt="{{ item.title | escape }}"
                         class="h-20 w-20 object-cover border"
                       >
                     {% else %}
@@ -37,10 +37,10 @@
                   </a>
                 </td>
                 <td class="py-4 px-2 flex flex-col justify-center">
-                  <a href="{{item.url}}" class="my-1">{{ item.product.title | truncatewords: 5, '...' }}</a>
+                  <a href="{{ item.url }}" class="my-1">{{ item.product.title | truncatewords: 5, '...' }}</a>
                   <span class="text-small text-gray-500 my-1">{{ item.variant.title }}</span>
                   <a
-                    href="{{ routes.cart_change_url}}?line={{forloop.index}}&quantity=0"
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
                     class="text-sm font-medium text-red-500 my-1"
                     >remove</a
                   >
@@ -52,7 +52,7 @@
                     class="w-20 border p-2"
                     value="{{ item.quantity }}"
                     min="1"
-                    id="updates_{{forloop.index}}"
+                    id="updates_{{ forloop.index }}"
                   >
                 </td>
                 <td class="py-4 px-2">
@@ -115,7 +115,7 @@
       <h1 class="text-3xl my-4">Your cart is empty</h1>
       <div class="my-4 py-4">
         <a
-          href="{{ routes.all_products_collection_url}}"
+          href="{{ routes.all_products_collection_url }}"
           class="border border-gray-600 text-white bg-gray-600 px-8 py-3"
         >
           Continue shopping
@@ -128,7 +128,9 @@
 {% schema %}
 {
   "name": "Template Cart",
-  "settings": [],
+  "settings": [
+
+  ],
   "blocks": [
     {
       "type": "subtotal",
