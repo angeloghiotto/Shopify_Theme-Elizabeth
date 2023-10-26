@@ -1,0 +1,233 @@
+{% assign _collection = section.settings.collection %}
+
+<div class="collection-carousel-container">
+  <h2 class="collection-carousel-title">{{ _collection.title }}</h2>
+  <div class="collection-carousel">
+    <div class="collection-carousel_track">
+      {% for product in _collection.products %}
+        <a class="collection-carousel_product" href="{{ product.url }}">
+          {% unless product.available %}
+            <span class="sold-out">SOLD OUT</span>
+          {% endunless %}
+          <img src="{{ product.featured_image | img_url: '100x' }}" data-src="{{ product.featured_image | img_url: '600x' }}" class="lazyload" />
+          <div class="collection-carousel_product_content">
+            <h3>{{ product.title }}</h3>
+            <span class=" stamped-product-reviews-badge" data-product-sku="{{ product.handle }}" data-id="{{ product.id }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}"  style="display:block;">{{ product.metafields.stamped.badge }}</span>
+            {% if product.compare_at_price > product.price %}
+            <p><span>{{ product.compare_at_price | money }}</span>{{ product.price | money }}</p>
+            {% else %}
+            <p>{{ product.price | money }}</p>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  <span class="collection-carousel_note">slide to see all products {% render 'gray-arrow' %}</span>
+</div>
+{% for block in section.blocks %}
+  {% if block.settings.collection != blank %}
+    <div class="collection-carousel-container">
+      <h2 class="collection-carousel-title">{{ block.settings.collection.title }}</h2>
+      <div class="collection-carousel">
+        <div class="collection-carousel_track">
+          {% for product in block.settings.collection.products %}
+          <a class="collection-carousel_product" href="{{ product.url }}">
+            {% unless product.available %}
+            <span class="sold-out">SOLD OUT</span>
+            {% endunless %}
+            <img src="{{ product.featured_image | img_url: '100x' }}" data-src="{{ product.featured_image | img_url: '600x' }}" class="lazyload" />
+            <div class="collection-carousel_product_content">
+              <h3>{{ product.title }}</h3>
+              <span class=" stamped-product-reviews-badge" data-product-sku="{{ product.handle }}" data-id="{{ product.id }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}"  style="display:block;">{{ product.metafields.stamped.badge }}</span>
+              {% if product.compare_at_price > product.price %}
+              <p><span>{{ product.compare_at_price | money }}</span>{{ product.price | money }}</p>
+              {% else %}
+              <p>{{ product.price | money }}</p>
+              {% endif %}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <span class="collection-carousel_note">slide to see all products {% render 'gray-arrow' %}</span>
+    </div>
+  {% endif %}
+{% endfor %}
+
+<style>
+
+.main-content {
+  background: #F9F9F9;
+}
+
+.index-section {
+  margin: 0;
+  padding: 36px 0 12px;
+}
+
+.collection-carousel_product .sold-out {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+.collection-carousel_note {
+  display: block;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 120%;
+  color: #858585;
+  padding: 0 12px;
+}
+
+.collection-carousel-title {
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 12px;
+  margin-bottom: 0;
+}
+
+.collection-carousel-container {
+  width: 100%;
+  padding: 36px 0 0;
+}
+
+.collection-carousel {
+  overflow-x: scroll;
+}
+
+.collection-carousel_track {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.collection-carousel_product {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 0px;
+  max-width: 232px;
+  min-width: 232px;
+  margin-right: 16px;
+  position: relative;
+}
+
+.collection-carousel_product img {
+  height: auto;
+  width: 100%;
+}
+
+.collection-carousel_product .stamped-fa-star:before {
+  font-size: 14px;
+}
+
+.collection-carousel_product span.stamped-badge-caption {
+  font-size: 12px;
+}
+
+.collection-carousel_product p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+.collection-carousel_product p span {
+  text-decoration: line-through;
+  margin-right: 4px;
+}
+
+.collection-carousel_product h3 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.collection-carousel_product_content {
+  padding: 8px;
+}
+
+@media (min-width: 764px) {
+  .collection-carousel_track {
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 12px 1%;
+  }
+
+  .collection-carousel-title {
+    padding: 0 2%;
+  }
+
+  .collection-carousel {
+    overflow-x: auto;
+  }
+
+  .collection-carousel_product {
+    min-width: 0;
+    max-width: none;
+    width: 31%;
+    margin: 0 1%;
+    margin-bottom: 24px;
+  }
+
+  .collection-carousel_note {
+    display: none;
+  }
+}
+
+@media (min-width: 1080px) {
+  .collection-carousel_product {
+    width: 23%;
+  }
+}
+</style>
+
+
+
+
+{% schema %}
+{
+  "name": "collection carousel",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "featured collection"
+    }
+  ],
+	"blocks": [
+		{
+			"name": "featured collection",
+			"type": "collection",
+			"settings": [
+				{
+					"type": "collection",
+					"id": "collection",
+					"label": "featured collection"
+				}
+			]
+		}
+	],
+  "presets": [
+    {
+      "name": "Collection Carousel",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

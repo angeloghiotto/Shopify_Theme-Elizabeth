@@ -1,0 +1,153 @@
+{{ 'product-recommendations.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="product-recommendations"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related"
+>
+  {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+    {% if recommendations.intent == 'related' %}
+      <h2 class="product-recommendations__title">you may also like</h2>
+    {% elsif recommendations.intent == 'complementary' %}
+     <h2 class="product-recommendations__title">yoy may also like</h2>
+    {% endif %}
+
+    <div class="recommended-products__container">
+      {%- for samePrintProducts in recommendations.products limit: 4 -%}
+        
+        {% assign titleLength = samePrintProducts | size %}
+      
+        <div class="recommended-product__container">
+
+          <a href="{{ samePrintProducts.url }}">
+            <img
+            class="product__img"
+            src="{{ samePrintProducts.featured_image | image_url: width: 300, height: 300 }}"
+            alt="{{ samePrintProducts.featured_image.alt }}"
+            />
+
+            <div style="padding: 0 12px; position: relative;">
+              {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
+                          
+              {% if product.metafields.okendo.summaryData.reviewCount > 0 %}
+                <div data-oke-star-rating {{ product_data_attribute }}>
+                  {{ product.metafields.okendo.StarRatingSnippet }}
+                </div>
+              {% endif %}   
+
+              {% assign productType = product.type %}
+              {% assign productPrint = product.title | remove: productType %}
+              
+              <p class="product__title recommend__title">{{ samePrintProducts.title }}</p>
+              <p class="product__price">{{ samePrintProducts.price | money}}</p>
+          </a>
+
+          {% if samePrintProducts.available and samePrintProducts.variants.size == 1 %}
+            <div
+            class="recommended-product__btn single-recommend"
+            data-section-id="{{product.id}}"
+            data-section-type="product-template"
+            data-product-handle="{{ samePrintProducts.handle }}"
+            data-product-url="{{ samePrintProducts.url }}">
+              <div class="product-grid-item_form_wrapper">
+                {% render 'dtc-product-single-product', section_id: section_id, samePrintProducts: samePrintProducts, quick-add__btn: quick-add__btn %}
+              </div>
+            </div>    
+          {% endif %}
+      
+            <div class="quick-add-product recommended-product__btn">
+              {% unless samePrintProducts.variants[0].option1 == 'Default Title' or samePrintProducts.available == false %}
+                <div 
+                  class="quick-add__btn hover-to-show-form recommended-product__btn"
+                  style="{%if sold_out %} pointer-events: none; opacity:0.3;{% endif %}
+                  {% if samePrintProducts.variants[0].option1 == 'Default Title' %} display: none !important; {% endif %}
+                  ">
+                    QUICK ADD
+                </div>
+              {% endunless %}
+
+              {% unless samePrintProducts.variants[0].title == "Default Title" %}
+              <div class="quick-add-form" style="{% if samePrintProducts.variants[0].title == "Default Title" %} display: none; {% endif %}">
+                <div
+                  class="product-section"
+                  data-section-id="{{ samePrintProducts.id}}"
+                  data-section-type="samePrintProducts-template"
+                  data-product-handle="{{ samePrintProducts.handle }}"
+                  data-product-url="{{ samePrintProducts.url }}">
+                  <div class="product-grid-item_form_wrapper" style="">
+                    {% assign section_id = samePrintProducts.id | append: '_product-grid' %}
+                    {% render 'product-form-dtc', section_id: section_id, samePrintProducts: samePrintProducts %}
+                  </div>
+                </div>
+              </div>
+              {% endunless %}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+
+        //Timeout will wait for the elements to be rendered before running the code
+        setTimeout(() => {
+          let recommendedProductContainer = [...document.querySelectorAll('.recommended-product__container')];
+          let recommendedProductsTitles = [...document.querySelectorAll('.recommend__title')];
+        
+          for(let i = 0; i < recommendedProductContainer.length; i++){
+            if(recommendedProductsTitles[i].innerHTML.length > 35){
+              recommendedProductContainer[i].style.height = '425px';
+            }
+          }
+        }, 100);
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+  
+  window.addEventListener('load', () => {
+    console.log("recommended products rendered!");
+
+    let titles = [...document.querySelectorAll('.recommend__title')];
+    let recommendedSelectTags = [...document.querySelectorAll('.size-changer-div')].slice(-4);
+    let recommendedProductContainer = document.querySelectorAll('.product-recommendations');
+    let returnBtn = document.querySelector('.return-link');
+
+    if(screen.width < 768){
+      titles.forEach(el => {
+        if(el.offsetHeight <= 18){
+          el.style.paddingBottom = '17px'
+        }
+      });
+
+    recommendedSelectTags.forEach(el => {
+      el.children[1].style.marginLeft = '-35px';
+    });
+    }
+  })
+
+</script>

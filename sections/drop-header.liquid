@@ -1,0 +1,204 @@
+<div class="drop-header">
+  <div class="page-width">
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.announcement }}</p>
+    {% if section.settings.show_countdown %}
+    <div id="countdown">
+    </div>
+    {% endif %}
+    <div>
+      {{ section.settings.klaviyo-embed }}
+    </div>
+  </div>
+</div>
+<style>
+
+  .drop-header {
+    text-align: center;
+    background: #FAFAFA;
+    padding: 20px 0;
+  }
+  
+  .drop-header h1 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .drop-header p {
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  
+  #countdown {
+  }
+  
+  .countdown-items {
+    min-width: 350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  
+  .countdown-item {
+    padding: 0 8px;
+  }
+  
+  #countdown span {
+    display: block;
+  }
+  
+  .countdown-time {
+    font-weight: 500;
+    font-size: 47.0588px;
+    line-height: 120%;
+    text-align: center;
+    color: #BE95AC;
+  }
+  
+  .countdown-label {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.294118px;
+    text-transform: uppercase;
+    color: #BE95AC;
+  }
+  
+  @media (min-width: 768px) {
+    .drop-header h1 {
+      font-size: 36px;
+    }
+    
+    .drop-header p {
+      font-size: 16px;
+    }
+    
+    .drop-header {
+      padding: 60px 0 40px;
+    } 
+  }
+</style>
+{% if section.settings.show_countdown %}
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("{{ section.settings.deadline }}").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown").innerHTML = `<div class="countdown-items">
+	<div class="countdown-item"><span class="countdown-time">${days}</span> <span class="countdown-label">days</span></div>
+	<div class="countdown-item"><span class="countdown-time">${hours}</span> <span class="countdown-label">hours</span></div>
+	<div class="countdown-item"><span class="countdown-time">${minutes}</span> <span class="countdown-label">minutes</span></div>
+	<div class="countdown-item"><span class="countdown-time">${seconds}</span> <span class="countdown-label">seconds</span></div>
+  </div>`;
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "{{ section.settings.drop_live }}";
+      document.querySelectorAll('.dc-btn').forEach(function(button) {
+        button.style.display = 'flex';
+      });
+      
+      document.querySelectorAll('a.dc-carousel_slide').forEach(function(link) {
+    	link.href = link.dataset.href
+      });
+      
+    }
+  }, 1000);
+</script>
+{% else %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.dc-btn').forEach(function(button) {
+      button.style.display = 'flex';
+    });
+
+    document.querySelectorAll('a.dc-carousel_slide').forEach(function(link) {
+      link.href = link.dataset.href
+    });    
+  })
+</script>
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide" type="text/javascript"></script>
+
+
+
+
+{% schema %}
+  {
+    "name": "Drop Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+		"default": "Holiday Drop 2021"
+      },
+      {
+        "type": "text",
+        "id": "drop_live",
+        "label": "Drop is live text",
+		"default": "The Drop is live!"
+      },
+      {
+        "type": "text",
+        "id": "announcement",
+        "label": "Announcement Text",
+		"default": "Launches Sept 30th at 8:00AM PDT"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_countdown",
+        "label": "Show Countdown? Enabled/disable the countdown",
+		"default": true
+      },
+      {
+        "type": "text",
+        "id": "deadline",
+        "label": "Launch Deadline format: 15 October 2021 09:00:00 GMT-0700",
+		"default": "15 October 2021 09:00:00 GMT-0700"
+      }
+	],
+    "presets": [
+      {
+        "name": "Drop Header",
+        "category": "Drops"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

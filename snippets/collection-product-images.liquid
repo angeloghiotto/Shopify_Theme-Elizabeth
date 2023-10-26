@@ -1,0 +1,45 @@
+{%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+
+{%- unless product.empty? -%}
+  <div
+    data-product-images
+    data-zoom="{{ settings.product_zoom_enable }}"
+    data-has-slideshow="true">
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
+
+      <div class="product__main-photos" data-aos data-product-single-media-group>
+        <div id="ProductPhotos-{{ section_id }}" class="collection-product-media">
+          {%- for media in product.media limit:2 -%}
+            {%- include 'media',
+              media: media,
+              featured_media: featured_media,
+              isModal: isModal,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="product__photo-dots product__photo-dots--{{ section_id }}"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="application/json" id="ModelJson-{{ section_id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{%- else -%}
+  <div class="product__photos product__photos-{{ section_id }}">
+    <div class="product__main-photos" style="width: 100%">
+      <div id="ProductPhotos-{{ section_id }}">
+        <div data-index="{{ forloop.index0 }}">
+          <a href="#">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endunless -%}

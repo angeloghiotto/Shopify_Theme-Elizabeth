@@ -1,0 +1,621 @@
+<style>
+  .picker-images {
+    object-fit: cover;
+  }
+
+  .body-picker-variantb {
+    display: block;
+  }
+
+  .body-picker-varianta {
+    display: none;
+  }
+
+  .main-body_picker .slick-slide {
+    margin: 0 10px;
+  }
+
+  .main-body_picker .slick-list {
+    margin: 0 -10px;
+  }
+
+  .main-body_picker {
+    position: relative;
+    z-index: 9;
+  }
+
+  .body_style_picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    grid-gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  html .custom_arrows .prev-body-picker,
+  html .custom_arrows .next-body-picker {
+    font-size: 12px;
+    color: black;
+  }
+
+  .custom_arrows {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    top: 30px;
+    z-index: -1;
+  }
+
+  html .custom_arrows .prev-body-picker {
+    left: -18px;
+  }
+
+  html .custom_arrows .next-body-picker {
+    right: -18px;
+  }
+
+  .active_body_picker {
+    border: 2px solid #2C2C2C;
+  }
+
+  .body_style_item {
+    border: 1px solid #EEEEE9;
+  }
+
+  .garment_type {
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: .75em;
+  }
+
+  .body_style_picker_scroller {
+    display: inline-flex;
+    overflow-x: scroll;
+    max-width: 100%;
+
+  }
+
+  .body_style_picker_scroller div {
+    width: 97px;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+
+  .body_picker_with_slider .slick-slide p {
+    margin-top: 5px;
+  }
+
+  .product-prints-options__container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    max-width: 1120px;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .single-product__container {
+    width: 262px;
+    min-height: 406px;
+    height: auto;
+    max-height: 406px;
+    border: 1px solid #EDEDED;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+  .print-options__title-container {
+    display:  flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 40px;
+  }
+
+  .print-options__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+
+  .hide-content {
+    overflow: hidden;
+    max-height: 420px;
+    transition: max-height 1s ease-out;
+  }
+
+  .show-content {
+    overflow: hidden;
+    max-height: 1330px;
+    transition: max-height 1s ease-in;
+  }
+
+  .show-more__btn {
+    margin: 0 auto;
+    margin-top: 40px !important;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px 10px 16px;
+    gap: 8px;
+    width: 328px;
+    height: 56px;
+    background: #000000;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+  }
+
+  .quick-add__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    gap: 8px;
+    width: 238px;
+    height: 39px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin: 0 12px !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #000000;
+  }
+
+  .quick-add-product .variant-wrapper {
+   max-width: 238px;
+   height: 39px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin: 0 12px;
+  }
+
+
+  .product-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+
+  .product-price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: #000000;
+  }
+
+ .quantity-add-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ #dtc-shop-pay{
+  max-width: 85%;
+ }
+
+ .product-single__form {
+  margin-top: 0 !important;
+ }
+
+ .available-variantsmobile-only:hover {
+    display: none;
+ }
+
+  @media only screen and (max-width: 1024px) {
+    .show-content {
+      max-height: 2800px;
+    }
+    .hide-content {
+     max-height: 646px;
+      
+    }
+    .product-title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: capitalize;
+      color: #000000;
+      padding-top: 8px;
+    }
+
+    .product-price {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+
+      color: #000000;
+    }
+    .product-prints-options__container {
+      display: grid;
+      grid-template-columns: auto auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .print-options__title {
+      font-family: 'Futura';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 32px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
+      color: #000000;
+    }
+
+    .single-product__container {
+      width: 100%;
+      min-height: 0;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+    }
+
+    .product-prints-options__container  {
+      padding: 0 16px;
+      gap: 12px;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .quick-add__btn {
+      margin: 0 auto !important;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      gap: 8px;
+      width: 90%;
+      height: 39px;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+      color: #000000;
+    }
+
+    .picker-images {
+    object-fit: contain;
+    height: auto;
+    }
+    .quick-add-product .variant-wrapper {
+      max-width: 90%;
+    }
+
+    .quick-add-product select {
+      width: 90% !important;
+    }
+
+    .size-changer-div {
+      padding-top: 2px;
+      padding-left: 15px;
+      display: block !important;
+    }
+
+    .quick-add-product .variant-wrapper {
+      margin: 0 auto !important;
+    }
+
+    .variant-input-wrap {
+      margin-left: 0 !important;
+    }
+
+    .quick-add-product  {
+      padding-bottom: 0 !important;
+      margin: 0 auto;
+    }
+
+    .product-single__form {
+      margin-bottom: 0px !important;
+    }
+
+    .available-variants {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .show-more__btn {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+
+    .show-content{
+      max-height: 2984px;
+    }
+  }
+
+  @media (max-width:500px) {
+    .hide-content__max {
+      max-height: 700px;
+      transition: max-height 1s ease-out;
+      overflow: hidden;
+    }
+
+    .hide-content{
+      max-height: 700px;
+    }
+  }
+
+  @media (min-width: 500px) and (max-width:1024px) {
+    .hide-content__max {
+      max-height: 837px;
+      transition: max-height 1s ease-out;
+      overflow: hidden;
+    }
+    .hide-content{
+      max-height: 838px;
+    }
+  }
+
+</style>
+
+{% liquid
+  assign has_print_tag = false
+
+  for tag in product.tags
+    if tag contains 'print_'
+      assign has_print_tag = true
+    endif
+  endfor
+%}
+
+{% comment %}
+Output HTML only if product has at least one tag containing "print_"
+{% endcomment %}
+
+{% if has_print_tag %}
+
+    {% for tag in product.tags %}
+      {% if tag contains 'print_' %}
+        {%- assign var1 = tag | replace: "_", " " -%}
+        {%- assign var2 = var1 | replace: "print", "" -%}
+        {%- assign var3 = var2 | upcase -%}
+
+        {% assign print_text = "this print is also available in " %}  
+        {% for collection in product.collections %}
+          {% if collection.metafields.custom.also_available_as != blank %}
+            {% assign print_text = collection.metafields.custom.also_available_as %}    
+          {% endif %}  
+        {% endfor %}
+        <div class="print-options__title-container">
+        <p class="print-options__title">{{print_text}}</p>
+        </div>
+
+        {% for collection in product.collections %}
+          {% if collection.metafields.custom.print_code == tag %}
+          <div style="height: 100%;">
+              <div class="product-prints-options__container hide-content">
+
+                {% for product in collection.products %}
+                  {% assign samePrintProducts = product %}
+                  {% assign cap_title = product.type %}
+
+                  {% assign words = var3 | split: " " %}
+
+                  {% for word in words %}
+                    {% assign cap_title = cap_title | replace_first: word , " " | replace: " -" , "" %}
+                  {% endfor %}
+                  <div class="single-product__container">
+                  <a href="{{product.url}}">
+                  <div style="width: 100%;">
+                      {%- if samePrintProducts.metafields.custom.dtc_body_picker_image != blank -%}
+                        <img
+                          class="picker-images"
+                          loading="lazy"
+                          width="262"
+                          height="262"
+                          src="{{ samePrintProducts.featured_image | image_url: width: 300, height: 300 }}"
+                          alt="{{ samePrintProducts.featured_image.alt }}"
+                          alt="{{product.images[1].alt}}"
+                        />
+                      {%- else -%}
+                        <img
+                          class="picker-images"
+                          loading="lazy"
+                          width="262"
+                          height="262"
+                          class="{% if samePrintProducts.handle == product_handledtc  %} active_body_picker {% else %}body_style_item{% endif %}"
+                          {%- if samePrintProducts.images[1] -%}
+                          class="product__img"
+                          src="{{ samePrintProducts.featured_image | image_url: width: 300, height: 300 }}"
+                          alt="{{ samePrintProducts.featured_image.alt }}"
+                            {% else %}
+                            class="product__img"
+                            src="{{ samePrintProducts.featured_image | image_url: width: 300, height: 300 }}"
+                            alt="{{ samePrintProducts.featured_image.alt }}"
+                          {% endif %}
+                        />
+                      {%- endif -%}
+                      </div>
+                      <div style="margin: 0 12px;">
+
+                    {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
+                 
+                    <div data-oke-star-rating {{ product_data_attribute }}>
+                      {{ product.metafields.okendo.StarRatingSnippet }}
+                    </div>
+                  
+
+                      {%- if collection.title != "You're the Zest" -%}
+                        <p class="product-title">{{product.metafields.custom.product_garment}}</p>
+                      {%- endif -%}
+                      <p class="product-price">{{ product.price | money }}</p>
+                    </div>
+                  </a>
+
+                  {% if product.available and product.variants.size == 1 %}
+                  <div
+                    class="product-section"
+                    data-section-id="{{product.id}}"
+                    data-section-type="product-template"
+                    data-product-handle="{{ product.handle }}"
+                    data-product-url="{{ product.url }}">
+                    <div class="product-grid-item_form_wrapper">
+                      {% render 'dtc-product-single-product', section_id: section_id, samePrintProducts: samePrintProducts, quick-add__btn: quick-add__btn %}
+                    </div>
+                  </div> 
+                     
+                {% endif %}
+                {% unless product.available %}
+                  <div 
+                    disabled
+                    class="quick-add__btn hover-to-show-form"
+                    style="pointer-events: none; opacity:0.3; width: 90%;">
+                    SOLD OUT
+                </div>
+              {% endunless %}
+
+                {% unless product.variants[0].option1 == 'Default Title' or product.available == false %}
+
+                <div class="quick-add-product available-variants{% if product.variants.size == 1 %}mobile-only{% endif %}">
+                
+                    <div 
+                      class="quick-add__btn hover-to-show-form"
+                      style="{% if sold_out %} pointer-events: none; opacity:0.3;{% endif %}
+                    {% if samePrintProducts.variants[0].option1 == 'Default Title' or samePrintProducts.variants.size == 1 %} display: none !important; {% endif %}
+                      ">
+                        QUICK ADD
+                    </div>
+                    
+            
+                  <div class="quick-add-form">
+                    <div
+                      class="product-section"
+                      data-section-id="{{ samePrintProducts.id }}"
+                      data-section-type="product-template"
+                      data-product-handle="{{ samePrintProducts.handle }}"
+                      data-product-url="{{ samePrintProducts.url }}">
+                      <div class="product-grid-item_form_wrapper" style="">
+                        {% assign section_id = samePrintProducts.id | append: '_product-grid' %}
+                        {% render 'product-form-dtc', section_id: section_id, samePrintProducts: samePrintProducts %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endunless %}
+              
+                </div>
+                {% endfor %}
+
+              </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+        <button class="show-more__btn">Show more</button>
+      {% endif %}
+    {% endfor %}
+{% endif %}
+
+<script>
+  let showMoreBtn = document.querySelector('.show-more__btn');
+  let printOptionsContainer = document.querySelector('.product-prints-options__container');
+  let sizeOptions = [...document.querySelectorAll('.size-changer-div')];
+  let quickAddBtn = [...document.querySelectorAll('.quick-add-product')];
+  let quickAddBtns = [...document.querySelectorAll('.single-product__container')];
+  let productsContainerHide = document.querySelector('.hide-content');
+  let productsContainerShow = document.querySelector('.show-content');
+
+  if(quickAddBtns.length <= 4){
+    if(showMoreBtn)
+    {
+      showMoreBtn.style.display = 'none';  
+    }
+    if(printOptionsContainer)
+    {
+      printOptionsContainer.style.marginBottom = '30px';  
+    }
+  }
+
+  // Set different height values for differents screen sizes (devices)
+
+  if(screen.width >= 414 && screen.width <= 768){
+    productsContainerHide.classList.remove('hide-content');
+    productsContainerHide.classList.add('hide-content__max')
+    if(showMoreBtn)
+    {
+      showMoreBtn.addEventListener('click', () => {
+        if(printOptionsContainer.classList.contains('hide-content__max')){
+          printOptionsContainer.classList.remove('hide-content__max');
+          printOptionsContainer.classList.add('show-content');
+          showMoreBtn.innerHTML = 'Show less';
+        } else {
+          printOptionsContainer.classList.add('hide-content__max');
+          printOptionsContainer.classList.remove('show-content');
+          showMoreBtn.innerHTML = 'Show more';
+      
+        }
+      })
+    }
+  } else {
+    if(showMoreBtn)
+    {
+      showMoreBtn.addEventListener('click', () => {
+        if(printOptionsContainer.classList.contains('hide-content')){
+          printOptionsContainer.classList.remove('hide-content');
+          printOptionsContainer.classList.add('show-content');
+          showMoreBtn.innerHTML = 'Show less';
+        } else {
+          printOptionsContainer.classList.add('hide-content');
+          printOptionsContainer.classList.remove('show-content');
+          showMoreBtn.innerHTML = 'Show more';
+      
+        }
+      })
+    }
+  }
+
+  quickAddBtns.forEach(btn => {
+    let singleQuickAdd = btn.children[1].children[0]?.children[3];
+    if(singleQuickAdd != undefined){
+      singleQuickAdd.style.width = '90%';
+      singleQuickAdd.style.margin = '0 auto';
+    }
+  })
+
+
+</script>

@@ -1,0 +1,25 @@
+{%- assign show_announcement = true -%}
+{%- assign announcement_block_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'dtc-announcement-2' -%}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+        <div class="dtc-announcement-slider">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'dtc-announcement-2' -%}
+              <div class="dtc-announcement-2">
+                  <a class="dtc-announcement-link">
+                    <span class="dtc-announcement-link-text">{{ block.settings.text-second }}</span>
+                  </a>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,147 @@
+<h3 class="review-title">TRUSTED CUSTOMER REVIEWS</h3>
+<div class="checkout-review-item ">
+    <div class="review-item-header">
+        <div class="review-image">
+            <img loading="lazy" src="{{ 'Ellipse_3.png' | file_url }}">
+        </div>
+        <div class="review-item-right">
+            <div class="review-item-name">
+                <p class="review-item-bold">Brenda Parmar</p>
+                <img loading="lazy" src="{{ 'NuaTBCne4Xc_1.png' | file_url }}">
+                <p class="review-item-bold"><span class="recomends-review">recommends</span> Bums & Roses.</p>
+            </div>
+            <div class="review-item-date">
+                <p>Apr 22 at 11:02</p>
+                <img loading="lazy" src="{{ 'world.svg' | file_url }}">
+            </div>
+        </div>
+    </div>
+    <div class="review-item-text">
+        <p>"The fastest and easiest return process I’ve ever had with a bamboo company. It was basically on the
+            level of an Amazon return, haha. Great customer service."</p>
+    </div>
+</div>
+<div class="checkout-review-item">
+    <div class="review-item-header">
+        <div class="review-image">
+            <img loading="lazy"
+                src="{{ 'Ellipse_3_985fc62b-f117-4fe5-8ff1-b5f26af1d33f.png' | file_url }}">
+        </div>
+        <div class="review-item-right">
+            <div class="review-item-name">
+                <p class="review-item-bold">Trisha Sebeck</p>
+                <img loading="lazy" src="{{ 'NuaTBCne4Xc_1.png' | file_url }}">
+                <p class="review-item-bold"><span class="recomends-review">recommends</span> Bums & Roses.</p>
+            </div>
+            <div class="review-item-date">
+                <p>May 10 at 17:02</p>
+                <img loading="lazy" src="{{ 'world.svg' | file_url }}">
+            </div>
+        </div>
+    </div>
+    <div class="review-item-text">
+        <p>"These are hands down the best pajamas!! They are so soft and they grow into them! My daughter can
+            wear each size well after what it’s recommended for as they are so stretchy! 😍"</p>
+    </div>
+</div>
+<div class="checkout-review-item">
+    <div class="review-item-header">
+        <div class="review-image">
+            <img loading="lazy" src="{{ 'Ellipse_3-1.png' | file_url }}">
+        </div>
+        <div class="review-item-right">
+            <div class="review-item-name">
+                <p class="review-item-bold">Courtney Ann</p>
+                <img loading="lazy" src="{{ 'NuaTBCne4Xc_1.png' | file_url }}">
+                <p class="review-item-bold"><span class="recomends-review">recommends</span> Bums & Roses.</p>
+            </div>
+            <div class="review-item-date">
+                <p>Jun 2 at 22:02</p>
+                <img loading="lazy" src="{{ 'world.svg' | file_url }}">
+            </div>
+        </div>
+    </div>
+    <div class="review-item-text">
+        <p>"The soft bamboo fabric is perfect for regulating his temperature while also keeping him comfortable
+            at night. Happy baby = happy mom! 👩🍼!"</p>
+    </div>
+</div>
+
+<style>
+    .checkout-review-item {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px 0.5px rgba(0, 0, 0, 0.15);
+        border-radius: 7px;
+        padding: 14px;
+        margin-bottom: 12px;
+    }
+
+    .review-item-name {
+        font-size: 13.6px;
+        display: inline;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .review-item-name p {
+        display: inline;
+    }
+
+    .review-item-text {
+        margin-top: 10px;
+    }
+
+    .review-title {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        color: #5E5E5E;
+        margin-top: 22px;
+        margin-bottom: 22px;
+    }
+
+    .review-title::before,
+    .review-title::after {
+        content: "";
+        border-top: 0.1rem double #E1E1E1;
+        align-self: center;
+    }
+
+    .review-image {
+        max-width: 39px;
+    }
+
+    .review-item-header {
+        display: grid;
+        grid-template-columns: 39px 1fr;
+        grid-gap: 11px;
+    }
+
+    .review-item-date {
+        display: grid;
+        grid-template-columns: 102px 14px;
+        align-items: center;
+        grid-gap: 3px;
+
+    }
+
+    .recomends-review {
+        color: #65676B !important;
+        font-weight: 400 !important;
+    }
+
+    .reviews-mobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: 999px) {
+      .reviews-mobile {
+        display: block;
+      }
+
+      .reviews-desktop {
+        display: none;
+      }
+    }
+
+</style>

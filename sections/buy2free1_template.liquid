@@ -1,0 +1,121 @@
+<div class="buy2free1_landing_template">
+    <div class="template_inner">
+      <div class="landing-header">
+        {% if section.settings.banner_image != blank %}
+        	<img data-src="{{section.settings.banner_image|img_url:'600x'}}" class="lazyload header-banner">
+        	<div class="header-banner-mask"></div>
+        {% endif %}
+        
+        <p>{{section.settings.description}}</p>
+      </div>
+
+      <div class="landing-body">
+        <p class="text1">{{section.settings.subtitle}}</p>
+
+        <span class="stamped-starrating stamped-badge-starrating" aria-hidden="true"><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i></span>
+
+        <p class="text2">{{section.settings.review_text}}</p>
+        
+        <div class="price-row">
+          <span class="original_price">{{section.settings.original_price}}</span>
+          <span class="discount_price">{{section.settings.discount_price}}</span>
+        </div>
+
+        
+        {% for block in section.blocks %}
+        <div class="text-center">
+        	<a href="{{block.settings.button_url}}" class="btn-start">{{block.settings.button_text}}</a>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <div class="landing-footer">
+        <span class="stamped-starrating stamped-badge-starrating" aria-hidden="true"><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i><i class="stamped-fa stamped-fa-star" aria-hidden="true"></i></span>
+        <p class="text3">{{section.settings.footer_text}}</p>
+        
+        <div class="footer-image-wrap">
+          {% if section.settings.footer_image != blank %}
+          	<img data-src="{{section.settings.footer_image | img_url: 'master'}}" class="lazyload">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Buy2 Free 1 page",
+    "settings": [
+		{
+			"type": "image_picker",
+			"id": "banner_image",
+			"label": "Banner Image"
+		},
+		{
+			"type": "textarea",
+			"id": "description",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "SubTitle"
+		},
+		{
+			"type": "text",
+			"id": "review_text",
+			"label": "Review Text"
+		},
+		{
+			"type": "text",
+			"id": "original_price",
+			"label": "Original Price"
+		},
+		{
+			"type": "text",
+			"id": "footer_text",
+			"label": "Footer Text"
+		},
+		{
+			"type": "text",
+			"id": "discount_price",
+			"label": "Discount Price"
+		},
+		{
+			"type": "image_picker",
+			"id": "footer_image",
+			"label": "Footer Image"
+		}
+	],
+	"blocks": [
+		{
+			"type": "item",
+			"name": "Item",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image"
+				},
+				{
+					"type": "text",
+					"id": "button_text",
+					"label": "Button Text"
+				},
+				{
+					"type": "url",
+					"id": "button_url",
+					"label": "Button Link"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

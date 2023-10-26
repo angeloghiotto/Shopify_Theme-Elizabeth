@@ -1,0 +1,49 @@
+{{ 'product-add-to-cart-dtc.js' | asset_url | script_tag }} ​
+{% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
+
+  {% if content_for_header contains '.mageworx.com\/groupedproducts\/source.js?' and product.tags contains 'mw_grouped_product' %}
+    <div class="mw-gp-container"></div>
+  {% endif %}
+
+<style>
+  .quantity-add-single {
+    margin-top: -25px !important;
+  }
+
+</style>
+
+  <input
+    type="hidden"
+    name="properties[no_scarcity_hint]"
+    value="{{ product.metafields.dtc.no_scarcity_hint }}" />
+
+  <div class="quantity-add-single">
+    <div class="input-quantity">
+      <input
+        type="hidden"
+        name="id"
+        data-productid="{{ collectionProduct.id }}"
+        value="{{ samePrintProducts.variants[0].id }}"
+        data-variant-title="{{ product.variants[0].title }}" />
+    </div>
+    <button
+    onclick="submitQuickAddToCart(event)"
+    class="quick-add__btn pop-over-single-quick-add"
+    value="Add To Cart">QUICK ADD</button>
+
+  </div>
+
+  <div
+    id="VariantsJson-{{ section_id }}"
+    class="hide"
+    aria-hidden="true">
+    {{ product.variants | json }}
+  </div>
+  {% if product.options.size > 1 %}
+    <div
+      id="CurrentVariantJson-{{ section_id }}"
+      class="hide"
+      aria-hidden="true">
+      {{ current_variant | json }}
+    </div>
+  {% endif %}

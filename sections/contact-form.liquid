@@ -1,95 +1,89 @@
-<div class="flex flex-col items-center my-8">
-  {% if section.settings.title != blank %}
-    <h1 class="text-3xl font-medium my-8 md:my-16">{{ section.settings.title }}</h1>
-  {% endif %}
+<div class="index-section">
+  <div class="page-width">
 
-  {% form 'contact' %}
-    {% if form.errors %}
-      <div class="border p-5">
-        <div class="flex flex-row items-center w-full my-3">
-          <div class="text-red-500">
-            {% render 'icon-failed' %}
+    <div class="grid">
+      <div class="grid__item{% if section.settings.narrow_column %} medium-up--three-quarters medium-up--push-one-eighth{% endif %}">
+
+        {% if section.settings.title != blank %}
+          <div class="section-header">
+            <h2 class="section-header__title">
+              {{ section.settings.title }}
+            </h2>
           </div>
-          <div class="text-sm font-medium ml-3">Oh no! Your message is not sent</div>
-          <ul class="px-4 mb-3 ml-7 list-decimal">
-            {% for error in form.errors %}
-              <li>
-                <span>{{ form.errors.messages[error] }}</span>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    {% elsif form.posted_successfully? %}
-      <div class="flex flex-row items-center w-full my-3 p-5">
-        <div class="text-green-500">
-          {% render 'icon-success' %}
-        </div>
-        <div class="text-sm font-medium ml-3">You message is sent successfully</div>
-      </div>
-    {% endif %}
+        {% endif %}
 
-    <div class="max-w-6xl mx-auto justify-center flex-1 items-center px-4">
-      <div class="flex px-1 mb-3">
-        <div class="px-3 md:w-1/2">
-          <label class="uppercase text-xs text-gray-500 font-medium" for="contact_name">Name</label>
-          <input
-            class="border py-3 px-4 mb-3 text-gray-700 w-full"
-            type="text"
-            name="contact[name]"
-            id="contact_name"
-            class="border"
-          >
-        </div>
-        <div class="px-3 md:w-1/2">
-          <label class="uppercase text-xs text-gray-500 font-medium" for="contact_email">Email address</label>
-          <input
-            class="border py-3 px-4 mb-3 text-gray-700 w-full"
-            type="email"
-            name="contact[email]"
-            id="contact_email"
-          >
-        </div>
-      </div>
+        <div class="form-vertical">
+          {% form 'contact' %}
 
-      <div class="flex px-1 mb-3">
-        <div class="w-full px-3">
-          <label for="contact_message" class="uppercase text-xs text-gray-500 font-medium">Message</label>
-          <textarea
-            name="contact[body]"
-            id="contact_message"
-            class="border py-3 px-4 mb-3 text-gray-700 w-full"
-          ></textarea>
-        </div>
-      </div>
+            {% if form.posted_successfully? %}
+              <p class="note note--success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% endif %}
 
-      <div class="flex px-1 mb-3">
-        <div class="w-full px-3">
-          <input
-            type="submit"
-            class="w-full cursor-pointer px-4 py-2 border text-base font-medium bg-gray-900 text-white hover:bg-gray-700"
-            value="Submit message"
-          >
+            {{ form.errors | default_errors }}
+
+            <div class="grid grid--small">
+              <div class="grid__item medium-up--one-half">
+                <label for="ContactFormName-{{ section.id }}">{{ 'contact.form.name' | t }}</label>
+                <input type="text" id="ContactFormName-{{ section.id }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              </div>
+
+              <div class="grid__item medium-up--one-half">
+                <label for="ContactFormEmail-{{ section.id }}">{{ 'contact.form.email' | t }}</label>
+                <input type="email" id="ContactFormEmail-{{ section.id }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+              </div>
+            </div>
+
+            {% if section.settings.show_phone %}
+              <label for="ContactFormPhone-{{ section.id }}">{{ 'contact.form.phone' | t }}</label>
+              <input type="tel" id="ContactFormPhone-{{ section.id }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+            {% endif %}
+
+            <label for="ContactFormMessage-{{ section.id }}">{{ 'contact.form.message' | t }}</label>
+            <textarea rows="5" id="ContactFormMessage-{{ section.id }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+            <button type="submit" class="btn">
+              {{ 'contact.form.send' | t }}
+            </button>
+
+          {% endform %}
         </div>
       </div>
     </div>
-  {% endform %}
+  </div>
 </div>
 
 {% schema %}
-{
-  "name": "Contact form",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Contact form"
-    }
-  ]
-}
+  {
+    "name": "Contact form",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "All submissions are sent to the customer email address of your store. [Learn more](https://help.shopify.com/en/manual/using-themes/change-the-layout/add-contact-form#view-contact-form-submissions)."
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Contact us"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_phone",
+        "label": "Show phone number"
+      },
+      {
+        "type": "checkbox",
+        "id": "narrow_column",
+        "label": "Narrow column",
+        "default": true
+      }
+    ],
+    "presets": [{
+      "name": "Contact form",
+      "category": "Store information"
+    }]
+  }
 {% endschema %}

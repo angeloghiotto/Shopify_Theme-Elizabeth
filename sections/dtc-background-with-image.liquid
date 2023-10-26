@@ -1,0 +1,413 @@
+{%liquid 
+assign icon_left = section.settings.icon_left | image_url
+assign icon_right = section.settings.icon_right | image_url
+assign small_label = section.settings.hero_small_label
+assign hero_title = section.settings.hero_title
+assign hero_description = section.settings.hero_description
+assign hero_button_text = section.settings.hero_button_text
+assign hero_mobile_image = section.settings.mobile_hero_image | image_url
+assign hero_desktop_image = section.settings.desktop_hero_image | image_url
+assign show_image_only = section.settings.show_image_only
+assign show_cta_button = true
+
+if icon_left != blank and icon_right != blank
+  assign small_label_class ='dtcDynamicHeroSection__SmallLabelContent'
+endif
+
+if icon_left == blank and icon_right == blank and  small_label == blank and hero_title == blank and hero_description == blank 
+  assign show_image_only = true
+endif
+
+if small_label == blank and hero_title == blank and hero_description == blank 
+  assign show_cta_button = false
+endif
+%}
+
+<style>
+.dtcDynamicHeroSection{
+  display: grid;
+  position: relative;
+  grid-template-columns: 30% 70%;
+  height:100%;
+  background-color: {{section.settings.hero_background_color}};
+}
+.dtcDynamicHeroSection.imagesOnly{
+  background-color:initial;
+}
+
+.dtcDynamicHeroSection__content{
+  width:100%;
+  display:flex;
+}
+.dtcDynamicHeroSection__contentImage img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
+.dtcDynamicHeroSection__SmallLabelContent{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+}
+.dtcDynamicHeroSection__contentLabel{
+    font-weight: 600;
+    font-size: 20px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: max-content;
+    letter-spacing:1.44px;
+    border: 1px dashed {{section.settings.hero_title_color}};
+    color: {{section.settings.hero_title_color}};
+    text-align:center;
+}
+.dtcDynamicHeroSection__contentTitle{
+  font-size:64px;
+  font-weight:600;
+  margin:0;
+  letter-spacing:5.12px;
+  color:{{section.settings.hero_title_color}};
+}
+.dtcDynamicHeroSection__contentDescription{
+  font-size:18px;
+  margin:0;
+  letter-spacing:1.44px;
+  color:{{section.settings.hero_description_color}};
+}
+.dtcDynamicHeroSection__innerContent{
+  display:flex;
+  gap:20px;
+  flex-direction:column;
+  width:100%;
+  position:relative;
+  justify-content:center;
+  padding:34px 40px;
+  max-width:700px;
+}
+.dtcDynamicHeroSection__contentButton{
+  display: flex;
+  max-width: 328px;
+  padding: 16px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  font-weight:600;
+  min-height:52px;
+  height:auto;
+  word-break: break-all;
+  letter-spacing:0.1px;
+  text-align:center;
+  background: {{section.settings.hero_button_background_color}};
+  color: {{section.settings.hero_button_text_color}};
+}
+.dtcDynamicHeroSection__contentButton:hover{
+  color: {{section.settings.hero_button_text_color}};
+}
+.dtcDynamicHeroSection__contentIcons{
+  display:flex;
+  justify-content:space-between;
+  max-width:520px;
+  width:100%;
+}
+.dtcDynamicHeroSection__contentIcons.right{
+  justify-content:flex-end;
+}
+.dtcDynamicHeroSection__IconFirst{
+  animation: fadein 4s;
+  -moz-animation: fadein 4s;
+  -webkit-animation: fadein 4s;
+  -o-animation: fadein 4s;
+  width:50px;
+}
+.dtcDynamicHeroSection__IconSecond{
+  animation: fadein 6s;
+  -moz-animation: fadein 6s;
+  -webkit-animation: fadein 6s;
+  -o-animation: fadein 6s; 
+  width:60px;
+}
+.dtcDynamicHeroSectionImageMobile{
+  display:none;
+}
+.dtcDynamicHeroSection.imagesOnly{
+  display:block;
+}
+@media screen and (max-width: 1500px) {
+  .dtcDynamicHeroSection__contentTitle{
+    font-size:32px;
+    letter-spacing: 2.56px;
+  }
+  .dtcDynamicHeroSection__contentDescription , .dtcDynamicHeroSection__contentLabel{
+    font-size:16px;
+    letter-spacing: 1.28px;
+  }
+  .dtcDynamicHeroSection__innerContent{
+    gap:10px;
+  }
+  .dtcDynamicHeroSection__contentButton{
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+}
+@media screen and (max-width: 968px) {
+  
+  .dtcDynamicHeroSection{
+    display:flex;
+    flex-direction:column-reverse;
+    max-height: initial;
+  }
+  .dtcDynamicHeroSection__contentButton{
+    max-width:40%;
+    padding: 10px 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .dtcDynamicHeroSection__SmallLabelContent {
+    justify-content:center;
+    top:-10px;
+  }
+
+
+  .dtcDynamicHeroSection__content{
+    padding-top:24px;
+    padding-bottom:24px;
+  }
+  .dtcDynamicHeroSection__contentIcons{
+    max-width:100%;
+  }
+ .dtcDynamicHeroSection__innerContent {
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.dtcDynamicHeroSection__IconFirst{
+  width:40px;
+}
+.dtcDynamicHeroSection__IconSecond{
+  width:50px;
+}
+.dtcDynamicHeroSection__contentLabel{
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: -70px;
+}
+.dtcDynamicHeroSection__contentImage img{
+  width:100%;
+}
+}
+@media screen and (max-width: 450px) {
+  .dtcDynamicHeroSection__contentButton{
+    max-width:40%;
+    padding: 10px 10px;
+        font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .dtcDynamicHeroSectionImageDesktop{
+    display:none;
+  }
+  .dtcDynamicHeroSectionImageMobile{
+    display:block;
+  }
+  .dtcDynamicHeroSection__contentTitle{
+    text-align:center;
+    margin-top: 5px;
+  }
+  .dtcDynamicHeroSection__contentDescription{
+    text-align:center;
+  }
+  .dtcDynamicHeroSection__innerContent {
+    gap: 10px;
+  } 
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+<div class="dtcDynamicHeroSection{% if show_image_only %} imagesOnly{% endif %}">
+    {% if show_image_only != true %}
+      <div class="dtcDynamicHeroSection__content">
+        <div class="page-width dtcDynamicHeroSection__innerContent">
+            {% if icon_left != blank and icon_right != blank %}
+              <div class="dtcDynamicHeroSection__contentIcons">            
+                <img class="dtcDynamicHeroSection__IconFirst" src="{{icon_left}}"/>
+                <img class="dtcDynamicHeroSection__IconSecond" src="{{icon_right}}"/>
+              </div>
+            {% elsif icon_left != blank %}
+              <div class="dtcDynamicHeroSection__contentIcons">            
+                <img class="dtcDynamicHeroSection__IconSecond" src="{{icon_left}}"/>
+              </div>
+            {% elsif icon_right != blank %}
+              <div class="dtcDynamicHeroSection__contentIcons right">            
+                <img class="dtcDynamicHeroSection__IconSecond" src="{{icon_right}}"/>
+              </div>
+            {% endif %}
+            {% if small_label != blank %}
+              <div class="{{small_label_class}}">
+                <span class="dtcDynamicHeroSection__contentLabel">{{small_label}}</span>
+              </div>
+            {% endif %}
+            {% if hero_title != blank  %}
+              <h1 class="dtcDynamicHeroSection__contentTitle">{{hero_title}}</h1>
+            {% endif %}
+            {% if hero_description != blank  %}
+              <p class="dtcDynamicHeroSection__contentDescription">{{hero_description}}</p>
+            {% endif %}
+            {% if hero_button_text != blank and show_cta_button == true %}
+                <a href="{{section.settings.call_to_action_url}}" class="dtcDynamicHeroSection__contentButton">{{hero_button_text}}</a>      
+            {% endif %}
+        </div>
+      </div>
+    {%endif %}
+    <div class="dtcDynamicHeroSection__contentImage">
+      <img loading="lazy" class="dtcDynamicHeroSectionImageMobile" src="{{hero_mobile_image}}"/>
+      <img loading="lazy" class="dtcDynamicHeroSectionImageDesktop" src="{{hero_desktop_image}}"/>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Dynamic Home Hero Section",
+    "class": "dtc-home-hero-section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "hero_background_color",
+        "label": "Background",
+        "default": "#F7F2EA"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_left",
+        "label": "Icon Left",
+        "info": "Recommended size: 50x50"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_right",
+        "label": "Icon Right",
+        "info": "Recommended size: 50x50"
+      },
+      {
+        "id": "hero_small_label",
+        "type": "text",
+        "label": "Hero Small Label",
+        "default": "New Arrivals"
+      },
+      {
+        "id": "hero_small_label_color",
+        "type": "color",
+        "label": "Small Label Color",
+        "default": "#000"
+      },
+      {
+        "id": "hero_title",
+        "type": "text",
+        "label": "Hero Title",
+        "default": "VACAY VIBES"
+      },
+      {
+        "id": "hero_title_color",
+        "type": "color",
+        "label": "Title Color",
+        "default": "#000"
+      },
+      {
+        "id": "hero_description",
+        "type": "text",
+        "label": "Hero Description",
+        "default": "Weds June 28 12 PM PT"
+      },
+      {
+        "id": "hero_description_color",
+        "type": "color",
+        "label": "Description Color",
+        "default": "#000"
+      },
+      {
+        "id": "call_to_action_url",
+        "type": "url",
+        "label": "Call To Action"
+      }, 
+      {
+        "id": "hero_button_text",
+        "type": "text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "id": "hero_button_background_color",
+        "type": "color",
+        "label": "Button Background Color",
+        "default": "#000"
+      },
+      {
+        "id": "hero_button_text_color",
+        "type": "color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      },
+       {
+        "type": "checkbox",
+        "id": "show_image_only",
+        "label": "Show Hero As Single Image",
+        "default": false
+      },
+      {
+        "id": "desktop_hero_image",
+        "type": "image_picker",
+        "label": "Hero Image Desktop",
+        "info":"Recommended size: 1780×984"
+      }, 
+      {
+        "id": "mobile_hero_image",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dynamic Home Hero Section",
+        "category": "ADVANCED LAYOUT"
+      }
+    ]
+  }
+{% endschema %}

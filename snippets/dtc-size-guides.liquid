@@ -1,0 +1,251 @@
+<style>
+  .product-single__form {
+    margin-top: 20px;
+  }
+
+  .dtc-size-popup {
+    z-index: 999;
+    background: white;
+    height: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    -webkit-transition: height .3s ease-in-out;
+    -o-transition: height .3s ease-in-out;
+    transition: height .3s ease-in-out;
+  }
+
+  .size-text {
+    float: right;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: #B77B9C;
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: auto;
+    text-transform: uppercase;
+  }
+
+  .size-popup_close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    position: fixed;
+    right: 2%;
+    top: 7%;
+    display: none;
+  }
+
+  .size-text svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .size-popup_title-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .dtc-size-popup a {
+    text-decoration: underline;
+  }
+
+  .size-popup_title {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .size-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background: #0000002e;
+  }
+
+  .size-overlay.show {
+    display: block;
+  }
+
+  .dtc-size-popup.show {
+    height: 95.5vh;
+    overflow-y: scroll;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .product__price {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .size-popup_close {
+      right: 5%;
+      top: 6%;
+    }
+  }
+
+</style>
+
+{% assign product_type = product.type | handleize %}
+{% assign size_guide_handle = 'size-guide-' | append: product_type %}
+
+{% if pages[size_guide_handle] != blank %}
+
+   <div class="size-information size-text-for-data" data-plan="{{ product.metafields.custom.dtc_size_guide.value }}">
+    <!--<img src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/ruler.svg?v=1686666088"/> -->
+      <span class="size-text">Size Chart</span>
+   </div>
+  
+  <div class="dtc-size-popup">
+    <div class="size-popup_title-container">
+      <span class="size-popup_title">Size Guide</span>
+    </div>
+   
+      <span class="size-popup_close">{% render 'close' %}</span>
+
+    <div class="dtc-size">
+      <div class="size-img">
+        <img class="prod-img-size" src="{{ product.media[0].src | img_url:'200x' }}" alt="">
+      </div>
+      <div class="sel-div">
+        <span class="customer-say">Customers say this <span id="fits-span"></span><strong id="dtc-filler"></strong></span>
+        <div class="box-sel-div">
+          <div id="box-sel-1"></div>
+          <div id="box-sel-2"></div>
+          <div id="box-sel-3"></div>
+          <div id="box-sel-4"></div>
+          <div id="box-sel-5"></div>
+        </div>
+        <div class="runs-div">
+          <span>runs small</span>
+          <span>runs large</span>
+        </div>
+      </div>
+    </div>
+    <div class="size-table">
+      {{ pages[size_guide_handle].content }}
+      </div>
+
+    <div class="still-in">
+      <span> <strong> Still in doubt?</strong> Chat with us by tapping on the 💬 button.</span>
+    </div>
+  </div>
+
+<script>
+    document.body.setAttribute('id', 'popup-active');
+    const bodyActive = document.getElementById('popup-active')
+    const announcement = document.querySelector('announcement-bar')
+    let sizeBtn = document.querySelector('.size-text');
+    let sizeOverlay = document.querySelector('.callout-overlay');
+    let sizePopup = document.querySelector('.dtc-size-popup');
+    let sizePopupClose = document.querySelector('.size-popup_close');
+    let sizeInfo = document.querySelector('.size-information');
+
+    sizeInfo.addEventListener('click', () => {
+      setTimeout(() => {
+        sizePopupClose.style.display = 'block';
+      }, 300);
+    })
+    
+    sizePopupClose.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+      bodyActive.style.overflow = 'scroll';
+      sizePopupClose.style.display = 'none';
+
+    })
+
+    sizeOverlay.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+    })
+
+    sizeBtn.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+      bodyActive.style.overflow = 'hidden';
+      announcement.style.position = 'sticky';
+
+    })
+
+</script>
+<script>
+
+  const box1 = document.getElementById('box-sel-1')
+  const box2 = document.getElementById('box-sel-2')
+  const box3 = document.getElementById('box-sel-3')
+  const box4 = document.getElementById('box-sel-4')
+  const box5 = document.getElementById('box-sel-5')
+  const spanFiller = document.getElementById('dtc-filler')
+  const fits = document.getElementById('fits-span')
+
+
+
+
+</script>
+{% if product.metafields.custom.dtc_size_guide.value contains 'Runs small' %}
+  <script>
+    box1.style.backgroundColor = 'black'
+    spanFiller.innerHTML = 'runs small'
+  </script>
+  {% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs a little small' %}
+    <script>
+      box2.style.backgroundColor = 'black'
+      spanFiller.innerHTML = 'runs a little small'
+    </script>
+    {% elsif product.metafields.custom.dtc_size_guide.value contains 'True to size' %}
+      <script>
+        box3.style.backgroundColor = 'black'
+        fits.innerHTML = 'fits'
+        spanFiller.innerHTML = 'true to size'
+      </script>
+      {% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs a little large' %}
+        <script>
+          box4.style.backgroundColor = 'black'
+          spanFiller.innerHTML = 'runs a little large'
+        </script>
+        {% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs large' %}
+          <script>
+            box5.style.backgroundColor = 'black'
+            spanFiller.innerHTML = 'runs large'
+          </script>
+          </script>
+          {% elsif product.metafields.custom.dtc_size_guide.value == null %}
+            <script>
+              box3.style.backgroundColor = 'black'
+              fits.innerHTML = 'fits '
+              spanFiller.innerHTML = 'true to size'
+            </script>
+          {% else %}
+            <script>
+              box3.style.backgroundColor = 'black'
+              fits.innerHTML = 'fits '
+              spanFiller.innerHTML = 'true to size'
+            </script>
+  {% endif %}
+
+
+{% endif %}

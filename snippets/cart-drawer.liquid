@@ -1,0 +1,117 @@
+{% if settings.cart_type == 'drawer' %}
+  <div id="CartDrawer" class="drawer drawer--right limoniapps-discountninja-drawercart-root dtc-scarcity-hint-variation">
+    <!--  <form action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents limoniapps-discountninja-drawercart-root"> -->
+    <form action="/checkout" method="post" novalidate class="drawer__contents limoniapps-discountninja-drawercart-root">
+      <div class="drawer__fixed-header">
+        <div class="drawer__header appear-animation appear-delay-1">
+          <div class="h2 drawer__title">{{ 'cart.general.title' | t }}
+          </div>
+          <div class="drawer__close">
+            <button type="button" class="drawer__close-button js-drawer-close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+              <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="progress-bar_container">
+        <p id="progress-bar_title"></p>
+        <div class="progress-labels">
+          <span class="progress-label_half">$50</span>
+          <span>$100</span>
+        </div>
+        <div id="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <div class="progress-labels">
+          <span class="progress-label_half">FREE SHIPPING</span>
+          <span>EXPRESS SHIPPING</span>
+        </div>
+      </div>
+
+  
+
+      <style>
+        /*  Progress Bar  */
+        .progress-labels {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+          margin-right: 0;
+          margin-left: auto;
+        }
+
+        .progress-labels span {
+          font-size: 10px;
+          line-height: 100%;
+          text-align: center;
+          color: #363636;
+          width: 33.3333%;
+          margin: 4px 0;
+          letter-spacing: 0.5px;
+        }
+
+        .progress-labels .progress-label_half {
+          position: relative;
+          left: -18%;
+        }
+
+        .progress-labels span:last-child {
+          text-align: right;
+        }
+
+        #progress-bar_container {
+          padding: 15px 30px;
+          display: block;
+        }
+
+        #progress-bar_title {
+          font-size: 14px;
+          line-height: 1.3;
+          text-align: center;
+          width: 100%;
+          margin: 0 0 12px;
+        }
+
+        #progress {
+          height: 100%;
+          width: 50%;
+          background: #D12837;
+          border-radius: 100px;
+          transition: width 0.3s ease-in-out;
+        }
+
+        #progress-bar {
+          width: 100%;
+          height: 6px;
+          border-radius: 100px;
+          background: #ffa4a4;
+        }
+        
+        .insurance-selector {
+          display: flex;
+        }
+
+        .insurance-selector label {
+          text-transform: none;
+          letter-spacing: 0;
+          margin-bottom: 0;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 1.3;
+        }
+      </style>
+
+      {%- comment -%}
+        <div class="drawerBump">
+        The items in the cart cannot be reserved until the purchase is completed.
+        </div>
+      {%- endcomment -%}
+
+      <div id="CartContainer" class="drawer__inner"></div>
+    </form>
+  </div>
+{% endif %}

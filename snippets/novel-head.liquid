@@ -1,0 +1,3 @@
+{% if request and request.origin %}
+    {% assign fullUrl = request.origin | append: request.path %}
+{% endif %}

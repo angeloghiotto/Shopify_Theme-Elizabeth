@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+
+<head>
+  <!-- Google Optimize -->
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-MVTN8LZ"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  <meta name="referrer" content="origin">
+
+  <style>
+    :root {
+      --line-border-fill: #000;
+      --line-border-empty: #737373;
+    }
+
+    .main__footer {
+      border: none !important;
+    }
+
+    .order-summary__sections {
+      height: auto !important;
+    }
+
+
+    #progress_alternte_dtc {
+      display: none;
+    }
+
+    .container {
+      padding-left: 17px;
+      padding-right: 17px;
+      text-align: center;
+    }
+
+    .container .progress-container {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      max-width: 100%;
+    }
+
+    .container .progress-container::before {
+      content: "";
+      display: flex;
+      background-color: var(--line-border-empty);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .container .progress {
+      display: flex;
+      background-color: var(--line-border-fill);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      transform: translateY(-50%);
+      z-index: -1;
+      transition: 0.4s ease;
+    }
+
+    .container .circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      color: #737373;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--line-border-empty);
+      transition: 0.4s ease;
+      margin-top: 6px;
+    }
+
+    .container .circle.active {
+      border-color: var(--line-border-fill);
+      height: 42px;
+      width: 42px;
+      margin-top: 0;
+      color: #000;
+    }
+
+    html .completed {
+      border-color: var(--line-border-fill) !important;
+      color: #000 !important;
+      ;
+    }
+
+    .circle span {
+      position: absolute;
+      display: block;
+      width: 300px;
+      top: 50px;
+    }
+
+    html .progress-bar-50 {
+      width: 50% !important;
+    }
+
+    html .progress-bar-100 {
+      width: 100% !important;
+    }
+
+    span.product__description__property {
+      display: none !important;
+    }
+
+    @media only screen and (max-width: 420px) {
+      html .active:after {
+        background: #000;
+        left: -78%;
+      }
+
+      html #progress_bar_payment:after {
+        left: -111% !important;
+      }
+
+    }
+  </style>
+
+
+
+
+
+  <title>{{ page_title }}</title>
+
+  {{ content_for_header }}
+
+  {{ checkout_stylesheets }}
+  {{ checkout_scripts }}
+  {{ 'checkout-styles.css' | asset_url | stylesheet_tag }}
+  <!-- Duty and Tax Calculator Script -->
+<script
+   id="DutyAndTaxApp-script"
+   src="https://assets.dutyandtax.app/script/dutyandtax.1.0.0.js"
+   >
+</script>
+</head>
+
+<body>
+  {{ skip_to_content_link }}
+
+  <header class="banner" data-header role="banner">
+    <div class="wrap">
+      {{ content_for_logo }}
+    </div>
+  </header>
+
+  <div class="dtc">
+  {{ order_summary_toggle }}
+  </div>
+
+          <style>
+          .dtc .order-summary-toggle__text{
+          color: black !important;
+        }
+
+        .dtc .order-summary-toggle__icon{
+          fill: black !important;
+        }
+
+        .dtc .order-summary-toggle__dropdown{
+          fill: black !important;
+        }
+        </style>
+  <div class="content" data-content>
+    <div class="wrap">
+      <div class="main">
+        <header class="main__header" role="banner">
+          {{ content_for_logo }}
+
+          <div id="original_breadcrumbs" class="current_breadcrumbs">
+            {{ breadcrumb }}
+          </div>
+
+
+          <div id="progress_alternte_dtc">
+            <div id="progress_bar_dtc" class="container">
+              <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <a href="?step=contact_information">
+                  <div id="progress_bar_information" class="circle">1 <span>Information</span></div>
+                </a>
+                <a href="?step=shipping_method">
+                  <div id="progress_bar_shipping" class="circle">2 <span>Shipping</span></div>
+                </a>
+                <a href="?step=payment_method">
+                  <div id="progress_bar_payment" class="circle">3 <span>Payment</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% comment %} {% render 'dtc-scarcity-message' %} {% endcomment %}
+
+          {{ alternative_payment_methods }}
+        </header>
+        <main class="main__content" role="main">
+          {{ content_for_layout }}
+        </main>
+        <footer class="main__footer" role="contentinfo">
+
+          <!-- Start DTC Pages Edits -->
+          <div class="dtc-mobile-returns dtc-shipping-returns">
+            {% render 'dtc-checkout-returns'%}
+          </div>
+
+          <div class="checkout-dtc-reviews reviews-mobile">
+            {% render 'dtc-checkout-reviews'%}
+          </div>
+          <!-- End DTC Pages Edits -->
+
+
+
+
+          {{ content_for_footer }}
+
+
+
+
+        </footer>
+      </div>
+      <aside class="sidebar" role="complementary">
+        <div class="sidebar__header">
+          {{ content_for_logo }}
+        </div>
+        <div class="sidebar__content">
+          {{ content_for_order_summary }}
+
+          <!-- Start DTC Pages Edits -->
+          <div class="dtc-desktop-returns dtc-shipping-returns">
+            {% render 'dtc-checkout-returns'%}
+          </div>
+          <div class="checkout-dtc-reviews reviews-desktop">
+            {% render 'dtc-checkout-reviews'%}
+          </div>
+          <!-- End DTC Pages Edits -->
+        </div>
+
+
+
+      </aside>
+
+    </div>
+  </div>
+
+  {{ tracking_code }}
+
+  <script type="text/javascript">
+    let current_breadcrumb = document.querySelector(".breadcrumb__item--current span").innerHTML;
+    let current_breadcrumb_link = document.querySelector(".breadcrumb__item--current span").innerHTML;
+    let progress_bar = document.getElementById('progress');
+    let main_progress_bar = document.getElementById('progress_bar_dtc');
+    let breadcrumb_information_tab = document.getElementById('progress_bar_information');
+    let breadcrumb_shipping_tab = document.getElementById('progress_bar_shipping');
+    let breadcrumb_paymeny_tab = document.getElementById('progress_bar_payment');
+    let original_breadcrumb = document.getElementById('original_breadcrumbs');
+    let hasDisplayNone = (main_progress_bar.offsetHeight === 0 && main_progress_bar.offsetWidth === 0);
+
+    if (current_breadcrumb == "Information") {
+      breadcrumb_information_tab.classList.add('active');
+    }
+
+    if (current_breadcrumb == "Shipping") {
+      breadcrumb_information_tab.classList.add('completed');
+      breadcrumb_shipping_tab.classList.add('active');
+      progress_bar.classList.add('progress-bar-50');
+    }
+
+    if (current_breadcrumb == "Payment") {
+      breadcrumb_information_tab.classList.add('completed');
+      breadcrumb_shipping_tab.classList.add('completed');
+      progress_bar.classList.add('progress-bar-100');
+      breadcrumb_paymeny_tab.classList.add('active');
+    }
+
+    if (hasDisplayNone === false) {
+      original_breadcrumb.remove();
+    }
+
+  </script>
+
+  {{ 'checkout-scripts.js' | asset_url | script_tag }}
+</body>
+
+</html>

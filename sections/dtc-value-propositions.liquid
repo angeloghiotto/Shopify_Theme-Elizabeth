@@ -1,0 +1,150 @@
+<div class="value-propositions-section">
+  <div class="page-width">
+    <div class="value-propositions-grid">
+  
+      <div class="value-propositions-item">
+        <div>
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_c5121a0b-9639-4cee-99ec-f2b1f67d8a58.png?v=1697047211">
+        </div>
+        <div>
+          <h3>Lasts 3X Longer</h3>
+          <p>Bamboo outlasts cotton! It offers a longer-lasting fit, making it a solid value for your money.</p>
+        </div>
+      </div>
+
+      <div class="value-propositions-item">
+        <div>
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Group_13-1.png?v=1697047211">
+        </div>
+        <div>
+          <h3>Silky Smooth</h3>
+          <p>Bamboo is gentle on the skin, and will keep your little one comfortable day & night.</p>
+        </div>
+      </div>
+
+    
+      <div class="value-propositions-item">
+        <div>
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Group_10.png?v=1697047786">
+        </div>
+        <div>
+          <h3>Temp Regulating</h3>
+          <p>Bamboo is breathable, and also temperature regulating to give comfort through the seasons.</p>
+        </div>
+        
+      </div>
+      
+      <div class="value-propositions-item">
+        <div>
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Group_13.png?v=1697047211">
+        </div>
+        <div >
+          <h3>Outrageously Cute</h3>
+          <p>Our moto: fun, vibrant & edgy. New exclusive prints & styles drop every Wednesday at 12pm PST.</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    </div>
+  </div>
+
+<style>
+    .value-propositions-section {
+      background : /*rgb(251, 251, 251)*/ white;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .value-propositions-grid {
+      display : grid;
+      grid-template-columns : auto auto auto auto;
+      justify-content: center;
+      align-content: start;
+      grid-gap: 100px;
+    }
+    
+    .value-propositions-item{
+      display : grid;
+      text-align : center;
+      max-width : 260px;
+      grid-template-rows: max-content;
+    }
+    
+    .value-propositions-grid div p {
+      font-size : 16px;
+      color : rgb(72, 72, 72);
+      margin-bottom: 0px;
+    }
+    
+    .value-propositions-grid div h3 {
+      font-size : 21px;
+      margin-top : 20px;
+    }
+
+    @media only screen and (max-width: 769px) {
+      .value-propositions-section {
+        padding : 50px 30px;
+        margin : 0px;
+      }
+    
+      .value-propositions-grid {
+        display : block;
+        padding : 0px;
+        margin : 0px;
+      }
+    
+      .value-propositions-item {
+        display : grid;
+        grid-template-columns : 40px auto;
+        align-items : flex-start;
+        row-gap : 10px;
+        column-gap : 15px;
+        max-width : 319px;
+        margin : 0px;
+        padding : 0px;
+        max-width: none;
+      }
+    
+      .value-propositions-item h3 {
+        margin-top : 0px !important;
+        text-align : left;
+      }
+    
+      .value-propositions-item p {
+        text-align : left;
+        margin : 0px;
+        padding : 0px;
+      }
+    
+      .value-propositions-item:nth-child(2) {
+        margin-top : 50px;
+        margin-bottom : 50px;
+      }
+
+      .value-propositions-item:nth-child(3) {
+        margin-top : 50px;
+        margin-bottom : 50px;
+      }
+    
+    }  
+</style>
+
+{% schema %}
+{
+  "name": "Testing - Do Not Move",
+  "class": "value-propositions",
+  "presets": [
+    {
+      "name": "Value Propositions"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

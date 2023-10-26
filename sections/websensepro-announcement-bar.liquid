@@ -1,0 +1,216 @@
+{% comment %} 
+    MrDigitals - Advanced Announcement Bar
+    © 2023 MrDigitals
+    https://wwww.mrdigitals.com 
+{% endcomment %}
+
+{%- if  section.blocks.size > 0 and section.settings.show_announcement_bar -%}
+  <style>
+  .swiper-container {
+    background: blue;
+    color: white;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+  }
+  .custom-announcement-bar{
+    padding-top: 6px;
+    padding-bottom: 3px;
+    background:{{section.settings.colorBackground}};
+    position: relative;
+    overflow: hidden;
+  }
+  .custom-announcement-bar .custom-message {
+    text-align:center;
+    font-weight: normal !important;
+    font-size: 13px;
+    margin-top: 2px;
+    color:{{section.settings.colorText}};
+/*     padding:0 7%; */
+  }
+  .custom-announcement-bar .swiper-button-next:after, .custom-announcement-bar .swiper-container-rtl .swiper-button-prev:after,
+  .custom-announcement-bar .swiper-button-prev:after, .custom-announcement-bar .swiper-container-rtl .swiper-button-next:after{
+    
+    color:white !important;
+  }
+  .custom-swiper-button.swiper-button-prev,
+  .custom-swiper-button.swiper-button-next {
+  	display: flex;
+  }
+  .custom-swiper-button.swiper-button-next {
+   	text-align: right; 
+  }
+  .custom-swiper-button.swiper-button-prev, .swiper-rtl .custom-swiper-button.swiper-button-next {
+    left: 20%;
+    
+  }
+ .custom-swiper-button.swiper-button-next, .swiper-rtl .custom-swiper-button.swiper-button-prev {
+    right: 20%;
+  }
+  .custom-message.swiper-slide a {
+    text-decoration: none;
+  }
+  @media only screen and (max-width: 800px) {
+      .custom-swiper-button.swiper-button-prev, .swiper-rtl .custom-swiper-button.swiper-button-next {
+        left: 2%;
+      }
+     .custom-swiper-button.swiper-button-next, .swiper-rtl .custom-swiper-button.swiper-button-prev {
+        right: 2%;
+      }
+     .custom-swiper-button.swiper-button-prev,
+    .custom-swiper-button.swiper-button-next {
+/*     	display: none; */
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+      left: 5%;
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+      right: 5%;
+    }
+    .custom-announcement-bar .custom-message {
+     font-size: 13px !important; 
+      height: 101% !important;
+      
+    }
+  }
+  {%- if  section.blocks.size < 2 %}
+  .custom-announcement-bar .custom-swiper-button{display:none!important;}
+  {%- endif -%}
+</style>
+  
+<div class="custom-announcement-bar swiper-container">
+  <div class="custom-messages swiper-wrapper" style="margin-top:2px">
+    {%- for block in section.blocks -%}
+      <div class="custom-message swiper-slide">
+      {%- if block.settings.link != blank -%}
+        <a class="custom-message" href="{{ block.settings.link }}">
+      {%- endif -%}
+
+      {{block.settings.message}}
+
+      {%- if block.settings.link != blank -%}
+        </a>
+      {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+  <div class="custom-swiper-button swiper-button-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12.5" height="5.31" viewBox="0 0 12.5 6.31" class="svg-icon svg-icon--chevron" style="
+    color: #ffffff;
+    color: var(--brand-white);
+    max-width: 1rem;
+    color: #ffffff;
+    transform: rotate(-270deg);
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+"><path d="M6.25 6.31c-.18 0-.35-.06-.49-.19L.26 1.31C-.06 1.04-.09.57.19.26S.93-.09 1.24.19l5.01 4.37L11.26.19c.31-.27.79-.24 1.06.07s.24.79-.07 1.06L6.74 6.13c-.14.12-.32.19-.49.19z"></path></svg>
+  </div>
+  <div class="custom-swiper-button swiper-button-next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12.5" height="5.31" viewBox="0 0 12.5 6.31" class="svg-icon svg-icon--chevron" style="
+    color: #ffffff;
+    color: var(--brand-white);
+    max-width: 1rem;
+    color: #ffffff;
+    transform: rotate(-90deg);
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+"><path d="M6.25 6.31c-.18 0-.35-.06-.49-.19L.26 1.31C-.06 1.04-.09.57.19.26S.93-.09 1.24.19l5.01 4.37L11.26.19c.31-.27.79-.24 1.06.07s.24.79-.07 1.06L6.74 6.13c-.14.12-.32.19-.49.19z"></path></svg>
+  </div>
+</div>
+
+
+
+{%- endif -%}
+ 
+{% schema %}
+{
+    "name": "Announcement Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement_bar",
+        "label": "Show"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Autoplay"
+      },
+      {
+        "type": "select",
+        "id": "direction",
+        "options": [
+            {
+              "value": "horizontal",
+              "label": "Horizontal"
+            },
+            {
+              "value": "vertical",
+              "label": "Vertical"
+            }
+        ],
+        "default": "horizontal",
+        "label": "Direction"
+      },
+      {
+        "type": "text",
+        "id": "delay",
+        "label": "Delay between transitions (in ms)",
+        "default": "5000"
+      },
+      {
+        "type": "color",
+        "id": "colorBackground",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "colorText",
+        "label": "Text color",
+        "default": "#000"
+      }
+      
+  ],
+  "blocks": [
+        {
+          "type": "header",
+          "name": "Message",
+          "settings": [
+              {
+                "id": "message",
+                "type": "textarea",
+               "label": "Message"
+              },
+            {
+                "type": "url",
+                "id": "link",
+                "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+            }
+          ]
+        }
+  ]
+}
+{% endschema %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    {%- if section.settings.autoplay %}
+    autoplay: {delay: {{section.settings.delay}} },
+    {%- endif -%}
+    {%- if section.settings.autoplay %}
+    direction: `{{ section.settings.direction}}`,
+    {%- endif -%}
+    
+    effect: "slide",
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>

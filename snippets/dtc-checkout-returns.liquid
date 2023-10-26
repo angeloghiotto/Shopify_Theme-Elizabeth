@@ -1,0 +1,72 @@
+<div class="dtc-shipping-returns-container">
+    <img loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/return-box_1_2x_81362329-02ba-48e1-b9cd-01a2223311b9.png?v=1655238661">
+</div>
+<div class="dtc-shipping-returns-container-text">
+    <h3>Free 30 Day Returns</h3>
+    <p>Free domestic returns and exchanges within 30 days from original order date.</p>
+</div>
+
+<style>
+    .dtc-shipping-returns {
+        grid-template-columns: 100px minmax(auto, auto);
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 3px;
+        height: 111px;
+        padding-right: 24px;
+        align-items: center;
+    }
+
+    .dtc-shipping-returns-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .dtc-shipping-returns-container>img {
+        width: 53px;
+    }
+
+    .dtc-shipping-returns-container-text {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dtc-shipping-returns-container-text h3 {
+        font-size: 18px;
+        color: #000;
+        font-weight: 500;
+        font-family: Futura, sans-serif;
+
+    }
+
+    .dtc-shipping-returns-container-text p {
+        font-size: 13.6px;
+        margin-top: 4px;
+        color: #383838;
+
+    }
+
+    .dtc-mobile-returns {
+        display: none;
+    }
+
+    .dtc-desktop-returns {
+        display: grid;
+    }
+
+    @media only screen and (max-width: 999px) {
+        .dtc-desktop-returns {
+            display: none;
+        }
+
+        .dtc-mobile-returns {
+            display: grid;
+            margin-bottom: 40px;
+        }
+    }
+</style>

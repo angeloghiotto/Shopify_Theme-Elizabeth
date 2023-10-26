@@ -1,0 +1,96 @@
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+<div class="template-header-top">
+  <h1 class="header-title text-center"></h1>
+  <h2 class="header-description text-center"></h2>
+</div>
+
+<div class="header-progress">
+  <div class="header-progress-item" data-index="0" data-title="{{section.settings.progress1_title}}" data-description="{{section.settings.progress1_description}}">
+    <img src="" class="header-progress-item-image">
+    <div class="animation-wrapper">
+    	
+    </div>
+    <span class="item-num">1</span>
+
+    <span class="header-progress-item_btn_remove">X</span>
+  </div>
+
+  <div class="header-progress-item" data-index="1" data-title="{{section.settings.progress2_title}}" data-description="{{section.settings.progress2_description}}">
+    <img src="" class="header-progress-item-image">
+    <div class="animation-wrapper">
+    	
+    </div>
+    <span class="item-num">2</span>
+
+    <span class="header-progress-item_btn_remove">X</span>
+  </div>
+
+  <div class="header-progress-item" data-index="2" data-title="{{section.settings.progress3_title}}" data-description="{{section.settings.progress3_description}}">
+    <img src="" class="header-progress-item-image">
+    <div class="animation-wrapper">
+    	
+    </div>
+    <span class="item-num">3</span>
+
+    <span class="header-progress-item_btn_remove">X</span>
+  </div>
+</div>
+
+<div class="header-footer">
+  <h3>{{section.settings.header_text}}</h3>
+</div>
+    
+
+
+{% schema %}
+  {
+    "name": "Template Header",
+    "settings": [
+		{
+			"type": "text",
+			"id": "header_text",
+			"label": "Header Text"
+		},
+		{
+			"type": "text",
+			"id": "progress1_title",
+			"label": "Progress1 Title"
+		},
+		{
+			"type": "text",
+			"id": "progress1_description",
+			"label": "Progress1 Description"
+		},
+
+		{
+			"type": "text",
+			"id": "progress2_title",
+			"label": "Progress2 Title"
+		},
+		{
+			"type": "text",
+			"id": "progress2_description",
+			"label": "Progress2 Description"
+		},
+                                            
+        {
+			"type": "text",
+			"id": "progress3_title",
+			"label": "Progress3 Title"
+		},
+		{
+			"type": "text",
+			"id": "progress3_description",
+			"label": "Progress3 Description"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

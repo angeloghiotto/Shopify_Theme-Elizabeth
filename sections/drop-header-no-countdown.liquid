@@ -1,0 +1,132 @@
+<div class="drop-header">
+  <div class="page-width">
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.announcement }}</p>
+    <p class="drop-header_subtext">{{ section.settings.subtext }}</p>
+    <div>
+      {{ section.settings.klaviyo-embed }}
+    </div>
+  </div>
+</div>
+<style>
+
+  .drop-header {
+    text-align: center;
+    background: #FAFAFA;
+    padding: 20px 0;
+  }
+  
+  .drop-header h1 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .drop-header p {
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  
+  .drop-header .drop-header_subtext {
+    text-transform: none;
+  }
+  
+  #countdown {
+  }
+  
+  .countdown-items {
+    min-width: 350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  
+  .countdown-item {
+    padding: 0 8px;
+  }
+  
+  #countdown span {
+    display: block;
+  }
+  
+  .countdown-time {
+    font-weight: 500;
+    font-size: 47.0588px;
+    line-height: 120%;
+    text-align: center;
+    color: #BE95AC;
+  }
+  
+  .countdown-label {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.294118px;
+    text-transform: uppercase;
+    color: #BE95AC;
+  }
+  
+  @media (min-width: 768px) {
+    .drop-header h1 {
+      font-size: 36px;
+    }
+    
+    .drop-header p {
+      font-size: 16px;
+    }
+    
+    .drop-header {
+      padding: 60px 0 40px;
+    } 
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Drop Header No Countdown",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+		"default": "Holiday Drop Part 2"
+      },
+      {
+        "type": "text",
+        "id": "announcement",
+        "label": "Announcement Text",
+		"default": "Launches Oct 7th at 8:00AM PDT"
+      },
+      {
+        "type": "text",
+        "id": "subtext",
+        "label": "Subtext",
+		"default": "The second half of our Holiday collection drops next week!"
+      }
+	],
+    "presets": [
+      {
+        "name": "Drop Header No Countdown",
+        "category": "Drops"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

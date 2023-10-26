@@ -1,0 +1,3547 @@
+window.theme = window.theme || {};
+
+if (console && console.log) {
+  console.log('Impulse theme ('+theme.settings.themeVersion+') by ARCHΞTYPE | Learn more at https://archetypethemes.co');
+}
+
+window.lazySizesConfig = window.lazySizesConfig || {};
+lazySizesConfig.expFactor = 4;
+
+(function($){
+  var $ = jQuery = $;
+
+  theme.utils = {
+    /**
+     * _.defaultTo from lodash
+     * Checks `value` to determine whether a default value should be returned in
+     * its place. The `defaultValue` is returned if `value` is `NaN`, `null`,
+     * or `undefined`.
+     * Source: https://github.com/lodash/lodash/blob/master/defaultTo.js
+     *
+     * @param {*} value - Value to check
+     * @param {*} defaultValue - Default value
+     * @returns {*} - Returns the resolved value
+     */
+    defaultTo: function(value, defaultValue) {
+      return (value == null || value !== value) ? defaultValue : value
+    }
+  };
+  
+  theme.a11y = {
+  
+    /**
+     * Traps the focus in a particular container
+     *
+     * @param {object} options - Options to be used
+     * @param {jQuery} options.$container - Container to trap focus within
+     * @param {jQuery} options.$elementToFocus - Element to be focused when focus leaves container
+     * @param {string} options.namespace - Namespace used for new focus event handler
+     */
+    trapFocus: function(options) {
+      var eventsName = {
+        focusin: options.namespace ? 'focusin.' + options.namespace : 'focusin',
+        focusout: options.namespace
+          ? 'focusout.' + options.namespace
+          : 'focusout',
+        keydown: options.namespace
+          ? 'keydown.' + options.namespace
+          : 'keydown.handleFocus'
+      };
+  
+      /**
+       * Get every possible visible focusable element
+       */
+      var $focusableElements = options.$container.find(
+        $(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex^="-"])'
+        ).filter(':visible')
+      );
+      var firstFocusable = $focusableElements[0];
+      var lastFocusable = $focusableElements[$focusableElements.length - 1];
+  
+      if (!options.$elementToFocus) {
+        options.$elementToFocus = options.$container;
+      }
+  
+      function _manageFocus(evt) {
+        // Tab key
+        if (evt.keyCode !== 9) return;
+  
+        /**
+         * On the last focusable element and tab forward,
+         * focus the first element.
+         */
+        if (evt.target === lastFocusable && !evt.shiftKey) {
+          evt.preventDefault();
+          firstFocusable.focus();
+        }
+        /**
+         * On the first focusable element and tab backward,
+         * focus the last element.
+         */
+        if (evt.target === firstFocusable && evt.shiftKey) {
+          evt.preventDefault();
+          lastFocusable.focus();
+        }
+      }
+  
+      options.$container.attr('tabindex', '-1');
+      options.$elementToFocus.focus();
+  
+      $(document).off('focusin');
+  
+      $(document).on(eventsName.focusout, function() {
+        $(document).off(eventsName.keydown);
+      });
+  
+      $(document).on(eventsName.focusin, function(evt) {
+        if (evt.target !== lastFocusable && evt.target !== firstFocusable) return;
+  
+        $(document).on(eventsName.keydown, function(evt) {
+          _manageFocus(evt);
+        });
+      });
+    },
+  
+    /**
+     * Removes the trap of focus in a particular container
+     *
+     * @param {object} options - Options to be used
+     * @param {jQuery} options.$container - Container to trap focus within
+     * @param {string} options.namespace - Namespace used for new focus event handler
+     */
+    removeTrapFocus: function(options) {
+      var eventName = options.namespace
+        ? 'focusin.' + options.namespace
+        : 'focusin';
+  
+      if (options.$container && options.$container.length) {
+        options.$container.removeAttr('tabindex');
+      }
+  
+      $(document).off(eventName);
+    },
+  
+    lockMobileScrolling: function(namespace, $element) {
+      if ($element) {
+        var $el = $element;
+      } else {
+        var $el = $(document.documentElement).add('body');
+      }
+      $el.on('touchmove' + namespace, function () {
+        return false;
+      });
+    },
+  
+    unlockMobileScrolling: function(namespace, $element) {
+      if ($element) {
+        var $el = $element;
+      } else {
+        var $el = $(document.documentElement).add('body');
+      }
+      $el.off(namespace);
+    }
+  };
+  
+  theme.Sections = function Sections() {
+    this.constructors = {};
+    this.instances = [];
+  
+    $(document)
+      .on('shopify:section:load', this._onSectionLoad.bind(this))
+      .on('shopify:section:unload', this._onSectionUnload.bind(this))
+      .on('shopify:section:select', this._onSelect.bind(this))
+      .on('shopify:section:deselect', this._onDeselect.bind(this))
+      .on('shopify:block:select', this._onBlockSelect.bind(this))
+      .on('shopify:block:deselect', this._onBlockDeselect.bind(this));
+  };
+  
+  theme.Sections.prototype = $.extend({}, theme.Sections.prototype, {
+    createInstance: function(container, constructor, customScope) {
+      var $container = $(container);
+      var id = $container.attr('data-section-id');
+      var type = $container.attr('data-section-type');
+  
+      constructor = constructor || this.constructors[type];
+  
+      if (typeof constructor === 'undefined') {
+        return;
+      }
+  
+      // If custom scope passed, check to see if instance
+      // is already initialized so we don't double up
+      if (customScope) {
+        var instanceExists = this._findInstance(id);
+        if (instanceExists) {
+          return;
+        }
+      }
+  
+      var instance = $.extend(new constructor(container), {
+        id: id,
+        type: type,
+        container: container
+      });
+  
+      this.instances.push(instance);
+    },
+  
+    _onSectionLoad: function(evt, subSection, subSectionId) {
+      if (AOS) {
+        AOS.refreshHard();
+      }
+      var container = subSection ? subSection : $('[data-section-id]', evt.target)[0];
+  
+      if (!container) {
+        return;
+      }
+  
+      this.createInstance(container);
+  
+      var instance = subSection ? subSectionId : this._findInstance(evt.detail.sectionId);
+  
+      if (!subSection) {
+        this._loadSubSections();
+      }
+  
+      // Run JS only in case of the section being selected in the editor
+      // before merchant clicks "Add"
+      if (instance && typeof instance.onLoad === 'function') {
+        instance.onLoad(evt);
+      }
+    },
+  
+    _loadSubSections: function() {
+      if (AOS) {
+        AOS.refreshHard();
+      }
+      $('[data-subsection]').each(function(evt, el) {
+        this._onSectionLoad(null, el, $(el).data('section-id'));
+      }.bind(this));
+    },
+  
+    _onSectionUnload: function(evt) {
+      var instance = this._removeInstance(evt.detail.sectionId);
+      if (instance && typeof instance.onUnload === 'function') {
+        instance.onUnload(evt);
+      }
+    },
+  
+    _onSelect: function(evt) {
+      var instance = this._findInstance(evt.detail.sectionId);
+  
+      if (instance && typeof instance.onSelect === 'function') {
+        instance.onSelect(evt);
+      }
+    },
+  
+    _onDeselect: function(evt) {
+      var instance = this._findInstance(evt.detail.sectionId);
+  
+      if (instance && typeof instance.onDeselect === 'function') {
+        instance.onDeselect(evt);
+      }
+    },
+  
+    _onBlockSelect: function(evt) {
+      var instance = this._findInstance(evt.detail.sectionId);
+  
+      if (instance && typeof instance.onBlockSelect === 'function') {
+        instance.onBlockSelect(evt);
+      }
+    },
+  
+    _onBlockDeselect: function(evt) {
+      var instance = this._findInstance(evt.detail.sectionId);
+  
+      if (instance && typeof instance.onBlockDeselect === 'function') {
+        instance.onBlockDeselect(evt);
+      }
+    },
+  
+    _findInstance: function(id) {
+      for (var i = 0; i < this.instances.length; i++) {
+        if (this.instances[i].id === id) {
+          return this.instances[i];
+        }
+      }
+    },
+  
+    _removeInstance: function(id) {
+      var i = this.instances.length;
+      var instance;
+  
+      while(i--) {
+        if (this.instances[i].id === id) {
+          instance = this.instances[i];
+          this.instances.splice(i, 1);
+          break;
+        }
+      }
+  
+      return instance;
+    },
+  
+    register: function(type, constructor, $scope) {
+      var afterLoad = false;
+      this.constructors[type] = constructor;
+      var $sections = $('[data-section-type=' + type + ']');
+  
+      if ($scope) {
+        $sections = $('[data-section-type=' + type + ']', $scope);
+      }
+  
+      $sections.each(function(index, container) {
+        this.createInstance(container, constructor, $scope);
+      }.bind(this));
+    }
+  });
+  
+  
+  /**
+   * Currency Helpers
+   * -----------------------------------------------------------------------------
+   * A collection of useful functions that help with currency formatting
+   *
+   * Current contents
+   * - formatMoney - Takes an amount in cents and returns it as a formatted dollar value.
+   *
+   * Alternatives
+   * - Accounting.js - http://openexchangerates.github.io/accounting.js/
+   *
+   */
+  
+  theme.Currency = (function() {
+    var moneyFormat = '${{amount}}';
+  
+    function formatMoney(cents, format) {
+      if (!format) {
+        format = theme.settings.moneyFormat;
+      }
+      if (typeof cents === 'string') {
+        cents = cents.replace('.', '');
+      }
+      var value = '';
+      var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
+      var formatString = (format || moneyFormat);
+  
+      function formatWithDelimiters(number, precision, thousands, decimal) {
+        precision = theme.utils.defaultTo(precision, 2);
+        thousands = theme.utils.defaultTo(thousands, ',');
+        decimal = theme.utils.defaultTo(decimal, '.');
+  
+        if (isNaN(number) || number == null) {
+          return 0;
+        }
+  
+        number = (number / 100.0).toFixed(precision);
+  
+        var parts = number.split('.');
+        var dollarsAmount = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + thousands);
+        var centsAmount = parts[1] ? (decimal + parts[1]) : '';
+  
+        return dollarsAmount + centsAmount;
+      }
+  
+      switch (formatString.match(placeholderRegex)[1]) {
+        case 'amount':
+          value = formatWithDelimiters(cents, 2);
+          break;
+        case 'amount_no_decimals':
+          value = formatWithDelimiters(cents, 0);
+          break;
+        case 'amount_with_comma_separator':
+          value = formatWithDelimiters(cents, 2, '.', ',');
+          break;
+        case 'amount_no_decimals_with_comma_separator':
+          value = formatWithDelimiters(cents, 0, '.', ',');
+          break;
+        case 'amount_no_decimals_with_space_separator':
+          value = formatWithDelimiters(cents, 0, ' ');
+          break;
+      }
+  
+      return formatString.replace(placeholderRegex, value);
+    }
+  
+    function getBaseUnit(variant) {
+      if (!variant) {
+        return;
+      }
+  
+      if (!variant.unit_price_measurement || !variant.unit_price_measurement.reference_value) {
+        return;
+      }
+  
+      return variant.unit_price_measurement.reference_value === 1
+        ? variant.unit_price_measurement.reference_unit
+        : variant.unit_price_measurement.reference_value +
+            variant.unit_price_measurement.reference_unit;
+    }
+  
+    return {
+      formatMoney: formatMoney,
+      getBaseUnit: getBaseUnit
+    }
+  })();
+  
+  
+  /**
+   * Image Helper Functions
+   * -----------------------------------------------------------------------------
+   * A collection of functions that help with basic image operations.
+   *
+   */
+  
+  theme.Images = (function() {
+  
+    /**
+     * Find the Shopify image attribute size
+     *
+     * @param {string} src
+     * @returns {null}
+     */
+    function imageSize(src) {
+      if (!src) {
+        return '620x'; // default based on theme
+      }
+  
+      var match = src.match(/.+_((?:pico|icon|thumb|small|compact|medium|large|grande)|\d{1,4}x\d{0,4}|x\d{1,4})[_\.@]/);
+  
+      if (match !== null) {
+        return match[1];
+      } else {
+        return null;
+      }
+    }
+  
+    /**
+     * Adds a Shopify size attribute to a URL
+     *
+     * @param src
+     * @param size
+     * @returns {*}
+     */
+    function getSizedImageUrl(src, size) {
+      if (!src) {
+        return src;
+      }
+  
+      if (size == null) {
+        return src;
+      }
+  
+      if (size === 'master') {
+        return this.removeProtocol(src);
+      }
+  
+      var match = src.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i);
+  
+      if (match != null) {
+        var prefix = src.split(match[0]);
+        var suffix = match[0];
+  
+        return this.removeProtocol(prefix[0] + '_' + size + suffix);
+      }
+  
+      return null;
+    }
+  
+    function removeProtocol(path) {
+      return path.replace(/http(s)?:/, '');
+    }
+  
+    /**
+     * Create lazyloading-friendly image string
+     *
+     * @param string
+     * @returns string with _{width}x as size param
+     */
+    function lazyloadImagePath(string) {
+      var image;
+  
+      if (string !== null) {
+        image = string.replace(/(\.[^.]*)$/, "_{width}x$1");
+      }
+  
+      return image;
+    }
+  
+    return {
+      imageSize: imageSize,
+      getSizedImageUrl: getSizedImageUrl,
+      removeProtocol: removeProtocol,
+      lazyloadImagePath: lazyloadImagePath
+    };
+  })();
+  
+  theme.Variants = (function() {
+  
+    function Variants(options) {
+      this.$container = options.$container;
+      this.variants = options.variants;
+      this.singleOptionSelector = options.singleOptionSelector;
+      this.originalSelectorId = options.originalSelectorId;
+      this.enableHistoryState = options.enableHistoryState;
+      this.currentVariant = this._getVariantFromOptions();
+  
+      $(this.singleOptionSelector, this.$container).on('change', this._onSelectChange.bind(this));
+    }
+  
+    Variants.prototype = $.extend({}, Variants.prototype, {
+  
+      _getCurrentOptions: function() {
+        var currentOptions = $.map($(this.singleOptionSelector, this.$container), function(element) {
+          var $element = $(element);
+          var type = $element.attr('type');
+          var currentOption = {};
+  
+          if (type === 'radio' || type === 'checkbox') {
+            if ($element[0].checked) {
+              currentOption.value = $element.val();
+              currentOption.index = $element.data('index');
+  
+              return currentOption;
+            } else {
+              return false;
+            }
+          } else {
+            currentOption.value = $element.val();
+            currentOption.index = $element.data('index');
+  
+            return currentOption;
+          }
+        });
+  
+        // remove any unchecked input values if using radio buttons or checkboxes
+        currentOptions = this._compact(currentOptions);
+  
+        return currentOptions;
+      },
+  
+      _getVariantFromOptions: function() {
+        var selectedValues = this._getCurrentOptions();
+        var variants = this.variants;
+        var found = false;
+  
+        variants.forEach(function(variant) {
+          var match = true;
+          var options = variant.options;
+  
+          selectedValues.forEach(function(option) {
+            if (match) {
+              match = (variant[option.index] === option.value);
+            }
+          });
+  
+          if (match) {
+            found = variant;
+          }
+        });
+  
+        return found || null;
+      },
+  
+      _onSelectChange: function() {
+        var variant = this._getVariantFromOptions();
+  
+        this.$container.trigger({
+          type: 'variantChange',
+          variant: variant
+        });
+  
+        if (!variant) {
+          return;
+        }
+  
+        this._updateMasterSelect(variant);
+        this._updateImages(variant);
+        this._updatePrice(variant);
+        this._updateUnitPrice(variant);
+        this._updateSKU(variant);
+        this.currentVariant = variant;
+  
+        if (this.enableHistoryState) {
+          this._updateHistoryState(variant);
+        }
+      },
+  
+      _updateImages: function(variant) {
+        var variantImage = variant.featured_image || {};
+        var currentVariantImage = this.currentVariant.featured_image || {};
+  
+        if (!variant.featured_image || variantImage.src === currentVariantImage.src) {
+          return;
+        }
+  
+        this.$container.trigger({
+          type: 'variantImageChange',
+          variant: variant
+        });
+      },
+  
+      _updatePrice: function(variant) {
+        if (variant.price === this.currentVariant.price && variant.compare_at_price === this.currentVariant.compare_at_price) {
+          return;
+        }
+  
+        this.$container.trigger({
+          type: 'variantPriceChange',
+          variant: variant
+        });
+      },
+  
+      _updateUnitPrice: function(variant) {
+        if (variant.unit_price === this.currentVariant.unit_price) {
+          return;
+        }
+  
+        this.$container.trigger({
+          type: 'variantUnitPriceChange',
+          variant: variant
+        });
+      },
+  
+      _updateSKU: function(variant) {
+        if (variant.sku === this.currentVariant.sku) {
+          return;
+        }
+  
+        this.$container.trigger({
+          type: 'variantSKUChange',
+          variant: variant
+        });
+      },
+  
+      _updateHistoryState: function(variant) {
+        if (!history.replaceState || !variant) {
+          return;
+        }
+  
+        var newurl = window.location.protocol + '//' + window.location.host + window.location.pathname + '?variant=' + variant.id;
+        window.history.replaceState({path: newurl}, '', newurl);
+      },
+  
+      _updateMasterSelect: function(variant) {
+        $(this.originalSelectorId, this.$container).val(variant.id);
+      },
+  
+      // _.compact from lodash
+      // https://github.com/lodash/lodash/blob/4d4e452ade1e78c7eb890968d851f837be37e429/compact.js
+      _compact: function(array) {
+        var index = -1,
+            length = array == null ? 0 : array.length,
+            resIndex = 0,
+            result = [];
+  
+        while (++index < length) {
+          var value = array[index];
+          if (value) {
+            result[resIndex++] = value;
+          }
+        }
+        return result;
+      }
+    });
+  
+    return Variants;
+  })();
+  
+  theme.rte = {
+    init: function() {
+      theme.rte.wrapTable();
+      theme.rte.imageLinks();
+    },
+  
+    wrapTable: function() {
+      $('.rte table').wrap('<div class="table-wrapper"></div>');
+    },
+  
+    // Remove CSS that adds animated underline under image links
+    imageLinks: function() {
+      $('.rte a img').parent().addClass('rte__image');
+    }
+  };
+  
+  theme.Drawers = (function() {
+    function Drawer(id, name, ignoreScrollLock) {
+      this.config = {
+        id: id,
+        close: '.js-drawer-close',
+        open: '.js-drawer-open-' + name,
+        openClass: 'js-drawer-open',
+        closingClass: 'js-drawer-closing',
+        activeDrawer: 'drawer--is-open',
+        namespace: '.drawer-' + name
+      };
+  
+      this.$nodes = {
+        parent: $(document.documentElement).add('body'),
+        page: $('#MainContent')
+      };
+  
+      this.$drawer = $('#' + id);
+  
+      if (!this.$drawer.length) {
+        return false;
+      }
+  
+      this.isOpen = false;
+      this.ignoreScrollLock = ignoreScrollLock;
+      this.init();
+    };
+  
+    Drawer.prototype = $.extend({}, Drawer.prototype, {
+      init: function() {
+        var $openBtn = $(this.config.open);
+  
+        // Add aria controls
+        $openBtn.attr('aria-expanded', 'false');
+  
+        $openBtn.on('click', this.open.bind(this));
+        this.$drawer.find(this.config.close).on('click', this.close.bind(this));
+  
+        // Close modal if a drawer is opened
+        $('body').on('productModalOpen', function() {
+          this.close();
+        }.bind(this));
+      },
+  
+      open: function(evt, returnFocusEl) {
+        if (evt) {
+          evt.preventDefault();
+        }
+  
+        if (this.isOpen) {
+          return;
+        }
+  
+        // Without this the drawer opens, the click event bubbles up to $nodes.page which closes the drawer.
+        if (evt && evt.stopPropagation) {
+          evt.stopPropagation();
+          // save the source of the click, we'll focus to this on close
+          this.$activeSource = $(evt.currentTarget).attr('aria-expanded', 'true');
+        } else if (returnFocusEl) {
+          var $el = $(returnFocusEl);
+          this.$activeSource = $el.attr('aria-expanded', 'true');
+        }
+  
+        this.$drawer.prepareTransition().addClass(this.config.activeDrawer);
+  
+        this.$nodes.parent.addClass(this.config.openClass);
+        this.isOpen = true;
+  
+        theme.a11y.trapFocus({
+          $container: this.$drawer,
+          namespace: 'drawer_focus'
+        });
+  
+        $('body')
+          .trigger('drawerOpen')
+          .trigger('drawerOpen.' + this.config.id);
+  
+        this.bindEvents();
+      },
+  
+      close: function() {
+        if (!this.isOpen) {
+          return;
+        }
+  
+        // deselect any focused form elements
+        $(document.activeElement).trigger('blur');
+  
+        this.$drawer.prepareTransition().removeClass(this.config.activeDrawer);
+  
+        this.$nodes.parent.removeClass(this.config.openClass);
+        this.$nodes.parent.addClass(this.config.closingClass);
+        window.setTimeout(function() {
+          this.$nodes.parent.removeClass(this.config.closingClass);
+          if (this.$activeSource && this.$activeSource.attr('aria-expanded')) {
+            this.$activeSource.attr('aria-expanded', 'false').focus();
+          }
+        }.bind(this), 500);
+  
+        this.isOpen = false;
+  
+        theme.a11y.removeTrapFocus({
+          $container: this.$drawer,
+          namespace: 'drawer_focus'
+        });
+  
+        this.unbindEvents();
+      },
+  
+      bindEvents: function() {
+        if (!this.ignoreScrollLock) {
+          theme.a11y.lockMobileScrolling(this.config.namespace, this.$nodes.page);
+        }
+  
+        // Clicking out of drawer closes it.
+        // Check to see if clicked on element in drawer
+        // because of any drawer built witin #MainContent
+        this.$nodes.page.on('click' + this.config.namespace, function (evt) {
+          var $target = $(evt.target);
+          var doNotClose = this.elementInsideDrawer($target);
+          if (!doNotClose) {
+            this.close();
+            return false;
+          }
+  
+        }.bind(this));
+  
+        // Pressing escape closes drawer
+        this.$nodes.parent.on('keyup' + this.config.namespace, function(evt) {
+          if (evt.keyCode === 27) {
+            this.close();
+          }
+        }.bind(this));
+      },
+  
+      unbindEvents: function() {
+        if (!this.ignoreScrollLock) {
+          theme.a11y.unlockMobileScrolling(this.config.namespace, this.$nodes.page);
+        }
+        this.$nodes.parent.off(this.config.namespace);
+        this.$nodes.page.off(this.config.namespace);
+      },
+  
+      // Check if clicked element is inside the drawer
+      elementInsideDrawer: function($el) {
+        return this.$drawer.find($el).length;
+      }
+    });
+  
+    return Drawer;
+  })();
+  
+  theme.cart = {
+    getCart: function() {
+      return $.getJSON('/cart.js');
+    },
+  
+    changeItem: function(key, qty) {
+      return this._updateCart({
+        type: 'POST',
+        url: '/cart/change.js',
+        data: 'quantity=' + qty + '&id=' + key,
+        dataType: 'json'
+      });
+    },
+  
+    addItemFromForm: function(data) {
+      return this._updateCart({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: data,
+        dataType: 'json'
+      });
+    },
+  
+    _updateCart: function(params) {
+      return $.ajax(params)
+        .then(function(cart) {
+          return cart;
+        }.bind(this))
+    },
+  
+    updateNote: function(note) {
+      var params = {
+        type: 'POST',
+        url: '/cart/update.js',
+        data: 'note=' + theme.cart.attributeToString(note),
+        dataType: 'json',
+        success: function(cart) {},
+        error: function(XMLHttpRequest, textStatus) {}
+      };
+  
+      $.ajax(params);
+    },
+  
+    attributeToString: function(attribute) {
+      if ((typeof attribute) !== 'string') {
+        attribute += '';
+        if (attribute === 'undefined') {
+          attribute = '';
+        }
+      }
+      return $.trim(attribute);
+    }
+  }
+  
+  $(function() {
+    // Add a loading indicator on the cart checkout button (/cart and drawer)
+    $('body').on('click', '.cart__checkout', function() {
+      $(this).addClass('btn--loading');
+    });
+  
+    $('body').on('change', 'textarea[name="note"]', function() {
+      var newNote = $(this).val();
+      theme.cart.updateNote(newNote);
+    });
+  
+  
+    // Custom JS to prevent checkout without confirming terms and conditions
+    $('body').on('click', '.cart__checkout--ajax', function(evt) {
+      if ($('#CartAgree').is(':checked')) {
+      } else {
+        alert(theme.strings.cartTermsConfirmation);
+        $(this).removeClass('btn--loading');
+        return false;
+      }
+    });
+  
+    $('body').on('click', '.cart__checkout--page', function(evt) {
+      if ($('#CartPageAgree').is(':checked')) {
+      } else {
+        alert(theme.strings.cartTermsConfirmation);
+        $(this).removeClass('btn--loading');
+        return false;
+      }
+    });
+  });
+  
+  theme.QtySelector = (function() {
+    var classes = {
+      input: '.js-qty__num',
+      plus: '.js-qty__adjust--plus',
+      minus: '.js-qty__adjust--minus'
+    };
+  
+    function QtySelector($el, options) {
+      this.$wrapper = $el;
+      this.$input = $el.find(classes.input);
+      this.$plus = $el.find(classes.plus);
+      this.$minus = $el.find(classes.minus);
+      this.minValue = this.$input.attr('min') || 1;
+  
+      var defaults = {
+        namespace: null,
+        key: this.$input.data('id')
+      };
+  
+      this.options = $.extend(defaults, options);
+  
+      this.initEventListeners();
+    };
+  
+    QtySelector.prototype = $.extend({}, QtySelector.prototype, {
+      initEventListeners: function() {
+        this.$plus.on('click', function() {
+          var qty = this.validateQty(this.$input.val());
+          this.addQty(qty);
+        }.bind(this));
+  
+        this.$minus.on('click', function() {
+          var qty = this.validateQty(this.$input.val());
+          this.subtractQty(qty);
+        }.bind(this));
+  
+        this.$input.on('change', function() {
+          var qty = this.validateQty(this.$input.val());
+          this.changeQty(qty);
+        }.bind(this));
+      },
+  
+      addQty: function(number) {
+        var qty = number + 1;
+        this.changeQty(qty);
+      },
+  
+      subtractQty: function(number) {
+        var qty = number - 1;
+        if (qty <= this.minValue) {
+          qty = this.minValue;
+        }
+        this.changeQty(qty);
+      },
+  
+      changeQty: function(qty) {
+        this.$input.val(qty);
+        $('body').trigger('qty' + this.options.namespace, [this.options.key, qty]);
+      },
+  
+      validateQty: function(number) {
+        if((parseFloat(number) == parseInt(number)) && !isNaN(number)) {
+          // We have a valid number!
+        } else {
+          // Not a number. Default to 1.
+          number = 1;
+        }
+        return parseInt(number);
+      }
+    });
+  
+    return QtySelector;
+  })();
+  
+  theme.CartDrawer = (function() {
+    var config = {
+      namespace: '.ajaxcart'
+    };
+  
+    var selectors = {
+      drawer: '#CartDrawer',
+      container: '#CartContainer',
+      template: '#CartTemplate',
+      cartBubble: '.cart-link__bubble'
+    };
+  
+    function CartDrawer() {
+      this.status = {
+        loaded: false,
+        loading: false
+      };
+  
+      this.drawer = new theme.Drawers('CartDrawer', 'cart');
+  
+      // Prep handlebars template
+      var source = $(selectors.template).html();
+      this.template = Handlebars.compile(source);
+  
+      // Build cart on page load so it's ready in the drawer
+      theme.cart.getCart().then(this.buildCart.bind(this));
+  
+      this.initEventListeners();
+    };
+  
+    CartDrawer.prototype = $.extend({}, CartDrawer.prototype, {
+      initEventListeners: function() {
+        $('body').on('updateCart' + config.namespace, this.initQtySelectors.bind(this));
+        $('body').on('updateCart' + config.namespace, this.updateCartNotification.bind(this));
+  
+        
+        if ( $(".buy2free1_template").length == 0 ) 
+        {
+          $('body').on('added.ajaxProduct', function(evt, returnFocusEl) {
+            theme.cart.getCart().then(function(cart) {
+              this.buildCart(cart, true, returnFocusEl);
+            }.bind(this));
+          }.bind(this));
+        }
+      },  
+      buildCart: function(cart, openDrawer, returnFocusEl) {
+        this.loading(true);
+        this.emptyCart();
+  
+        if (cart.item_count === 0) {
+          $(selectors.container).append('<div class="drawer__scrollable"><p class="appear-animation appear-delay-3">' + theme.strings.cartEmpty +'</p></div>');
+        } else {
+          var items = [];
+          var item = {};
+          var data = {};
+          var animation_row = 1;
+  
+          $.each(cart.items, function(index, product) {
+            var prodImg;
+
+            if (product.image !== null) {
+              prodImg = product.image.replace(/(\.[^.]*)$/, "_180x$1");
+            } else {
+              prodImg = '//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif';
+            }
+  
+            if (product.properties !== null) {
+              $.each(product.properties, function(key, value) {
+                if (key.charAt(0) === '_' || !value) {
+                   delete product.properties[key];
+                 }
+              });
+            }
+  
+            // If we have line-item discount, add formattedAmount to discount object
+            var amount = 0;
+            var discount_text = '';
+            var randomNumber = Math.floor(Math.random() * 4);
+
+            if (product.line_level_discount_allocations.length !== 0) {
+              for (var discount in product.line_level_discount_allocations) {
+                amount = product.line_level_discount_allocations[discount].amount;
+                //DTC get discount title
+                discount_text = product.line_level_discount_allocations[discount].discount_application.title;
+                product.line_level_discount_allocations[discount].formattedAmount = theme.Currency.formatMoney(amount, theme.settings.moneyFormat);
+              }
+            }
+
+            animation_row+=2;
+  
+            item = {
+              key: product.key,
+              handle: product.handle,
+              url: product.url,
+              img: prodImg,
+              animationRow: animation_row,
+              name: product.product_title,
+              variation: product.variant_title,
+              properties: product.properties,
+              itemQty: product.quantity,
+              price: theme.Currency.formatMoney(product.price, theme.settings.moneyFormat),
+              unitPrice: theme.Currency.formatMoney(product.unit_price, theme.settings.moneyFormat),
+              unitBase: theme.Currency.getBaseUnit(product),
+              discountedPrice: theme.Currency.formatMoney((product.price - (product.total_discount/product.quantity)), theme.settings.moneyFormat),
+              discounts: product.line_level_discount_allocations,
+              discountsApplied: product.line_level_discount_allocations.length === 0 ? false : true,
+              vendor: product.vendor,
+              discount_text:discount_text,
+              randomNumber: randomNumber,
+              randomLabel: randomNumber > 1
+                ? "other people have this in their cart"
+                : "other person has this in their cart",
+              noScarcityHint: product?.properties?.no_scarcity_hint
+            };
+
+            items.push(item);
+          });
+  
+          animation_row+=2;
+  
+          // If we have cart discount, add a formattedAmount to the discount object
+          var cartAmount = 0;
+          if (cart.cart_level_discount_applications.length !== 0) {
+            for (var cartDiscount in cart.cart_level_discount_applications) {
+              cartAmount = cart.cart_level_discount_applications[cartDiscount].total_allocated_amount;
+  
+              cart.cart_level_discount_applications[cartDiscount].formattedAmount = theme.Currency.formatMoney(cartAmount,theme.settings.moneyFormat);
+            }
+          }
+  
+          data = {
+            items: items,
+            note: cart.note,
+            lastAnimationRow: animation_row,
+            cartDiscounts: cart.cart_level_discount_applications,
+            cartDiscountsApplied: cart.cart_level_discount_applications.length === 0 ? false : true,
+            totalPrice: theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat)
+          };
+  
+          $(selectors.container).append(this.template(data));
+        }
+  
+        this.status.loaded = true;
+        this.loading(false);
+        this.updateProgress();
+        this.updateInsuranceTrigger();
+
+        $('body').trigger('updateCart' + config.namespace, cart);
+  
+        if (window.Shopify && Shopify.StorefrontExpressButtons) {
+          Shopify.StorefrontExpressButtons.initialize();
+        }
+  
+        // If specifically asked, open the cart drawer (only happens after product added from form)
+        if (openDrawer === true) {
+          this.drawer.open(false, returnFocusEl);
+        }
+        $(`[data-rebuy-id="41930"]`).remove(); $(".ajaxcart__product").last().append('<div data-rebuy-id="41930"></div>'); if(window.Rebuy){ Rebuy.init(); }
+      },
+      updateInsuranceTrigger: function() {
+        let checkoutBtn = document.querySelector('#insurance-checkout');
+        let insuranceTrigger = document.querySelector('#insurance');
+        let insuranceNoScarcityHint = document.querySelector('[name="no_scarcity_hint"]').value;
+
+        insuranceTrigger.addEventListener('change', () => {
+          if (insuranceTrigger.checked) {
+            checkoutBtn.dataset.insuranceActive = 'true';
+          } else {
+            checkoutBtn.dataset.insuranceActive = 'false';
+          }
+        })
+
+        checkoutBtn.addEventListener('click', () => {
+          if (checkoutBtn.dataset.insuranceActive === 'true') {
+            addInsuranceToCart();
+          } else {
+            removeInsuranceFromCart();
+            console.log('insurance is not active');
+          }
+        })
+
+        function removeInsuranceFromCart() {
+          const data = {
+            updates: {
+              41501458006184: 0
+            }
+          }
+        
+          $.ajax({ type: "POST", url: "/cart/update.js", data: data, dataType: "json" }).done(function () {
+            console.log('removed from cart if it is there');
+            window.location.href = window.location.origin + '/checkout';
+          });
+        }
+
+        function addInsuranceToCart() {
+          const data = {
+            updates: {
+              41501458006184: 1
+            }
+          }
+        
+          $.ajax({ type: "POST", url: "/cart/update.js", data: data, dataType: "json" }).done(function () {
+            console.log('::: added to cart');
+
+            $.post('/cart/change.js', { 
+              properties: { no_scarcity_hint: insuranceNoScarcityHint}, 
+              line: 1 
+            })
+
+            window.location.href = window.location.origin + '/checkout';
+          });
+        }
+      },
+      updateProgress: function() {    
+        $.ajax({
+          url: '/cart.json',
+          dataType: 'json',
+          cache: false,
+          type: 'get',
+          success: function success(data) {
+            let firstCartThreshold = 5000;
+            let finalCartThreshold = 10000;
+            // select progress elements
+            let progressBarTitles = document.querySelectorAll('#progress-bar_title');
+            let progress = document.querySelectorAll('#progress');
+            // get current cart totals
+            let total = data.total_price;
+            let formattedTotal = theme.Currency.formatMoney(data.total_price, $('body').data('money-format')).split(' ')[0];
+    
+          //   if (data.currency.includes('USD')) {
+          // CartThreshold = 5000;
+          //     document.querySelectorAll('#progress-bar_container').forEach(function(bar) {
+          //       bar.style.display = 'none';
+          //     })
+          //   } else if (data.currency.includes('CAD')) {
+          // CartThreshold = 4000;
+          //   }
+            
+            
+            
+            // 2.1 calculate distance from threshold
+            let firstDistanceAmount = firstCartThreshold - total;
+            let firstDistancePercent = ((1 - (firstDistanceAmount / firstCartThreshold)) * 100);
+            let firstFormattedDistance = theme.Currency.formatMoney(firstDistanceAmount, $('body').data('money-format')).replace('USD', '').trim().split(' ').join('');
+            
+            let finalDistanceAmount = finalCartThreshold - total;
+            let finalDistancePercent = ((1 - (finalDistanceAmount / finalCartThreshold)) * 100);
+            let finalFormattedDistance = theme.Currency.formatMoney(finalDistanceAmount, $('body').data('money-format')).replace('USD', '').trim().split(' ').join('');
+
+            if (firstDistancePercent >= 100) {
+              if (finalDistancePercent >= 100) {
+                // Update the progress Bar
+                progress.forEach(function(item) {
+                  item.style.width = '100%';
+                })
+                
+                // Update the free shipping text
+                progressBarTitles.forEach(function(item) {
+                  item.innerText = `You've unlocked free express U.S shipping!`;
+                })
+                
+                // Update the labels
+                document.head.insertAdjacentHTML('beforeend', `<style>.progress-labels span { font-weight: 700; }</style>`);
+                
+              } else {
+                progress.forEach(function(item) {
+                  item.style.width = `${finalDistancePercent}%`;
+                })
+                
+                progressBarTitles.forEach(function(item) {
+                  item.innerText = `You've unlocked free U.S shipping! You're ${finalFormattedDistance} away from free express U.S shipping!`;
+                })
+                
+                document.head.insertAdjacentHTML('beforeend', `<style>
+                  .progress-labels .progress-label_half { font-weight: 700; }
+                  .progress-labels span { font-weight: 400; }</style>`);
+              }
+            } else {
+              progress.forEach(function(item) {
+                item.style.width = `${50 * (firstDistancePercent / 100)}%`;
+              })
+    
+              progressBarTitles.forEach(function(item) {
+                item.innerText = `You're ${firstFormattedDistance} away from free U.S shipping!`;
+              })
+              
+              document.head.insertAdjacentHTML('beforeend', `<style>
+            .progress-labels .progress-label_half { font-weight: 400; }
+            .progress-labels span { font-weight: 400; }</style>`);
+            }
+            
+            updateGifts(data)
+          }
+        })
+
+        function updateGifts(data) {
+          let gifts = document.querySelectorAll('.gifts .gift');
+          let giftCount = document.querySelector('.gift-launcher_notification span');
+          let totalGifts = gifts.length;
+          let giftsUnlocked = 0;
+          let giftsRemaining = gifts.length;
+          gifts.forEach((gift) => {
+            let title = gift.querySelector('h4');
+            let subtitle = gift.querySelector('p');
+            let successIcon = gift.querySelector('.gift-success');
+            let giftThreshold = Number(gift.dataset.threshold);
+            let giftTotal = gift.dataset.giftTotal;
+            let progress = giftThreshold - data.total_price;
+
+            if (progress <= 0) {
+              title.innerText = `You've unlocked a free ${theme.Currency.formatMoney(giftTotal)} Gift Card! 🎉`
+              successIcon.style.display = 'block';
+              subtitle.style.display = 'none';
+              gift.style.background = 'rgba(81, 184, 60, 0.05)';
+              gift.style.border = '1px solid rgba(49, 205, 102, 0.3)';
+              giftsRemaining -= 1;
+            } else {
+              if (data.total_price === 0) {
+                subtitle.innerText = `If you spend ${theme.Currency.formatMoney(progress)}`
+                title.innerText = `Get a FREE ${theme.Currency.formatMoney(giftTotal)} Gift Card`;
+              } else {
+                title.innerText = `Get a FREE ${theme.Currency.formatMoney(giftTotal)} Gift Card`;
+                subtitle.innerText = `If you spend ${theme.Currency.formatMoney(progress)} more`
+              }
+
+              successIcon.style.display = 'none';
+              subtitle.style.display = 'block';
+              gift.style.background = 'white';
+              gift.style.border = '0';
+            }
+            console.log(giftsRemaining)
+            if (giftsRemaining > 0 && giftsRemaining < 4) {
+              gifts[totalGifts - giftsRemaining - 2].style.display = 'none';
+              gifts[totalGifts - giftsRemaining - 1].style.display = 'flex';
+            } else if (giftsRemaining === 4) {
+              gifts[totalGifts - giftsRemaining - 1].style.display = 'flex';
+            }
+            
+          })
+
+          if (giftCount)
+            giftCount.innerText = `${giftsRemaining}`;
+        }
+      },
+      initQtySelectors: function() {
+        $(selectors.container).find('.js-qty__wrapper').each(function(index, el) {
+          var selector = new theme.QtySelector($(el), {
+            namespace: '.cart-drawer'
+          });
+        }.bind(this));
+  
+        $('body').on('qty.cart-drawer', this.updateItem.bind(this));
+      },
+  
+      updateItem: function(evt, key, qty) {
+        if (this.status.loading) {
+          return;
+        }
+  
+        this.loading(true);
+  
+        theme.cart.changeItem(key, qty)
+          .then(function(cart) {
+            this.updateSuccess(cart);
+          }.bind(this))
+          .catch(function(XMLHttpRequest) {
+            this.updateError(XMLHttpRequest)
+          }.bind(this))
+          .always(function() {
+            this.loading(false);
+          }.bind(this));
+      },
+  
+      loading: function(state) {
+        this.status.loading = state;
+  
+        if (state) {
+          $(selectors.container).addClass('is-loading');
+        } else {
+          $(selectors.container).removeClass('is-loading');
+        }
+      },
+  
+      emptyCart: function() {
+        $(selectors.container).empty();
+      },
+  
+      updateSuccess: function(cart) {
+        this.buildCart(cart)
+      },
+  
+      updateError: function(XMLHttpRequest) {
+        if (XMLHttpRequest.responseJSON && XMLHttpRequest.responseJSON.description) {
+          // console.warn(XMLHttpRequest.responseJSON.description);
+        }
+      },
+  
+      updateCartNotification: function(evt, cart) {
+        if (cart.items.length > 0) {
+          $(selectors.cartBubble).addClass('cart-link__bubble--visible');
+        } else {
+          $(selectors.cartBubble).removeClass('cart-link__bubble--visible');
+        }
+      }
+    });
+  
+    return CartDrawer;
+  })();
+  
+  theme.AjaxProduct = (function() {
+    var status = {
+      loading: false
+    };
+  
+    function ProductForm($form) {
+      this.$form = $form;
+      this.$addToCart = this.$form.find('.add-to-cart');
+  
+      if (this.$form.length) {
+        this.$form.on('submit', this.addItemFromForm.bind(this));
+      }
+    };
+  
+    ProductForm.prototype = $.extend({}, ProductForm.prototype, {
+      addItemFromForm: function(evt, callback){
+        evt.preventDefault();
+  
+        if (status.loading) {
+          return;
+        }
+  
+        // Loading indicator on add to cart button
+        this.$addToCart.addClass('btn--loading');
+  
+        status.loading = true;
+  
+        var data = this.$form.serialize();
+  
+        theme.cart.addItemFromForm(data)
+          .then(function(product) {
+            this.success(product);
+          }.bind(this))
+          .catch(function(XMLHttpRequest) {
+            this.error(XMLHttpRequest)
+          }.bind(this))
+          .always(function() {
+            status.loading = false;
+            this.$addToCart.removeClass('btn--loading');
+          }.bind(this));
+      },
+  
+      success: function(product) {
+        this.$form.find('.errors').remove();
+        $('body').trigger('added.ajaxProduct', this.$addToCart);
+        $('body').trigger('added.ajaxProduct_buy2free', product);
+      },
+  
+      error: function(XMLHttpRequest) {
+        this.$form.find('.errors').remove();
+  
+        if (XMLHttpRequest.responseJSON && XMLHttpRequest.responseJSON.description) {
+          this.$form.prepend('<div class="errors text-center">' + XMLHttpRequest.responseJSON.description + '</div>');
+        }
+      }
+    });
+  
+    return ProductForm;
+  })();
+  
+  theme.collapsibles = (function() {
+  
+    var selectors = {
+      trigger: '.collapsible-trigger',
+      module: '.collapsible-content',
+      moduleInner: '.collapsible-content__inner'
+    };
+  
+    var classes = {
+      hide: 'hide',
+      open: 'is-open',
+      autoHeight: 'collapsible--auto-height'
+    };
+  
+    var namespace = '.collapsible';
+  
+    var isTransitioning = false;
+  
+    function init() {
+      $(selectors.trigger).each(function() {
+        var $el = $(this);
+        var state = $el.hasClass(classes.open);
+        $el.attr('aria-expanded', state);
+      });
+  
+      // Event listeners (hack for modals)
+      $('body, .modal__inner')
+        .off(namespace)
+        .on('click' + namespace, selectors.trigger, function() {
+  
+        if (isTransitioning) {
+          return;
+        }
+  
+        isTransitioning = true;
+  
+        var $el = $(this);
+        var isOpen = $el.hasClass(classes.open);
+        var moduleId = $el.attr('aria-controls');
+        var $module = $('#' + moduleId);
+        var height = $module.find(selectors.moduleInner).outerHeight();
+        var isAutoHeight = $el.hasClass(classes.autoHeight);
+  
+        // If isAutoHeight, set the height to 0 just after setting the actual height
+        // so the closing animation works nicely
+        if (isOpen && isAutoHeight) {
+          setTimeout(function() {
+            height = 0;
+            setTransitionHeight($module, height, isOpen, isAutoHeight);
+          }, 0);
+        }
+  
+        if (isOpen && !isAutoHeight) {
+          height = 0;
+        }
+  
+        $el
+          .attr('aria-expanded', !isOpen)
+          .toggleClass(classes.open, !isOpen);
+  
+        setTransitionHeight($module, height, isOpen, isAutoHeight);
+      });
+    }
+  
+    function setTransitionHeight($module, height, isOpen, isAutoHeight) {
+      $module
+        .removeClass(classes.hide)
+        .prepareTransition()
+        .css('height', height)
+        .toggleClass(classes.open, !isOpen);
+  
+      if (!isOpen && isAutoHeight) {
+        var o = $module;
+        window.setTimeout(function() {
+          o.css('height','auto');
+          isTransitioning = false;
+        }, 350);
+      } else {
+        isTransitioning = false;
+      }
+    }
+  
+    return {
+      init: init
+    };
+  })();
+  
+  theme.headerNav = (function() {
+  
+    var $parent = $(document.documentElement).add('body');
+    var $page = $('#MainContent');
+    var selectors = {
+      wrapper: '.header-wrapper',
+      siteHeader: '.site-header',
+      searchBtn: '.js-search-header',
+      closeSearch: '.js-search-header-close',
+      searchContainer: '.site-header__search-container',
+      logoContainer: '.site-header__logo',
+      logo: '.site-header__logo img',
+      navigation: '.site-navigation',
+      megamenu: '.megamenu',
+      navContainerWithLogo: '.header-item--logo',
+      navItems: '.site-nav__item',
+      navLinks: '.site-nav__link',
+      navLinksWithDropdown: '.site-nav__link--has-dropdown',
+      navDropdownLinks: '.site-nav__dropdown-link--second-level'
+    };
+  
+    var classes = {
+      hasDropdownClass: 'site-nav--has-dropdown',
+      hasSubDropdownClass: 'site-nav__deep-dropdown-trigger',
+      dropdownActive: 'is-focused',
+      overlaidBodyClass: 'overlaid-header',
+      stickyBodyClass: 'sticky-header'
+    };
+  
+    var config = {
+      namespace: '.siteNav',
+      wrapperOverlayed: false,
+      overlayedClass: 'is-light',
+      stickyEnabledClass: 'header-wrapper--sticky',
+      stickyEnabled: false,
+      stickyActive: false,
+      stickyInitialized: false,
+      forceStopSticky: false,
+      stickyClass: 'site-header--stuck',
+      openTransitionClass: 'site-header--opening',
+      lastScroll: 0
+    };
+  
+    // Elements used in resize functions, defined in init
+    var $window;
+    var $navContainerWithLogo;
+    var $logoContainer;
+    var $nav;
+    var $wrapper;
+    var $siteHeader;
+  
+    function init() {
+      $window = $(window);
+      $navContainerWithLogo = $(selectors.navContainerWithLogo);
+      $logoContainer = $(selectors.logoContainer);
+      $nav = $(selectors.navigation);
+      $wrapper = $(selectors.wrapper);
+      $siteHeader = $(selectors.siteHeader);
+  
+      config.wrapperOverlayed = theme.settings.overlayHeader = $wrapper.hasClass(config.overlayedClass);
+      config.stickyEnabled = $siteHeader.data('sticky');
+  
+      if (config.stickyEnabled) {
+        stickyHeaderCheck();
+        $window.on('resize' + config.namespace, $.debounce(150, stickyHeaderCheck));
+      }
+  
+      if (config.wrapperOverlayed) {
+        $('body').addClass(classes.overlaidBodyClass);
+      }
+  
+      accessibleDropdowns();
+      searchDrawer();
+    }
+  
+    function unload() {
+      $(window).off(config.namespace);
+      $(selectors.searchBtn).off(config.namespace);
+      $(selectors.closeSearch).off(config.namespace);
+      $parent.off(config.namespace);
+      $(selectors.navLinks).off(config.namespace);
+      $(selectors.navDropdownLinks).off(config.namespace);
+    }
+  
+    function searchDrawer() {
+      $(selectors.searchBtn).on('click' + config.namespace, function(evt) {
+        evt.preventDefault();
+        openSearchDrawer();
+      });
+  
+      $(selectors.closeSearch).on('click' + config.namespace, function() {
+        closeSearchDrawer();
+      });
+    }
+  
+    function openSearchDrawer() {
+      $(selectors.searchContainer).addClass('is-active');
+      $parent.addClass('js-drawer-open--search');
+  
+      theme.a11y.trapFocus({
+        $container: $(selectors.searchContainer),
+        namespace: 'header_search',
+        $elementToFocus: $(selectors.searchContainer).find('input')
+      });
+  
+      // If sticky is enabled, scroll to top on mobile when close to it
+      // so you don't get an invisible search box
+      if (theme.config.bpSmall && config.stickyEnabled && config.lastScroll < 300) {
+        window.scrollTo(0,0);
+      }
+  
+      // Bind events
+      theme.a11y.lockMobileScrolling(config.namespace);
+  
+      // Clicking out of container closes it
+      $page.on('click' + config.namespace, function () {
+        closeSearchDrawer();
+        return false;
+      });
+  
+      $parent.on('keyup' + config.namespace, function(evt) {
+        if (evt.keyCode === 27) {
+          closeSearchDrawer();
+        }
+      });
+    }
+  
+    function closeSearchDrawer() {
+      // deselect any focused form elements
+      $(document.activeElement).trigger('blur');
+  
+      $parent.removeClass('js-drawer-open--search').off(config.namespace);
+      $(selectors.searchContainer).removeClass('is-active');
+  
+      theme.a11y.removeTrapFocus({
+        $container: $(selectors.searchContainer),
+        namespace: 'header_search'
+      });
+  
+      theme.a11y.unlockMobileScrolling(config.namespace);
+      $page.off('click' + config.namespace);
+      $parent.off('keyup' + config.namespace);
+    }
+  
+    function accessibleDropdowns() {
+      var hasActiveDropdown = false;
+      var hasActiveSubDropdown = false;
+      var closeOnClickActive = false;
+  
+      // Touch devices open dropdown on first click, navigate to link on second
+      if (theme.config.isTouch) {
+        $(selectors.navLinksWithDropdown).on('touchend' + config.namespace, function(evt) {
+          var $el = $(this);
+          var $parentItem = $el.parent();
+          if (!$parentItem.hasClass(classes.dropdownActive)) {
+            evt.preventDefault();
+            closeDropdowns();
+            openFirstLevelDropdown($el);
+          } else {
+            window.location.replace($el.attr('href'));
+          }
+        });
+  
+        $(selectors.navDropdownLinks).on('touchend' + config.namespace, function(evt) {
+          var $el = $(this);
+          var $parentItem = $el.parent();
+  
+          // Open third level menu or go to link based on active state
+          if ($parentItem.hasClass(classes.hasSubDropdownClass)) {
+            if (!$parentItem.hasClass(classes.dropdownActive)) {
+              evt.preventDefault();
+              closeThirdLevelDropdown();
+              openSecondLevelDropdown($el);
+            } else {
+              window.location.replace($el.attr('href'));
+            }
+          } else {
+            // No third level nav, go to link
+            window.location.replace($el.attr('href'));
+          }
+        });
+      }
+  
+      $(selectors.navLinks).on('focusin mouseover' + config.namespace, function() {
+        if (hasActiveDropdown) {
+          closeSecondLevelDropdown();
+        }
+  
+        if (hasActiveSubDropdown) {
+          closeThirdLevelDropdown();
+        }
+  
+        openFirstLevelDropdown($(this));
+      });
+  
+      // Force remove focus on sitenav links because focus sometimes gets stuck
+      $(selectors.navLinks).on('mouseleave' + config.namespace, function() {
+        closeSecondLevelDropdown();
+        closeThirdLevelDropdown();
+      });
+  
+      // Open/hide sub level dropdowns
+      $(selectors.navDropdownLinks).on('focusin' + config.namespace, function() {
+        if (hasActiveSubDropdown) {
+          closeThirdLevelDropdown();
+        }
+  
+        openSecondLevelDropdown($(this), true);
+      });
+  
+      // Private dropdown methods
+      function openFirstLevelDropdown($el) {
+        var $parentItem = $el.parent();
+        if ($parentItem.hasClass(classes.hasDropdownClass)) {
+          $parentItem.addClass(classes.dropdownActive);
+          hasActiveDropdown = true;
+        }
+  
+        if (!theme.config.isTouch) {
+          if (!closeOnClickActive) {
+            var eventType = theme.config.isTouch ? 'touchend' : 'click';
+            closeOnClickActive = true;
+            $('body').on(eventType + config.namespace, function() {
+              closeDropdowns();
+              $('body').off(config.namespace);
+              closeOnClickActive = false;
+            });
+          }
+        }
+      }
+  
+      function openSecondLevelDropdown($el, skipCheck) {
+        var $parentItem = $el.parent();
+        if ($parentItem.hasClass(classes.hasSubDropdownClass) || skipCheck) {
+          $parentItem.addClass(classes.dropdownActive);
+          hasActiveSubDropdown = true;
+        }
+      }
+  
+      function closeDropdowns() {
+        closeSecondLevelDropdown();
+        closeThirdLevelDropdown();
+      }
+  
+      function closeSecondLevelDropdown() {
+        $(selectors.navItems).removeClass(classes.dropdownActive);
+      }
+  
+      function closeThirdLevelDropdown() {
+        $(selectors.navDropdownLinks).parent().removeClass(classes.dropdownActive);
+      }
+    }
+  
+    function stickyHeaderCheck() {
+      // Disable sticky header if any mega menu is taller than window
+      theme.config.stickyHeader = doesMegaMenuFit();
+  
+      if (theme.config.stickyHeader) {
+        config.forceStopSticky = false;
+        stickyHeaderSetup();
+      } else {
+        config.forceStopSticky = true;
+      }
+    }
+  
+    function stickyHeaderSetup() {
+      if (!config.stickyInitialized) {
+        $parent.addClass(classes.stickyBodyClass);
+        $siteHeader.wrap('<div class="site-header-sticky"></div>');
+  
+        stickyHeaderHeight();
+        setTimeout(function() {
+          stickyHeaderHeight();
+        }, 200);
+  
+        $window.on('resize' + config.namespace, $.debounce(50, stickyHeaderHeight));
+        $window.on('scroll' + config.namespace, $.throttle(15, stickyHeaderScroll));
+      }
+  
+      config.stickyInitialized = true;
+    }
+  
+    function doesMegaMenuFit() {
+      var largestMegaNav = 0;
+      $(selectors.megamenu).each(function() {
+        var h = $(this).outerHeight();
+        if (h > largestMegaNav) {
+          largestMegaNav = h;
+        }
+      });
+  
+      // 120 ~ space of visible header when megamenu open
+      if (window.innerHeight < (largestMegaNav + 120)) {
+        return false;
+      }
+  
+      return true;
+    }
+  
+    function stickyHeaderHeight() {
+      var height = $siteHeader.outerHeight(true);
+      var $stickyHeader = $('.site-header-sticky').css('height', height);
+  
+      // Also update top position of sticky sidebar
+      if ($('.grid__item--sidebar').length) {
+        $('.grid__item--sidebar').css('top', height + 10);
+      }
+    }
+  
+    function stickyHeaderScroll() {
+      if (config.forceStopSticky) {
+        return;
+      }
+  
+      var scroll = $window.scrollTop();
+      var threshold = 150;
+  
+      if (scroll > threshold) {
+        if (config.stickyActive) {
+          return;
+        }
+  
+        config.stickyActive = true;
+  
+        $siteHeader.addClass(config.stickyClass);
+        if (config.wrapperOverlayed) {
+          $wrapper.removeClass(config.overlayedClass);
+        }
+  
+        // Add open transition class after element is set to fixed
+        // so CSS animation is applied correctly
+        setTimeout(function() {
+          $siteHeader.addClass(config.openTransitionClass);
+        }, 100);
+      } else {
+        if (!config.stickyActive) {
+          return;
+        }
+  
+        config.stickyActive = false;
+  
+        $siteHeader.removeClass(config.openTransitionClass).removeClass(config.stickyClass);
+        if (config.wrapperOverlayed) {
+          $wrapper.addClass(config.overlayedClass);
+        }
+      }
+  
+      config.lastScroll = scroll;
+    }
+  
+    // If the header setting to overlay the menu on the collection image
+    // is enabled but the collection setting is disabled, we need to undo
+    // the init of the sticky nav
+    function disableOverlayHeader() {
+      $(selectors.wrapper)
+        .removeClass(config.stickyEnabledClass)
+        .removeClass(config.overlayedClass);
+  
+      $('body').removeClass(classes.overlaidBodyClass);
+      config.wrapperOverlayed = false;
+    }
+  
+    return {
+      init: init,
+      disableOverlayHeader: disableOverlayHeader,
+      unload: unload
+    };
+  })();
+  
+  theme.announcementBar = (function() {
+    var slideCount = 0;
+    var compact = false;
+    var defaults = {
+      accessibility: true,
+      arrows: false,
+      dots: false,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      touchThreshold: 20,
+      slidesToShow: 1
+    };
+    var $slider;
+  
+    function init() {
+      $slider = $('#AnnouncementSlider');
+      if (!$slider.length) {
+        return;
+      }
+  
+      slideCount = $slider.data('block-count');
+      compact = $slider.data('compact-style');
+  
+      var desktopOptions = $.extend({}, defaults, {
+        slidesToShow: compact ? 1 : slideCount,
+        slidesToScroll: 1
+      });
+  
+      var mobileOptions = $.extend({}, defaults, {
+        slidesToShow: 1
+      });
+  
+      if (theme.config.bpSmall) {
+        initSlider($slider, mobileOptions);
+      } else {
+        initSlider($slider, desktopOptions);
+      }
+  
+      $('body').on('matchSmall', function() {
+        initSlider($slider, mobileOptions);
+      }.bind(this));
+  
+      $('body').on('matchLarge', function() {
+        initSlider($slider, desktopOptions);
+      }.bind(this));
+    }
+  
+    function initSlider($slider, args) {
+      if (isInitialized($slider)) {
+        $slider.slick('unslick');
+      }
+      $slider.slick(args);
+    }
+  
+    function isInitialized($slider) {
+      return $slider.length && $slider.hasClass('slick-initialized');
+    }
+  
+    // Go to slide if selected in the editor
+    function onBlockSelect(id) {
+      var $slide = $('#AnnouncementSlide-' + id);
+      if ($slider.length) {
+        $slider.slick('slickPause');
+      }
+      if ($slide.length) {
+        $slider.slick('slickGoTo', $slide.data('index'));
+      }
+    }
+  
+    function onBlockDeselect(id) {
+      if ($slider.length && isInitialized($slider)) {
+        $slider.slick('slickPlay');
+      }
+    }
+  
+    function unload() {
+      if (isInitialized($slider)) {
+        $slider.slick('unslick');
+      }
+    }
+  
+    return {
+      init: init,
+      onBlockSelect: onBlockSelect,
+      onBlockDeselect: onBlockDeselect,
+      unload: unload
+    };
+  })();
+  
+  theme.predictiveSearch = (function() {
+    var currentString = '';
+    var isLoading = false;
+    var searchTimeout;
+    var namespace = '.predictive';
+  
+    var selectors = {
+      form: '#HeaderSearchForm',
+      input: 'input[type="search"]',
+      wrapper: '.predictive-results',
+  
+      searchButton: '[data-predictive-search-button]',
+  
+      resultDiv: '#PredictiveResults',
+      resultTemplate: '#PredictiveTemplate'
+    };
+  
+    var classes = {
+      isActive: 'predicitive-active'
+    };
+  
+    var keys = {
+      up_arrow: 38,
+      down_arrow: 40,
+      tab: 9
+    };
+  
+    function init() {
+      // Only some languages support predictive search
+      if (document.getElementById('shopify-features')) {
+        var supportedShopifyFeatures = JSON.parse(document.getElementById('shopify-features').innerHTML);
+        if (!supportedShopifyFeatures.predictiveSearch) {
+          return;
+        }
+      }
+  
+      $(selectors.form).attr('autocomplete', 'off');
+  
+      $(selectors.input, selectors.form).on('keyup' + namespace, handleKeyup);
+      $(selectors.searchButton, selectors.wrapper).on('click' + namespace, triggerSearch);
+  
+      // Prep handlebars template
+      var source = $(selectors.resultTemplate).html();
+      resultTemplate = Handlebars.compile(source);
+    }
+  
+    function reset() {
+      $(selectors.wrapper).addClass('hide');
+      clearTimeout(searchTimeout);
+    }
+  
+    function triggerSearch() {
+      $(selectors.form).trigger('submit');
+    }
+  
+    function handleKeyup(evt) {
+      if (evt.keyCode === keys.up_arrow) {
+        navigationEvent(evt, 'up');
+        return;
+      }
+  
+      if (evt.keyCode === keys.down_arrow) {
+        navigationEvent(evt, 'down');
+        return;
+      }
+  
+      if (evt.keyCode === keys.tab) {
+        return;
+      }
+  
+      search();
+    }
+  
+    function search() {
+      var keyword = $(selectors.input, selectors.form).val();
+  
+      if (keyword === '') {
+        reset();
+        return;
+      }
+  
+      var q = _normalizeQuery(keyword);
+  
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(
+        function () {
+          predictQuery(q);
+        }.bind(this),
+        500
+      );
+    }
+  
+    function predictQuery(q) {
+      if (isLoading) {
+        return;
+      }
+  
+      // Do not re-search the same thing
+      if (currentString === q) {
+        return;
+      }
+  
+      currentString = q;
+      isLoading = true;
+  
+      jQuery.getJSON('/search/suggest.json', {
+        "q": q,
+        "resources": {
+          "type": theme.settings.predictiveSearchType,
+          "limit": 4,
+          "options": {
+            "unavailable_products": "last",
+            "fields": "title,product_type,variants.title,vendor"
+          }
+        }
+      }).done(function(response) {
+        isLoading = false;
+        var data = {};
+        var resultCount = 0;
+  
+        $(selectors.wrapper).removeClass('hide');
+  
+        var resultTypes = Object.entries(response.resources.results);
+  
+        for (var i = resultTypes.length - 1; i >= 0; i--) {
+          var obj = resultTypes[i];
+          var type = obj[0];
+          var results = obj[1];
+          resultCount += results.length;
+  
+          switch(type) {
+            case 'products':
+              data[type] = buildProducts(results);
+              break;
+            default:
+              data[type] = parseResultImages(results);
+              break;
+          }
+        }
+  
+        if (resultCount === 0) {
+          reset();
+        }
+  
+        // Append result markup
+        $(selectors.resultDiv).empty().append(resultTemplate(data));
+      });
+    }
+  
+    function buildProducts(results) {
+      var products = [];
+  
+      for (var i = results.length - 1; i >= 0; i--) {
+        var product = results[i];
+  
+        var new_product = {
+          title: product.title,
+          url: product.url,
+          image: theme.Images.lazyloadImagePath(product.image),
+          vendor: product.vendor,
+          price: theme.Currency.formatMoney(product.price),
+          compare_price_max: theme.Currency.formatMoney(product.compare_at_price_max),
+          on_sale: parseInt(product.compare_at_price_max) > parseInt(product.price),
+          custom_label: _checkCustomLabel(product.tags)
+        };
+  
+        products.push(new_product);
+      }
+  
+      return products;
+    }
+  
+    // Overwrite full sized image returned form API
+    // with lazyloading-friendly path
+    function parseResultImages(results) {
+      for (var i = results.length - 1; i >= 0; i--) {
+        if (!results[i].image) {
+          continue;
+        }
+  
+        var image = theme.Images.lazyloadImagePath(results[i].image);
+        results[i].image = image;
+      }
+  
+      return results;
+    }
+  
+    function _checkCustomLabel(tags) {
+      if (!tags.length) {
+        return false;
+      }
+  
+      for (var i = tags.length - 1; i >= 0; i--) {
+        if (tags[i].indexOf('_label_') !== -1) {
+          return tags[i].replace('_label_', '');
+        }
+      }
+  
+      return false;
+    }
+  
+    function _normalizeQuery(string) {
+      if (typeof string !== 'string') {
+        return null;
+      }
+  
+      return string
+        .trim()
+        .replace(/\ /g, '-')
+        .toLowerCase();
+    }
+  
+    function navigationEvent(evt, direction) {
+  
+    }
+  
+    return {
+      init: init
+    };
+  })();
+
+  theme.collectionTemplate = (function() {
+    var isAnimating = false;
+  
+    var selectors = {
+      collectionGrid: '.collection-grid__wrapper',
+      sidebar: '#CollectionSidebar',
+      activeTagList: '.tag-list--active-tags',
+      tags: '.tag-list a',
+      filters: '.collection-filter'
+    };
+  
+    var settings = {
+      combineTags: $(selectors.sidebar).data('combine-tags')
+    };
+  
+    var classes = {
+      activeTag: 'tag--active',
+      removeTagParent: 'tag--remove'
+    };
+  
+    function init() {
+      // Ajax pagination
+      $(window).on('popstate', function(state) {
+        if (state) {
+          getNewCollectionContent(location.href);
+        }
+      });
+  
+      // Set mobile top value for filters if sticky header enabled
+      if (theme.config.stickyHeader) {
+        setFilterStickyPosition();
+        $(window).on('resize', $.debounce(150, setFilterStickyPosition));
+      }
+  
+      initTagClicks();
+    }
+  
+    function initTagClicks() {
+      $('body').on('click', selectors.tags, function(evt) {
+        var $el = $(this);
+        if (theme.FilterDrawer) {
+          theme.FilterDrawer.close();
+        }
+  
+        if ($el.hasClass('no-ajax')) {
+          return;
+        }
+  
+        evt.preventDefault();
+        if (isAnimating) {
+          return;
+        }
+  
+        isAnimating = true;
+  
+        var $el = $(evt.currentTarget);
+        var $parent = $el.parent();
+        var newUrl = $el.attr('href');
+  
+        if (settings.combineTags) {
+          if ($parent.hasClass(classes.activeTag)) {
+            $parent.removeClass(classes.activeTag);
+          } else {
+            $parent.addClass(classes.activeTag);
+  
+            // If adding a tag, show new tag right away.
+            // Otherwise, remove it before ajax finishes
+            if ($el.parent('li').hasClass(classes.removeTagParent)) {
+              $(this).parent().remove();
+            } else {
+              $(selectors.activeTagList).append('<li class="tag tag--remove"><a class="btn btn--small js-no-transition">' + $el.text() + '</a></li>');
+            }
+          }
+        } else {
+          $(selectors.tags).parent().removeClass(classes.activeTag);
+          $parent.addClass(classes.activeTag);
+        }
+  
+        updateScroll(true);
+  
+        history.pushState({}, '', newUrl);
+        $(selectors.collectionGrid).addClass('unload');
+        getNewCollectionContent(newUrl);
+      });
+    }
+  
+    function updateScroll(animate) {
+      var scrollTo;
+      if (theme.config.bpSmall) {
+        // 60 is ~ height of sticky filters
+        scrollTo = $('[data-scroll-to]').offset().top - 60;
+      } else {
+        scrollTo = $('#CollectionAjaxResult').offset().top + 1;
+      }
+  
+      if (theme.config.stickyHeader) {
+        var heightOfStickyNav = $('.site-header').outerHeight(true);
+        scrollTo = scrollTo - heightOfStickyNav;
+      }
+  
+      if (animate) {
+        $('html, body').animate({ scrollTop: scrollTo }, 300);
+      } else {
+        $('html, body').scrollTop(scrollTo);
+      }
+    }
+  
+    function setFilterStickyPosition() {
+      var headerHeight = $('.site-header').outerHeight(true);
+      $(selectors.filters).css('top', headerHeight + 10);
+    }
+  
+    function getNewCollectionContent(url) {
+      url = url + '?view=ajax';
+      $('#CollectionAjaxResult').load(url + ' #CollectionAjaxContent', function() {
+        isAnimating = false;
+        theme.reinitSection('collection-template');
+        theme.collectionTemplate.reinit();
+      }.bind(this));
+    }
+  
+    function reinit() {
+      settings.combineTags = $(selectors.sidebar).data('combine-tags');
+  
+      updateScroll(false);
+  
+      // Setup page transition classes
+      theme.pageTransitions();
+  
+      theme.reinitProductGridItem();
+  
+      // Trigger resize for sticky sidebar styles to update
+      $('body').trigger('resize');
+    }
+  
+    return {
+      init: init,
+      reinit: reinit
+    };
+  })();
+
+  theme.Product = (function() {
+  
+    var classes = {
+      onSale: 'on-sale',
+      disabled: 'disabled',
+      isModal: 'is-modal',
+      loading: 'loading',
+      loaded: 'loaded',
+      hidden: 'hide',
+      interactable: 'video-interactable',
+      visuallyHide: 'visually-invisible'
+    };
+  
+    var selectors = {
+      productVideo: '.product__video',
+      videoParent: '.product__video-wrapper',
+      currentSlide: '.slick-current',
+      startingSlide: '.starting-slide'
+    };
+  
+    function Product(container) {
+      var $container = this.$container = $(container);
+      var sectionId = this.sectionId = $container.attr('data-section-id');
+  
+      this.inModal = $container.closest('.modal').length;
+      this.$modal;
+  
+      this.settings = {
+        enableHistoryState: $container.data('enable-history-state') || false,
+        namespace: '.product-' + sectionId,
+        inventory: $container.data('inventory') || false,
+        incomingInventory: $container.data('incoming-inventory') || false,
+        modalInit: false,
+        slickMainInitialized: false,
+        slickThumbInitialized: false,
+        thumbArrows: false,
+        thumbVertical: false,
+        hasImages: true,
+        hasMultipleImages: false,
+        has3d: false,
+        imageSize: '620x',
+        videoLooping: $container.data('video-looping')
+      };
+  
+      // Overwrite some settings when loaded in modal
+      if (this.inModal) {
+        this.settings.enableHistoryState = false;
+        this.settings.namespace = '.product-' + sectionId + '-modal';
+        this.$modal = $('#QuickShopModal-' + sectionId);
+      }
+  
+      this.selectors = {
+        variantsJson: 'VariantsJson-' + sectionId,
+        currentVariantJson: 'CurrentVariantJson-' + sectionId,
+  
+        video: 'ProductVideo-' + sectionId,
+        media: '[data-product-media-type-model]',
+        closeMedia: '.product-single__close-media',
+        photoThumbs: '.product__thumb-' + sectionId,
+        thumbSlider: '#ProductThumbs-' + sectionId,
+        mainSlider: '#ProductPhotos-' + sectionId,
+        imageContainer: '[data-product-images]',
+        productImageMain: '.product-image-main--' + sectionId,
+        dotsContainer: '.product__photo-dots--' + sectionId,
+  
+        priceWrapper: '.product__price-wrap-' + sectionId,
+        price: '#ProductPrice-' + sectionId,
+        comparePrice: '#ComparePrice-' + sectionId,
+        savePrice: '#SavePrice-' + sectionId,
+        priceA11y: '#PriceA11y-' + sectionId,
+        comparePriceA11y: '#ComparePriceA11y-' + sectionId,
+        unitWrapper: '.product__unit-price-wrapper--' + sectionId,
+        unitPrice: '.product__unit-price--' + sectionId,
+        unitPriceBaseUnit: '.product__unit-base--' + sectionId,
+        sku: '#Sku-' + sectionId,
+        inventory: '#ProductInventory-' + sectionId,
+        incomingInventory: '#ProductIncomingInventory-' + sectionId,
+  
+        addToCart: '#AddToCart-' + sectionId,
+        addToCartText: '#AddToCartText-' + sectionId,
+  
+        originalSelectorId: '#ProductSelect-' + sectionId,
+        singleOptionSelector: '.variant__input-' + sectionId,
+        variantColorSwatch: '.variant__input--color-swatch-' + sectionId,
+  
+        modalFormHolder: '#ProductFormHolder-' + sectionId,
+        formContainer: '#AddToCartForm-' + sectionId
+      };
+  
+      this.$mainSlider = $(this.selectors.mainSlider);
+      this.$thumbSlider = $(this.selectors.thumbSlider);
+      this.$firstProductImage = this.$mainSlider.find('img').first();
+  
+      if (!this.$firstProductImage.length) {
+        this.settings.hasImages = false;
+      }
+  
+      this.init();
+    }
+  
+    Product.prototype = $.extend({}, Product.prototype, {
+      init: function() {
+        if (this.inModal) {
+          this.$container.addClass(classes.isModal);
+          $('body')
+            .off('modalOpen.QuickShopModal-' + this.sectionId)
+            .off('modalClose.QuickShopModal-' + this.sectionId);
+          $('body').on('modalOpen.QuickShopModal-' + this.sectionId, this.openModalProduct.bind(this));
+          $('body').on('modalClose.QuickShopModal-' + this.sectionId, this.closeModalProduct.bind(this));
+        }
+  
+        if (!this.inModal) {
+          this.stringOverrides();
+          this.formSetup();
+          this.productSetup();
+  
+          // Add product id to recently viewed array
+          this.addIdToRecentlyViewed();
+        }
+      },
+  
+      formSetup: function() {
+        // Determine how to handle variant availability selectors
+        if (theme.settings.dynamicVariantsEnable) {
+          this.$variantSelectors = $(this.selectors.formContainer).find(this.selectors.singleOptionSelector);
+        }
+  
+        this.initQtySelector();
+        this.initAjaxProductForm();
+        this.initVariants();
+      },
+  
+      productSetup: function() {
+        this.setImageSizes();
+        this.initImageSwitch();
+      },
+  
+      addIdToRecentlyViewed: function() {
+        var handle = this.$container.attr('data-product-handle');
+        var url = this.$container.attr('data-product-url');
+        var aspectRatio = this.$container.attr('data-aspect-ratio');
+        var featuredImage = this.$container.attr('data-img-url');
+  
+        // Remove current product if already in set of recent
+        if (theme.recentlyViewed.recent.hasOwnProperty(handle)) {
+          delete theme.recentlyViewed.recent[handle];
+        }
+  
+        // Add it back to the end
+        theme.recentlyViewed.recent[handle] = {
+          url: url,
+          aspectRatio: aspectRatio,
+          featuredImage: featuredImage
+        };
+  
+        if (theme.config.hasLocalStorage) {
+          window.localStorage.setItem('theme-recent', JSON.stringify(theme.recentlyViewed.recent));
+        }
+      },
+  
+      stringOverrides: function() {
+        theme.productStrings = theme.productStrings || {};
+        $.extend(theme.strings, theme.productStrings);
+      },
+  
+      initVariants: function() {
+        if (!document.getElementById(this.selectors.variantsJson)) {
+          return;
+        }
+  
+        this.variantsObject = JSON.parse(document.getElementById(this.selectors.variantsJson).innerHTML);
+  
+        var options = {
+          $container: this.$container,
+          enableHistoryState: this.settings.enableHistoryState,
+          singleOptionSelector: this.selectors.singleOptionSelector,
+          originalSelectorId: this.selectors.originalSelectorId,
+          variants: this.variantsObject
+        };
+  
+        if ($(this.selectors.variantColorSwatch).length) {
+          $(this.selectors.variantColorSwatch).on('change', function(evt) {
+            var $el = $(evt.currentTarget);
+            var color = $el.data('color-name');
+            var index = $el.data('color-index');
+            this.updateColorName(color, index);
+          }.bind(this));
+        }
+  
+        this.variants = new theme.Variants(options);
+
+        console.log(this)
+  
+        this.$container
+          .on('variantChange' + this.settings.namespace, this.updateCartButton.bind(this))
+          .on('variantPriceChange' + this.settings.namespace, this.updatePrice.bind(this))
+          .on('variantUnitPriceChange' + this.settings.namespace, this.updateUnitPrice.bind(this));
+  
+        if ($(this.selectors.sku).length) {
+          this.$container.on('variantSKUChange' + this.settings.namespace, this.updateSku.bind(this));
+        }
+        if (this.settings.inventory || this.settings.incomingInventory) {
+          this.$container.on('variantChange' + this.settings.namespace, this.updateInventory.bind(this));
+        }
+  
+        // Update individual variant availability on each selection
+        if (theme.settings.dynamicVariantsEnable && document.getElementById(this.selectors.currentVariantJson)) {
+          this.currentVariantObject = JSON.parse(document.getElementById(this.selectors.currentVariantJson).innerHTML);
+  
+          this.$variantSelectors.on('change' + this.settings.namespace, this.updateVariantAvailability.bind(this));
+  
+          // Set default state based on current selected variant
+          this.setCurrentVariantAvailability(this.currentVariantObject, true);
+        }
+      },
+  
+      initQtySelector: function() {
+        this.$container.find('.js-qty__wrapper').each(function() {
+          new theme.QtySelector($(this), {
+            namespace: '.product'
+          });
+        });
+      },
+  
+      initAjaxProductForm: function() {
+        if (theme.settings.cartType === 'drawer') {
+          new theme.AjaxProduct($(this.selectors.formContainer));
+        }
+      },
+  
+      /*============================================================================
+        Dynamic variant availability
+          - To disable, set dynamicVariantsEnable to false in theme.liquid
+      ==============================================================================*/
+      setCurrentVariantAvailability: function(variant) {
+        var valuesToEnable = {
+          option1: [],
+          option2: [],
+          option3: []
+        };
+  
+        // Disable all options to start
+        this.disableVariantGroup($(this.selectors.formContainer).find('.variant-input-wrap'));
+  
+        // Combine all available variants
+        var availableVariants = this.variantsObject.filter(function(el) {
+          if (variant.id === el.id) {
+            return false;
+          }
+  
+          // Option 1
+          if (variant.option2 === el.option2 && variant.option3 === el.option3) {
+            return true;
+          }
+  
+          // Option 2
+          if (variant.option1 === el.option1 && variant.option3 === el.option3) {
+            return true;
+          }
+  
+          // Option 3
+          if (variant.option1 === el.option1 && variant.option2 === el.option2) {
+            return true;
+          }
+        });
+  
+  
+        // IE11 can't handle shortform of {variant} so extra step is needed
+        var variantObject = {
+          variant: variant
+        };
+  
+        availableVariants = Object.assign({}, variantObject, availableVariants);
+  
+        // Loop through each available variant to gather variant values
+        for (var property in availableVariants) {
+          if (availableVariants.hasOwnProperty(property)) {
+            var item = availableVariants[property];
+            var option1 = item.option1;
+            var option2 = item.option2;
+            var option3 = item.option3;
+  
+            if (option1) {
+              if (valuesToEnable.option1.indexOf(option1) === -1) {
+                valuesToEnable.option1.push(option1);
+              }
+            }
+            if (option2) {
+              if (valuesToEnable.option2.indexOf(option2) === -1) {
+                valuesToEnable.option2.push(option2);
+              }
+            }
+            if (option3) {
+              if (valuesToEnable.option3.indexOf(option3) === -1) {
+                valuesToEnable.option3.push(option3);
+              }
+            }
+          }
+        }
+  
+        // Have values to enable, separated by option index
+        if (valuesToEnable.option1.length) {
+          this.enableVariantOptionByValue(valuesToEnable.option1, 'option1');
+        }
+        if (valuesToEnable.option2.length) {
+          this.enableVariantOptionByValue(valuesToEnable.option2, 'option2');
+        }
+        if (valuesToEnable.option3.length) {
+          this.enableVariantOptionByValue(valuesToEnable.option3, 'option3');
+        }
+      },
+  
+      updateVariantAvailability: function(evt, value, index) {
+        if (value && index) {
+          var newVal = value;
+          var optionIndex = index;
+        } else {
+          var $el = $(evt.currentTarget);
+          var newVal = $el.val() ? $el.val() : evt.currentTarget.value;
+          var optionIndex = $el.data('index');
+        }
+  
+        var variants = this.variantsObject.filter(function(el) {
+          return el[optionIndex] === newVal;
+        });
+  
+        // Disable all buttons/dropdown options that aren't the current index
+        $(this.selectors.formContainer).find('.variant-input-wrap').each(function(index, el) {
+          var $group = $(el);
+          var currentOptionIndex = $group.data('index');
+  
+          if (currentOptionIndex !== optionIndex) {
+            // Disable all options as a starting point
+            this.disableVariantGroup($group);
+  
+            // Loop through legit available options and enable
+            for (var i = 0; i < variants.length; i++) {
+              this.enableVariantOption($group, variants[i][currentOptionIndex]);
+            }
+          }
+        }.bind(this));
+      },
+  
+      disableVariantGroup: function($group) {
+        if (theme.settings.dynamicVariantType === 'dropdown') {
+          $group.find('option').prop('disabled', true)
+        } else {
+          $group.find('input').prop('disabled', true);
+          $group.find('label').toggleClass('disabled', true);
+        }
+      },
+  
+      enableVariantOptionByValue: function(array, index) {
+        var $group = $(this.selectors.formContainer).find('.variant-input-wrap[data-index="'+ index +'"]');
+  
+        for (var i = 0; i < array.length; i++) {
+          this.enableVariantOption($group, array[i]);
+        }
+      },
+  
+      enableVariantOption: function($group, value) {
+        // Selecting by value so escape it
+        value = value.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g,'\\$1');
+  
+        if (theme.settings.dynamicVariantType === 'dropdown') {
+          $group.find('option[value="'+ value +'"]').prop('disabled', false);
+        } else {
+          var $buttonGroup = $group.find('.variant-input[data-value="'+ value +'"]');
+          $buttonGroup.find('input').prop('disabled', false);
+          $buttonGroup.find('label').toggleClass('disabled', false);
+        }
+      },
+  
+      /*============================================================================
+        Variant change methods
+      ==============================================================================*/
+      updateColorName: function(color, index) {
+        // Updates on radio button change, not variant.js
+        $('#VariantColorLabel-' + this.sectionId + '-' + index).text(color);
+      },
+  
+      updateCartButton: function(evt) {
+        var variant = evt.variant;
+  
+        if (variant) {
+          if (variant.available) {
+            // Available, enable the submit button and change text
+            $(this.selectors.addToCart).removeClass(classes.disabled).prop('disabled', false);
+            $(this.selectors.addToCartText).html(theme.strings.addToCart);
+          } else {
+            // Sold out, disable the submit button and change text
+            $(this.selectors.addToCart).addClass(classes.disabled).prop('disabled', true);
+            $(this.selectors.addToCartText).html(theme.strings.soldOut);
+          }
+        } else {
+          // The variant doesn't exist, disable submit button
+          $(this.selectors.addToCart).addClass(classes.disabled).prop('disabled', true);
+          $(this.selectors.addToCartText).html(theme.strings.unavailable);
+        }
+      },
+  
+      updatePrice: function(evt) {
+        var variant = evt.variant;
+  
+        if (variant) {
+          // Regular price
+          $(this.selectors.price).html(theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat)).show();
+  
+          // Sale price, if necessary
+          if (variant.compare_at_price > variant.price) {
+            $(this.selectors.comparePrice).html(theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat));
+            $(this.selectors.priceWrapper).removeClass('hide');
+            $(this.selectors.price).addClass(classes.onSale);
+            $(this.selectors.comparePriceA11y).attr('aria-hidden', 'false');
+            $(this.selectors.priceA11y).attr('aria-hidden', 'false');
+  
+            var savings = variant.compare_at_price - variant.price;
+  
+            if (theme.settings.saveType == 'percent') {
+              savings = Math.round(((savings) * 100) / variant.compare_at_price) + '%';
+            } else {
+              savings = theme.Currency.formatMoney(savings, theme.settings.moneyFormat);
+            }
+  
+            $(this.selectors.savePrice)
+              .removeClass('hide')
+              .html(theme.strings.savePrice.replace('[saved_amount]', savings));
+          } else {
+            $(this.selectors.priceWrapper).addClass('hide');
+            $(this.selectors.price).removeClass(classes.onSale);
+            $(this.selectors.comparePriceA11y).attr('aria-hidden', 'true');
+            $(this.selectors.priceA11y).attr('aria-hidden', 'true');
+            $(this.selectors.savePrice).addClass('hide')
+          }
+        }
+      },
+  
+      updateUnitPrice: function(evt) {
+        var variant = evt.variant;
+  
+        if (variant && variant.unit_price) {
+          $(this.selectors.unitPrice).html(theme.Currency.formatMoney(variant.unit_price, theme.settings.moneyFormat));
+          $(this.selectors.unitPriceBaseUnit).text(theme.Currency.getBaseUnit(variant));
+          $(this.selectors.unitWrapper).removeClass('hide').removeClass(classes.visuallyHide);
+        } else {
+          $(this.selectors.unitWrapper).addClass(classes.visuallyHide);
+        }
+      },
+  
+      updateSku: function(evt) {
+        var variant = evt.variant;
+        var newSku = '';
+  
+        if (variant) {
+          if (variant.sku) {
+            newSku = variant.sku;
+          }
+  
+          $(this.selectors.sku).html(newSku);
+        }
+      },
+  
+      updateInventory: function(evt) {
+        var variant = evt.variant;
+  
+        // If we don't track variant inventory, hide stock
+        if (!variant || !variant.inventory_management) {
+          this.toggleInventoryQuantity(false);
+          this.toggleIncomingInventory(false);
+          return;
+        }
+  
+        if (variant.inventory_management === 'shopify' && window.inventories && window.inventories[this.sectionId]) {
+          variantInventoryObject = window.inventories[this.sectionId][variant.id];
+          var quantity = variantInventoryObject.quantity;
+          var showInventory = true;
+          var showIncomingInventory = false;
+  
+          if (quantity <= 0 || quantity > theme.settings.inventoryThreshold) {
+            showInventory = false;
+          }
+  
+          this.toggleInventoryQuantity(showInventory, quantity);
+  
+          if (!showInventory && variantInventoryObject.incoming) {
+            showIncomingInventory = true;
+          }
+  
+          this.toggleIncomingInventory(showIncomingInventory, variant.available, variantInventoryObject.next_incoming_date);
+        }
+      },
+  
+      toggleInventoryQuantity: function(show, qty) {
+        if (!this.settings.inventory) {
+          show = false;
+        }
+  
+        if (show) {
+          $(this.selectors.inventory)
+            .removeClass('hide')
+            .text(theme.strings.stockLabel.replace('[count]', qty));
+        } else {
+          $(this.selectors.inventory).addClass('hide');
+        }
+      },
+  
+      toggleIncomingInventory: function(show, available, date) {
+        if (!this.settings.incomingInventory) {
+          show = false;
+        }
+  
+        if (show) {
+          var string = available ?
+                       theme.strings.willNotShipUntil.replace('[date]', date) :
+                       theme.strings.willBeInStockAfter.replace('[date]', date);
+  
+          if (!date) {
+            string = theme.strings.waitingForStock;
+          }
+  
+          $(this.selectors.incomingInventory)
+            .removeClass('hide')
+            .text(string);
+        } else {
+          $(this.selectors.incomingInventory).addClass('hide');
+        }
+      },
+  
+      /*============================================================================
+        Product images
+      ==============================================================================*/
+  
+      setImageSizes: function() {
+        if (!this.settings.hasImages) {
+          return;
+        }
+  
+        // Get srcset image src, works on most modern browsers
+        // otherwise defaults to settings.imageSize
+        var currentImage = this.$firstProductImage[0].currentSrc;
+  
+        if (currentImage) {
+          this.settings.imageSize = theme.Images.imageSize(currentImage);
+        }
+      },
+  
+      initImageSwitch: function() {
+        if (!$(this.selectors.photoThumbs).length) {
+          return;
+        }
+  
+        $(this.selectors.photoThumbs)
+          .on('click', function(evt) {
+            evt.preventDefault();
+          })
+          .on('focus', function(evt) {
+            if (!this.settings.slickThumbInitialized) { return }
+            var index = $(evt.currentTarget).data('index');
+            if (index !== undefined) {
+              this.$thumbSlider.slick('slickGoTo', index);
+            }
+          }.bind(this))
+          .on('keydown', function(evt) {
+            if (evt.keyCode === 13) {
+              this.$container.find(selectors.currentSlide).focus();
+            }
+          }.bind(this));
+      },
+  
+      onUnload: function() {
+        this.$container.off(this.settings.namespace);
+        $('body').off(this.settings.namespace);
+        this.destroyImageCarousels();
+      }
+    });
+  
+    return Product;
+  })();
+  
+  theme.CollectionHeader = (function() {
+  
+    var selectors = {
+      hero: '.collection-hero',
+      parallaxContainer: '.parallax-container'
+    };
+  
+    function CollectionHeader(container) {
+      var $container = $(container);
+      this.namespace = '.collection-header';
+  
+      var $heroImageContainer = this.$heroContainer = $container.find(selectors.hero);
+      if ($heroImageContainer.length) {
+        this.checkIfNeedReload();
+      } else {
+        // Prevent 'Overlay header over collection' header setting
+        // from breaking layout. Required because settings from two
+        // different sections rely on each other on page load.
+        theme.headerNav.disableOverlayHeader();
+      }
+    }
+  
+    CollectionHeader.prototype = $.extend({}, CollectionHeader.prototype, {
+      // A liquid variable in the header needs a full page refresh
+      // if the collection header hero image setting is enabled
+      // and the header is set to sticky. Only necessary in the editor.
+      checkIfNeedReload: function() {
+        if (!Shopify.designMode) {
+          return;
+        }
+  
+        if (!theme.settings.overlayHeader) {
+          return;
+        }
+        var $header = $('.header-wrapper');
+        if (!$header.hasClass('is-light') && !$('.header-wrapper').hasClass('header-wrapper--sticky')) {
+          location.reload();
+        }
+      },
+  
+      onUnload: function() {}
+    });
+  
+    return CollectionHeader;
+  })();
+  
+  theme.CollectionSidebar = (function() {
+    var drawerStyle = false;
+  
+    function CollectionSidebar(container) {
+      this.$container = $(container);
+      this.init();
+    }
+  
+    CollectionSidebar.prototype = $.extend({}, CollectionSidebar.prototype, {
+      init: function() {
+        // Force close the drawer if it exists
+        this.onUnload();
+  
+        drawerStyle = this.$container.data('style') === 'drawer';
+        theme.FilterDrawer = new theme.Drawers('FilterDrawer', 'collection-filters', true);
+      },
+  
+      forceReload: function() {
+        this.init();
+      },
+  
+      onSelect: function() {
+        if (theme.FilterDrawer) {
+          if (!drawerStyle) {
+            theme.FilterDrawer.close();
+            return;
+          }
+  
+          if (drawerStyle || theme.config.bpSmall) {
+            theme.FilterDrawer.open();
+          }
+        }
+      },
+  
+      onDeselect: function() {
+        if (theme.FilterDrawer) {
+          theme.FilterDrawer.close();
+        }
+      },
+  
+      onUnload: function() {
+        if (theme.FilterDrawer) {
+          theme.FilterDrawer.close();
+        }
+      }
+    });
+  
+    return CollectionSidebar;
+  })();
+  
+  theme.Collection = (function() {
+  
+    var selectors = {
+      colorSwatchImage: '.grid-product__color-image',
+      colorSwatch: '.color-swatch--with-image',
+      sortSelect: '#SortBy'
+    };
+  
+    var data = {
+      sortBy: 'data-default-sortby'
+    };
+  
+    function Collection(container) {
+      this.container = container;
+      this.sectionId = $(container).attr('data-section-id');
+      this.namespace = '.collection-' + this.sectionId;
+  
+      this.init();
+      
+      
+      var ajaxProductForms = $(".product-grid-item_form_wrapper form.product-single__form");
+      for(var i=0;i<ajaxProductForms.length;i++){
+        new theme.AjaxProduct($(ajaxProductForms[i]));
+      }
+    }
+  
+    Collection.prototype = $.extend({}, Collection.prototype, {
+      init: function() {
+        // init is called on load and when tags are selected
+        this.$container = $(this.container);
+        var sectionId = this.sectionId = this.$container.attr('data-section-id');
+        this.namespace = '.collection-' + sectionId;
+  
+        this.$sortSelect = $(selectors.sortSelect);
+        this.$sortSelect.on('change', this.onSortChange.bind(this));
+        this.defaultSort = this.getDefaultSortValue();
+  
+        this.initParams();
+        this.colorSwatchHovering();
+  
+        theme.reinitSection('collection-sidebar');
+      },
+  
+      initParams: function() {
+        this.queryParams = {};
+  
+        if (location.search.length) {
+          var aKeyValue;
+          var aCouples = location.search.substr(1).split('&');
+          for (var i = 0; i < aCouples.length; i++) {
+            aKeyValue = aCouples[i].split('=');
+            if (aKeyValue.length > 1) {
+              this.queryParams[
+                decodeURIComponent(aKeyValue[0])
+              ] = decodeURIComponent(aKeyValue[1]);
+            }
+          }
+        }
+      },
+  
+      getSortValue: function() {
+        return this.$sortSelect.val() || this.defaultSort;
+      },
+  
+      getDefaultSortValue: function() {
+        return this.$sortSelect.attr(data.sortBy);
+      },
+  
+      onSortChange: function() {
+        this.queryParams.sort_by = this.getSortValue();
+  
+        if (this.queryParams.page) {
+          delete this.queryParams.page;
+        }
+  
+        window.location.search = $.param(this.queryParams);
+      },
+  
+      colorSwatchHovering: function() {
+        var $colorImage = $(selectors.colorSwatchImage);
+        if (!$colorImage.length) {
+          return;
+        }
+  
+        $(selectors.colorSwatch).on({
+          mouseenter: function (evt) {
+            $el = $(evt.currentTarget);
+            var id = $el.data('variant-id');
+            var image = $el.data('variant-image');
+            $('.grid-product__color-image--' + id)
+              .css('background-image', 'url(' + image + ')')
+              .addClass('is-active');
+          },
+          mouseleave: function (evt) {
+            $el = $(evt.currentTarget);
+            var id = $el.data('variant-id');
+            $('.grid-product__color-image--' + id).removeClass('is-active');
+          }
+        });
+      },
+  
+      forceReload: function() {
+        this.onUnload();
+        this.init();
+      },
+  
+      onUnload: function() {
+        $(window).off(this.namespace);
+        this.$container.off(this.namespace);
+        $(selectors.colorSwatch).off(this.namespace);
+      }
+    });
+  
+    return Collection;
+  })();
+  
+  theme.HeaderSection = (function() {
+  
+    var selectors = {
+      drawer: '#NavDrawer',
+      mobileSubNavToggle: '.mobile-nav__toggle-btn',
+      hasSublist: '.mobile-nav__has-sublist',
+      disclosureLocale: '[data-disclosure-locale]',
+      disclosureCurrency: '[data-disclosure-currency]'
+    };
+  
+    var classes = {
+      navExpanded: 'mobile-nav--expanded'
+    };
+  
+    function Header(container) {
+      var $container = this.$container = $(container);
+      var sectionId = this.sectionId = $container.attr('data-section-id');
+  
+      // Reload any slideshow if when the header is reloaded to make sure the
+      // sticky header works as expected
+      theme.reinitSection('slideshow-section');
+  
+      this.initDrawers();
+      theme.headerNav.init();
+      theme.announcementBar.init();
+  
+      this.cache = {};
+      this.cacheSelectors();
+  
+      // Set a timer to resize the header in case the logo changes size
+      if (Shopify.designMode) {
+        setTimeout(function() {
+          $('body').trigger('resize');
+        }, 500);
+      }
+    }
+  
+    Header.prototype = $.extend({}, Header.prototype, {
+      cacheSelectors: function() {
+        this.cache = {
+          $localeDisclosure: this.$container.find(selectors.disclosureLocale),
+          $currencyDisclosure: this.$container.find(selectors.disclosureCurrency)
+        };
+      },
+  
+      initDrawers: function() {
+        theme.NavDrawer = new theme.Drawers('NavDrawer', 'nav');
+        if (theme.settings.cartType === 'drawer') {
+          new theme.CartDrawer();
+        }
+  
+        this.drawerMenuButtons();
+      },
+  
+      drawerMenuButtons: function() {
+        $(selectors.drawer).find('.js-drawer-close').on('click', function(evt){
+          evt.preventDefault();
+          theme.NavDrawer.close();
+        });
+  
+        var $mobileSubNavToggle = $(selectors.mobileSubNavToggle);
+  
+        $mobileSubNavToggle.attr('aria-expanded', 'false');
+        $mobileSubNavToggle.each(function (i, el) {
+          var $el = $(el);
+          $el.attr('aria-controls', $el.attr('data-aria-controls'));
+        });
+  
+        $mobileSubNavToggle.on('click', function() {
+          var $el = $(this);
+          var currentlyExpanded = $el.attr('aria-expanded');
+          var toggleState = false;
+  
+          // Updated aria-expanded value based on state pre-click
+          if (currentlyExpanded === 'true') {
+            $el.attr('aria-expanded', 'false');
+          } else {
+            $el.attr('aria-expanded', 'true');
+            toggleState = true;
+          }
+  
+          // Toggle class that expands/collapses sublist
+          $el.closest(selectors.hasSublist).toggleClass(classes.navExpanded, toggleState);
+        });
+      },
+  
+      onBlockSelect: function(evt) {
+        theme.announcementBar.onBlockSelect(evt.detail.blockId);
+      },
+  
+      onDeselect: function() {
+        theme.announcementBar.onBlockDeselect();
+      },
+  
+      onUnload: function() {
+        theme.NavDrawer.close();
+        theme.headerNav.unload();
+        theme.announcementBar.unload();
+  
+        if (this.cache.$localeDisclosure.length) {
+          this.localeDisclosure.unload();
+        }
+  
+        if (this.cache.$currencyDisclosure.length) {
+          this.currencyDisclosure.unload();
+        }
+      }
+    });
+  
+    return Header;
+  
+  })();
+  
+  theme.FooterSection = (function() {
+  
+    var selectors = {
+      disclosureLocale: '[data-disclosure-locale]',
+      disclosureCurrency: '[data-disclosure-currency]'
+    };
+  
+    function Footer(container) {
+      var $container = this.$container = $(container);
+  
+      this.cache = {};
+      this.cacheSelectors();
+    }
+  
+    Footer.prototype = $.extend({}, Footer.prototype, {
+      cacheSelectors: function() {
+        this.cache = {
+          $localeDisclosure: this.$container.find(selectors.disclosureLocale),
+          $currencyDisclosure: this.$container.find(selectors.disclosureCurrency)
+        };
+      },
+  
+      onUnload: function() {
+        if (this.cache.$localeDisclosure.length) {
+          this.localeDisclosure.unload();
+        }
+  
+        if (this.cache.$currencyDisclosure.length) {
+          this.currencyDisclosure.unload();
+        }
+      }
+    });
+  
+    return Footer;
+  })();
+
+  // Medium breakpoint is also set in theme.scss.liquid and inline throughout some templates.
+  // Do not change values unless you know what you're doing.
+  theme.bp = {};
+  theme.bp.smallUp = 769;
+  theme.bp.small = theme.bp.smallUp - 1;
+
+  theme.config = {
+    bpSmall: false,
+    hasSessionStorage: true,
+    hasLocalStorage: true,
+    mediaQuerySmall: 'screen and (max-width: '+ theme.bp.small +'px)',
+    mediaQuerySmallUp: 'screen and (min-width: '+ theme.bp.smallUp +'px)',
+    isTouch: ('ontouchstart' in window) || window.DocumentTouch && window.document instanceof DocumentTouch || window.navigator.maxTouchPoints || window.navigator.msMaxTouchPoints ? true : false,
+    isIpad: /ipad/.test(window.navigator.userAgent.toLowerCase()) || (window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1),
+    stickyHeader: false,
+    recentlyViewed: []
+  };
+
+  if (theme.config.isIpad) {
+    document.documentElement.className += ' js-ipad';
+  }
+
+  theme.recentlyViewed = {
+    recent: {}, // will store handle+url of recent products
+    productInfo: {} // will store product data to reduce API calls
+  };
+
+  theme.init = function() {
+    theme.setGlobals();
+    theme.pageTransitions();
+    theme.collapsibles.init();
+    theme.rte.init();
+
+    AOS.init({
+      easing: 'ease-out-quad',
+      once: true,
+      offset: 60,
+      disableMutationObserver: true
+    });
+
+    $(document.documentElement).on('keyup.tab', function(evt) {
+      if (evt.keyCode === 9) {
+        $(document.documentElement).addClass('tab-outline');
+        $(document.documentElement).off('keyup.tab');
+      }
+    });
+
+    // Change email icon to submit text
+    $('.footer__newsletter-input').on('keyup', function() {
+      $(this).addClass('footer__newsletter-input--active');
+    });
+  };
+
+  theme.initSecondary = function() {
+    if (theme.settings.predictiveSearch) {
+      theme.predictiveSearch.init();
+    }
+    theme.collectionTemplate.init();
+  };
+
+  theme.setGlobals = function() {
+    theme.config.hasSessionStorage = theme.isStorageSupported('session');
+    theme.config.hasLocalStorage = theme.isStorageSupported('local');
+
+    if (theme.config.hasLocalStorage) {
+      theme.recentlyViewed.localStorage = window.localStorage.getItem('theme-recent');
+
+      if (theme.recentlyViewed.localStorage) {
+        theme.recentlyViewed.recent = JSON.parse(theme.recentlyViewed.localStorage);
+      }
+    }
+
+    theme.recentlyViewed.productInfo = theme.config.hasSessionStorage && sessionStorage['recent-products'] ? JSON.parse(sessionStorage['recent-products']) : {};
+
+    if (theme.config.isTouch) {
+      $('body').addClass('supports-touch');
+    }
+
+    enquire.register(theme.config.mediaQuerySmall, {
+      match: function() {
+        theme.config.bpSmall = true;
+        $('body').trigger('matchSmall');
+      },
+      unmatch: function() {
+        theme.config.bpSmall = false;
+        $('body').trigger('unmatchSmall');
+      }
+    });
+
+    enquire.register(theme.config.mediaQuerySmallUp, {
+      match: function() {
+        $('body').trigger('matchLarge');
+      },
+      unmatch: function() {
+        $('body').trigger('unmatchLarge');
+      }
+    });
+  };
+
+  theme.loadImageSection = function($container) {
+    // Wait until images inside container have lazyloaded class
+    function setAsLoaded() {
+      $container.removeClass('loading loading--delayed').addClass('loaded');
+    }
+
+    function checkForLazyloadedImage() {
+      return $container.find('.lazyloaded').length;
+    }
+
+    // If it has SVGs it's in the onboarding state so set as loaded
+    if ($container.find('svg').length) {
+      setAsLoaded();
+      return;
+    };
+
+    if (checkForLazyloadedImage() > 0) {
+      setAsLoaded();
+      return;
+    }
+
+    var interval = setInterval(function() {
+      if (checkForLazyloadedImage() > 0) {
+        clearInterval(interval);
+        setAsLoaded();
+      }
+    }, 80);
+  };
+
+  theme.isStorageSupported = function(type) {
+    // Return false if we are in an iframe without access to sessionStorage
+    if (window.self !== window.top) {
+      return false;
+    }
+
+    var testKey = 'test';
+    var storage;
+    if (type === 'session') {
+      storage = window.sessionStorage;
+    }
+    if (type === 'local') {
+      storage = window.localStorage;
+    }
+
+    try {
+      storage.setItem(testKey, '1');
+      storage.removeItem(testKey);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  theme.pageTransitions = function() {
+    if ($('body').data('transitions') == true) {
+      var namespace = '.page-transition';
+
+      // Hack test to fix Safari page cache issue.
+      // window.onpageshow doesn't always run when navigating
+      // back to the page, so the unloading class remains, leaving
+      // a white page. Setting a timeout to remove that class when leaving
+      // the page actually finishes running when they come back.
+      if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
+        $('a').off(namespace).on('click' + namespace, function() {
+          window.setTimeout(function() {
+            $('body').removeClass('unloading');
+          }, 1200);
+        });
+      }
+
+      // Add disable transition class to malito, anchor, and YouTube links
+      $('a[href^="mailto:"], a[href^="#"], a[target="_blank"], a[href*="youtube.com/watch"], a[href*="youtu.be/"]').each(function() {
+        $(this).addClass('js-no-transition');
+      });
+
+      $('a:not(.js-no-transition)').off(namespace).on('click' + namespace, function(evt) {
+        if (evt.metaKey) return true;
+        evt.preventDefault();
+        $('body').addClass('unloading');
+        var src = $(this).attr('href');
+        window.setTimeout(function() {
+          location.href = src;
+        }, 50);
+      });
+
+      // iOS caches the page state, so close the drawer when navigating away
+      $('a.mobile-nav__link').off(namespace).on('click' + namespace, function() {
+        theme.NavDrawer.close();
+      });
+    }
+  };
+
+  theme.reinitSection = function(section) {
+    for (var i = 0; i < sections.instances.length; i++) {
+      var instance = sections.instances[i];
+      if (instance['type'] === section) {
+        if (typeof instance.forceReload === 'function') {
+          instance.forceReload();
+        }
+      }
+    }
+  };
+
+  theme.reinitProductGridItem = function($scope) {
+    if (AOS) {
+      AOS.refreshHard();
+    }
+
+    // Refresh reviews app
+    if (window.SPR) {
+      SPR.initDomEls();SPR.loadBadges();
+    }
+
+    // Re-register product templates in quick view modals.
+    // Will not double-register.
+    sections.register('product-template', theme.Product, $scope);
+
+    // Re-hook up collapsible box triggers
+    theme.collapsibles.init();
+  };
+
+  window.onpageshow = function(evt) {
+    // Removes unload class when returning to page via history
+    if (evt.persisted) {
+      $('body').removeClass('unloading');
+    }
+  };
+
+  $(document).ready(function() {
+    theme.init();
+
+    window.sections = new theme.Sections();
+    sections.register('header-section', theme.HeaderSection);
+    sections.register('product-template', theme.Product);
+    sections.register('collection-header', theme.CollectionHeader);
+    sections.register('collection-sidebar', theme.CollectionSidebar);
+    sections.register('collection-template', theme.Collection);
+    sections.register('footer-section', theme.FooterSection);
+
+    theme.initSecondary();
+  });
+  
+  var links = document.links;
+for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
+  if (links[i].hostname !== window.location.hostname) {
+    links[i].target = '_blank';
+    links[i].relList.add('noreferrer', 'noopener');
+  }
+}
+})(theme.jQuery);
+
+window.InstaBuy = window.InstaBuy || {}
+window.InstaBuy.afterAddToCart = function() {
+  $('body').trigger('added.ajaxProduct')
+}

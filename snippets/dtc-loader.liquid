@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" width="250px"
+    height="250px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="icon-loader">
+    <circle cx="50" cy="50" fill="none" stroke="#000000" stroke-width="5" r="30"
+        stroke-dasharray="141.37166941154067 49.12388980384689">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="2s"
+            values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+    </circle>
+</svg>
+
+<script>
+    let loader = document.querySelector('.icon-loader');
+    let selector = {{ selector | json }};
+    
+    function checkForElementAndClearInterval(selector) {
+        const intervalId = setInterval(function () {
+            const element = document.querySelector(selector);
+            if (element) {
+            clearInterval(intervalId);
+            loader.style.display = 'none';
+            }
+        }, 200);
+    }
+
+    // Call the function with your desired selector
+    checkForElementAndClearInterval(selector);
+</script>

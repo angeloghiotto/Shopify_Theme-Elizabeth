@@ -1,0 +1,69 @@
+<div class="dtc-nav-btns">
+    {% assign links = linklists['dtc-new-flow'].links %}
+    <a href="{{ links[0].url }}" class="dtc-nav-btn">{{ links[0].title }}</a>
+    <a href="{{ links[1].url }}" class="dtc-nav-btn">{{ links[1].title }}</a>
+</div>
+
+
+<style>
+    .dtc-nav-btns{
+        display: none;
+    }
+    .hero-cta-filter{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .hero-cta-filter > a{
+        color: white;
+        max-width: 170px;
+        background: rgb(0, 0, 0);
+        color: white;
+        font-size: 15px;
+        padding: 16px 40px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+    @media (max-width:768px) {
+        .dtc-nav-btns{
+            display: flex;
+            width: 100%;
+        }
+        .dtc-nav-btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+            width: 50%;
+            height: 54px;
+            border: 1px solid #ECECEC;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.1em;
+            color: #1E1E1E;
+        }
+        .hero-cta-filter{
+            justify-content: center;
+    
+        }
+    }
+</style>
+
+
+
+{% schema %}
+    {
+      "name": "DTC Nav Shop Boy/Girl",
+      "settings": [],
+      "presets": [
+      {
+        "name": "DTC Nav Shop Boy/Girl",
+        "settings": {
+        }
+      }
+    ]
+    }
+  {% endschema %}

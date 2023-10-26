@@ -1,0 +1,448 @@
+{% assign show_two_call_to_action = false %}
+{% if section.settings.call-to-action-1-label != blank and section.settings.call-to-action-2-label != blank %}
+  {% assign show_two_call_to_action = true %}
+{% endif %}
+
+
+<div class="hero-dtc-content">
+  <div class="hero-dtc-page-width page-width">
+    <div class="left-content">
+      <div class="hero-title">
+
+
+        <div class="comment-and-author">
+          <div class="dtc-hero-comment">
+            {{ section.settings.section-review }}
+            {% if section.settings.section-review-author != blank %}
+              <span class="dtc-hero-author">
+                - {{ section.settings.section-review-author }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="hero-dtc-cta3">
+
+          <a href="{{ section.settings.call-to-action-3-url }}">{{ section.settings.call-to-action-3-label }}</a>
+
+        </div>
+
+        {% if show_two_call_to_action == true %}
+          <div class="hero-dtc-cta">
+
+            <a href="{{ section.settings.call-to-action-1-url }}">{{ section.settings.call-to-action-1-label }}</a>
+            <a href="{{ section.settings.call-to-action-2-url }}">{{ section.settings.call-to-action-2-label }}</a>
+
+          </div>
+
+
+        {% else %}
+          <div class="call-to-action-1-button hero-dtc-cta">
+            {% if section.settings.call-to-action-1-label != blank %}
+              <a href="{{ section.settings.call-to-action-1-url }}">{{ section.settings.call-to-action-1-label }}</a>
+            {% endif %}
+
+            {% if section.settings.call-to-action-2-label != blank %}
+              <a href="{{ section.settings.call-to-action-2-url }}">{{ section.settings.call-to-action-2-label }}</a>
+            {% endif %}
+          </div>
+
+        {% endif %}
+
+
+        {% if section.settings.show-star-rating == true %}
+          <div class="hero-rating-site">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+
+            <p>{{ section.settings.section-review-star-rating-content }}</p>
+
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  <div class="hero-right-div">
+    <a href="{{ section.settings.image-link }}"><img
+        class="hero-image"
+        loading="lazy"
+        height="500"
+        width="800"
+        src="{{ section.settings.desktop-hero-image | img_url: 'master' }}"></a>
+  </div>
+  <div class="hero-right-div-mobile">
+    <a href="{{ section.settings.image-link }}"><img
+        class="hero-image"
+        loading="lazy"
+        height="289"
+        width="386"
+        src="{{ section.settings.mobile-hero-image | img_url: 'master' }}"></a>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Section (DTC Pages)",
+    "class": "dtc-home-hero-section",
+    "settings": [
+      {
+        "id": "section-review",
+        "type": "textarea",
+        "label": "Review"
+      },
+      {
+        "type": "color_background",
+        "id": "hero-background-color",
+        "label": "Background"
+      },
+      {
+        "id": "section-review-author",
+        "type": "text",
+        "label": "Review Author"
+      },
+      {
+        "id": "call-to-action-1-url",
+        "type": "url",
+        "label": "Call To Action 1 Link"
+      }, {
+        "id": "call-to-action-1-label",
+        "type": "text",
+        "label": "Call To Action 1 Label"
+      }, {
+        "id": "call-to-action-2-url",
+        "type": "url",
+        "label": "Call To Action 2 Link"
+      }, {
+        "id": "call-to-action-2-label",
+        "type": "text",
+        "label": "Call To Action 2 Label"
+      }, {
+        "id": "call-to-action-3-url",
+        "type": "url",
+        "label": "Call To Action 3 Link"
+      }, {
+        "id": "call-to-action-3-label",
+        "type": "text",
+        "label": "Call To Action 3 Label"
+      }, {
+        "id": "desktop-hero-image",
+        "type": "image_picker",
+        "label": "Hero Image Desktop"
+      }, {
+        "id": "mobile-hero-image",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      }, {
+        "type": "checkbox",
+        "id": "show-star-rating",
+        "label": "Show star rating",
+        "default": true
+      }, {
+        "id": "section-review-star-rating-content",
+        "type": "textarea",
+        "label": "Star Rating Content"
+      }, {
+        "id": "image-link",
+        "type": "url",
+        "label": "Image Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Section (DTC Pages)",
+        "category": "ADVANCED LAYOUT"
+      }
+    ]
+  }
+{% endschema %}
+
+{% style %}
+  .dtc-hero-1 {
+    background-color: {{ section.settings.hero-background-color }}
+    ;
+    height: auto;
+    background-repeat: no-repeat no-repeat;
+    background-position: right center;
+    max-height: 607px;
+  }
+
+  .hero-dtc-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100vw;
+    font-family: Futura, sans-serif;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    // background : {{ section.settings.hero-background-color }};
+  }
+
+  .hero-right-div {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 50vw;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .comment-and-author {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  .dtc-hero-comment {
+    margin-bottom: 24px;
+    margin-top: 30px;
+  }
+
+  .dtc-hero-author {
+    font-size: 15px;
+    color: #D12837;
+    display: inline-flex;
+  }
+
+  .hero-right-div-mobile {
+    display: none;
+  }
+
+  .image-flag {
+    max-width: 16px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+    line-height: 47px;
+    font-weight: 400;
+    max-width: 500px;
+    font-family: FUTURA;
+  }
+
+  .hero-title h3 {
+    text-transform: none;
+    font-weight: 400;
+    line-height: 46px;
+    position: relative;
+    font-size: 39px;
+    font-family: Futura, sans-serif;
+  }
+
+  .hero-title span {
+    color: #D12837;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: Futura, sans-serif;
+  }
+
+  .hero-dtc-cta {
+    display: none;
+    grid-template-columns: 160px 160px;
+    row-gap: 15px;
+    column-gap: 15px;
+  }
+
+  .hero-dtc-cta a {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    max-width: 167px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px !important;
+    font-size: 15px !important;
+  }
+
+  .hero-dtc-cta a:hover {
+    color: rgb(255, 255, 255);
+  }
+
+
+  .hero-dtc-cta3 {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .hero-dtc-cta3 a {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.2em;
+    border-radius: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px !important;
+    font-size: 17px !important;
+    padding: 1rem 5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .hero-dtc-cta3 a:hover {
+    color: rgb(255, 255, 255);
+  }
+
+  .dtc-hero-image {
+    display: flex;
+    justify-self: end;
+  }
+
+  .hero-rating-site {
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .hero-rating-site p {
+    margin: 5px 0 0 7px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  @media(max-width: 800px) {
+    .hero-dtc-page-width {
+      order: 2;
+    }
+
+    .hero-dtc-cta3 {
+      justify-content: center;
+    }
+
+    .hero-dtc-cta3 a {
+      background: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.2em;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px !important;
+      font-size: 17px !important;
+      padding: 1rem 5rem;
+      font-weight: bold;
+    }
+
+    .hero-dtc-content {
+      grid-template-columns: 100%;
+      padding-bottom: 0; // updated nico
+    }
+
+    .left-content {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .hero-title h3 {
+      line-height: 30px;
+      font-size: 25px !important;
+    }
+
+    .hero-title span {
+      color: #D12837;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .dtc-hero-author {
+      display: block;
+    }
+
+    .hero-dtc-cta {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      justify-content: center;
+    }
+
+    .hero-rating-site {
+      margin-top: 15px;
+      display: block;
+      align-items: center;
+    }
+
+    .dtc-hero-comment {
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    .comment-and-author {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .hero-comment-author {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .hero-rating-site p {
+      margin-left: 0;
+      margin-top: -20px;
+    }
+
+    .hero-right-div-mobile {
+      display: flex;
+      justify-content: center;
+      max-width: 100vw;
+    }
+
+    .hero-image {
+      width: 100vw;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .hero-right-div {
+      display: none;
+    }
+
+    .call-to-action-1-button {
+      display: block;
+      max-width: 167px;
+      margin: 0 auto;
+    }
+
+  }
+
+  img.image-flag {
+    display: none;
+  }
+{% endstyle %}

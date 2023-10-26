@@ -1,0 +1,67 @@
+{% unless template contains 'product' %}
+  {% if collection.handle == "holiday-2023" %}
+  <div class="item-type-variant">
+    {% comment %} <p style="text-align: center; text-decoration: underline; font-weight: bold; margin-bottom: 3px;"> Shop Black Friday by Style</p> {% endcomment %}
+    <div class="item_picker_scroller">
+      {% for link in linklists.shop-item.links %}
+        <a href="{{link.url}}">
+          <div class="item-type-item">
+            {% for collection in collections %}
+              {% assign collection_url = "/collections/" | append: collection.handle %}
+              {% if link.url == collection_url and collection.metafields.custom.dtc_collection_navigation_swatch != blank %}
+                <img width="65" height="65" loading="lazy" class="shop-item-image" src="{{ collection.metafields.custom.dtc_collection_navigation_swatch | image_url }}">                
+                <p>{{link.title}}</p>
+              {% endif %}
+            {%- endfor %}
+          </div>
+        </a>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <style>
+    .shop-item-image {
+    border-radius: 50%
+    }
+
+    .item-type-variant {
+      display: none;  /* Hide by default on all screen sizes */
+    }
+
+    @media only screen and (max-width: 767px) {
+      .item-type-variant {
+        display: block;  /* Show only on mobile (screen width <= 767px) */
+      }
+
+      .item-type-container {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+        display: grid;
+      }
+  
+      .item_picker_scroller {
+        display: inline-flex;
+        overflow-x: scroll;
+        max-width: 100%;
+        padding-left: 10px;
+      }
+  
+      .item-type-item {
+        width: 65px;
+        text-align: center;
+        flex-shrink: 0;
+        margin-right: 10px;
+      }
+  
+      .item-type-item p {
+        margin-bottom: 10px;
+        line-height: 15px;
+      }
+  
+      .item-type-variant {
+        margin-top: 20px;
+      }
+    }
+  </style>
+  
+{% endif %}
+{% endunless %}

@@ -1,0 +1,329 @@
+
+{% if template == 'product' %}
+  {% include 'product-template',
+    description_style: section.settings.description_style,
+    image_position: section.settings.image_position,
+    image_container_width: section.settings.image_size,
+    section_id: product.id,
+    social: section.settings.social_enable,
+    thumbnail_position: section.settings.thumbnail_position,
+    thumbnail_arrows: section.settings.thumbnail_arrows,
+    video_looping: section.settings.enable_video_looping,
+    video_style: section.settings.product_video_style,
+    scarce_title: section.settings.scarce_title,
+    scarce_description: section.settings.scarce_description
+  %}
+{% endif %}
+
+{% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
+  <hr id="Reviews-{{ product.id }}" class="hr--clear">
+  <div class="index-section product-reviews product-reviews--full">
+    <div class="page-width">
+     <h3 style="text-align:center;">Customer Reviews</h3>    
+      <!--
+      <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{product.id}}" data-product-title="{{product.title}}" data-product-type="{{product.type}}" style="display: block;"></span>
+      -->
+      {% render 'okendo-reviews-widget', product: product %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "text",
+        "id": "first-swatch",
+        "label": "First swatch Option",
+        "default": "NEW"
+      },
+      {
+        "type": "text",
+        "id": "second-swatch",
+        "label": "Second swatch Option",
+        "default": "SEASON"
+      },
+      {
+        "type": "text",
+        "id": "third-swatch",
+        "label": "Third swatch Option",
+        "default": "BEST SELLERS"
+      },
+      {
+        "type": "select",
+        "id": "description_style",
+        "label": "Description position",
+        "default": "default",
+        "options": [
+          {
+            "value": "default",
+            "label": "Next to media"
+          },
+          {
+            "value": "full",
+            "label": "Below media"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "social_enable",
+        "label": "Enable social sharing",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "callout",
+        "label": "Callout text",
+        "default": "Free Returns*"
+      },
+      {
+        "type": "richtext",
+        "id": "callout_content",
+        "label": "Callout Popup Content",
+        "default": "<p>We offer domestirc returns and exchanges.</p>"
+      },
+      {
+        "type": "text",
+        "id": "scarce_title",
+        "label": "Scarcity title"
+      },
+      {
+        "type": "text",
+        "id": "print_also_available_text",
+        "label": "Print Label",
+        "default":"This print is also available as:"
+      },
+
+      {
+        "type": "text",
+        "id": "scarce_description",
+        "label": "Scarcity description"
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Position",
+        "default": "right",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_size",
+        "label": "Size",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnail position",
+        "default": "beside",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Next to media"
+          },
+          {
+            "value": "below",
+            "label": "Below media"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "thumbnail_arrows",
+        "label": "Show thumbnail arrows"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": "Enable video looping",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_video_style",
+        "label": "Video style",
+        "default": "muted",
+        "options": [
+          {
+            "value": "muted",
+            "label": "Video without sound"
+          },
+          {
+            "value": "unmuted",
+            "label": "Video with sound"
+          }
+        ],
+        "info": "Video with sound will not autoplay"
+      },
+      {
+        "type": "text",
+        "id": "print-detail-text",
+        "label": "Print Detail Button Text",
+        "default":"Print Detail"
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Stretch Video Header",
+        "default": "The most elastic fabric"
+      },
+      {
+        "type": "url",
+        "id": "video_url",
+        "label": "Stretch Video URL"
+      },
+      {
+        "type": "text",
+        "id": "why-title",
+        "label": "Why Bamboo title",
+        "default":"Why Doctors Recommend Bamboo Over Cotton:"
+      },
+      {
+        "type": "image_picker",
+        "id": "why-bamboo-img",
+        "label": "Why Bamboo Img Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "why-bamboo-img-mob",
+        "label": "Why Bamboo Img Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "first-drop-img",
+        "label": "First Dropdown Icon"
+      },
+      {
+        "type": "text",
+        "id": "first-drop-text",
+        "label": "First Dropdown Title",
+        "default":"Features"
+      },
+      {
+        "type": "richtext",
+        "id": "first-drop-content",
+        "label": "First Dropdown Content",
+        "default":"<p>Firs Content</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "second-drop-img",
+        "label": "Second Dropdown Icon"
+      },
+      {
+        "type": "text",
+        "id": "second-drop-text",
+        "label": "Second Dropdown Title",
+        "default":"Features"
+      },
+      {
+        "type": "richtext",
+        "id": "second-drop-content",
+        "label": "Second Dropdown Content",
+        "default":"<p>Firs Content</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "third-drop-img",
+        "label": "Third Dropdown Icon"
+      },
+      {
+        "type": "text",
+        "id": "third-drop-text",
+        "label": "Third Dropdown Title",
+        "default":"Features"
+      },
+      {
+        "type": "richtext",
+        "id": "third-drop-content",
+        "label": "Third Dropdown Content",
+        "default":"<p>Firs Content</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "fourth-drop-img",
+        "label": "Fourth Dropdown Icon"
+      },
+      {
+        "type": "text",
+        "id": "fourth-drop-text",
+        "label": "Fourth Dropdown Title",
+        "default":"Features"
+      },
+      {
+        "type": "richtext",
+        "id": "fourth-drop-content",
+        "label": "Fourth Dropdown Content",
+        "default":"<p>Firs Content</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "fifth-drop-img",
+        "label": "Fifth Dropdown Icon"
+      },
+      {
+        "type": "text",
+        "id": "fifth-drop-text",
+        "label": "Fifth Dropdown Title",
+        "default": "Complete The Look"
+      },
+      {
+        "type": "richtext",
+        "id": "fifth-drop-content",
+        "label": "Fifth Dropdown Content"
+      }
+    ]
+  }
+{% endschema %}
+
+<!--
+{% if product.metafields.loox.num_reviews %}
+<script id="looxSchemaJson" type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Product",
+	"@id": {{ canonical_url | json }},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "{{ product.metafields.loox.avg_rating }}",
+		"reviewCount": "{{ product.metafields.loox.num_reviews }}"
+	},
+	"name": {{ product.title | json }}
+}
+</script>
+{% endif %}
+-->

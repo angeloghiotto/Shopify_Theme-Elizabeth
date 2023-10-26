@@ -1,0 +1,8 @@
+<div class="sticky-atc-overlay"></div>
+<div id="dtc-form">
+  <div class="close-variant-sticky-form"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg></div>
+  {% include 'product-form', section_id: section_id, product_is_available: product.available %}
+  {% if product.available %}
+    <div class="fake-add-to-cart-button"><button class="btn btn--full">ADD TO CART - <span class="variant-price-dtc">{{ current_variant.price | money }}</span></button></div>
+  {% endif %}
+</div>

@@ -1,0 +1,129 @@
+<style>
+  @-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); } }
+
+@keyframes marquee {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); } }
+  .promotion-banner-wrapper
+  {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ffffff;
+  }
+  .promotion-banner-inner
+  {
+    padding-top: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-animation-name: marquee;
+    animation-name: marquee;
+    -webkit-animation-duration: 25s;
+    animation-duration: 25s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+  }
+  .promotion-banner-content
+  {
+    white-space: nowrap;
+  }
+  .promotion-banner-content span
+  {
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    white-space: nowrap;
+    margin: 0 1.1rem;
+    color: #000;
+  }
+  @media only screen and (min-width: 1024px)
+  {
+    .promotion-banner-content span
+    {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 0 0.5rem;
+    }
+  }
+  @media only screen and (max-width: 767px)
+  {
+    .promotion-banner-inner
+    {
+      animation-duration: 40s;
+    }
+  }
+</style>
+<div class="promotion-banner-wrapper"{% if section.settings.background_color != blank %} style="background-color: {{ section.settings.background_color }};"{% endif %}>
+  <div class="promotion-banner-inner">
+    {% for i in (1..3) %}
+    <div class="promotion-banner-content">
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank %}
+          <span>{{ block.settings.title }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Promotion Banner",
+    "class": "index-section--promotion",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "text",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+      "name": "Promotion Banner",
+      "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

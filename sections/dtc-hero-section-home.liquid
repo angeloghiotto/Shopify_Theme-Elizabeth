@@ -1,0 +1,439 @@
+<div class="hero-dtc-content">
+  <div class="hero-dtc-page-width page-width">
+    <div class="left-content">
+      <div class="hero-title">
+
+
+        <div class="comment-and-author">
+          <div class="dtc-hero-comment">
+            {{ section.settings.review_section }}
+            {% if section.settings.review_section_author != blank %}
+              <span class="dtc-hero-author">
+                - {{ section.settings.review_section_author }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="hero-dtc-cta">
+            {% if section.settings.cta1_label != blank %}
+                <a href="{{ section.settings.cta1_url }}">{{ section.settings.cta1_label }}</a>
+            {% endif %}
+
+            {% if section.settings.cta2_label != blank %}
+                <a href="{{ section.settings.cta2_url }}">{{ section.settings.cta2_label }}</a>
+            {% endif %}
+        </div>
+
+
+        <div class="hero-cta-filter">
+            {% if section.settings.cta4_label != blank %}
+                <a href="{{ section.settings.cta4_url }}">{{ section.settings.cta4_label }}</a>
+            {% endif %}
+        </div>
+
+        {% if section.settings.show_star_rating == true %}
+          <div class="hero-rating-site">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+            <img
+              loading="lazy"
+              width="20"
+              height="20"
+              src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Rating_Star.svg?v=1668097514">
+
+            <p>{{ section.settings.review_section_star_rating_content }}</p>
+
+          </div>
+        {% endif %}
+
+        {% if section.settings.cta3_label != blank %}
+            <div class="dtc-more-btn">
+                <a href="{{ section.settings.cta3_url }}">{{ section.settings.cta3_label }}</a>
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="hero-right-div">
+    {% assign load_strategy = 'lazy' %}
+    {% if section.settings.is_above_the_fold %}
+      {% assign load_strategy = 'eager' %}
+    {% endif %}
+    <a href="{{ section.settings.img_link }}"><img
+        class="hero-image"
+        loading="{{ load_strategy }}"
+        {% if section.settings.is_above_the_fold %}
+          fetchpriority="high"
+        {% endif %}
+        height="500"
+        width="800"
+        src="{{ section.settings.desktop_hero_img | img_url: 'master' }}"></a>
+  </div>
+  <div class="hero-right-div-mobile">
+    <a href="{{ section.settings.img_link }}"><img
+        class="hero-image"
+        loading="{{ load_strategy }}"
+        {% if section.settings.is_above_the_fold %}
+          fetchpriority="high"
+        {% endif %}
+        height="289"
+        width="386"
+        src="{{ section.settings.mobile_hero_img | img_url: 'master' }}"></a>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "DTC Hero Section #2",
+    "class": "dtc-hero-section-home",
+    "settings": [
+      {
+        "id": "review_section",
+        "type": "textarea",
+        "label": "Review"
+      },
+      {
+        "type": "color_background",
+        "id": "hero_bg_color",
+        "label": "Background"
+      },
+      {
+        "id": "review_section_author",
+        "type": "text",
+        "label": "Review Author"
+      },
+      {
+        "id": "cta1_url",
+        "type": "url",
+        "label": "Call To Action 1 Link"
+      }, {
+        "id": "cta1_label",
+        "type": "text",
+        "label": "Call To Action 1 Label"
+      }, {
+        "id": "cta2_url",
+        "type": "url",
+        "label": "Call To Action 2 Link"
+      }, {
+        "id": "cta2_label",
+        "type": "text",
+        "label": "Call To Action 2 Label"
+      }, {
+        "id": "cta3_url",
+        "type": "url",
+        "label": "Call To Action 3 Link"
+      }, {
+        "id": "cta3_label",
+        "type": "text",
+        "label": "Call To Action 3 Label"
+      },
+      {
+        "id": "cta4_url",
+        "type": "url",
+        "label": "Call To Action 4 Link"
+      }, {
+        "id": "cta4_label",
+        "type": "text",
+        "label": "Call To Action 4 Label"
+      }, {
+        "id": "desktop_hero_img",
+        "type": "image_picker",
+        "label": "Hero Image Desktop"
+      }, {
+        "id": "mobile_hero_img",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "is_above_the_fold",
+        "label": "Section is above the fold",
+        "info": "If checked, the image will not be lazily loaded in order to improve page performance",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "show_star_rating",
+        "label": "Show star rating",
+        "default": true
+      }, {
+        "id": "review_section_star_rating_content",
+        "type": "textarea",
+        "label": "Star Rating Content"
+      }, {
+        "id": "img_link",
+        "type": "url",
+        "label": "Image Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "DTC Hero Section #2",
+        "category": "ADVANCED LAYOUT"
+      }
+    ]
+  }
+{% endschema %}
+
+{% style %}
+    .dtc-hero-section-home .dtc-hero-1 {
+        background-color: {{ section.settings.hero_bg_color }};
+        height: auto;
+        background-repeat: no-repeat no-repeat;
+        background-position: right center;
+        max-height: 607px;
+    }
+
+    .dtc-hero-section-home .hero-dtc-content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100vw;
+        font-family: Futura, sans-serif;
+        align-items: center;
+        justify-content: center;
+        background: {{ section.settings.hero_bg_color }};
+    }
+
+    .dtc-hero-section-home .hero-right-div {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 50vw;
+    }
+
+    .dtc-hero-section-home .hero-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .dtc-hero-section-home .comment-and-author {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .dtc-hero-section-home .dtc-hero-comment {
+        margin-bottom: 24px;
+        margin-top: 30px;
+    }
+
+    .dtc-hero-section-home .dtc-hero-author {
+        font-size: 15px;
+        color: #D12837;
+        display: inline-flex;
+    }
+
+    .dtc-hero-section-home .hero-right-div-mobile {
+        display: none;
+    }
+
+    .dtc-hero-section-home .image-flag {
+        max-width: 16px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+
+    .dtc-hero-section-home .hero-title {
+        font-size: 18px;
+        line-height: 47px;
+        font-weight: 400;
+        max-width: 500px;
+        font-family: FUTURA;
+    }
+
+    .dtc-hero-section-home .hero-title h3 {
+        text-transform: none;
+        font-weight: 400;
+        line-height: 46px;
+        position: relative;
+        font-size: 39px;
+        font-family: Futura, sans-serif;
+    }
+
+    .dtc-hero-section-home .hero-title span {
+        color: #D12837;
+        font-size: 17px;
+        font-weight: 400;
+        font-family: Futura, sans-serif;
+        text-transform: uppercase;
+    }
+
+    .dtc-hero-section-home .hero-dtc-cta {
+        display: none;
+    }
+
+    .dtc-hero-section-home .hero-dtc-cta a {
+      background: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      font-size: 15px;
+      padding: 16px 45px;
+      line-height: 18px;
+      text-transform: uppercase;
+      margin-right: 20px;
+      min-width: 170px;
+    }
+
+    .dtc-hero-section-home .hero-dtc-cta a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    .dtc-hero-section-home .dtc-more-btn {
+        margin-top: 40px;
+    }
+
+    .dtc-hero-section-home .dtc-more-btn a {
+        border: 1px solid #D6D6D6;
+        padding: 16px 50px;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .dtc-hero-section-home .dtc-hero-image {
+        display: flex;
+        justify-self: end;
+    }
+
+    .dtc-hero-section-home .hero-rating-site {
+        margin-top: 15px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .dtc-hero-section-home .hero-rating-site p {
+        margin: 5px 0 0 7px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .dtc-hero-section-home .hero-dtc-page-width {
+            order: 2;
+        }
+
+        .dtc-hero-section-home .hero-dtc-content {
+            grid-template-columns: 100%;
+            padding-bottom: 0;
+        }
+
+        .dtc-hero-section-home .left-content {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dtc-hero-section-home .hero-title h3 {
+            line-height: 30px;
+            font-size: 25px !important;
+        }
+
+        .dtc-hero-section-home .hero-title span {
+            color: #D12837;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .dtc-hero-section-home .dtc-hero-author {
+            display: block;
+        }
+
+        .dtc-hero-section-home .hero-dtc-cta {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            justify-content: space-between;
+        }
+
+        .dtc-hero-section-home .dtc-more-btn {
+            margin: 20px 0 50px 0;
+        }
+
+        .dtc-hero-section-home .hero-dtc-cta a {
+            margin-right: 0;
+        }
+
+        .dtc-hero-section-home .hero-rating-site {
+            margin-top: 15px;
+            display: block;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dtc-hero-section-home .dtc-hero-comment {
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .dtc-hero-section-home .comment-and-author {
+            font-size: 22px;
+            line-height: 30px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .dtc-hero-section-home .hero-comment-author {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .dtc-hero-section-home .hero-rating-site p {
+            margin-left: 0;
+            margin-top: -20px;
+        }
+
+        .dtc-hero-section-home .hero-right-div-mobile {
+            display: flex;
+            justify-content: center;
+            max-width: 100vw;
+        }
+
+        .dtc-hero-section-home .hero-image {
+            width: 100vw;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .dtc-hero-section-home .hero-right-div {
+            display: none;
+        }
+
+        .dtc-hero-section-home .call-to-action-1-button {
+            display: block;
+            max-width: 167px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .dtc-hero-section-home .hero-dtc-cta a {
+            padding: 20px;
+        }
+    }
+
+    .dtc-hero-section-home img.image-flag {
+        display: none;
+    }
+{% endstyle %}

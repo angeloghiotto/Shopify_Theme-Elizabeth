@@ -1,0 +1,36 @@
+<div class="page-width klaviyo-embed">
+	{{ section.settings.klaviyo_embed }}
+</div>
+
+<style>
+  @media (min-width: 768px) {
+    .klaviyo-embed {
+      max-width: 500px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Klaviyo Embed",
+    "settings": [
+      {
+        "type": "text",
+        "id": "klaviyo_embed",
+        "label": "Klaviyo Form Embed Code"
+      }
+	],
+    "presets": [
+      {
+        "name": "Klaviyo Embed",
+        "category": "Drops"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

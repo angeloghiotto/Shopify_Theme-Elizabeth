@@ -1,0 +1,405 @@
+<div class="dtc-pdp-dropdown">
+  <div class="drop-tem dtc-bundle">
+    <div class="drop-header">
+      <button class="drop-button5">
+        <div>
+          {% if product.metafields.custom.first_dropdown_icon != blank %}
+            <img src="{{ product.metafields.custom.fifth_dropdown_icon | img_url }}" alt="">
+            {% else %}
+            <img src="{{ section.settings.fifth-drop-img | img_url }}" alt="">
+          {% endif %}
+          {% if product.metafields.custom.fifth_dropdown_title != blank %}
+             <span>{{ product.metafields.custom.fifth_dropdown_title }}</span>
+            {% else %}
+              <span>{{ section.settings.fifth-drop-text }}</span>
+          {% endif %}
+        </div>
+        <img class="arrow-drop rotate" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_3.svg?v=1686337799" alt="">
+     </button>
+    </div>
+    <div class="drop-content show">
+      {% if section.settings.fifth-drop-content != blank %}
+        {{ section.settings.fifth-drop-content }}
+      {% else %}
+        <div data-rebuy-id="97453" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+        {% render 'dtc-loader',
+          selector: '.widget-type-dynamic-bundle'
+        %}
+      {% endif %}
+    </div>
+    
+  </div>
+
+  <div class="drop-tem">
+    <div class="drop-header">
+      <button class="drop-button1">
+        <div>
+          {% if product.metafields.custom.first_dropdown_icon != blank %}
+            <img src="{{ product.metafields.custom.first_dropdown_icon | img_url }}" alt="">
+            {% else %}
+            <img src="{{ section.settings.first-drop-img | img_url }}" alt="">
+          {% endif %}
+          {% if product.metafields.custom.first_dropdown_title != blank %}
+             <span>{{ product.metafields.custom.first_dropdown_title }}</span>
+            {% else %}
+              <span>{{ section.settings.first-drop-text }}</span>
+          {% endif %}
+        </div>
+        <img class="arrow-drop" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_3.svg?v=1686337799" alt="">
+     </button>
+    </div>
+    <div class="drop-content">
+      {% if product.metafields.custom.first_dropown_content != blank %}
+      {{ product.metafields.custom.first_dropown_content | metafield_tag }}
+      {% else %}
+      {{ section.settings.first-drop-content }}
+      {% endif %}
+      </div>
+  </div>
+  
+  <div class="drop-tem">
+    <div class="drop-header">
+      <button class="drop-button2">
+        <div>
+          {% if product.metafields.custom.second_dropdown_icon != blank %}
+            <img src="{{ product.metafields.custom.second_dropdown_icon | img_url }}" alt="">
+            {% else %}
+            <img src="{{ section.settings.second-drop-img | img_url }}" alt="">
+          {% endif %}
+          {% if product.metafields.custom.second_dropdown_title != blank %}
+             <span>{{ product.metafields.custom.second_dropdown_title }}</span>
+            {% else %}
+              <span>{{ section.settings.second-drop-text }}</span>
+          {% endif %}
+        </div>
+        <img class="arrow-drop" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_3.svg?v=1686337799" alt="">
+     </button>
+    </div>
+    <div class="drop-content">
+      {% if product.metafields.custom.second_dropdown_content != blank %}
+      {{ product.metafields.custom.second_dropdown_content | metafield_tag }}
+      {% else %}
+      {{ section.settings.second-drop-content }}
+      {% endif %}    
+      </div>
+  </div>
+  
+  <div class="drop-tem">
+    <div class="drop-header">
+      <button class="drop-button3">
+        <div>
+          {% if product.metafields.custom.third_dropdown_icon != blank %}
+            <img src="{{ product.metafields.custom.third_dropdown_icon | img_url }}" alt="">
+            {% else %}
+            <img src="{{ section.settings.third-drop-img | img_url }}" alt="">
+          {% endif %}
+          {% if product.metafields.custom.third_dropdown_title != blank %}
+             <span>{{ product.metafields.custom.third_dropdown_title }}</span>
+            {% else %}
+              <span>{{ section.settings.third-drop-text }}</span>
+          {% endif %}
+        </div>
+        <img class="arrow-drop" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_3.svg?v=1686337799" alt="">
+     </button>
+    </div>
+    <div class="drop-content">
+      {% if product.metafields.custom.third_dropdown_content != blank %}
+      {{ product.metafields.custom.third_dropdown_content | metafield_tag }}
+      {% else %}
+      {{ section.settings.third-drop-content }}
+      {% endif %}    </div>
+  </div>
+  
+  <div class="drop-tem">
+    <div class="drop-header">
+      <button class="drop-button4">
+        <div>
+          {% if product.metafields.custom.fourth_dropdown_icon != blank %}
+            <img src="{{ product.metafields.custom.fourth_dropdown_icon | img_url }}" alt="">
+            {% else %}
+            <img src="{{ section.settings.fourth-drop-img | img_url }}" alt="">
+          {% endif %}
+          {% if product.metafields.custom.fourth_dropdown_title != blank %}
+             <span>{{ product.metafields.custom.fourth_dropdown_title }}</span>
+            {% else %}
+              <span>{{ section.settings.fourth-drop-text }}</span>
+          {% endif %}
+        </div>
+        <img class="arrow-drop" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Vector_3.svg?v=1686337799" alt="">
+     </button>
+    </div>
+    <div class="drop-content">
+      {% assign product_type = product.type | handleize %}
+      {% assign size_guide_handle = 'size-guide-' | append: product_type %}
+      <div class="new-class-size-popup">
+
+      <div class="new-class-size">
+        <div class="new-size-img">
+          <img class="new-prod-img-size" src="{{ product.media[0].src | img_url:'200x' }}" alt="">
+        </div>
+        <div class="new-sel-div">
+          <span class="new-customer-say">Customers say this <span id="new-fits-span"></span><strong id="new-dtc-filler"></strong></span>
+          <div class="new-box-sel-div">
+            <div id="new-box-sel-1"></div>
+            <div id="new-box-sel-2"></div>
+            <div id="new-box-sel-3"></div>
+            <div id="new-box-sel-4"></div>
+            <div id="new-box-sel-5"></div>
+          </div>
+          <div class="new-runs-div">
+            <span>runs small</span>
+            <span>runs large</span>
+          </div>
+        </div>
+      </div>
+      {% if pages[size_guide_handle] != blank %}
+      <div class="new-size-table-pdp">
+        {{ pages[size_guide_handle].content }}
+      </div>
+      {% else %}
+      <div class="new-size-table-pdp">
+          {{ pages[settings.product_content_2].content }}
+        </div>    {% endif %}
+    
+      <div class="new-still-in-pdp">
+        <span> <strong> Still in doubt?</strong> Chat with us by tapping on the 💬 button.</span>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+
+<style>
+
+.drop-tem.dtc-bundle{
+  display: none;
+}
+
+.dtc-bundle .primary-title{
+  text-transform: capitalize;
+}
+
+.dtc-bundle .rebuy-bundle__images{
+  width: 100%!important;
+}
+
+.icon-loader{
+  width: 15%;
+}
+
+.drop-content {
+  max-height: 0;
+  padding: 0 16px;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.drop-content.show {
+  max-height: 100%;
+  padding: 16px;
+  opacity: 1;
+}
+
+.rebuy-product-price div{
+  display: flex;
+}
+
+  .drop-content.show {
+    display: block;
+    padding-bottom: 20px;
+    }
+
+  .drop-content.show > ul > li {
+      font-family: 'Futura';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 200%;
+      color: #000000;
+    }
+
+    .drop-content.show > h6 {
+      text-transform: none;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 0px;
+      font-size: 17px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left:  15px;
+
+    }
+
+  .drop-header {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #EAEAEA;
+    flex-direction: row;
+    height: 56px;
+  }
+
+  .drop-button1,
+  .drop-button2,
+  .drop-button3,
+  .drop-button4,
+  .drop-button5 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .drop-button5 > div > img{
+    vertical-align: middle;
+  }
+
+
+  .drop-button1 > div > span,
+  .drop-button2 > div > span,
+  .drop-button3 > div > span,
+  .drop-button4 > div > span,
+  .drop-button5 > div > span {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    align-self: center;
+    text-transform: capitalize;
+    color: #000000;
+    
+  }
+
+  .drop-button1 > div,
+  .drop-button2 > div,
+  .drop-button3 > div,
+  .drop-button4 > div
+  .drop-button5 > div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+
+  .arrow-drop {
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-drop.rotate {
+    transform: rotate(180deg);
+  }
+
+  .size-table-pdp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+  .new-size-table-pdp > div{
+    z-index: 1 !important;
+    margin-bottom: 10px;
+
+  }
+
+  .new-size-table-pdp{
+    margin-top: 10px;
+  }
+
+  .still-in-pdp{
+    max-width: 70%;
+    display: flex;
+    justify-content: flex-end;  }
+
+    @media (max-width:768px) {
+      .dtc-pdp-dropdown{
+        margin-top: 50px;
+      }
+
+      .drop-button1 > div > span,
+      .drop-button2 > div > span,
+      .drop-button3 > div > span,
+      .drop-button4 > div > span
+      .drop-button5 > div > span{
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      .drop-content.show > ul > li {
+        font-size: 14px;
+      }
+
+      .drop-content.show > h6{
+        font-size: 15px;
+      }
+    }
+</style>
+
+<script>
+  var buttons = document.querySelectorAll('.drop-button1, .drop-button2, .drop-button3, .drop-button4, .drop-button5');
+  
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var content = this.parentElement.nextElementSibling;
+      content.classList.toggle('show');
+      this.querySelector('.arrow-drop').classList.toggle('rotate');
+    });
+  });
+</script>
+
+
+<script>
+
+const newBox1 = document.getElementById('new-box-sel-1')
+const newBox2 = document.getElementById('new-box-sel-2')
+const newBox3 = document.getElementById('new-box-sel-3')
+const newBox4 = document.getElementById('new-box-sel-4')
+const newBox5 = document.getElementById('new-box-sel-5')
+const newSpanFiller = document.getElementById('new-dtc-filler')
+const newFits = document.getElementById('new-fits-span')
+</script>
+
+{% if product.metafields.custom.dtc_size_guide.value contains 'Runs small' %}
+<script>
+  newBox1.style.backgroundColor = 'black'
+  newSpanFiller.innerHTML = 'runs small'
+</script>
+{% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs a little small' %}
+<script>
+  newBox2.style.backgroundColor = 'black'
+  newSpanFiller.innerHTML = 'runs a little small'
+</script>
+{% elsif product.metafields.custom.dtc_size_guide.value contains 'True to size' %}
+<script>
+  newBox3.style.backgroundColor = 'black'
+  newFits.innerHTML = 'fits'
+  newSpanFiller.innerHTML = 'true to size'
+</script>
+{% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs a little large' %}
+<script>
+  newBox4.style.backgroundColor = 'black'
+  newSpanFiller.innerHTML = 'runs a little large'
+</script>
+{% elsif product.metafields.custom.dtc_size_guide.value contains 'Runs large' %}
+<script>
+  newBox5.style.backgroundColor = 'black'
+  newSpanFiller.innerHTML = 'runs large'
+</script>
+{% elsif product.metafields.custom.dtc_size_guide.value == null %}
+<script>
+  newBox3.style.backgroundColor = 'black'
+  newFits.innerHTML = 'fits'
+  newSpanFiller.innerHTML = 'true to size'
+</script>
+{% endif %}
+
+</script>
+
+
+
+
+

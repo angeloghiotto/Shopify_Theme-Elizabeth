@@ -1,0 +1,369 @@
+{% assign _ = section.settings %}
+{% assign image_count = -1 %}
+
+
+
+<div class="dc">
+  <div class="dc-title_container page-width">
+    <div>
+      <h2>{{ _.title }}</h2>
+      {% if _.subtitle != blank %}
+      <span class="dc-subtitle">{{ _.subtitle }}</span>
+      {% endif %}
+    </div>
+      <a href="{{ _.link }}" class="dc-btn">View Collection{% render 'dc-arrow' %}</a>
+    </div>
+  <div class="dc-container">
+    <div class="dc-media_container glide dc-slider">
+      <div class="glide__track" data-glide-el="track">
+        <div class="dc-media glide__slides">
+          {% for block in section.blocks %}
+              {% if block.type == 'hero' %}
+                  <img src="{{ block.settings.hero_image.src | img_url: 'master' }}" class="glide__slide">
+                  {% assign image_count = image_count | plus: 1 %}
+              {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{ 'arrow-left-1.png' | asset_url }}"></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{ 'arrow-right-1.png' | asset_url }}"></button>
+      </div>
+
+      {% assign range = (0..image_count) %}
+      <div class="glide">
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          {% for i in range %}
+          <button class="glide__bullet" data-glide-dir="={{i}}"></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  <div class="dc-carousel_container glide">
+    <div class="glide__track dc-carousel_track" data-glide-el="track">
+      <div class="dc-carousel glide__slides">
+        {% for block in section.blocks %}
+        {% if block.type == 'product' %}
+        <a class="dc-carousel_slide" data-href="{{ block.settings.link }}">
+          <img src="{{ block.settings.image.src | img_url: '600x' }}">
+          <span>{{ block.settings.title }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<style>
+
+  .dc {
+    overflow: hidden;
+    margin-top: 24px;
+    margin-bottom: 36px;
+  }
+
+  .dc-title_container {
+    background: #FAFAFA;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .dc-title_container h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: #000000;
+    text-transform: none;
+    margin-bottom: 0;
+  }
+  
+  .dc-subtitle {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .dc-btn {
+    color: white;    
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    background: #a97f96;
+    border: 1px solid #a97f96;
+    padding: 8px 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+	display: none;
+  }
+  
+  .dc-media_container {
+    position: relative;
+  }
+  
+  .dc-btn svg {
+    margin-left: 4px;
+    top: 1px;
+    position: relative;
+    width: 13px;
+    height: 13px;
+  }
+  
+  .dc-btn svg path {
+    fill: white;
+  }
+
+  .dc-btn svg rect {
+    fill: transparent;
+  }
+
+  
+  .glide__slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .glide__arrows {
+    position: static;
+    width: 100%;
+	bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .glide__arrow--left {
+    left: 0;
+  }
+  .glide__arrow--right {
+    right: 0;
+  }
+  
+  .glide__arrow {
+    width: 40px;
+    position: absolute;
+    bottom: 45%;
+  }
+  
+  button.glide__bullet {
+    width: 8px;
+    height: 8px;
+    background: #D9D9D9;
+    border-radius: 100px;
+    padding: 0;
+  }
+
+  .glide__bullets {
+    text-align: center;
+    padding: 8px 0;
+  }
+  
+  button.glide__bullet.glide__bullet--active {
+    background: #BE95AC;
+  }
+  
+  .dc-carousel_track {
+    overflow-x: scroll;
+  }
+  
+  .dc-carousel_slide {
+    min-width: 205px;
+    max-width: 205px;
+    height: auto;
+    text-align: center;
+    margin: 0 4px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  
+  .dc-carousel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    
+    .dc-title_container {
+      background: white;
+    }
+    
+    .dc-media_container {
+      overflow: hidden;
+      width: 50%;
+    }
+    .dc-carousel_track {
+      overflow-x: auto;
+    }
+    
+    .dc-carousel_container {
+      width: 48.5%;
+    }
+    
+    .dc-media.glide__slides {
+      max-width: 100%;
+    }
+    
+    .dc-media.glide__slides img {
+      min-width: 100%;
+    }
+    
+    .dc-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0 40px;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    } 
+    
+    .dc-carousel {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      width: 100%;
+      min-width: 0;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+    
+    .dc-carousel_slide {
+      width: 48%;
+      max-width: none;
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    
+  }
+  
+</style>
+
+<script>
+//   const carousels = document.querySelectorAll('.glide.dc-slider');
+//   carousels.forEach(item => {
+//     new Glide(item, {
+//       type: 'slider',
+//       perView: 1,
+//       gap: 0,
+//     }).mount();
+//   });
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof sliders === 'undefined' || sliders === null) {
+      let sliders = document.querySelectorAll('.glide.dc-slider'); 
+      
+      sliders.forEach(item => {
+        new Glide(item, {
+          type: 'slider',
+          perView: 1,
+          gap: 0,
+        }).mount();
+      });
+    }
+  });
+
+</script>
+
+{% schema %}
+  {
+    "name": "Drop Section",
+    "settings": [
+	{
+		"type": "text",
+		"id": "title",
+		"label": "Collection Title"
+	},
+	{
+		"type": "text",
+		"id": "subtitle",
+		"label": "Collection Subtitle"
+	},
+	{
+		"type": "url",
+		"id": "link",
+		"label": "Collection Link"
+	}
+	],
+	"blocks": [
+      {
+        "name": "Hero Image",
+        "type": "hero",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "hero_image",
+            "label": "Hero Image"
+          }
+        ]
+      },
+      {
+        "name": "Product Type",
+        "type": "product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Product Title"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Product Link"
+          }
+        ]
+      }
+
+	],
+    "presets": [
+      {
+        "name": "Drop Section",
+        "category": "Drops"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

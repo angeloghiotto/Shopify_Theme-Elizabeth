@@ -1,0 +1,84 @@
+{%- style -%}
+  :root {
+    --typeHeaderPrimary: {{ settings.type_header_font_family.family }};
+    --typeHeaderFallback: {{ settings.type_header_font_family.fallback_families }};
+    --typeHeaderSize: {{ settings.type_header_base_size | default: '32' | append: 'px' }};
+    --typeHeaderWeight: {{ settings.type_header_font_family.weight }};
+    --typeHeaderLineHeight: {{ settings.type_header_line_height | default: 1.4 }};
+    --typeHeaderSpacing: {{ settings.type_header_spacing | default: '25' | divided_by: 1000.00 | append: 'em' }};
+
+    --typeBasePrimary:{{ settings.type_base_font_family.family }};
+    --typeBaseFallback:{{ settings.type_base_font_family.fallback_families }};
+    --typeBaseSize: {{ settings.type_base_size | default: 16 | append: 'px' }};
+    --typeBaseWeight: {{ settings.type_base_font_family.weight }};
+    --typeBaseSpacing: {{ settings.type_base_spacing | default: '50' | divided_by: 1000.00 | append: 'em' }};
+    --typeBaseLineHeight: {{ settings.type_base_line_height | default: 1.4 }};
+
+    {% if settings.button_style == 'round-slight' %}
+      --buttonRadius: 3px;
+    {% elsif settings.button_style == 'round' %}
+      --buttonRadius: 50px;
+    {% else %}
+      --buttonRadius: 0px;
+    {% endif %}
+
+    --colorGridOverlayOpacity: {{ settings.collection_grid_opacity | divided_by: 100.0 }};
+
+    --colorBtnPrimary:{{ settings.color_button | default: "#000" }};
+    --colorBtnPrimaryText:{{ settings.color_button_text | default: "#fff" }};
+
+    --colorLink:{{ settings.color_body_text | default: "#1c1d1d" }};
+
+    --colorTextBody:{{ settings.color_body_text | default: "#1c1d1d" }};
+    --colorPrice:{{ settings.color_price | default: "#1c1d1d" }};
+    --colorTextSavings:{{ settings.color_savings_text | default: "#1c1d1d" }};
+    --colorSaleTag:{{ settings.color_sale_tag | default: "#1c1d1d" }};
+    {% liquid
+      assign color_sale_tag_lightness = settings.color_sale_tag | color_extract: 'lightness'
+      assign color_sale_tag_text = "#ffffff"
+      if color_sale_tag_lightness > 60
+        assign color_sale_tag_text = "#ffffff"
+      endif
+    %}
+    --colorSaleTagText:{{ color_sale_tag_text }};
+
+    --colorBody:{{ settings.color_body_bg | default: "#fff" }};
+    --colorBodyDim:{{ settings.color_body_bg | default: "#1c1d1d" | color_darken: 5 }};
+
+    --colorFooter:{{ settings.color_footer | default: "#111" }};
+    --colorFooterText:{{ settings.color_footer_text | default: "#fff" }};
+
+    --colorBorder:{{ settings.color_borders | default: "#1c1d1d" }};
+
+    --colorNav:{{ settings.color_header | default: "#fff" }};
+    --colorNavText:{{ settings.color_header_text | default: "#000" }};
+    --colorAnnouncement:{{ settings.color_announcement | default: "#1c1d1d" }};
+    --colorAnnouncementText:{{ settings.color_announcement_text | default: "#fff" }};
+
+    --colorModalBg:{{ settings.color_modal_overlays | default: "#000" }};
+
+    --colorSmallImageBg:{{ settings.color_small_image_bg | default: "#eee" }};
+
+    --colorDrawers:{{ settings.color_drawer_background | default: "#1c1d1d" }};
+    --colorDrawersDim:{{ settings.color_drawer_background | default: "#1c1d1d" | color_darken: 5 }};
+    --colorDrawerBorder:{{ settings.color_drawer_border | default: "#343535" }};
+    --colorDrawerText:{{ settings.color_drawer_text | default: "#fff" }};
+    --colorDrawerTextDark:{{ settings.color_drawer_text | default: "#fff" | color_darken: 15 }};
+    --colorDrawerButton:{{ settings.color_drawer_button | default: "#a26b25" }};
+    --colorDrawerButtonText:{{ settings.color_drawer_button_text | default: "#fff" }};
+
+    --grid-gutter:17px;
+    --drawer-gutter:20px;
+  }
+
+  @media only screen and (min-width:769px){
+    :root{
+      --grid-gutter:22px;
+      --drawer-gutter:30px;
+    }
+  }
+
+  .placeholder-content {
+    background-image: linear-gradient(100deg, {{ settings.color_small_image_bg }} 40%, {{ settings.color_small_image_bg | color_darken: 3 }} 63%, {{ settings.color_small_image_bg }} 79%);
+  }
+{%- endstyle -%}

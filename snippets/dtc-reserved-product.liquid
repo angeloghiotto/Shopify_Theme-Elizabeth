@@ -1,0 +1,64 @@
+<div class="dtc-reserved-product">
+<img src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Group.svg?v=1665156685" loading="lazy" width="" height="">
+<span>High demand. Cart reserved for:
+    <span id="countdown"></span>
+</span>
+</div>
+
+<script>
+    let startingMinutes = 10;
+let time = startingMinutes * 60;
+const countdown = document.getElementById('countdown');
+let refresh = setInterval(updateCount, 1000);
+function updateCount() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  seconds = seconds < 10
+    ? '0' + seconds
+    : seconds;
+  countdown.innerHTML = `${minutes}:${seconds}`;
+  time--;
+  if (time < 0) {
+    clearInterval(refresh)
+  }
+}
+</script>
+
+<style>
+    .dtc-reserved-product {
+      display: none;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      gap: 5px;
+      max-width: 100vw;
+      max-height: 46px;
+      background: #FFE0E9;
+      border: 1px solid #FF006B;
+      border-radius: 3px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .dtc-reserved-product > span {
+      font-family: 'Helvetica neue';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #000000;
+    }
+    #countdown {
+      font-family: 'Helvetica neue';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #000000;
+    }
+    @media only screen and (max-width: 420px) {
+      .dtc-reserved-product {
+        margin-top: 0;
+      }
+    }
+</style>

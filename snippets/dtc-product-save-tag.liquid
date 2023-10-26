@@ -1,0 +1,41 @@
+<style>
+.dtc-save-tags{
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 13px;
+    position: relative;
+    max-width: 100%;
+    padding: 0.25em 0.5em;
+    background-image: linear-gradient(to right,rgb(204,0,0),rgb(204,0,0));
+    opacity: 1;
+    margin-left: 10px;
+}
+.pricing_container{
+    align-items:center;
+    margin-top: 5px;
+}
+html .template-product .callout-text ,html .template-product .final-sales  {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:0;
+}
+</style>
+
+
+
+{%-liquid
+
+
+if product.price < product.compare_at_price 
+    assign is_product_on_sale = true
+    assign save_percentage = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round | to_i 
+    assign sale_tag = save_percentage | append: '% OFF'
+endif 
+-%}
+
+{% if is_product_on_sale %}
+    <div class="dtc-save-tags">
+        {{sale_tag}}
+    </div>
+{% endif %}

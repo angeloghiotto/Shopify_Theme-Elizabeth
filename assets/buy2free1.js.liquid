@@ -1,0 +1,180 @@
+
+
+
+$(document).ready(function() {
+  var headertitle1 = $(".header-progress-item[data-index='0']").attr("data-title");
+  var headertitle2 = $(".header-progress-item[data-index='1']").attr("data-title");
+  var headertitle3 = $(".header-progress-item[data-index='2']").attr("data-title");
+  var headerdescription1 = $(".header-progress-item[data-index='0']").attr("data-description");
+  var headerdescription2 = $(".header-progress-item[data-index='1']").attr("data-description");
+  var headerdescription3 = $(".header-progress-item[data-index='2']").attr("data-description");
+  
+  
+  $("html").addClass("buy2free1");
+  $("body").addClass("buy2free1");
+  
+  $(".grid-product__link").click(function(e){
+    e.preventDefault();
+  });
+  
+  
+  $(".popup-buy2free1-complte .btn-popoup-close").click(function(e){
+    $(".buy2free1_template").removeClass("popup-complete");
+  });
+  
+  $(".product-grid-item_form_wrapper .variant-input-wrap select").change(function(e){
+    var sectionId = $(this).attr("data-section-id");
+    var variant= $(this).find("option:selected").attr("data-variant");  
+    $("#ProductSelect-" + sectionId).val(variant).trigger("change");
+    
+  });
+  
+  
+  $(".header-progress-item_btn_remove").click(function(e){
+    var variantId = $(this).parent().attr("variant-id");
+    var quantity = $(this).parent().attr("quantity");
+    if ( quantity > 0 ){
+      quantity--;
+    }
+    
+    $.ajax({
+        type: 'POST',
+        url: '/cart/change.js',
+       	dataType: 'json',
+      	data: {
+            quantity: quantity,
+            id: variantId
+        },
+        success: function (data){
+          
+          if ( quantity == 0 ){
+            for(var i=0;i<discountItems.length;i++){
+              if ( discountItems[i].variant_id == variantId ){
+                discountItems.splice(i, 1);
+              }
+            }
+          }else{
+            for(var i=0;i<discountItems.length;i++){
+              if ( discountItems[i].variant_id == variantId ){
+                discountItems[i].quantity = quantity;
+              }
+            }
+            
+            for(var i=discountItems.length-1;i>=0;i--){
+              if ( discountItems[i].variant_id == variantId ){
+                discountItems.splice(i, 1);
+                break;
+              }
+            }
+          }
+          
+          updateHeaders();
+          
+        }
+    });
+  });
+  
+  /*
+  $("body").on("drawerOpen", function(e){
+    $("html").removeClass("js-drawer-open");
+    $("body").removeClass("js-drawer-open");
+  });
+  */
+  
+  $("body").on("added.ajaxProduct_buy2free", function(e, param){
+    var addedProgressIndex = 0;
+    
+    var item = {
+      "image_url": param.featured_image.url,
+      "variant_id": param.variant_id,
+      "quantity": param.quantity
+    };
+
+    if ( discountItems.length <= 2 ){  
+      discountItems.push(item);
+    }
+    else{
+      discountItems.splice(2, 1);
+      discountItems.push(discountItem);
+    }
+    
+    for(var i=0;i<discountItems.length;i++){
+      if ( discountItems[i].variant_id == param.variant_id ){
+        discountItems[i].quantity = param.quantity;
+      }
+    }    
+    addedProgressIndex = discountItems.length - 1;
+    
+    startAddedProductAnimation(addedProgressIndex);
+    updateHeaders();
+    
+  });
+  
+  updateHeaders();
+  
+  
+  function startAddedProductAnimation(index){
+    $('.header-progress-item[data-index="' + index + '"]').addClass("animation-start");
+    
+    var html = '<lottie-player src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/lf30_editor_j6de9ghr.json?v=1615949506"  background="transparent"  speed="1" autoplay></lottie-player>';
+    $('.header-progress-item[data-index="' + index + '"] .animation-wrapper').html(html);
+    
+    setTimeout(function(){
+      $('.header-progress-item').removeClass("animation-start");
+      $('.header-progress-item .animation-wrapper').html("");
+    }, 3000);
+    
+  }
+  
+  function startCongratulationAnimation(){
+    var html = '<lottie-player src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/lottie-congratulation-animation.json?v=1615951634"  background="transparent"  speed="1" autoplay></lottie-player>';
+    $(".popup-buy2free1-complte .animation-wrapper").html(html);
+    $(".popup-buy2free1-complte").addClass("animation-start");
+    
+    setTimeout(function(){
+      $(".popup-buy2free1-complte").removeClass("animation-start");
+      $(".popup-buy2free1-complte .animation-wrapper").html("");
+    }, 5000);
+  }
+  
+  function updateHeaders(){
+    if ( discountItems.length >= 3 ){
+      $(".buy2free1_template").addClass("popup-complete");
+      startCongratulationAnimation();
+    }
+    
+    $(".header-progress-item").removeClass("set");
+    $(".header-progress-item").removeClass("active");
+    
+    for(var i=0;i<discountItems.length;i++){
+      var imgUrl = discountItems[i].image_url;
+      var variant_id = discountItems[i].variant_id;
+      var quantity = discountItems[i].quantity;
+      document.querySelector('.header-progress-item[data-index="' + i + '"]' + ' .header-progress-item-image').src= imgUrl;
+      document.querySelector('.header-progress-item[data-index="' + i + '"]').classList.add("set");
+      document.querySelector('.header-progress-item[data-index="' + i + '"]').setAttribute("variant-id", variant_id);
+      document.querySelector('.header-progress-item[data-index="' + i + '"]').setAttribute("quantity", quantity);
+
+      document.querySelector('.popup-buy2free1-complte .popup-item[data-index="' + i + '"]' + ' img').src = imgUrl;
+    }
+
+    
+    if ( discountItems.length == 0 ){
+      $(".buy2free1_template .header-title").html(headertitle1);
+      $(".buy2free1_template .header-description").html(headerdescription1);
+      document.querySelector('.header-progress-item[data-index="0"]').classList.add("active");
+    }
+    else if ( discountItems.length == 1 ){
+      $(".buy2free1_template .header-title").html(headertitle2);
+      $(".buy2free1_template .header-description").html(headerdescription2);
+      document.querySelector('.header-progress-item[data-index="1"]').classList.add("active");
+    }
+    else if ( discountItems.length == 2 ){
+      $(".buy2free1_template .header-title").html(headertitle3);
+      $(".buy2free1_template .header-description").html(headerdescription3);
+      document.querySelector('.header-progress-item[data-index="2"]').classList.add("active");
+    }
+  }
+  
+  
+});    

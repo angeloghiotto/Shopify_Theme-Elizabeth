@@ -1,0 +1,26 @@
+{%- assign show_announcement = true -%}
+{%- assign announcement_block_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'dtc-announcement' -%}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+        <div class="dtc-announcement-slider">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'dtc-announcement' -%}
+              <div class="dtc-announcement">
+                  <a class="dtc-announcement-link">
+                    <span class="dtc-announcement-link-text">{{ block.settings.text-one }}</span>
+                    <img class="img-stars" src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Frame_5_f26f08dd-1a2c-4995-86c0-09e80dd0a1a9.svg?v=1668528754" height="17" width="72">
+                    <span class="dtc-announcement-link-text">{{ block.settings.text-two }}</span>
+                  </a>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>

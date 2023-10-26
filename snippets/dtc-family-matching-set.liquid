@@ -1,0 +1,109 @@
+{% liquid 
+    assign collectionPrint = collections[collectionURL]
+    assign collectionPrintImage = collectionPrint.featured_image
+%}
+
+<style>
+    .dtc-family-set{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .dtc-family-set__title{
+        font-weight: 500;
+        line-height: 2.1rem;
+        font-size: 1.6rem;
+        color: #000;
+        font-family: "Futura", sans-serif;
+        text-transform: capitalize;
+        text-align: center;
+        letter-spacing: 0px;
+    }
+
+    .dtc-family-set__title.--desktop{
+        display: none;
+    }
+
+    .dtc-family-set__title.--mobile{
+        margin-bottom: 1.5rem;
+    }
+
+    .dtc-family-set__picture{
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .dtc-family-set__picture img{
+        display: block;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .dtc-family-set__content{
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .dtc-family-set__link{
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .dtc-family-set__button{
+        margin-top: 1.5rem;
+    }
+
+    .dtc-family-set__link:hover{
+        color: #fff;
+    }
+
+    @media screen and (min-width: 1120px) {
+        .dtc-family-set{
+            flex-direction: row;
+            padding: 1.25rem;
+            gap: 2.5rem;
+            letter-spacing: 0px;
+        }
+        .dtc-family-set__title.--mobile{    
+            display: none;
+        }
+        .dtc-family-set__title.--desktop{
+            display: block;
+            margin-bottom: 2.5rem;
+            font-size: 1.4rem;
+        }
+        .dtc-family-set__picture img{
+            width: 328px;
+            height: 328px;
+        }
+        .dtc-family-set__button{
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="dtc-family-set">
+    <h3 class="dtc-family-set__title --mobile" style="font-family: Futura,sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;font-size: 1.6625em;text-align:center">Family Matching</h3>
+    <picture class="dtc-family-set__picture">
+        <img src="{{ collectionPrintImage |  image_url: width: 450 }}">
+    </picture>
+    <div class="dtc-family-set__content">
+        <h3 class="dtc-family-set__title --desktop">Family Matching</h3>
+      <a href="/collections/{{ collectionURL }}">
+        <button type="button" class="dtc-family-set__button btn btn--full">
+            <span class="dtc-family-set__link">Build Your Bundle</span>
+        </button>
+      </a>
+    </div>
+</div>

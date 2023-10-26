@@ -1,0 +1,30 @@
+<div class="filter-btns-type">
+
+<button type="button" onclick="toggleRemoveFilterButton(this)" class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height tag-list__header" aria-controls="{{ location }}-{{ index }}{% if id %}-{{ id }}{% endif %}">
+  {{ title }}
+  {% include 'collapsible-icons' %}
+</button>
+</div>
+
+<script>
+  let isOpen = [];
+  
+  function toggleRemoveFilterButton(el){
+    let removeFilterBtn = document.querySelector('.tag--remove');
+    let containsIsOpen = el.classList.contains('is-open');
+    
+    if(!containsIsOpen){
+      isOpen.push(true);
+      if (removeFilterBtn){
+        removeFilterBtn.style.display = 'none';
+      }
+    } else {
+      isOpen.pop();
+      if(isOpen.length === 0) {
+        if (removeFilterBtn){
+          removeFilterBtn.style.display = 'flex';
+        }
+      }
+    }
+  }
+</script>

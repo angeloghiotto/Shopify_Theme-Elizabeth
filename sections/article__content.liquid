@@ -1,0 +1,246 @@
+{% comment %}
+** Rich text - dynamic **
+- Draggable section
+- Uses blocks
+{% endcomment %}
+
+<section class="section">
+  <div class="container
+              has-limit
+              ">
+    <div class="columns one-whole">
+      <div class="content">
+        {% for block in section.blocks %}
+	        {% if block.type == 'rich-text' %}
+              <div>
+                {{ block.settings.text }}
+              </div>
+        	{% elsif block.type == 'heading' %}
+		        {% if block.settings.heading-type == 'h2' %}
+		        	<h2><span>{{ block.settings.title }}</span></h2>        
+                {% elsif block.settings.heading-type == 'h3' %}
+                    <h3><span>{{ block.settings.title }}</span></h3>        
+                {% elsif block.settings.heading-type == 'h4' %}
+                    <h4><span>{{ block.settings.title }}</span></h4>        
+                {% endif %}
+        	{% elsif block.type == 'button' %}
+                <div class="buttons is-{{ block.settings.button_alignment }}">
+                  {% render 'button',
+                            label: block.settings.button_label,
+                  href: block.settings.button_link,
+                  style: block.settings.button_style,
+                  type: "link"
+                  %}
+                </div>
+        	{% elsif block.type == 'image' %}
+        		<a href="{{ block.settings.image_link }}" style="display: flex; justify-content: {{ block.settings.desktop-alignment }};" class="block-image-container">
+                  <img src="{{ block.settings.image.src | img_url: 'master' }}" style="width: {{ block.settings.desktop-width }};" class="block-image"/>
+		        </a>
+        {% elsif block.type == 'space' %}
+            <div style="padding: 12px 0;">
+            </div>
+	        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  @media (max-width: 768px) {
+    .block-image {
+      width: 100% !important;
+    }
+    
+    .block-image-container {
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Article Content",
+    "class": "article-content",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "rich-text",
+        "name": "Rich Text",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc.</p>"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "name": "Heading",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "This is a Headline"
+          },
+		  {
+            "type": "select",
+            "id": "heading-type",
+            "label": "Heading Type",
+            "options": [
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              }
+            ],
+            "default": "h2"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          },
+          {
+            "type": "select",
+            "id": "button_alignment",
+            "label": "Alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+          },
+		  {
+            "type": "select",
+            "id": "button_style",
+            "label": "Style",
+            "options": [
+              {
+                "value": "button--primary",
+                "label": "Primary"
+              },
+              {
+                "value": "button--secondary",
+                "label": "Secondary"
+              },
+              {
+                "value": "button--link-style",
+                "label": "Link style"
+              }
+            ],
+            "default": "button--primary"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Image Link"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Layout"
+          },
+		  {
+            "type": "select",
+            "id": "desktop-width",
+            "label": "Desktop Width",
+            "options": [
+              {
+                "value": "100%",
+                "label": "Full Width"
+              },
+              {
+                "value": "50%",
+                "label": "Half Width"
+              },
+              {
+                "value": "33%",
+                "label": "One Third"
+              }
+            ],
+            "default": "33%"
+          },
+		  {
+            "type": "select",
+            "id": "desktop-alignment",
+            "label": "Desktop Alignment",
+            "options": [
+              {
+                "value": "flex-start",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "flex-end",
+                "label": "Right"
+              }
+            ],
+            "default": "flex-start"
+          }
+
+			
+        ]
+      },
+      {
+        "type": "space",
+        "name": "Space",
+        "settings": [
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Article Content",
+        "category": "Text",
+        "settings": {
+
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,79 @@
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{% for block in section.blocks %}
+  {% if block.type == 'announcement' %}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {% endif %}
+{% endfor %}
+
+{% if show_announcement %}
+  <div class="announcement-bar">
+    <div class="page-width">
+      <div
+        id="AnnouncementSlider"
+        class="announcement-slider{% if section.settings.announcement_compact %} announcement-slider--compact{% endif %}"
+        data-compact-style="{{ section.settings.announcement_compact }}"
+        data-block-count="{{ announcement_block_count }}">
+        {%- assign slide_index = 0 -%}
+        {% for block in section.blocks %}
+          {% if block.type == 'announcement' %}
+            <div
+              id="AnnouncementSlide-{{ block.id }}"
+              class="announcement-slider__slide"
+              data-index="{{ slide_index }}"
+              {{ block.shopify_attributes }}>
+              {% if block.settings.link != blank %}
+                <a class="announcement-link" style="display: inline !important" href="{{ block.settings.link }}">
+              {% endif %}
+                {% if block.settings.text != blank %}
+                  <strong>{{ block.settings.text }}</strong>
+                {% endif %}
+                {% if block.settings.link_text != blank %}
+                  <div style="display: inline-block;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid #FAF7ED;
+    border-radius: 6px;
+    margin-left: 2px;
+    font-size: 11px;
+    text-decoration: none;
+    color: #faf7ed;">{{ block.settings.link_text }}</div>
+                {% endif %}
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            </div>
+            {%- assign slide_index = slide_index | plus: 1 -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+<style>
+  .shipscout-banner {
+    font-weight: 700;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .85em;
+  }
+  
+  .drawer .shipscout-banner {
+    font-size: 12px;
+  }
+  
+  @media (max-width: 768px)
+    
+    .drawer .shipscout-banner {
+      font-size: 10px;
+    }
+  
+    .announcement-bar .shipscout-banner {
+      letter-spacing: .15em;
+    }
+</style>
+
+
+{% endif %}

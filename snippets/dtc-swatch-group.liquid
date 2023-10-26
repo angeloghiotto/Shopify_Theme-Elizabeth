@@ -1,0 +1,324 @@
+<style>
+    /* start of dtc print above fold snippet */
+    .dtc-sbp-above-fold{
+      margin-top:15px;
+    }
+
+    .dtc-above-fold-print-container {
+      display: flex;
+      position: relative;
+      margin: 0;
+      margin-left: -3px;
+      padding: 0;
+      margin-right: -3px;
+    }
+    
+    .dtc-above-fold-print-container:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -2px;
+      bottom: 15px;
+      pointer-events: none;
+      width: 15%;
+    }
+    
+    .dtc-above-fold-bg:after {
+      background-image: linear-gradient(92.42deg, rgba(255, 255, 255, 0) 2.62%, #FFFFFF 91.05%);
+    }
+    
+    html .dtc-above-fold-print-container .dtc-sbp-content {
+      white-space: nowrap;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding-bottom: 20px;
+      position:initial;
+    }
+    .dtc-above-fold-print-container li {
+      list-style-type: none;
+      border: 1px solid #C6C6C6;
+      height: 60px;
+      width: 60px;
+      box-sizing: content-box;
+      display: flex;
+      padding: 3px;
+      border-radius: 100%;
+      margin-right: 13px;
+    }
+    .dtc-above-fold-print-container li img {
+      border-radius: 100%;
+    }
+    html .active-print{
+      border:1px solid #000;
+    }
+    .dtc-sbp-content .slick-arrow {
+      color:#000;
+      opacity:1;
+      top:35px;
+    }
+    .dtc-sbp-content .slick-prev {
+      left:-18px;
+    }
+    .dtc-sbp-content .slick-next{
+      right:-14px;
+    }
+    /* end of dtc print above fold snippet */
+  
+    @media only screen and (max-width: 767px) {
+      html .dtc-above-fold-print-container .dtc-sbp-content {
+        overflow-x: scroll;
+      }
+    }
+
+        .dtc-swatch-container{
+            display: block;
+        }
+        .dtc-swatch{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .style-span{
+            font-family: 'Futura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 15px;
+            letter-spacing: 0.15em;
+            color: #000000;
+        }
+
+        .swatch{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 10px;
+            gap: 10px;
+            border: 1px solid #000;
+            width: 120.67px;
+            height: 45px;
+            font-family: 'Futura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 15px;
+            letter-spacing: 0.15em;
+            color: #000;
+            transition: color .25s, background .25s;
+        }
+
+        .border-left{
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+        .border-right{
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+
+       .swatch[aria-expanded=true]:after {
+            border: solid transparent;
+            border-color: rgba(var(---color--primary--rgb),0);
+            border-top-color: var(---color--primary);
+            border-width: 8px;
+            content: "";
+            height: 0;
+            left: 50%;
+            margin-left: -8px;
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            width: 0;
+      }
+
+      .season{
+        display: none;
+      }
+
+      .best-seller{
+        display: none;
+      }
+
+      .new{
+        display: flex;
+      }    
+
+      #new-btn{
+        background-color: #000;
+        color: #FFFFFF;
+        position: relative;
+      }
+      #best-seller-btn{
+        position: relative;
+      }
+      
+      #season-btn{
+        position: relative;
+      }
+
+    
+      @media only screen and (min-width: 767px) {
+        .dtc-swatch{
+          justify-content: flex-start;
+      }
+      }
+
+      #best-seller-btn{
+        position: relative;
+      }
+
+      .dtc-chatbox::after{
+        border: solid transparent;
+        border-top-color: black;
+        border-width: 8px;
+        content: "";
+        height: 0;
+        left: 50%;
+        margin-left: -8px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;      
+      }
+  
+  </style>
+
+  {% assign current_product_handle = product.handle %}
+  {% for c in product.collections %}
+
+    {% if c.metafields.custom.other_best_selling_label != empty %}
+      {% assign best_selling_label = c.metafields.custom.other_best_selling_label %}
+   
+    {% endif %}
+
+
+
+    {% if c.handle == "footies" or c.handle == "rompers" or c.handle == "tutu" or c.handle == "blanket" or c.handle == "pajamas-1" or c.handle == "baby-dresses" %}
+    <div class="dtc-swatch-container">    
+<span class="style-span">STYLE: <span id="name-group">NEW</span></span>
+<div class="dtc-swatch">
+    <button id="new-btn" class="swatch border-left dtc-chatbox">{{ section.settings.first-swatch }}</button>
+    <button id="season-btn" class="swatch">{{ section.settings.second-swatch }}</button>
+    <button id="best-seller-btn" class="swatch border-right">{{ section.settings.third-swatch }}</button>
+</div>
+
+    <div class="dtc-sbp-above-fold">
+      <label class="variant__label">
+        PRINT: 
+    {% for tag in product.tags %}
+      {% if tag contains 'print_' %}
+        {%- assign var1 = tag | replace: "_", " " -%}
+        {%- assign var2 = var1 | replace: "print", "" -%}
+        {%- assign var3 = var2 | upcase -%}
+        {{ var3 }}
+      {% endif %}
+    {% endfor %}
+
+
+      </label>
+      <ul class="dtc-above-fold-print-container dtc-above-fold-bg">
+        <div class="dtc-sbp-content new">
+          {% for product in collections[c.handle].products %}
+            {%- if product.metafields.custom.show_print_image and product.metafields.custom.print_group.value contains 'First Option' -%}
+              <a href="{{ product.handle }}">
+                <li class = "{% if current_product_handle == product.handle %}active-print{% endif %}">
+                  <img loading="lazy" width="60" height="60" src="{{ product.metafields.custom.print_image  | img_url  }}"/>
+                </li>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="dtc-sbp-content season">
+          {% for product in collections[c.handle].products %}
+            {%- if product.metafields.custom.show_print_image and product.metafields.custom.print_group.value contains 'Second Option' -%}
+              <a href="{{ product.handle }}">
+                <li class = "{% if current_product_handle == product.handle %}active-print{% endif %}">
+                  <img loading="lazy" width="60" height="60" src="{{ product.metafields.custom.print_image  | img_url  }}"/>
+                </li>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="dtc-sbp-content best-seller">
+          {% for product in collections[c.handle].products %}
+            {%- if product.metafields.custom.show_print_image and product.metafields.custom.print_group.value contains 'Third Option' -%}
+              <a href="{{ product.handle }}">
+                <li class = "{% if current_product_handle == product.handle %}active-print{% endif %}">
+                  <img loading="lazy" width="60" height="60" src="{{ product.metafields.custom.print_image  | img_url  }}"/>
+                </li>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </ul>
+    </div>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  
+
+
+  
+  <script>
+    const newBtn = document.querySelector('#new-btn');
+    const seasonBtn = document.querySelector('#season-btn');
+    const bestSellerBtn = document.querySelector('#best-seller-btn');
+    const newContent = document.querySelector('.new');
+    const seasonContent = document.querySelector('.season');
+    const bestSellerContent = document.querySelector('.best-seller');
+    const nameGroup = document.querySelector('#name-group');
+
+    newBtn.addEventListener('click', () => {
+      newBtn.style.backgroundColor = '#000';
+      newBtn.style.color = '#FFFFFF';
+      seasonBtn.style.backgroundColor = '#FFFFFF';
+      seasonBtn.style.color = '#000000';
+      bestSellerBtn.style.backgroundColor = '#FFFFFF';
+      bestSellerBtn.style.color = '#000000';
+      newContent.style.display = 'flex';
+      seasonContent.style.display = 'none';
+      bestSellerContent.style.display = 'none';
+      nameGroup.innerHTML = '{{ section.settings.first-swatch }}';
+      newBtn.classList.add('dtc-chatbox');
+      bestSellerBtn.classList.remove('dtc-chatbox');
+      seasonBtn.classList.remove('dtc-chatbox');
+    })
+
+    seasonBtn.addEventListener('click', () => {
+      newBtn.style.backgroundColor = '#FFFFFF';
+      newBtn.style.color = '#000000';
+      seasonBtn.style.backgroundColor = '#000';
+      seasonBtn.style.color = '#FFFFFF';
+      bestSellerBtn.style.backgroundColor = '#FFFFFF';
+      bestSellerBtn.style.color = '#000000';
+      newContent.style.display = 'none';
+      seasonContent.style.display = 'flex';
+      bestSellerContent.style.display = 'none';
+      nameGroup.innerHTML = '{{ section.settings.second-swatch }}';
+      newBtn.classList.remove('dtc-chatbox');
+      bestSellerBtn.classList.remove('dtc-chatbox');
+      seasonBtn.classList.add('dtc-chatbox');
+    })
+
+    bestSellerBtn.addEventListener('click', () => {
+      newBtn.style.backgroundColor = '#FFFFFF';
+      newBtn.style.color = '#000000';
+      seasonBtn.style.backgroundColor = '#FFFFFF';
+      seasonBtn.style.color = '#000000';
+      bestSellerBtn.style.backgroundColor = '#000';
+      bestSellerBtn.style.color = '#FFFFFF';
+      newContent.style.display = 'none';
+      seasonContent.style.display = 'none';
+      bestSellerContent.style.display = 'flex';
+      nameGroup.innerHTML = '{{ section.settings.third-swatch }}';
+      newBtn.classList.remove('dtc-chatbox');
+      bestSellerBtn.classList.add('dtc-chatbox');
+      seasonBtn.classList.remove('dtc-chatbox');
+    })
+
+
+  </script>

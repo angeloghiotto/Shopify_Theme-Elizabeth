@@ -1,0 +1,464 @@
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+  .variant_home_page_reviews .slick-slide {
+    margin: 0 27px;
+  }
+
+  .variant_home_page_reviews {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .variant_home_page_reviews .slick-list {
+    margin: 0 -27px;
+  }
+
+  .home-page-review-section-{{ section.id }}{
+    background: #F7F2EA;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .reviews_slider {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .review_image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .review_image > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .variant_home_page_reviews .review_content {
+    background: #fff;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    max-width: 337px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .review_content {
+    height: 456px !important;
+    width: 338px !important;
+  }
+
+  .variant_home_page_reviews .review_description {
+    color: #474747;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .variant_home_page_reviews .slick-dots {
+    bottom: -29px !important;
+  }
+
+  .variant_home_page_reviews .slick-dots li.slick-active button:before {
+    color: #CBADA0;
+    background: #585858;
+  }
+
+  .variant_home_page_reviews .slick-slider .slick-dots li,
+  .slick-slider .slick-dots li button,
+  .product__photo-dots .slick-dots li,
+  .product__photo-dots .slick-dots li button {
+    width: 8px;
+    height: 8px;
+  }
+
+  .variant_home_page_reviews .slick-dots li button:before {
+    font-size: 36px !important;
+    width: 8px !important;
+    height: 8px !important;
+    background: #C4C4C4;
+    opacity: 1;
+  }
+
+  .variant_home_page_reviews .review_user {
+    display: grid;
+    grid-template-columns: 53px 180px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  .profile_pic > img {
+    max-width: 45px;
+    border-radius: 50%;
+  }
+
+  .variant_home_page_reviews .review_name {
+    font-size: 17px;
+    color: #000;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-top: 0;
+  }
+
+  .review_item {
+    position: relative;
+    height: 468px;
+    max-height: 468px;
+    width: 353px;
+    max-width: 353px;
+  }
+
+  .variant_home_page_reviews .review_item {
+    background: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .variant_home_page_reviews .verified_buyer_star {
+    max-width: 12px;
+    display: initial !important;
+  }
+
+  .variant_home_page_reviews .five_star_image {
+    max-width: 100px;
+  }
+
+  .variant_home_page_reviews .review_stars ul {
+    list-style-type: none;
+  }
+
+  .variant_home_page_reviews .review_stars li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .variant_home_page_reviews .review_stars {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .variant_home_page_reviews .verified_buyer {
+    display: inline-block;
+  }
+
+  .variant_home_page_reviews .review_stats {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 208px;
+    margin: 0 auto;
+    max-width: 232px;
+    padding-right: 26px;
+  }
+
+  .variant_home_page_reviews .verified_buyer span {
+    font-size: 13px;
+    color: #909090;
+  }
+
+  .variant_home_page_reviews .name_and_product_bought {
+    color: #616161;
+  }
+
+  .variant_home_page_reviews .name_and_product_bought a {
+    color: #CBADA0 !important;
+    text-decoration: none;
+  }
+
+  .variant_home_page_reviews .variant_title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+
+  .variant_home_page_reviews .variant_title h3 {
+    font-size: 33px;
+    background: url('{{ 'lbb_quote.png' | file_url }}');
+    background-repeat: no-repeat;
+    background-size: 10%;
+    padding-top: 25px;
+    max-width: 440px;
+    margin: 0 auto 10px;
+  }
+
+  .variant_home_page_reviews .image_variant_quoute {
+    max-width: 65px;
+    position: absolute;
+  }
+
+  .variant_home_page_reviews .main_review_stars {
+    margin: 0 0 0 5px;
+    list-style-type: none;
+  }
+
+  .variant_home_page_reviews .main_review_stars li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .variant_home_page_reviews .main_review_stars li img {
+    max-width: 104px;
+  }
+
+  .variant_home_page_reviews .main_review_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .variant_home_page_reviews .main_review_container p {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .reviews-container {
+    height: 590px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .review_item {
+      height: 442px !important;
+      max-height: 442px !important;
+      max-width: 338px !important;
+      margin-bottom: 20px !important;
+
+    }
+
+    .review_content {
+      width: 295px !important;
+    }
+
+    .review_image  {
+     bottom: -15px;
+    }
+
+    .variant_home_page_reviews .slick-slide {
+      margin: 0 15px;
+    }
+
+    .slick-track {
+      margin-bottom: 15px;
+    }
+    
+  }
+
+  @media only screen and (max-width: 767px) {
+    .variant_home_page_reviews .slick-slide {
+      margin: 0 15px !important;
+    }
+
+  .reviews-container {
+    height: 560px;
+  }
+
+    .review_item {
+      height: 442px !important;
+      width: 325px !important;
+    }
+    .review_content {
+      height: 180px;
+    }
+    .review_image {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      max-width: 100vw;
+      bottom: -35px !important;
+    }
+  }
+
+  @media only screen and (max-width: 490px) {
+    .variant_home_page_reviews .review_content {
+      max-width: 286px;
+    }
+    .review_content {
+      max-height: 411px;
+      width: 286px;
+    }
+    .slick-track {
+      display: flex !important;
+    }
+
+    .variant_home_page_reviews .review_item {
+      background: #fff;
+    }
+
+    .home-page-review-section-{{ section.id }}{
+      padding-bottom: 70px;
+      overflow-x: hidden;
+    }
+
+    .review_item {
+      height: 412px !important;
+      width: 286px !important;
+    }
+
+    .review_image {
+      position: absolute;
+    }
+
+    .review_user {
+      margin-bottom: 0 !important;
+    }
+
+    .review_description {
+      margin-top: 10px;
+    }
+
+    .variant_home_page_reviews .slick-slide {
+      margin: 0 5px !important;
+    }  
+  }
+
+  @media only screen and (min-width: 389px) and (max-width: 490px) {
+    .review_item {
+      width: 325px !important;
+    }
+  }
+
+    @media only screen and (min-width: 767px) and (max-width: 1199px){
+      .review_item {
+        width: 314px !important;
+      }
+    }
+</style>
+
+
+<div class="home-page-review-section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="collection-template" data-aos="fade-up">
+  <div class="page-width reviews-container">
+    <div class="variant_home_page_reviews">
+      <div class="variant_title">
+        <h2 class="section-header__title">{{ section.settings.title }}</h2>
+        <div class="main_review_container">
+          <ul class="main_review_stars">
+            <li>
+              <img loading="lazy" height="21" width="104" src="{{ '4_5red-stars.svg' | file_url }}" alt="stars">
+            </li>
+          </ul>
+          <p>4.7/5 Average rating</p>
+        </div>
+      </div>
+      <div id="reviews_slider" class="reviews_slider">
+        {% for block in section.blocks %}
+        <div class="review_item">
+          <div class="review_content">
+            <div class="review_user">
+              <div class="profile_pic">
+                {{ block.settings.profile_image | image_url: width: 45 | image_tag }}
+              </div>
+              <div>
+                <h4 class="review_name">{{ block.settings.name }}</h4>
+                <ul class="review_stars">
+                  <li>
+                    <img loading="lazy" src="{{ 'red-stars.svg' | file_url }}" height="16" width="76"  alt="stars_1">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="review_description">{{ block.settings.review_description }}</p>
+          </div>
+          <div class="review_image">
+            {{ block.settings.review_image | image_url: width: 353 | image_tag }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    if (window.innerWidth <= 1200) { 
+      var reviewSlider = document.getElementById('reviews_slider');
+      $(reviewSlider).slick({
+        dots: true,
+        slidesToShow: 1,
+        centerMode: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              slidesToShow: 1,
+              centerMode: true,
+            },
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              arrows: false,
+              slidesToShow: 2,
+              centerMode: true,
+            },
+          }
+        ]
+      });
+    }
+  });
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({});
+  </script>
+
+{% schema %}
+  {
+    "name": "DTC Reviews",
+    "tag": "section",
+    "class": "slideshow",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Loved by 100,000+ moms"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+       {
+         "name": "Review",
+         "type": "slide",
+         "settings": [
+           {
+             "type": "image_picker",
+             "id": "profile_image",
+             "label": "Profile Image",
+             "info": "Recommended Height: 45px, Width: 45px"
+           },
+           {
+             "type": "text",
+             "id": "name",
+             "label": "Reviewer Name",
+             "info": "Recommended maximun characters: 26"
+           },
+           {
+             "type": "text",
+             "id": "review_description",
+             "label": "Reviewer Description",
+             "info": "Recommended maximun characters: 26"
+           },{
+             "type": "image_picker",
+             "id": "review_image",
+             "label": "Image",
+             "info": "Recommended Height: 279px, Width: 353px"
+           }
+         ]
+       }
+    ],
+    "presets": [
+      {
+        "name": "DTC Reviews"
+      }
+    ]
+  }
+  {% endschema %}

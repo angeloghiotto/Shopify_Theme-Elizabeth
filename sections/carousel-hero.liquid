@@ -1,0 +1,302 @@
+<div class="chero">
+  <div class="chero-desc">
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{section.settings.subtext}}</p>
+    <a href="{{ section.settings.button_url }}" class="chero-btn_desktop">{{ section.settings.button_text }}</a>
+  </div>
+  <div class="glide chero-carousel">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        {% for block in section.blocks %}
+        <div class="chero-slide glide__slide">
+          <a class="chero-slide_img" href="{{ block.settings.collection_id.url }}">
+              <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-expand="-10" data-src="{{ block.settings.collection_id.image | img_url: '500x' }}">
+          </a>
+          <span>{{ block.settings.collection_id.title }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">{% render 'arrow-right' %}</button>
+    </div>
+  </div>
+  <a href="{{ section.settings.button_url }}" class="chero-btn_mobile">{{ section.settings.button_text }}</a>
+</div>
+
+<style>
+
+
+  .chero-carousel {
+    position: relative;
+  }
+  
+  .carousel-hero-section {
+    display: none;
+  }
+
+  .glide__slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .chero {
+    padding-bottom: 72px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .chero-desc {
+    padding: 24px 17px;
+  }
+
+  .chero-desc p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .chero-desc h1 {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: capitalize;
+  }
+
+  .chero-btn_desktop,
+  .chero-btn_mobile {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    padding: 12px 46px;
+    text-align: center;
+    background: black;
+    color: white;
+    margin-top: 24px;
+  }
+
+  .chero-btn_mobile {
+    display: inline-block;
+    margin-left: 17px;
+
+  }
+
+  .chero-btn_desktop {
+    display: none;
+  }
+
+  .chero-carousel {
+    padding-left: 17px;
+  }
+
+  .chero-slide {
+    margin-right: 8px;
+  }
+
+  .chero-slide span {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  
+  .glide__arrows {
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 30%;
+    z-index: 100;
+  }
+  
+  .glide__arrows svg {
+    -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.11);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.11);
+    border-radius: 100px;
+    height: 36px;
+    width: 36px;
+  }
+    
+  @media (min-width: 768px) {
+    .chero {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding-left: 40px;
+    }
+
+    .chero-desc {
+      width: 40%;
+      padding-left: 0;
+    }
+
+    .chero-carousel {
+      position: relative;
+      width: 60%;
+    }
+
+    .chero-carousel .glide__track {
+      overflow-x: hidden;
+    }
+
+    .chero-btn_mobile {
+      display: none;
+    }
+
+    .chero-btn_desktop {
+      display: inline-block;
+    }
+
+    .glide__arrows {
+      display: block;
+      position: absolute;
+      right: 36px;
+      top: 30%;
+      z-index: 100;
+    }
+
+    .glide__arrows svg {
+      -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.11);
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.11);
+      border-radius: 100px;
+      height: unset;
+      width: unset;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .chero-desc {
+      width: 40%;
+    }
+
+    .chero-carousel {
+      width: 60%;
+    }
+
+    .chero-desc h1 {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .chero-desc p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .chero-btn_desktop {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .glide__arrows {
+      top: 40%;
+    }
+  }
+
+  @media (max-width: 768px) {
+/*     .glide__slides { transform : initial !important; } */
+    }
+
+    .glide__track {
+/*       overflow-x: scroll; */
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide" type="text/javascript"></script>
+<script>
+    new Glide('.glide', {
+        type: 'carousel',
+        breakpoints: {
+          768: {
+            perView: 2,
+            gap: 20,
+            peek: {
+              before: 0,
+              after: 80
+            },
+            swipeThreshold: 15,
+            touchRatio: .5,
+          },
+          1024: {
+            perView: 2,
+            gap: 20,
+            peek: {
+              before: 0,
+              after: 44
+            }
+          },
+          1280: {
+            perView: 2,
+            gap: 16,
+            peek: {
+              before: 0,
+              after: 45
+            }
+          }
+        },
+        perView: 3,
+        gap: 16,
+        peek: {
+          before: 0,
+          after: 44
+        }
+      }).mount();
+
+</script>
+
+
+{% schema %}
+{
+  "name": "new-hero",
+  "class": "carousel-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel Hero",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
