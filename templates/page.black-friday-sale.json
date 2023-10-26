@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "1637074132ed6d1abb": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><strong>🎁 Our best sale of the year is now LIVE! 🎁<\/strong><br\/><\/p><p><strong>Get 25% off everything sitewide (prices already marked down, no discount codes needed)<\/strong><\/p><p><strong>❤️<\/strong> Loved by over 50,000 moms! <strong>❤️<\/strong><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "a-little-moody"
+      }
+    },
+    "1637072870fec369b0": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "aint-lion"
+      }
+    }
+  },
+  "order": [
+    "1637074132ed6d1abb",
+    "main",
+    "1637072870fec369b0"
+  ]
+}

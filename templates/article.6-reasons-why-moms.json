@@ -1,0 +1,547 @@
+{
+  "sections": {
+    "1641404437867155bb": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "Why 48,793 moms switched to Bamboo baby clothes",
+        "drop_live": "",
+        "announcement": "By: Sonia on JAN 5th at 8:00AM PDT",
+        "show_countdown": false,
+        "deadline": "15 October 2021 09:00:00 GMT-0700"
+      }
+    },
+    "16414066571d3133ff": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "<p>I just knew I had to find the absolute best for her 💟<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/DSC_9429.jpg",
+        "focal_point": "center",
+        "color_border": "#ffffff",
+        "layout": "left",
+        "height": 450,
+        "framed": true,
+        "parallax": false
+      }
+    },
+    "main": {
+      "type": "article__content",
+      "blocks": {
+        "af35973d-43b0-4b40-9213-68dc2c23e61d": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Nine months ago my husband and I welcomed our first baby girl Blush into the world, and I traded in my career to become a full time mama.<\/p><p>Before Blush, I spent the last 10 years as a consultant. I had to be \"agile\" and talk about 'synergy' while wearing very uncomfortable pantsuits... But my new client is a tiny little human who only wants three things: milk, snuggles, and her ducky pacifier.<br\/><br\/>It still seems crazy that you get to raise a kid without a permit... or training... or something. Google and mommy blogs became my best friend. Every night I found myself asking a zillion questions: Do you think she’s too cold? Too hot? How do I get her to stop scratching her little face at night? And- Does anyone snore louder than my husband?!<\/p><p>I spent most days and nights in mama mode: Baby in one hand (breastfeeding) and phone in the other hand… reading mommy blogs for the inside scoop.<\/p><p>I noticed that so many moms shared this concern: what is the best quality sleepwear to put my baby in? I needed something gentle for her delicate skin, temperature regulating, and of course something stylish for the daily Snapchats we send to her grandparents.<br\/><strong><br\/>Research opened my eyes to bamboo fabric. Here's why I could never go back:<br\/><br\/><\/strong><\/p>"
+          }
+        },
+        "a61ff8f7-2944-441a-bb88-9411636318d1": {
+          "type": "heading",
+          "settings": {
+            "title": "1. FOR THE buttery-soft feel fabric",
+            "heading-type": "h2"
+          }
+        },
+        "f2d54646-3a4f-43b9-afc1-fda046e0bb67": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Even the best organic cotton feels like sandpaper when rubbed next to bamboo.<\/p>"
+          }
+        },
+        "3b8881d2-5758-4e47-a33e-14a8813ac439": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e": {
+          "type": "heading",
+          "settings": {
+            "title": "2. Lasts you 3x longer than cotton",
+            "heading-type": "h2"
+          }
+        },
+        "39b12653-0576-410b-bcd4-be9e63ddc89f": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Quality and durable fabric.<\/p>"
+          }
+        },
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "b75ac491-9d62-49e3-8fcc-2495da30a618": {
+          "type": "heading",
+          "settings": {
+            "title": "3. keeps you dry on-the-go",
+            "heading-type": "h2"
+          }
+        },
+        "065be33f-34d0-4cb8-9978-4d735bcb6898": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Bamboo is 40% more absorbent than even the finest organic cotton. This means less diaper rashes. <\/p>"
+          }
+        },
+        "dbbf12c7-f775-4784-9bcd-57f14aeac12d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_DSC_3836.jpg",
+            "image_link": "",
+            "desktop-width": "100%",
+            "desktop-alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "af35973d-43b0-4b40-9213-68dc2c23e61d",
+        "a61ff8f7-2944-441a-bb88-9411636318d1",
+        "f2d54646-3a4f-43b9-afc1-fda046e0bb67",
+        "3b8881d2-5758-4e47-a33e-14a8813ac439",
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e",
+        "39b12653-0576-410b-bcd4-be9e63ddc89f",
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f",
+        "b75ac491-9d62-49e3-8fcc-2495da30a618",
+        "065be33f-34d0-4cb8-9978-4d735bcb6898",
+        "dbbf12c7-f775-4784-9bcd-57f14aeac12d"
+      ],
+      "settings": {
+      }
+    },
+    "16414064645a887ebc": {
+      "type": "article__content",
+      "blocks": {
+        "b034125e-b9e9-40be-aba2-53fcfc78fe26": {
+          "type": "heading",
+          "settings": {
+            "title": "4. For the Stretchy Fabric that always fits",
+            "heading-type": "h2"
+          }
+        },
+        "1f405129-913c-4f66-9e34-0d49a4c0abdb": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>It will fit even the chunkiest of babies. <\/p><p>BONUS: It stretches and grows with kids.<\/p>"
+          }
+        },
+        "92d682e4-6ece-4aaa-a962-4a0070aa581d": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "4733e9fb-cd3e-40c0-859e-c2ff816c01c9": {
+          "type": "heading",
+          "settings": {
+            "title": "5. stays fresh - it is breathable and temperature regulating",
+            "heading-type": "h2"
+          }
+        },
+        "3de6e823-d68f-464a-af37-5bfc2281170d": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>The right temperature is crucial for a baby's sleep. This is a no brainer for better sleep for them and you!!<\/p>"
+          }
+        },
+        "7c5cbf93-b497-40e5-bf22-a47a93839e0b": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "c4bfdae3-73e0-4827-8d16-777bcf8a1e64": {
+          "type": "heading",
+          "settings": {
+            "title": "6. Stays clean longer than bamboo",
+            "heading-type": "h2"
+          }
+        },
+        "918d316a-9499-44f9-83cb-b1949db9efdf": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>The fabric is naturally antibacterial and antifungal. <\/p>"
+          }
+        },
+        "3e71d949-5a89-4878-b6dc-4a92d606bfa4": {
+          "type": "space",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "b034125e-b9e9-40be-aba2-53fcfc78fe26",
+        "1f405129-913c-4f66-9e34-0d49a4c0abdb",
+        "92d682e4-6ece-4aaa-a962-4a0070aa581d",
+        "4733e9fb-cd3e-40c0-859e-c2ff816c01c9",
+        "3de6e823-d68f-464a-af37-5bfc2281170d",
+        "7c5cbf93-b497-40e5-bf22-a47a93839e0b",
+        "c4bfdae3-73e0-4827-8d16-777bcf8a1e64",
+        "918d316a-9499-44f9-83cb-b1949db9efdf",
+        "3e71d949-5a89-4878-b6dc-4a92d606bfa4"
+      ],
+      "settings": {
+      }
+    },
+    "1644370021aa9f6f82": {
+      "type": "advanced-content",
+      "blocks": {
+        "0101968e-960d-4743-8b9b-34a22fed34ee": {
+          "type": "html",
+          "settings": {
+            "code": "<h2> From everyday moms to celebrities, moms love Little Bum Bums ❤️<\/h2>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "164437002112444a82-1": {
+          "type": "html",
+          "settings": {
+            "code": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/CZaa3iXP4CA\/?utm_source=ig_embed&utm_campaign=loading\" data-instgrm-version=\"14\" style=\" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);\"><div style=\"padding:16px;\"> <a href=\"https:\/\/www.instagram.com\/p\/CZaa3iXP4CA\/?utm_source=ig_embed&utm_campaign=loading\" style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;\" target=\"_blank\"> <div style=\" display: flex; flex-direction: row; align-items: center;\"> <div style=\"background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;\"><\/div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;\"><\/div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\"><\/div>\n<\/div>\n<\/div>\n<div style=\"padding: 19% 0;\"><\/div> <div style=\"display:block; height:50px; margin:0 auto 12px; width:50px;\"><svg width=\"50px\" height=\"50px\" viewbox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\"><g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g transform=\"translate(-511.000000, -20.000000)\" fill=\"#000000\"><g><path d=\"M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631\"><\/path><\/g><\/g><\/g><\/svg><\/div>\n<div style=\"padding-top: 8px;\"> <div style=\" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;\">View this post on Instagram<\/div>\n<\/div>\n<div style=\"padding: 12.5% 0;\"><\/div> <div style=\"display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;\">\n<div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);\"><\/div> <div style=\"background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\"><\/div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\"><\/div>\n<\/div>\n<div style=\"margin-left: 8px;\"> <div style=\" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;\"><\/div> <div style=\" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)\"><\/div>\n<\/div>\n<div style=\"margin-left: auto;\"> <div style=\" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\"><\/div> <div style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);\"><\/div> <div style=\" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);\"><\/div>\n<\/div>\n<\/div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;\"><\/div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;\"><\/div>\n<\/div><\/a><p style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;\"><a href=\"https:\/\/www.instagram.com\/p\/CZaa3iXP4CA\/?utm_source=ig_embed&utm_campaign=loading\" style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A post shared by Jason King (@jasonking)<\/a><\/p>\n<\/div><\/blockquote> <script async src=\"\/\/www.instagram.com\/embed.js\"><\/script>\n<p> Jason King, Jason Derulo and Jena Frumes' son<\/p><p><\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "1bd07dbe-04d5-4a7e-9d22-912a57610034": {
+          "type": "html",
+          "settings": {
+            "code": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https:\/\/www.instagram.com\/p\/CX7tg2HLfj9\/?utm_source=ig_embed&utm_campaign=loading\" data-instgrm-version=\"14\" style=\" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);\"><div style=\"padding:16px;\"> <a href=\"https:\/\/www.instagram.com\/p\/CX7tg2HLfj9\/?utm_source=ig_embed&utm_campaign=loading\" style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;\" target=\"_blank\"> <div style=\" display: flex; flex-direction: row; align-items: center;\"> <div style=\"background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;\"><\/div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;\"><\/div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\"><\/div>\n<\/div>\n<\/div>\n<div style=\"padding: 19% 0;\"><\/div> <div style=\"display:block; height:50px; margin:0 auto 12px; width:50px;\"><svg width=\"50px\" height=\"50px\" viewbox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"https:\/\/www.w3.org\/1999\/xlink\"><g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g transform=\"translate(-511.000000, -20.000000)\" fill=\"#000000\"><g><path d=\"M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631\"><\/path><\/g><\/g><\/g><\/svg><\/div>\n<div style=\"padding-top: 8px;\"> <div style=\" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;\">View this post on Instagram<\/div>\n<\/div>\n<div style=\"padding: 12.5% 0;\"><\/div> <div style=\"display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;\">\n<div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);\"><\/div> <div style=\"background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\"><\/div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\"><\/div>\n<\/div>\n<div style=\"margin-left: 8px;\"> <div style=\" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;\"><\/div> <div style=\" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)\"><\/div>\n<\/div>\n<div style=\"margin-left: auto;\"> <div style=\" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\"><\/div> <div style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);\"><\/div> <div style=\" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);\"><\/div>\n<\/div>\n<\/div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;\"><\/div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;\"><\/div>\n<\/div><\/a><p style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;\"><a href=\"https:\/\/www.instagram.com\/p\/CX7tg2HLfj9\/?utm_source=ig_embed&utm_campaign=loading\" style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">A post shared by Alex Morgan (@alexmorgan13)<\/a><\/p>\n<\/div><\/blockquote> <script async src=\"\/\/www.instagram.com\/embed.js\"><\/script>\n<p>Alex Morgan, captain of the US Womans Soccer Team<\/p><p><\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "0101968e-960d-4743-8b9b-34a22fed34ee",
+        "164437002112444a82-1",
+        "1bd07dbe-04d5-4a7e-9d22-912a57610034"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1641516267f5eccb6e": {
+      "type": "klaviyo-embed",
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-UiiVBD\"><\/div>"
+      }
+    },
+    "1641406601671ef806": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC_6918.jpg",
+        "image_width": 310,
+        "subtitle": "",
+        "title": "Is there a mom who isn't always looking the best for their little ones?",
+        "text": "<p>The whole idea behind Little Bum Bums is to create only the best quality for babies. Moms shouldn’t have to worry about settling for less for their little ones.<\/p><p>You should be able to simply pick something out of the closet, and know that what you are picking will not only look cute but great for your baby too. That's why I originally created Little Bum Bums bamboo clothing: it’s gentle for their delicate skin, and of course stylish.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "1641406921be9dcc5a": {
+      "type": "testimonials",
+      "blocks": {
+        "1641406921d46abbad-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>I don't know about you guys, but if you have a chunky babe like I do, he's 6 months old, 21 lbs and we have in size 9-12 and it fits perfect!<\/p>",
+            "author": "Haley, mom of 1"
+          }
+        }
+      },
+      "block_order": [
+        "1641406921d46abbad-0"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "round_images": false,
+        "divider": true
+      }
+    },
+    "1641407187e69021e2": {
+      "type": "featured-content",
+      "settings": {
+        "title": "Over +50,000 moms love Little Bum Bums😍",
+        "text": "<p><\/p><p><\/p><p>Little Bum Bums is the new revolution in baby wear. Other baby clothing companies are selling cheaper, low grade fabric, we focus on the highest quality. <\/p><p>Moms everywhere are choosing Little Bum Bums.<\/p><p>Our community of moms is fantastic. We all believe great quality clothing should be a given and not something we should be searching high and low for. We post pictures, share (soliscated) advice!<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": true
+      }
+    },
+    "16414073745cd38420": {
+      "type": "testimonials",
+      "blocks": {
+        "16414073746c8248a3-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p><em>We got our first LBB order and umm I need one in every color please<\/em><\/p>",
+            "author": "Keana, mom of a little girl"
+          }
+        }
+      },
+      "block_order": [
+        "16414073746c8248a3-0"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "round_images": false,
+        "divider": false
+      }
+    },
+    "1641408225312bf107": {
+      "type": "text-columns",
+      "blocks": {
+        "b48259d0-aefb-4afd-8313-126c93c2d7a6": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "16414082255e71096f-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design-8.png",
+            "image_width": 90,
+            "title": "",
+            "text": "<p><strong>At Little Bum Bums, we like to say everything is “made with love for my baby and yours”. Our bamboo clothes will get you wanting to replace your entire family’s wardrobe. <\/strong><\/p><p><\/p><p><\/p>",
+            "button_label": "Check out our bamboo clothes",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "ada28ba5-cc89-425a-bf46-01e599b0012b": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b48259d0-aefb-4afd-8313-126c93c2d7a6",
+        "16414082255e71096f-0",
+        "ada28ba5-cc89-425a-bf46-01e599b0012b"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": true
+      }
+    },
+    "1641410495d29072f8": {
+      "type": "featured-content",
+      "settings": {
+        "title": "Little Bum Bums bamboo clothes are sold exclusively on the Little Bum Bums' website.",
+        "text": "<p>As an environmentally conscious vegan, it was important to me to find a fabric that not only meets my baby’s needs, but also aligned with my personal values. Bamboo viscose checks off all the boxes and so much more!<\/p><p>Bamboo viscose is a <strong>natural textile<\/strong> made from the fibers of bamboo grass. It's a no brainer that bamboo is not only the most superior fabric for both your baby and yourself, but also the environment!<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": true
+      }
+    },
+    "1641410549fac1c5a9": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "home_featured_products": "footies",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "164151627001700349": {
+      "type": "klaviyo-embed",
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-UiiVBD\"><\/div>"
+      }
+    },
+    "1641410795d96dffb6": {
+      "type": "testimonials",
+      "blocks": {
+        "1641410795082a0ef3-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Nine months ago my husband and I welcomed our first baby girl Blush into the world, and I traded in my career to become a full time mama.<\/p><p>It still seems crazy that you get to raise a kid without a permit... or training... or something.<\/p>",
+            "image": "shopify:\/\/shop_images\/sonia.png",
+            "author": "Sonia, mama of 2, LBB founder"
+          }
+        }
+      },
+      "block_order": [
+        "1641410795082a0ef3-0"
+      ],
+      "settings": {
+        "title": "ABOUT THE AUTHOR",
+        "align_text": "center",
+        "round_images": true,
+        "divider": true
+      }
+    },
+    "16414111620624f15c": {
+      "type": "promo-grid",
+      "blocks": {
+        "fcd1fede-b783-41d3-8f59-5dc7ddb41ecd": {
+          "type": "banner",
+          "settings": {
+            "heading": "Try our bamboo sleepers! you will love them.",
+            "text": "",
+            "link": "shopify:\/\/collections\/all",
+            "label": "Check out our bamboo baby clothes",
+            "color_tint": "#c89fb6",
+            "color_tint_opacity": 10,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "fcd1fede-b783-41d3-8f59-5dc7ddb41ecd"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "1641411302925cff6e": {
+      "type": "testimonials",
+      "blocks": {
+        "164141130207c934f8-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>LOVE these jams so much, this was my first FULL mama set… needless to say, after wearing this set I immediately ordered another pair.<\/p>",
+            "author": "Alicia, mom of 1"
+          }
+        },
+        "fa64fe54-68a1-4298-8e35-311cd52bbfa3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>First LBB purchase and it won't be my last ❤️<\/p>",
+            "author": "Melissa, mom of 1"
+          }
+        },
+        "5cd9db62-bb6c-415d-8999-fc099c2aa6b7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Not saying we are obsessed but....❤️<\/p>",
+            "author": "Paige, mom of a baby girl"
+          }
+        }
+      },
+      "block_order": [
+        "164141130207c934f8-0",
+        "fa64fe54-68a1-4298-8e35-311cd52bbfa3",
+        "5cd9db62-bb6c-415d-8999-fc099c2aa6b7"
+      ],
+      "settings": {
+        "title": "What moms are saying about us...",
+        "align_text": "center",
+        "round_images": false,
+        "divider": true
+      }
+    },
+    "164141139451d8e15e": {
+      "type": "article__content",
+      "blocks": {
+        "beac4779-354c-4627-aa21-a266f17344cc": {
+          "type": "space",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "beac4779-354c-4627-aa21-a266f17344cc"
+      ],
+      "settings": {
+      }
+    },
+    "1641410963a7864720": {
+      "type": "promo-grid",
+      "blocks": {
+        "2f880a05-f107-4c71-86bd-d6224c2c53a5": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Little Bum Bums",
+            "heading": "",
+            "textarea": "clothes are made for on-the-go moms.",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/DSC_0835_2.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_size": 120,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "2f880a05-f107-4c71-86bd-d6224c2c53a5"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "164141139833401bb6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "home_featured_products": "toddler-pajamas",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "1641404437867155bb",
+    "16414066571d3133ff",
+    "main",
+    "16414064645a887ebc",
+    "1644370021aa9f6f82",
+    "1641516267f5eccb6e",
+    "1641406601671ef806",
+    "1641406921be9dcc5a",
+    "1641407187e69021e2",
+    "16414073745cd38420",
+    "1641408225312bf107",
+    "1641410495d29072f8",
+    "1641410549fac1c5a9",
+    "164151627001700349",
+    "1641410795d96dffb6",
+    "16414111620624f15c",
+    "1641411302925cff6e",
+    "164141139451d8e15e",
+    "1641410963a7864720",
+    "164141139833401bb6"
+  ]
+}

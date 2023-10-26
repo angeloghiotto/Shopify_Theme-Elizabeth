@@ -1,0 +1,311 @@
+{
+  "sections": {
+    "main": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "NEW STYLES",
+        "drop_live": "The Drop is live!",
+        "announcement": "New prints drop every Wednesday! Scroll to Shop!",
+        "show_countdown": false,
+        "deadline": "13 October 2021 12:00:00 GMT-0700"
+      }
+    },
+    "1633705289ae1a45df": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "16337077997cc088dc": {
+      "type": "drop-collage",
+      "blocks": {
+        "196e8820-a576-4119-a867-d2f75d61d6f1": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_0133.jpg"
+          }
+        },
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_9725.jpg"
+          }
+        },
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_8922_1.jpg"
+          }
+        },
+        "0006fa7c-664c-4b32-a809-983c82166804": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_DSC_9673.jpg",
+            "title": "Footie",
+            "link": "shopify:\/\/products\/mustache-glasses-footie"
+          }
+        },
+        "a86c2647-d585-4521-8787-5985f4998c9c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Blanket_Mustache.jpg",
+            "title": "Blanket",
+            "link": "shopify:\/\/products\/mustache-glasses-bum-bum-blanket"
+          }
+        },
+        "7e16f809-77d0-48fd-a072-c95576d0882a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_0150.jpg",
+            "title": "Romper",
+            "link": "shopify:\/\/products\/mustache-glasses-romper"
+          }
+        },
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_9300.jpg",
+            "title": "Two-Piece Pajama Set",
+            "link": "shopify:\/\/products\/mustache-glasses-two-piece-pajama-set"
+          }
+        }
+      },
+      "block_order": [
+        "196e8820-a576-4119-a867-d2f75d61d6f1",
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef",
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea",
+        "0006fa7c-664c-4b32-a809-983c82166804",
+        "a86c2647-d585-4521-8787-5985f4998c9c",
+        "7e16f809-77d0-48fd-a072-c95576d0882a",
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33"
+      ],
+      "settings": {
+        "title": "Kiss My Stache",
+        "subtitle": "",
+        "link": "shopify:\/\/collections\/new-collections"
+      }
+    },
+    "1633718908cafa83ad": {
+      "type": "drop-collage",
+      "blocks": {
+        "faa91eec-f498-4d66-9f44-ad91c8a18888": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_8145.jpg"
+          }
+        },
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_7268.jpg"
+          }
+        },
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Copy_of_DSC_7057.jpg"
+          }
+        },
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tools_footie2.jpg",
+            "title": "Footie",
+            "link": "shopify:\/\/products\/nailed-it-footie"
+          }
+        },
+        "8d75665c-c377-45f1-b12c-97459c5313d6": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_DSC_8127_1.jpg",
+            "title": "Two-Piece Pajama Set",
+            "link": "shopify:\/\/products\/nailed-it-two-piece-pajama-set"
+          }
+        },
+        "9a950224-89d1-4cb7-998c-528f06510963": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_9633.jpg",
+            "title": "Blanket",
+            "link": "shopify:\/\/products\/nailed-it-bum-bum-blanket"
+          }
+        },
+        "4b22b4ac-1f6d-4d5d-a2be-38457f6ded82": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_DSC_7268_1.jpg",
+            "title": "Swaddle  & Beanie Set",
+            "link": "shopify:\/\/products\/nailed-it-swaddle-beanie-set"
+          }
+        }
+      },
+      "block_order": [
+        "faa91eec-f498-4d66-9f44-ad91c8a18888",
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60",
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4",
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c",
+        "8d75665c-c377-45f1-b12c-97459c5313d6",
+        "9a950224-89d1-4cb7-998c-528f06510963",
+        "4b22b4ac-1f6d-4d5d-a2be-38457f6ded82"
+      ],
+      "settings": {
+        "title": "Nailed It - Back By Popular Demand!",
+        "subtitle": "",
+        "link": "shopify:\/\/collections\/new-collections"
+      }
+    },
+    "16340960803d708be9": {
+      "type": "drop-collage",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "link": ""
+      }
+    },
+    "16337204527af62f22": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "16339721125a4533c3": {
+      "type": "drop-header-no-countdown",
+      "disabled": true,
+      "settings": {
+        "headline": "Holiday Drop Part 2",
+        "announcement": "Launches Oct 7th at 8:00AM PDT",
+        "subtext": "The second half of our Holiday collection drops next week!"
+      }
+    },
+    "bc1bc862-3e70-4392-8eb4-7b2d7b7d46bb": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "e4784459-8a90-41df-bebe-287b3bfff800": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-6": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-7": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-0",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-1",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-2",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-3",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-4",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-5",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-6",
+        "template--15970325823656__e4784459-8a90-41df-bebe-287b3bfff800-16690690206fb69194-7"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Collection list",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
+    "3cc66236-848d-427a-9b44-bc3c63b41c4f": {
+      "type": "collection-carousel",
+      "blocks": {
+        "8502e845-2c0b-43f1-81e9-6432b8db0e73": {
+          "type": "collection",
+          "settings": {
+            "collection": "2021-summer"
+          }
+        }
+      },
+      "block_order": [
+        "8502e845-2c0b-43f1-81e9-6432b8db0e73"
+      ],
+      "settings": {
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1633705289ae1a45df",
+    "16337077997cc088dc",
+    "1633718908cafa83ad",
+    "16340960803d708be9",
+    "16337204527af62f22",
+    "16339721125a4533c3",
+    "bc1bc862-3e70-4392-8eb4-7b2d7b7d46bb",
+    "e4784459-8a90-41df-bebe-287b3bfff800",
+    "3cc66236-848d-427a-9b44-bc3c63b41c4f"
+  ]
+}

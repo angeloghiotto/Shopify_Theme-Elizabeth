@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "main": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "Holiday Drop 2021",
+        "drop_live": "The Drop is live!",
+        "announcement": "Launches October 13th at 9:00AM PDT",
+        "show_countdown": true,
+        "deadline": "July 13th, 2022"
+      }
+    },
+    "1633705289ae1a45df": {
+      "type": "klaviyo-embed",
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "16337077997cc088dc": {
+      "type": "drop-collage",
+      "blocks": {
+        "196e8820-a576-4119-a867-d2f75d61d6f1": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_9313.jpg"
+          }
+        },
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6596.jpg"
+          }
+        },
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_0231.jpg"
+          }
+        },
+        "0006fa7c-664c-4b32-a809-983c82166804": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6478.jpg",
+            "title": "Footie",
+            "link": "shopify:\/\/products\/mint-monsters-footie"
+          }
+        },
+        "a86c2647-d585-4521-8787-5985f4998c9c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_7431.jpg",
+            "title": "Blanket",
+            "link": "shopify:\/\/products\/a-little-moody-bum-bum-blanket"
+          }
+        },
+        "7e16f809-77d0-48fd-a072-c95576d0882a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_0172.jpg",
+            "title": "Romper",
+            "link": "shopify:\/\/products\/peach-bats-romper"
+          }
+        },
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_0291.jpg",
+            "title": "Mama Set",
+            "link": "shopify:\/\/products\/all-the-jingle-ladies-lovey"
+          }
+        }
+      },
+      "block_order": [
+        "196e8820-a576-4119-a867-d2f75d61d6f1",
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef",
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea",
+        "0006fa7c-664c-4b32-a809-983c82166804",
+        "a86c2647-d585-4521-8787-5985f4998c9c",
+        "7e16f809-77d0-48fd-a072-c95576d0882a",
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33"
+      ],
+      "settings": {
+        "title": "Up To Snow Good",
+        "subtitle": "",
+        "link": "shopify:\/\/collections\/new-collections"
+      }
+    },
+    "1633718908cafa83ad": {
+      "type": "drop-collage",
+      "blocks": {
+        "faa91eec-f498-4d66-9f44-ad91c8a18888": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/orig_close_up.jpg"
+          }
+        },
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_2104_1.jpg"
+          }
+        },
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_3565.jpg"
+          }
+        },
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3565.jpg",
+            "title": "Footie",
+            "link": "shopify:\/\/products\/a-little-moody-bum-bum-blanket"
+          }
+        },
+        "8d75665c-c377-45f1-b12c-97459c5313d6": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_0606.jpg",
+            "title": "Pajamas",
+            "link": "shopify:\/\/products\/a-little-moody-headwrap"
+          }
+        }
+      },
+      "block_order": [
+        "faa91eec-f498-4d66-9f44-ad91c8a18888",
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60",
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4",
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c",
+        "8d75665c-c377-45f1-b12c-97459c5313d6"
+      ],
+      "settings": {
+        "title": "Paper View",
+        "subtitle": "",
+        "link": "shopify:\/\/collections\/new-collections"
+      }
+    },
+    "16337204527af62f22": {
+      "type": "klaviyo-embed",
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "16339721125a4533c3": {
+      "type": "drop-header-no-countdown",
+      "settings": {
+        "headline": "Holiday Drop Part 2",
+        "announcement": "Launches Oct 7th at 8:00AM PDT",
+        "subtext": "The second half of our Holiday collection drops next week!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1633705289ae1a45df",
+    "16337077997cc088dc",
+    "1633718908cafa83ad",
+    "16337204527af62f22",
+    "16339721125a4533c3"
+  ]
+}

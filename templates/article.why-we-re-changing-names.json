@@ -1,0 +1,614 @@
+{
+  "sections": {
+    "1641404437867155bb": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "WE'RE CHANGING NAMES.... AND HERE’S WHY!",
+        "drop_live": "",
+        "announcement": "",
+        "show_countdown": false,
+        "deadline": "15 October 2021 09:00:00 GMT-0700"
+      }
+    },
+    "dd00ba34-520b-46b1-af64-efe6121ce8ec": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p>2 Years ago, we launched Little Bum Bums.<\/p><p>And today is the biggest day in our company's history..<\/p><p><\/p><p>After months of work, we're excited to unveil our new name...<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "article__content",
+      "blocks": {
+        "af35973d-43b0-4b40-9213-68dc2c23e61d": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Nine months ago my husband and I welcomed our first baby girl Blush into the world, and I traded in my career to become a full time mama.<\/p><p>Before Blush, I spent the last 10 years as a consultant. I had to be \"agile\" and talk about 'synergy' while wearing very uncomfortable pantsuits... But my new client is a tiny little human who only wants three things: milk, snuggles, and her ducky pacifier.<br\/><br\/>It still seems crazy that you get to raise a kid without a permit... or training... or something. Google and mommy blogs became my best friend. Every night I found myself asking a zillion questions: Do you think she’s too cold? Too hot? How do I get her to stop scratching her little face at night? And- Does anyone snore louder than my husband?!<\/p><p>I spent most days and nights in mama mode: Baby in one hand (breastfeeding) and phone in the other hand… reading mommy blogs for the inside scoop.<\/p><p>I noticed that so many moms shared this concern: what is the best quality sleepwear to put my baby in? I needed something gentle for her delicate skin, temperature regulating, and of course something stylish for the daily Snapchats we send to her grandparents.<br\/><strong><br\/>Research opened my eyes to bamboo fabric. Here's why I could never go back:<br\/><br\/><\/strong><\/p>"
+          }
+        },
+        "a61ff8f7-2944-441a-bb88-9411636318d1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Today is the biggest day in our company's history...",
+            "heading-type": "h3"
+          }
+        },
+        "f2d54646-3a4f-43b9-afc1-fda046e0bb67": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>2 Years ago, we launched Little Bum Bums..<\/p><p><\/p>"
+          }
+        },
+        "e5aff882-8e90-436f-92fd-728788c76a3e": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>And, today is the biggest day in our company's history<\/p>"
+          }
+        },
+        "fb04808d-c6b6-4136-a4b3-6dc0ce6b6dfc": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "39b12653-0576-410b-bcd4-be9e63ddc89f": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>After months of work, we're excited to unveil our new name...<\/p>"
+          }
+        },
+        "3b8881d2-5758-4e47-a33e-14a8813ac439": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "heading-type": "h4"
+          }
+        },
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "b75ac491-9d62-49e3-8fcc-2495da30a618": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "AFTER MONTHS OF WORK, WE ARE EXCITED TO SHOWCASE OUR NEW NAME:",
+            "heading-type": "h4"
+          }
+        },
+        "dd105f58-a3ba-437f-8a97-1e1520bcafb0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Formerly_LBB_Logo-min.png",
+            "image_link": "",
+            "desktop-width": "33%",
+            "desktop-alignment": "flex-start"
+          }
+        },
+        "8bd05cca-7865-4c11-873d-4e75b37b26f7": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>It’s catchy, fun, and a little edgy. The perfect way to describe who we are! <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "af35973d-43b0-4b40-9213-68dc2c23e61d",
+        "a61ff8f7-2944-441a-bb88-9411636318d1",
+        "f2d54646-3a4f-43b9-afc1-fda046e0bb67",
+        "e5aff882-8e90-436f-92fd-728788c76a3e",
+        "fb04808d-c6b6-4136-a4b3-6dc0ce6b6dfc",
+        "39b12653-0576-410b-bcd4-be9e63ddc89f",
+        "3b8881d2-5758-4e47-a33e-14a8813ac439",
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e",
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f",
+        "b75ac491-9d62-49e3-8fcc-2495da30a618",
+        "dd105f58-a3ba-437f-8a97-1e1520bcafb0",
+        "8bd05cca-7865-4c11-873d-4e75b37b26f7"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "164cea8b-cef3-4ff7-a966-f359cec37100": {
+      "type": "article__content",
+      "blocks": {
+        "eb2dce25-41dd-410b-98fe-64da70a7b54c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Logo-min.png",
+            "image_link": "",
+            "desktop-width": "50%",
+            "desktop-alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "eb2dce25-41dd-410b-98fe-64da70a7b54c"
+      ],
+      "settings": {
+      }
+    },
+    "b484cebe-73b4-4fd0-ade3-014af3052652": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><em>...It’s catchy, fun, and a little edgy. <\/em><\/p><p><\/p><p><em>The perfect way to describe who we are! <\/em><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "divider": false
+      }
+    },
+    "1644370021aa9f6f82": {
+      "type": "advanced-content",
+      "blocks": {
+        "0101968e-960d-4743-8b9b-34a22fed34ee": {
+          "type": "html",
+          "settings": {
+            "code": "<h3> Why change names? <\/h3>\n\nHear the backstory with all the fun details in this video!❤️<p1><\/p1>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "164437002112444a82-1": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<iframe src=\"https:\/\/player.vimeo.com\/video\/761082803?h=0337b57be1&badge=0&autopause=0&player_id=0&app_id=58479\" width=\"540\" height=\"960 !important\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen title=\"We’re changing our name - and here’s why!\"><\/iframe>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "26affd0f-6dde-41db-8956-46a45af5bfe7": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "0101968e-960d-4743-8b9b-34a22fed34ee",
+        "164437002112444a82-1",
+        "26affd0f-6dde-41db-8956-46a45af5bfe7"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "a723c1ce-4900-4e72-a6eb-c7b0d60a4ce0": {
+      "type": "featured-content",
+      "settings": {
+        "title": "BUT, Why Change Names?",
+        "text": "<p><\/p><p><em><strong>Hear the backstory with all the fun details in this video!<\/strong><\/em><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "divider": false
+      }
+    },
+    "4e4f2102-0934-4c01-9d27-d19246595699": {
+      "type": "featured-video",
+      "settings": {
+        "title": "",
+        "video_url": "https:\/\/vimeo.com\/761082803",
+        "divider": false
+      }
+    },
+    "1641410795d96dffb6": {
+      "type": "testimonials",
+      "blocks": {
+        "1641410795082a0ef3-0": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "testimonial": "<p>You guys are amazing! The name could be anything in the world & you’d still have an army of people supporting you! LIFERS!! <\/p>",
+            "author": "Ewelina"
+          }
+        }
+      },
+      "block_order": [
+        "1641410795082a0ef3-0"
+      ],
+      "settings": {
+        "title": "HERE'S What moms are saying... about our new look",
+        "align_text": "center",
+        "round_images": true,
+        "divider": true
+      }
+    },
+    "7f1e6954-340d-4eea-81eb-8e3e5dec487f": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039795261608__7f1e6954-340d-4eea-81eb-8e3e5dec487f-1666036245f6bd3132-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Amber.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        },
+        "dcac7c71-1ca0-41fd-84e5-d93bfa0806e7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_2.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "top-middle"
+          }
+        },
+        "a10ea332-43c5-4a57-8f94-12f43620b08c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Missy.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039795261608__7f1e6954-340d-4eea-81eb-8e3e5dec487f-1666036245f6bd3132-0",
+        "dcac7c71-1ca0-41fd-84e5-d93bfa0806e7",
+        "a10ea332-43c5-4a57-8f94-12f43620b08c"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "dbb29d1c-bbee-4c01-8a8b-f8d9288b0864": {
+      "type": "article__content",
+      "blocks": {
+        "642a27bf-5a64-42f1-8abc-3c7bd8c3cc1b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Hangtag-01.jpg",
+            "image_link": "",
+            "desktop-width": "50%",
+            "desktop-alignment": "flex-start"
+          }
+        }
+      },
+      "block_order": [
+        "642a27bf-5a64-42f1-8abc-3c7bd8c3cc1b"
+      ],
+      "settings": {
+      }
+    },
+    "9086f1af-e648-40e3-aaca-36f06e7541b4": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039645348008__9086f1af-e648-40e3-aaca-36f06e7541b4-16660293178ceda2ce-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Hangtag-01.jpg",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039645348008__9086f1af-e648-40e3-aaca-36f06e7541b4-16660293178ceda2ce-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "ea3fa1f3-2111-4edf-ab7a-d73fdf0aaf23": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039795261608__ea3fa1f3-2111-4edf-ab7a-d73fdf0aaf23-16660364504d8e10e1-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_4.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039795261608__ea3fa1f3-2111-4edf-ab7a-d73fdf0aaf23-16660364504d8e10e1-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1095c95f-ab6b-482d-9168-5667a61af382": {
+      "type": "article__content",
+      "blocks": {
+        "dba3c52d-6d46-4d8e-9d15-267438b02c9e": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "10c89da3-ae73-4671-a843-16195e51f013": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Polymailer_Small_Mockup_4.jpg",
+            "image_link": "",
+            "desktop-width": "50%",
+            "desktop-alignment": "flex-start"
+          }
+        }
+      },
+      "block_order": [
+        "dba3c52d-6d46-4d8e-9d15-267438b02c9e",
+        "10c89da3-ae73-4671-a843-16195e51f013"
+      ],
+      "settings": {
+      }
+    },
+    "68e52b39-8ebf-4641-967e-60658e9ba364": {
+      "type": "article__content",
+      "blocks": {
+        "5202d2a6-c872-4023-ae7b-e22552120fe2": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shoe_box_02_Resized_1.jpg",
+            "image_link": "",
+            "desktop-width": "50%",
+            "desktop-alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "5202d2a6-c872-4023-ae7b-e22552120fe2"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "729ebf13-6614-4cf3-a4f3-550d117f137b": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039645348008__729ebf13-6614-4cf3-a4f3-550d117f137b-1666029316455e006a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Polymailer_Small_Mockup_4.jpg",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039645348008__729ebf13-6614-4cf3-a4f3-550d117f137b-1666029316455e006a-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "space_around": true
+      }
+    },
+    "5d412c79-77ca-4d8b-af7b-12579ddd1d42": {
+      "type": "article__content",
+      "blocks": {
+        "3c853f1e-823e-4498-9660-63d759a906cb": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "92705bdb-1889-48ff-9e7b-8d4c23e63aff": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Caitlyn.png",
+            "image_link": "",
+            "desktop-width": "100%",
+            "desktop-alignment": "flex-start"
+          }
+        },
+        "1a7384d5-78d8-449c-8c1a-7233f54816a2": {
+          "type": "space",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "3c853f1e-823e-4498-9660-63d759a906cb",
+        "92705bdb-1889-48ff-9e7b-8d4c23e63aff",
+        "1a7384d5-78d8-449c-8c1a-7233f54816a2"
+      ],
+      "settings": {
+      }
+    },
+    "2eec18ca-3cdd-4ecf-a9a8-3f8d855b37e1": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039645348008__2eec18ca-3cdd-4ecf-a9a8-3f8d855b37e1-1666029687bdbe5a22-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shoe_box_02_Resized_1.jpg",
+            "link": "",
+            "width": "66%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039645348008__2eec18ca-3cdd-4ecf-a9a8-3f8d855b37e1-1666029687bdbe5a22-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "space_around": true
+      }
+    },
+    "da059cde-2c6d-4d41-86d7-f1b6c3b929f2": {
+      "type": "article__content",
+      "blocks": {
+        "232f2d9f-6229-4745-b60a-1966eb6f97bd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Swaddle_box_Pullout_strap_Mockup.jpg",
+            "image_link": "",
+            "desktop-width": "50%",
+            "desktop-alignment": "flex-start"
+          }
+        }
+      },
+      "block_order": [
+        "232f2d9f-6229-4745-b60a-1966eb6f97bd"
+      ],
+      "settings": {
+      }
+    },
+    "7c03bb08-b57f-4467-9a6a-81b21e1db1b2": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039645348008__7c03bb08-b57f-4467-9a6a-81b21e1db1b2-166602930029552146-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Swaddle_box_Pullout_strap_Mockup.jpg",
+            "link": "",
+            "width": "66%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039645348008__7c03bb08-b57f-4467-9a6a-81b21e1db1b2-166602930029552146-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "164141139451d8e15e": {
+      "type": "article__content",
+      "blocks": {
+        "beac4779-354c-4627-aa21-a266f17344cc": {
+          "type": "space",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "beac4779-354c-4627-aa21-a266f17344cc"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1641406601671ef806": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rebranding_FAQ_1.jpg",
+        "image_width": 280,
+        "subtitle": "",
+        "title": "You might be wondering...",
+        "text": "<p><strong>Why did you rebrand?  <\/strong>We started as a baby sleepwear brand. Over time, we've grown into more daywear, toddlers, mom & dad apparel etc... We began thinking of a name that would better capture our brand. <br\/><br\/>This video tells the full story: <a href=\"https:\/\/vimeo.com\/761082803\" target=\"_blank\" title=\"https:\/\/vimeo.com\/761082803\">Why we're rebranding :) <\/a><\/p><p><strong>What's changed with the rebrand? <\/strong>Only our name and Logo!  <\/p><p>We're still the same company, with all bold prints and buttery soft bamboo you love!!<\/p><p><\/p><p><strong>What about my 'Bum Bucks' and  loyalty Program? Are there any changes? <\/strong>Your Bum Bucks and Loyalty points stay exactly the same! If you're part of our rewards program you get free shipping,and special discounts and freebies on drop days!! Not part of Rewards Program yet? <a href=\"https:\/\/bumsandroses.com\/#smile-home\" target=\"_blank\" title=\"https:\/\/bumsandroses.com\/#smile-home\">Join here<\/a><\/p><p><strong>Why is 'Bums & Roses' the new name? <\/strong>Bums & Roses was our first ever print. It was the one I wore for my own pregnancy, and still one of our all time favorite puns. <\/p><p><\/p><p>The name sounds bold, edgy, and oh so beautiful. We fell in love with the name and bold colors!<\/p><p><\/p><p><strong>Will drops change? <\/strong>Not at all! Everything you know and love about the brand, will stay the same. Drops will be remain on Wednesday’s at 12pm PST and feature bright, bold, playful prints you’ve come to love us for. <\/p><p><\/p><p><strong>What about the products from previous drops, do they still have the 'Little Bum Bums' branding?<\/strong> If you order items from previous drops. You'll still be seeing LBB branded items! But all upcoming drops will be with the new and beautiful Bums & Roses branding!<\/p><p><\/p><p><strong>Which email address will drop emails come from? Will they come from: '<\/strong><em><strong>Little Bums Bums' <\/strong><\/em><strong>or '<\/strong><em><strong>Bums & Roses?'<\/strong><\/em><\/p><p>Until the end of October, you will still get emails from the '<em>Little Bum Bums<\/em>' email address. Starting in November, you will see all emails come from the '<em>Bums & Roses'<\/em> email address!<\/p><p><strong>Have any further questions? <\/strong>Please message us at help@bumsandroses.com<\/p><p><\/p><p><\/p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "1641408225312bf107": {
+      "type": "text-columns",
+      "blocks": {
+        "b48259d0-aefb-4afd-8313-126c93c2d7a6": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "16414082255e71096f-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Logo-min.png",
+            "image_width": 210,
+            "title": "",
+            "text": "<p><strong>Welcome to the new Chapter of our brand<\/strong><\/p><p><\/p><p><\/p>",
+            "button_label": "",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "ada28ba5-cc89-425a-bf46-01e599b0012b": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b48259d0-aefb-4afd-8313-126c93c2d7a6",
+        "16414082255e71096f-0",
+        "ada28ba5-cc89-425a-bf46-01e599b0012b"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": true
+      }
+    }
+  },
+  "order": [
+    "1641404437867155bb",
+    "dd00ba34-520b-46b1-af64-efe6121ce8ec",
+    "main",
+    "164cea8b-cef3-4ff7-a966-f359cec37100",
+    "b484cebe-73b4-4fd0-ade3-014af3052652",
+    "1644370021aa9f6f82",
+    "a723c1ce-4900-4e72-a6eb-c7b0d60a4ce0",
+    "4e4f2102-0934-4c01-9d27-d19246595699",
+    "1641410795d96dffb6",
+    "7f1e6954-340d-4eea-81eb-8e3e5dec487f",
+    "dbb29d1c-bbee-4c01-8a8b-f8d9288b0864",
+    "9086f1af-e648-40e3-aaca-36f06e7541b4",
+    "ea3fa1f3-2111-4edf-ab7a-d73fdf0aaf23",
+    "1095c95f-ab6b-482d-9168-5667a61af382",
+    "68e52b39-8ebf-4641-967e-60658e9ba364",
+    "729ebf13-6614-4cf3-a4f3-550d117f137b",
+    "5d412c79-77ca-4d8b-af7b-12579ddd1d42",
+    "2eec18ca-3cdd-4ecf-a9a8-3f8d855b37e1",
+    "da059cde-2c6d-4d41-86d7-f1b6c3b929f2",
+    "7c03bb08-b57f-4467-9a6a-81b21e1db1b2",
+    "164141139451d8e15e",
+    "1641406601671ef806",
+    "1641408225312bf107"
+  ]
+}

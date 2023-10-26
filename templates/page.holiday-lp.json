@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "1637074132ed6d1abb": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><strong>Shop Our Exclusive Holiday Prints!<\/strong><\/p><p><strong>❤️ Loved by over 50,000 moms! ❤️<\/strong><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "deer-santa"
+      }
+    },
+    "1637072870fec369b0": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "up-to-snow-good"
+      }
+    },
+    "1637587092583da9b7": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "checkmate"
+      }
+    },
+    "16375871173adcfe8d": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "treemendously-bright"
+      }
+    },
+    "1637587133c425b148": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "ice-ice-baby"
+      }
+    },
+    "16375871495743638d": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sugar-plum"
+      }
+    },
+    "163758716363ba8e87": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "love-you-a-latke"
+      }
+    },
+    "165742366323cd5b25": {
+      "type": "drop-header-no-countdown",
+      "settings": {
+        "headline": "Holiday Drop Part 2",
+        "announcement": "Launches Oct 7th at 8:00AM PDT",
+        "subtext": "The second half of our Holiday collection drops next week!"
+      }
+    }
+  },
+  "order": [
+    "1637074132ed6d1abb",
+    "main",
+    "1637072870fec369b0",
+    "1637587092583da9b7",
+    "16375871173adcfe8d",
+    "1637587133c425b148",
+    "16375871495743638d",
+    "163758716363ba8e87",
+    "165742366323cd5b25"
+  ]
+}

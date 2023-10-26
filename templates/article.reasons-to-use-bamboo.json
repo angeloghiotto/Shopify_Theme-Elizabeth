@@ -1,0 +1,166 @@
+{
+  "sections": {
+    "1640201670a2dbc25d": {
+      "type": "slideshow",
+      "blocks": {
+        "16402016701bca2a11-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Reasons you should use bamboo",
+            "title_size": 40,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/DSC_9439_3.jpg",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "16402016701bca2a11-0"
+      ],
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "minimal",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "main": {
+      "type": "article__content",
+      "blocks": {
+        "8dd28a55-f8d0-4040-b973-d6e2842d7b90": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>This is the intro<\/p>"
+          }
+        },
+        "817f8352-56ee-45a4-834e-bbeddb652ad5": {
+          "type": "heading",
+          "settings": {
+            "title": "1. because it is soft",
+            "heading-type": "h2"
+          }
+        },
+        "764207ea-1509-4f96-bc8d-ba2a645f2929": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>yes bamboo is really soft.<\/p>"
+          }
+        },
+        "8d8b66d9-5f10-4728-8d0e-ad3ac1062e4a": {
+          "type": "heading",
+          "settings": {
+            "title": "2. because the prints are better",
+            "heading-type": "h2"
+          }
+        },
+        "763fe6f6-2158-4f76-a085-264fdce0b88e": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>this is some text about the prints.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8dd28a55-f8d0-4040-b973-d6e2842d7b90",
+        "817f8352-56ee-45a4-834e-bbeddb652ad5",
+        "764207ea-1509-4f96-bc8d-ba2a645f2929",
+        "8d8b66d9-5f10-4728-8d0e-ad3ac1062e4a",
+        "763fe6f6-2158-4f76-a085-264fdce0b88e"
+      ],
+      "settings": {
+      }
+    },
+    "164020167440aca211": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "home_featured_products": "accessories",
+        "per_row": 3,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "1640201774e51c2a36": {
+      "type": "article__content",
+      "blocks": {
+        "4ff1673f-feef-4a0d-8a06-5e4cd7f34f21": {
+          "type": "heading",
+          "settings": {
+            "title": "3. because you'll love it",
+            "heading-type": "h2"
+          }
+        },
+        "901072c9-eb54-442d-af59-768c440267f0": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4ff1673f-feef-4a0d-8a06-5e4cd7f34f21",
+        "901072c9-eb54-442d-af59-768c440267f0"
+      ],
+      "settings": {
+      }
+    },
+    "1640201805faca64f3": {
+      "type": "logo-list",
+      "blocks": {
+        "16402018055bde6e3f-0": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16402018055bde6e3f-1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16402018055bde6e3f-2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16402018055bde6e3f-3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16402018055bde6e3f-0",
+        "16402018055bde6e3f-1",
+        "16402018055bde6e3f-2",
+        "16402018055bde6e3f-3"
+      ],
+      "settings": {
+        "title": "",
+        "logo_opacity": 76,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "1640201670a2dbc25d",
+    "main",
+    "164020167440aca211",
+    "1640201774e51c2a36",
+    "1640201805faca64f3"
+  ]
+}

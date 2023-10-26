@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "sidebar": {
+      "type": "collection-sidebar-test",
+      "blocks": {
+        "aae6bd5c-bc03-4e3e-baaf-ff80ace3b4ae": {
+          "type": "tags_group",
+          "settings": {
+            "title": "Size",
+            "tag_list": "First tag \nSecond tag \nThird tag",
+            "collapsed": false
+          }
+        },
+        "222a4a9e-d9f7-4281-bead-e58362212d20": {
+          "type": "tags_group",
+          "settings": {
+            "title": "Garment",
+            "tag_list": "Footie\nRomper \nPajama Set\nJogger Set\nDress\nTutu",
+            "collapsed": false
+          }
+        }
+      },
+      "block_order": [
+        "aae6bd5c-bc03-4e3e-baaf-ff80ace3b4ae",
+        "222a4a9e-d9f7-4281-bead-e58362212d20"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "filter_style": "drawer",
+        "tags_combine": true,
+        "enable_sort": true
+      }
+    },
+    "1637074132ed6d1abb": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><strong>❤️ Loved by over 50,000 moms! ❤️ <br\/><br\/>New Collections Drop Every Wednesday!<\/strong><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": false
+      }
+    },
+    "1644351743b71406b1": {
+      "type": "advanced-content",
+      "blocks": {
+        "164435174325a6e3bc-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "164435174325a6e3bc-1": {
+          "type": "html",
+          "settings": {
+            "code": "<h2>Custom content<\/h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "164435174325a6e3bc-0",
+        "164435174325a6e3bc-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "sidebar",
+    "1637074132ed6d1abb",
+    "1644351743b71406b1"
+  ]
+}

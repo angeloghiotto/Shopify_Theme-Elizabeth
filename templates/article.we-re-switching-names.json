@@ -1,0 +1,617 @@
+{
+  "sections": {
+    "1641404437867155bb": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "WE'RE CHANGING NAMES, AND HERE’S WHY!",
+        "drop_live": "",
+        "announcement": "",
+        "show_countdown": false,
+        "deadline": "15 October 2021 09:00:00 GMT-0700"
+      }
+    },
+    "16414066571d3133ff": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "<p>I just knew I had to find the absolute best for her 💟<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/DSC_9429.jpg",
+        "focal_point": "center",
+        "color_border": "#ffffff",
+        "layout": "left",
+        "height": 450,
+        "framed": true,
+        "parallax": false
+      }
+    },
+    "main": {
+      "type": "article__content",
+      "blocks": {
+        "af35973d-43b0-4b40-9213-68dc2c23e61d": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Nine months ago my husband and I welcomed our first baby girl Blush into the world, and I traded in my career to become a full time mama.<\/p><p>Before Blush, I spent the last 10 years as a consultant. I had to be \"agile\" and talk about 'synergy' while wearing very uncomfortable pantsuits... But my new client is a tiny little human who only wants three things: milk, snuggles, and her ducky pacifier.<br\/><br\/>It still seems crazy that you get to raise a kid without a permit... or training... or something. Google and mommy blogs became my best friend. Every night I found myself asking a zillion questions: Do you think she’s too cold? Too hot? How do I get her to stop scratching her little face at night? And- Does anyone snore louder than my husband?!<\/p><p>I spent most days and nights in mama mode: Baby in one hand (breastfeeding) and phone in the other hand… reading mommy blogs for the inside scoop.<\/p><p>I noticed that so many moms shared this concern: what is the best quality sleepwear to put my baby in? I needed something gentle for her delicate skin, temperature regulating, and of course something stylish for the daily Snapchats we send to her grandparents.<br\/><strong><br\/>Research opened my eyes to bamboo fabric. Here's why I could never go back:<br\/><br\/><\/strong><\/p>"
+          }
+        },
+        "a61ff8f7-2944-441a-bb88-9411636318d1": {
+          "type": "heading",
+          "settings": {
+            "title": "2 years ago, we launched Little Bum Bums.",
+            "heading-type": "h2"
+          }
+        },
+        "9cfa73fa-3613-4834-b902-3d8c77ffdcdb": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "3b8881d2-5758-4e47-a33e-14a8813ac439": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e": {
+          "type": "heading",
+          "settings": {
+            "title": "And today is the biggest day in our company history…",
+            "heading-type": "h4"
+          }
+        },
+        "39b12653-0576-410b-bcd4-be9e63ddc89f": {
+          "type": "rich-text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "a6d5b2ea-ca46-4303-aa1b-f1a9b70a56ca": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "b75ac491-9d62-49e3-8fcc-2495da30a618": {
+          "type": "heading",
+          "settings": {
+            "title": "After months of work, we are excited to showcase our new name:",
+            "heading-type": "h4"
+          }
+        },
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "065be33f-34d0-4cb8-9978-4d735bcb6898": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Bamboo is 40% more absorbent than even the finest organic cotton. This means less diaper rashes. <\/p>"
+          }
+        },
+        "39dce7d9-88b4-4b28-b874-62e2eeed36c6": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "dbbf12c7-f775-4784-9bcd-57f14aeac12d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_3.gif",
+            "image_link": "",
+            "desktop-width": "100%",
+            "desktop-alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "af35973d-43b0-4b40-9213-68dc2c23e61d",
+        "a61ff8f7-2944-441a-bb88-9411636318d1",
+        "9cfa73fa-3613-4834-b902-3d8c77ffdcdb",
+        "3b8881d2-5758-4e47-a33e-14a8813ac439",
+        "8ddfe75a-8917-4ca4-ab4c-a266c218fe5e",
+        "39b12653-0576-410b-bcd4-be9e63ddc89f",
+        "a6d5b2ea-ca46-4303-aa1b-f1a9b70a56ca",
+        "b75ac491-9d62-49e3-8fcc-2495da30a618",
+        "eb2a72c2-d1c0-486e-8763-996b5ccadf9f",
+        "065be33f-34d0-4cb8-9978-4d735bcb6898",
+        "39dce7d9-88b4-4b28-b874-62e2eeed36c6",
+        "dbbf12c7-f775-4784-9bcd-57f14aeac12d"
+      ],
+      "settings": {
+      }
+    },
+    "16414064645a887ebc": {
+      "type": "article__content",
+      "blocks": {
+        "022eba0a-0b7d-41a9-ae93-1fc83ca6b8ac": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "fe73fb65-4aad-4137-8247-52c4c5babbed": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "ef704767-8ac6-4dd0-8f31-fdc9fec8e25a": {
+          "type": "heading",
+          "settings": {
+            "title": "Starting Today",
+            "heading-type": "h2"
+          }
+        },
+        "99f1bcfd-f20e-4d8f-9b4c-aa573e4d4eb0": {
+          "type": "heading",
+          "settings": {
+            "title": "It's official, we are....",
+            "heading-type": "h3"
+          }
+        },
+        "3e71d949-5a89-4878-b6dc-4a92d606bfa4": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "cb6514b3-d8f4-4085-879b-9ab9df3bde03": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "0af9fb07-7f13-4972-8622-0e262d89db87": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Formerly_LBB_Logo-min.png",
+            "image_link": "",
+            "desktop-width": "33%",
+            "desktop-alignment": "flex-start"
+          }
+        },
+        "23a0f16b-fbca-4a95-90cc-b0f0375d0b4b": {
+          "type": "space",
+          "settings": {
+          }
+        },
+        "c8577fe3-c0c1-4ebc-a588-011f5219772e": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>It’s catchy, fun, and a little edgy. The perfect way to describe who we are! <\/p><p>Wanna know why? Hear the backstory with all the fun details in this video!<\/p>"
+          }
+        },
+        "d49e4151-7a7f-42a0-870c-b369a10db8ed": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "3d5e169a-11f6-479a-9268-9a494c6121de": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "b034125e-b9e9-40be-aba2-53fcfc78fe26": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "4. For the Stretchy Fabric that always fits",
+            "heading-type": "h2"
+          }
+        },
+        "1f405129-913c-4f66-9e34-0d49a4c0abdb": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>It will fit even the chunkiest of babies. <\/p><p>BONUS: It stretches and grows with kids.<\/p>"
+          }
+        },
+        "92d682e4-6ece-4aaa-a962-4a0070aa581d": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "4733e9fb-cd3e-40c0-859e-c2ff816c01c9": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "5. stays fresh - it is breathable and temperature regulating",
+            "heading-type": "h2"
+          }
+        },
+        "3de6e823-d68f-464a-af37-5bfc2281170d": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>The right temperature is crucial for a baby's sleep. This is a no brainer for better sleep for them and you!!<\/p>"
+          }
+        },
+        "7c5cbf93-b497-40e5-bf22-a47a93839e0b": {
+          "type": "space",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "c4bfdae3-73e0-4827-8d16-777bcf8a1e64": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "6. Stays clean longer than bamboo",
+            "heading-type": "h2"
+          }
+        },
+        "918d316a-9499-44f9-83cb-b1949db9efdf": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>The fabric is naturally antibacterial and antifungal. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "022eba0a-0b7d-41a9-ae93-1fc83ca6b8ac",
+        "fe73fb65-4aad-4137-8247-52c4c5babbed",
+        "ef704767-8ac6-4dd0-8f31-fdc9fec8e25a",
+        "99f1bcfd-f20e-4d8f-9b4c-aa573e4d4eb0",
+        "3e71d949-5a89-4878-b6dc-4a92d606bfa4",
+        "cb6514b3-d8f4-4085-879b-9ab9df3bde03",
+        "0af9fb07-7f13-4972-8622-0e262d89db87",
+        "23a0f16b-fbca-4a95-90cc-b0f0375d0b4b",
+        "c8577fe3-c0c1-4ebc-a588-011f5219772e",
+        "d49e4151-7a7f-42a0-870c-b369a10db8ed",
+        "3d5e169a-11f6-479a-9268-9a494c6121de",
+        "b034125e-b9e9-40be-aba2-53fcfc78fe26",
+        "1f405129-913c-4f66-9e34-0d49a4c0abdb",
+        "92d682e4-6ece-4aaa-a962-4a0070aa581d",
+        "4733e9fb-cd3e-40c0-859e-c2ff816c01c9",
+        "3de6e823-d68f-464a-af37-5bfc2281170d",
+        "7c5cbf93-b497-40e5-bf22-a47a93839e0b",
+        "c4bfdae3-73e0-4827-8d16-777bcf8a1e64",
+        "918d316a-9499-44f9-83cb-b1949db9efdf"
+      ],
+      "settings": {
+      }
+    },
+    "1644370021aa9f6f82": {
+      "type": "advanced-content",
+      "blocks": {
+        "0101968e-960d-4743-8b9b-34a22fed34ee": {
+          "type": "html",
+          "settings": {
+            "code": "<p1> Wanna know why? Hear the backstory with all the fun details in this video!<\/p1>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "c069cdde-51a7-4376-9542-58313c64b988": {
+          "type": "html",
+          "settings": {
+            "code": "<iframe src=\"https:\/\/player.vimeo.com\/video\/761082803?h=0337b57be1&title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&player_id=0&app_id=58479\" width=\"840\" height=\"1260\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen title=\"We&rsquo;re changing our name - and here&rsquo;s why!\"><\/iframe>",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "0101968e-960d-4743-8b9b-34a22fed34ee",
+        "c069cdde-51a7-4376-9542-58313c64b988"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "32dd099e-efac-44fd-a334-0b2b1526bcfa": {
+      "type": "featured-video",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "video_url": "https:\/\/vimeo.com\/761082803",
+        "divider": true
+      }
+    },
+    "eebef797-fa84-4de4-b373-7e577ca5cbf0": {
+      "type": "hero-video",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "rgba(0,0,0,0)",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/vimeo.com\/761098708",
+        "section_height": "450px",
+        "mobile_height": "500px"
+      }
+    },
+    "1641516267f5eccb6e": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-UiiVBD\"><\/div>"
+      }
+    },
+    "1641406601671ef806": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC_6918.jpg",
+        "image_width": 310,
+        "subtitle": "",
+        "title": "Is there a mom who isn't always looking the best for their little ones?",
+        "text": "<p>The whole idea behind Little Bum Bums is to create only the best quality for babies. Moms shouldn’t have to worry about settling for less for their little ones.<\/p><p>You should be able to simply pick something out of the closet, and know that what you are picking will not only look cute but great for your baby too. That's why I originally created Little Bum Bums bamboo clothing: it’s gentle for their delicate skin, and of course stylish.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "1641411302925cff6e": {
+      "type": "testimonials",
+      "blocks": {
+        "164141130207c934f8-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Bums & Roses is such a cute name!<\/p>",
+            "author": "Alicia, mom of 1"
+          }
+        },
+        "fa64fe54-68a1-4298-8e35-311cd52bbfa3": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "testimonial": "<p>Love the new name! The significance is perfection!!<\/p>",
+            "author": "Melissa, mom of 1"
+          }
+        },
+        "5cd9db62-bb6c-415d-8999-fc099c2aa6b7": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "testimonial": "<p>I dont care what you call yourselves you still have all my money!<\/p>",
+            "author": "Paige, mom of a baby girl"
+          }
+        }
+      },
+      "block_order": [
+        "164141130207c934f8-0",
+        "fa64fe54-68a1-4298-8e35-311cd52bbfa3",
+        "5cd9db62-bb6c-415d-8999-fc099c2aa6b7"
+      ],
+      "settings": {
+        "title": "What moms are saying about our new name",
+        "align_text": "center",
+        "round_images": false,
+        "divider": true
+      }
+    },
+    "1641406921be9dcc5a": {
+      "type": "testimonials",
+      "blocks": {
+        "1641406921d46abbad-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>You guys are amazing! The name could be anything in the world & you’d still have an army of people supporting you!LIFERS!! Thank you for everything you do and for making our babes look FAB!<\/p>",
+            "author": "Jayda, mom of 1"
+          }
+        }
+      },
+      "block_order": [
+        "1641406921d46abbad-0"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "round_images": false,
+        "divider": true
+      }
+    },
+    "1641407187e69021e2": {
+      "type": "featured-content",
+      "disabled": true,
+      "settings": {
+        "title": "Over +100,000 moms love Little Bum Bums😍",
+        "text": "<p><\/p><p><\/p><p>Little Bum Bums is the new revolution in baby wear. Other baby clothing companies are selling cheaper, low grade fabric, we focus on the highest quality. <\/p><p>Moms everywhere are choosing Little Bum Bums.<\/p><p>Our community of moms is fantastic. We all believe great quality clothing should be a given and not something we should be searching high and low for. We post pictures, share (soliscated) advice!<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": true
+      }
+    },
+    "c2154cc2-0410-4dc5-856c-cf6d0989b8a5": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039425474728__c2154cc2-0410-4dc5-856c-cf6d0989b8a5-16660269314926d07d-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Polymailer_Small_Mockup_4.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039425474728__c2154cc2-0410-4dc5-856c-cf6d0989b8a5-16660269314926d07d-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "16414073745cd38420": {
+      "type": "testimonials",
+      "blocks": {
+        "16414073746c8248a3-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>You guys are simply AMAZING!!!!! Literally the best bamboo company around with the best owners and the best clothing!!!!! I love love love the new name and I will continue to buy from you for my 10 month old and 4 year old for years to come!!!<\/p>",
+            "author": "Erica"
+          }
+        }
+      },
+      "block_order": [
+        "16414073746c8248a3-0"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "round_images": false,
+        "divider": false
+      }
+    },
+    "f7cd5ec9-a356-462b-b386-d23f065e9400": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039425474728__f7cd5ec9-a356-462b-b386-d23f065e9400-16660269314926d07d-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bums_Roses_Hangtag-01.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039425474728__f7cd5ec9-a356-462b-b386-d23f065e9400-16660269314926d07d-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "939fd10f-9ed1-4828-a2fe-cfabb37eaa0e": {
+      "type": "testimonials",
+      "blocks": {
+        "template--16039425474728__939fd10f-9ed1-4828-a2fe-cfabb37eaa0e-16660273327e8efe1a-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039425474728__939fd10f-9ed1-4828-a2fe-cfabb37eaa0e-16660273327e8efe1a-0"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "round_images": false,
+        "divider": false
+      }
+    },
+    "dc43f622-adef-41f4-9553-dc9d46844402": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039425474728__dc43f622-adef-41f4-9553-dc9d46844402-1666027335c97b463b-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Swaddle_box_Pullout_strap_Mockup.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039425474728__dc43f622-adef-41f4-9553-dc9d46844402-1666027335c97b463b-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1641410495d29072f8": {
+      "type": "featured-content",
+      "settings": {
+        "title": "A Sneak Peek of the Holiday Print in BUMS AND ROSES",
+        "text": "<p>(insert images of Holiday drop below):<\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": true
+      }
+    },
+    "164141139833401bb6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "home_featured_products": "toddler-pajamas",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16039425474728__c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8-1666022885ae081a16-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "template--16039425474728__c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8-1666022885ae081a16-1": {
+          "type": "html",
+          "settings": {
+            "code": "<h2>FAQ<\/h2><p>Although our name will be different,  we’re still the same brand with all the bamboo fabric and prints you love.<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "627f5baa-ae42-4b92-a49f-609ddd03d3a1": {
+          "type": "html",
+          "settings": {
+            "code": "<p>Smiles: Nothing changes, the best baby bamboo rewards program is still the best. Points are still enabled and account is still the same for everyone.<\/p>\n\nDid we really got sued? We didn’t, . But our lawyer recommended us to got our trademark and that Little Bum Bums would be difficult to get. So we had to rebrand. \n\nWhat if I get Little Bum Bums products? Every now and then you may get Little Bum Bums tagged products with your order. It’s totally fine, we rebranded and some items will be tagged as Little Bum Bums, others as Bums & Roses",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16039425474728__c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8-1666022885ae081a16-0",
+        "template--16039425474728__c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8-1666022885ae081a16-1",
+        "627f5baa-ae42-4b92-a49f-609ddd03d3a1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "1641404437867155bb",
+    "16414066571d3133ff",
+    "main",
+    "16414064645a887ebc",
+    "1644370021aa9f6f82",
+    "32dd099e-efac-44fd-a334-0b2b1526bcfa",
+    "eebef797-fa84-4de4-b373-7e577ca5cbf0",
+    "1641516267f5eccb6e",
+    "1641406601671ef806",
+    "1641411302925cff6e",
+    "1641406921be9dcc5a",
+    "1641407187e69021e2",
+    "c2154cc2-0410-4dc5-856c-cf6d0989b8a5",
+    "16414073745cd38420",
+    "f7cd5ec9-a356-462b-b386-d23f065e9400",
+    "939fd10f-9ed1-4828-a2fe-cfabb37eaa0e",
+    "dc43f622-adef-41f4-9553-dc9d46844402",
+    "1641410495d29072f8",
+    "164141139833401bb6",
+    "c08f9b20-b9e1-4f9c-9f5c-23244b6b47e8"
+  ]
+}

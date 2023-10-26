@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "1637074132ed6d1abb": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><strong>WE FOUND SOME GOODIES!<\/strong><\/p><p><span style=\"text-decoration:underline\"><strong>Important notes<\/strong><\/span><\/p><p>-As a reminder, this is NOT a restock. Just a few items of various collections, not all styles\/sizes\/prints.-When there is high site volume, it is not uncommon for there to be lags or items over sold <\/p><p>- the system truly can't keep up with the rush. We do our very best to prevent this but since only a few items of each are going up, it makes it much harder to control that. We HOPE no orders will need to be cancelled, but you will be notified if it does (so sorry in advance!!)<\/p>",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false
+      }
+    },
+    "1637072870fec369b0": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "footie"
+      }
+    },
+    "main": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "rompers-1"
+      }
+    },
+    "16375873661a564d15": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-dresses"
+      }
+    },
+    "16389883731061b8f4": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-blankets"
+      }
+    },
+    "163758738855c450e7": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-pajama-sets"
+      }
+    },
+    "1637587409880f9545": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-headwraps"
+      }
+    },
+    "163758742551c08f35": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-loveys"
+      }
+    },
+    "1637589116c88bb6f1": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-mom-pants"
+      }
+    },
+    "1637589132cacf2d5b": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-jogger-sets"
+      }
+    },
+    "16375891545007befa": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-t-shirt-jogger-sets"
+      }
+    },
+    "1637589184d57c7d91": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-tops-tights"
+      }
+    },
+    "1637589199e8c3f3be": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-knit"
+      }
+    },
+    "164443070593c9fd4d": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-bows"
+      }
+    },
+    "1644432039c51d3aa3": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-socks"
+      }
+    },
+    "164443073413601a36": {
+      "type": "collection-carousel",
+      "settings": {
+        "collection": "sweep-mens"
+      }
+    }
+  },
+  "order": [
+    "1637074132ed6d1abb",
+    "1637072870fec369b0",
+    "main",
+    "16375873661a564d15",
+    "16389883731061b8f4",
+    "163758738855c450e7",
+    "1637587409880f9545",
+    "163758742551c08f35",
+    "1637589116c88bb6f1",
+    "1637589132cacf2d5b",
+    "16375891545007befa",
+    "1637589184d57c7d91",
+    "1637589199e8c3f3be",
+    "164443070593c9fd4d",
+    "1644432039c51d3aa3",
+    "164443073413601a36"
+  ]
+}

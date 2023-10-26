@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="112px" height="112px" viewBox="0 0 112 112" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Toxic-Free" transform="translate(0.72753906 0.72802734)">
+    <path d="M55 110C85.3757 110 110 85.3757 110 55C110 24.6243 85.3757 0 55 0C24.6243 0 0 24.6243 0 55C0 85.3757 24.6243 110 55 110Z" id="Oval-Copy-4" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    <g id="Group-13" transform="translate(25 31)">
+      <path d="M0 0L62 59.9848" transform="translate(0 0.015204354)" id="Stroke-1" fill="none" fill-rule="evenodd" stroke="#012169" stroke-width="1.4558609" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M0 0.241339L16.5454 0.241339" transform="translate(21.841505 21.841755)" id="Stroke-3" fill="none" fill-rule="evenodd" stroke="#012169" stroke-width="1.4558609" stroke-linecap="round" stroke-linejoin="round" />
+      <g id="Group-12" transform="translate(10.6142645 0)">
+        <path d="M33.6668 45.5489L5.22803 45.365C1.03654 45.3428 -1.43493 40.7182 0.902837 37.2791L11.2289 22.0864C12.6951 19.9216 13.4842 17.388 13.4993 14.781L13.7242 6.33467L10.5696 6.33467L10.5696 0L28.6755 0L28.6755 6.33467L25.3897 6.33467L25.5297 14.8399C25.5297 17.4541 26.3114 20.0027 27.7704 22.1747L38.074 37.4775C40.4044 40.9388 37.8729 45.5711 33.6668 45.5489Z" id="Stroke-4" fill="none" fill-rule="evenodd" stroke="#012169" stroke-width="1.4558609" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M0 0.241339L6.30384 0.241339" transform="translate(13.724183 6.0934706)" id="Stroke-6" fill="none" fill-rule="evenodd" stroke="#012169" stroke-width="1.4558609" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6.20137 3.06694C6.20137 4.76065 4.81315 6.13387 3.10093 6.13387C1.38822 6.13387 0 4.76065 0 3.06694C0 1.37274 1.38822 0 3.10093 0C4.81315 0 6.20137 1.37274 6.20137 3.06694Z" transform="translate(10.503854 33.04992)" id="Stroke-8" fill="none" fill-rule="evenodd" stroke="#012169" stroke-width="1.4558609" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M3.77479 1.867C3.77479 2.898 2.92966 3.734 1.88739 3.734C0.845131 3.734 0 2.898 0 1.867C0 0.835998 0.845131 0 1.88739 0C2.92966 0 3.77479 0.835998 3.77479 1.867" transform="translate(24.084694 26.419037)" id="Fill-10" fill="#012169" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

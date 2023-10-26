@@ -1,0 +1,133 @@
+{
+  "sections": {
+    "1640124015392309ff": {
+      "type": "slideshow",
+      "blocks": {
+        "16401240153f0c24eb-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "6 reasons why moms are switching from cotton to bamboo",
+            "title_size": 40,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/DSC_9439_3.jpg",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "16401240153f0c24eb-0"
+      ],
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "minimal",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "main": {
+      "type": "article__content",
+      "blocks": {
+        "d86338f1-91c3-44f7-912c-2654a665cc96": {
+          "type": "heading",
+          "settings": {
+            "title": "1. Because bamboo is great",
+            "heading-type": "h2"
+          }
+        },
+        "a02b6072-0c1e-4a96-9c8e-182ca1b7816e": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Here is some text<\/p><p><strong>that I can bold<\/strong><\/p><p><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d86338f1-91c3-44f7-912c-2654a665cc96",
+        "a02b6072-0c1e-4a96-9c8e-182ca1b7816e"
+      ],
+      "settings": {
+      }
+    },
+    "1640188138191b3405": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "home_featured_products": "accessories",
+        "per_row": 3,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "164018822349c726a4": {
+      "type": "article__content",
+      "blocks": {
+        "ed2d4123-1641-4fc6-95e2-3ffb51fac4ac": {
+          "type": "heading",
+          "settings": {
+            "title": "2. because we love bamboo",
+            "heading-type": "h2"
+          }
+        },
+        "0014d96e-03b4-40ee-967b-f5a83c49eecb": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>Look at this image of bamboo products<\/p>"
+          }
+        },
+        "846eed50-2e6b-4390-aec8-794359be13e1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/penguin_-_family_great_toy.jpg",
+            "image_link": "",
+            "desktop-width": "33%",
+            "desktop-alignment": "flex-start"
+          }
+        },
+        "42a1bdb4-a05f-4c70-9694-8d441f751059": {
+          "type": "rich-text",
+          "settings": {
+            "text": "<p>then look at this featured bamboo product<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ed2d4123-1641-4fc6-95e2-3ffb51fac4ac",
+        "0014d96e-03b4-40ee-967b-f5a83c49eecb",
+        "846eed50-2e6b-4390-aec8-794359be13e1",
+        "42a1bdb4-a05f-4c70-9694-8d441f751059"
+      ],
+      "settings": {
+      }
+    },
+    "1640188265246bda88": {
+      "type": "featured-product",
+      "settings": {
+        "featured_product": "bloom-shakalaka-girls-dress",
+        "show_description": false,
+        "divider": false,
+        "thumbnail_position": "below",
+        "thumbnail_arrows": false,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    }
+  },
+  "order": [
+    "1640124015392309ff",
+    "main",
+    "1640188138191b3405",
+    "164018822349c726a4",
+    "1640188265246bda88"
+  ]
+}

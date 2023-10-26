@@ -1,0 +1,1141 @@
+{
+  "sections": {
+    "main": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "Hallloween 2022!",
+        "drop_live": "",
+        "announcement": "",
+        "show_countdown": false,
+        "deadline": "27 October 2021 12:00:00 GMT-0700"
+      }
+    },
+    "1633705289ae1a45df": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-QTrELT\"><\/div>"
+      }
+    },
+    "16345657894229148f": {
+      "type": "drop-collage",
+      "blocks": {
+        "a900ed6b-9191-41b0-ad5a-8f2e336a46ac": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Hello_Gourdeous.jpg"
+          }
+        },
+        "43d36afc-4754-41d0-81c8-b62433163a1f": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Hello_gourdeous_2.jpg"
+          }
+        },
+        "1893b238-2b77-426f-95d8-31fe64e0bcd4": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/00_DSC_2474.jpg"
+          }
+        },
+        "7ac354ed-b1ad-4041-80bc-9e24d45be40d": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298412289_635150988034145_245615542580064018_n.jpg"
+          }
+        },
+        "4624912b-1c73-4e38-8e04-22544f017f20": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_2613.jpg",
+            "title": "Toddler Two-Piece Pajama Set",
+            "link": "https:\/\/littlebumbums.com\/collections\/hello-gourdeous"
+          }
+        },
+        "05719041-161e-4245-a513-bc1a95e62612": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_2413.jpg",
+            "title": "Ruffle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/hello-gourdeous"
+          }
+        },
+        "5d795055-faff-4af0-80f0-6cb521873ce2": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_2421.jpg",
+            "title": "Romper",
+            "link": "https:\/\/littlebumbums.com\/collections\/hello-gourdeous"
+          }
+        },
+        "d848a19d-82b7-45a7-9309-c9e68732fa99": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5644.jpg",
+            "title": "Lovey",
+            "link": "https:\/\/littlebumbums.com\/collections\/hello-gourdeous"
+          }
+        },
+        "808b8dee-fa19-49c1-9f05-2ccad750ff31": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/298412289_635150988034145_245615542580064018_n.jpg",
+            "title": "Styles",
+            "link": "shopify:\/\/collections\/fall-2022"
+          }
+        }
+      },
+      "block_order": [
+        "a900ed6b-9191-41b0-ad5a-8f2e336a46ac",
+        "43d36afc-4754-41d0-81c8-b62433163a1f",
+        "1893b238-2b77-426f-95d8-31fe64e0bcd4",
+        "7ac354ed-b1ad-4041-80bc-9e24d45be40d",
+        "4624912b-1c73-4e38-8e04-22544f017f20",
+        "05719041-161e-4245-a513-bc1a95e62612",
+        "5d795055-faff-4af0-80f0-6cb521873ce2",
+        "d848a19d-82b7-45a7-9309-c9e68732fa99",
+        "808b8dee-fa19-49c1-9f05-2ccad750ff31"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Hello Gourdeous",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "16345664862ee722bc": {
+      "type": "drop-collage",
+      "blocks": {
+        "425d0955-0b16-45cf-9b8b-07448ed1cc9d": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/00_DSC_3076.jpg"
+          }
+        },
+        "7a40f1fa-a2af-4e10-a4a4-ac3bc49a20b7": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/00_DSC_2802.jpg"
+          }
+        },
+        "b0914162-05cc-40bd-8c51-bf646dd88ac6": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/297673011_634904538058790_2203565690692409035_n.jpg"
+          }
+        },
+        "252ef22a-b63d-45c9-bf3f-daeee21bdea2": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298003594_635168651365712_5910000288220501145_n.jpg"
+          }
+        },
+        "9f1fda22-fa23-4826-9f4d-f215331442e5": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3066.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/skelebrate"
+          }
+        },
+        "dc51d2ec-29a3-45d9-ae35-ad49034bebcb": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_2820.jpg",
+            "title": "Ruffle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/skelebrate"
+          }
+        },
+        "5f19cda7-a51c-4e01-8273-9e7a41d281d1": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3320.jpg",
+            "title": "Mama Pants",
+            "link": "https:\/\/littlebumbums.com\/collections\/skelebrate"
+          }
+        },
+        "e8e20eb8-e74a-4862-9661-ee13cd57bcd0": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Skelebrate_Blanket.jpg",
+            "title": "Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/skelebrate"
+          }
+        }
+      },
+      "block_order": [
+        "425d0955-0b16-45cf-9b8b-07448ed1cc9d",
+        "7a40f1fa-a2af-4e10-a4a4-ac3bc49a20b7",
+        "b0914162-05cc-40bd-8c51-bf646dd88ac6",
+        "252ef22a-b63d-45c9-bf3f-daeee21bdea2",
+        "9f1fda22-fa23-4826-9f4d-f215331442e5",
+        "dc51d2ec-29a3-45d9-ae35-ad49034bebcb",
+        "5f19cda7-a51c-4e01-8273-9e7a41d281d1",
+        "e8e20eb8-e74a-4862-9661-ee13cd57bcd0"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Skelebrate",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "1634566455a8a96e16": {
+      "type": "drop-collage",
+      "blocks": {
+        "1260b81e-dd96-4a7e-9f7a-8207b6f8a28b": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/00_DSC_3461.jpg"
+          }
+        },
+        "c1a422c4-4704-4bd2-9aa0-9bc00d66a3a2": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298209095_635272828021961_705336982699511712_n.jpg"
+          }
+        },
+        "7933a279-976c-4dc5-b6d1-e0b4dd42537a": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/297994592_635273951355182_6346526456015594015_n.jpg"
+          }
+        },
+        "f883b3e5-2612-45aa-aa13-65a17eccc839": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298219860_10108995270018604_8235534656058199635_n.jpg"
+          }
+        },
+        "795e2e4d-f0fc-4b81-86a1-4fd5343e9bb3": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3063.jpg",
+            "title": "Ruffle Dress - Long Sleeves",
+            "link": "https:\/\/littlebumbums.com\/collections\/bad-to-the-bone"
+          }
+        },
+        "9376c94e-d577-4755-aab0-d13bc5be6880": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_2535.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/bad-to-the-bone"
+          }
+        },
+        "af4beb84-8bef-4564-b553-bc5df8fbef56": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3446.jpg",
+            "title": "Romper - Long Sleeves",
+            "link": "https:\/\/littlebumbums.com\/collections\/bad-to-the-bone"
+          }
+        },
+        "2be5f1fd-5803-4541-bf28-fb9c31bc1864": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_3561.jpg",
+            "title": "Headwrap",
+            "link": "https:\/\/littlebumbums.com\/collections\/bad-to-the-bone"
+          }
+        }
+      },
+      "block_order": [
+        "1260b81e-dd96-4a7e-9f7a-8207b6f8a28b",
+        "c1a422c4-4704-4bd2-9aa0-9bc00d66a3a2",
+        "7933a279-976c-4dc5-b6d1-e0b4dd42537a",
+        "f883b3e5-2612-45aa-aa13-65a17eccc839",
+        "795e2e4d-f0fc-4b81-86a1-4fd5343e9bb3",
+        "9376c94e-d577-4755-aab0-d13bc5be6880",
+        "af4beb84-8bef-4564-b553-bc5df8fbef56",
+        "2be5f1fd-5803-4541-bf28-fb9c31bc1864"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Bad to the Bone",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "16337077997cc088dc": {
+      "type": "drop-collage",
+      "blocks": {
+        "196e8820-a576-4119-a867-d2f75d61d6f1": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/image4.jpg"
+          }
+        },
+        "47717735-c377-4f76-8a8c-af5ec7c6c747": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6929.jpg"
+          }
+        },
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298955577_637972361085341_1156137089458503288_n.jpg"
+          }
+        },
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298531291_637209537828290_5495192486210751752_n.jpg"
+          }
+        },
+        "0006fa7c-664c-4b32-a809-983c82166804": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5125.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-queen"
+          }
+        },
+        "a86c2647-d585-4521-8787-5985f4998c9c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5859.jpg",
+            "title": "Bum Bum Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-queen"
+          }
+        },
+        "7e16f809-77d0-48fd-a072-c95576d0882a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5865.jpg",
+            "title": "Ruffle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-queen"
+          }
+        },
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4185.jpg",
+            "title": "Jogger Set",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-queen"
+          }
+        },
+        "42db7140-ed16-4f41-89be-d4c80602b119": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Family_2.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "200d0de1-0ab5-47e6-80da-94fbfe666bc2": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Family_2.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "83ba1430-4da2-43bc-b64a-d1193a2f8fb8": {
+          "type": "hero",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "196e8820-a576-4119-a867-d2f75d61d6f1",
+        "47717735-c377-4f76-8a8c-af5ec7c6c747",
+        "9427111d-a7a5-4291-bb61-b166c2fd59ef",
+        "e36f52f6-fb26-4974-aef0-5e2a7ef339ea",
+        "0006fa7c-664c-4b32-a809-983c82166804",
+        "a86c2647-d585-4521-8787-5985f4998c9c",
+        "7e16f809-77d0-48fd-a072-c95576d0882a",
+        "35bb3fb6-64dd-4eaf-893b-c9728b5b1e33",
+        "42db7140-ed16-4f41-89be-d4c80602b119",
+        "200d0de1-0ab5-47e6-80da-94fbfe666bc2",
+        "83ba1430-4da2-43bc-b64a-d1193a2f8fb8"
+      ],
+      "settings": {
+        "title": "Killer Queen",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "1634672523af40debc": {
+      "type": "drop-collage",
+      "blocks": {
+        "94727992-8285-41eb-b673-afb14717f806": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Checkmate_Footie.jpg"
+          }
+        },
+        "3ea374c2-4e1b-4d0b-9a80-7ea09ba2c44f": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Family_2.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "1486842c-8c3a-4c52-9573-92e337c5ac66": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Footie.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "63321f63-9442-47f8-8854-9c13973f5d1b": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Family.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "b8c9d52b-26e1-4aa0-bb53-2bebd3572f9d": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Dress.jpg",
+            "title": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "94727992-8285-41eb-b673-afb14717f806",
+        "3ea374c2-4e1b-4d0b-9a80-7ea09ba2c44f",
+        "1486842c-8c3a-4c52-9573-92e337c5ac66",
+        "63321f63-9442-47f8-8854-9c13973f5d1b",
+        "b8c9d52b-26e1-4aa0-bb53-2bebd3572f9d"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "link": ""
+      }
+    },
+    "16346749829d9cdaeb": {
+      "type": "drop-collage",
+      "blocks": {
+        "c9885ad0-71ad-4e23-bdd2-c382245d0652": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/Deer_Dress.jpg"
+          }
+        },
+        "8dcee971-3bf7-422e-ada9-670dd01dbc85": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Footie.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "24d8d9f7-db85-4d6a-a3f8-f5712e0a0743": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Mama.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "fe001326-ce6a-4066-8ebb-5973e559d96c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Family.jpg",
+            "title": "",
+            "link": ""
+          }
+        },
+        "9bf921c7-5f40-4751-a469-d2bb52e04667": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Deer_Footie.jpg",
+            "title": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "c9885ad0-71ad-4e23-bdd2-c382245d0652",
+        "8dcee971-3bf7-422e-ada9-670dd01dbc85",
+        "24d8d9f7-db85-4d6a-a3f8-f5712e0a0743",
+        "fe001326-ce6a-4066-8ebb-5973e559d96c",
+        "9bf921c7-5f40-4751-a469-d2bb52e04667"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "link": ""
+      }
+    },
+    "1633718908cafa83ad": {
+      "type": "drop-collage",
+      "blocks": {
+        "faa91eec-f498-4d66-9f44-ad91c8a18888": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.45_PM.jpg"
+          }
+        },
+        "e55e69b0-1e2f-4fdc-9b31-82d2d4b14f13": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_1.jpg"
+          }
+        },
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5146.jpg"
+          }
+        },
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/299015477_637976487751595_965592780990415870_n.jpg"
+          }
+        },
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6294.jpg",
+            "title": "Mama Lounge Top",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-king"
+          }
+        },
+        "8d75665c-c377-45f1-b12c-97459c5313d6": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4505.jpg",
+            "title": "Jogger Set",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-king"
+          }
+        },
+        "f186fd38-b95e-44ae-81aa-ae69b46538c3": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6251.jpg",
+            "title": "Romper",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-king"
+          }
+        },
+        "2f76a46d-1596-4ec4-9f30-51d966a6a62d": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4133.jpg",
+            "title": "Lovey",
+            "link": "https:\/\/littlebumbums.com\/collections\/killer-king"
+          }
+        }
+      },
+      "block_order": [
+        "faa91eec-f498-4d66-9f44-ad91c8a18888",
+        "e55e69b0-1e2f-4fdc-9b31-82d2d4b14f13",
+        "a42b7c16-ac8b-4ed9-b5ee-0747fc2d7b60",
+        "2f9c7837-0bfc-4eac-8389-2725077cc0c4",
+        "0cf07d98-5c0c-4680-9993-8bc80c764d8c",
+        "8d75665c-c377-45f1-b12c-97459c5313d6",
+        "f186fd38-b95e-44ae-81aa-ae69b46538c3",
+        "2f76a46d-1596-4ec4-9f30-51d966a6a62d"
+      ],
+      "settings": {
+        "title": "Killer King",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "163456465653e7aebd": {
+      "type": "drop-collage",
+      "blocks": {
+        "a95576dd-7b57-417e-b9a2-00f2edd52e9c": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5196.jpg"
+          }
+        },
+        "3ea093d7-35da-4f29-9394-1816debb68ac": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6596_40e8c4c5-4a0b-40ce-aaa9-643225236b12.jpg"
+          }
+        },
+        "d427446a-e331-4f31-8db0-70d9bcb69ecb": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_2.jpg"
+          }
+        },
+        "2fbc62da-299b-4405-9db2-23c2a880bd2e": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298255314_10108995271031574_5253238851760002190_n.jpg"
+          }
+        },
+        "17f53cd5-e791-44b4-aa36-ebb4c51f8054": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6405.jpg",
+            "title": "Lovey",
+            "link": "https:\/\/littlebumbums.com\/collections\/glow-hard-or-go-home"
+          }
+        },
+        "e66d668c-a2f2-4ea0-8066-51a47601f09b": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5183.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/glow-hard-or-go-home"
+          }
+        },
+        "3364d59e-b22d-4874-8442-3bc7f4895e9e": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6397.jpg",
+            "title": "Bum Bum Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/glow-hard-or-go-home"
+          }
+        },
+        "6624c55e-361e-439f-bc09-154d133057e7": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4204.jpg",
+            "title": "Tutu Tulle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/glow-hard-or-go-home"
+          }
+        }
+      },
+      "block_order": [
+        "a95576dd-7b57-417e-b9a2-00f2edd52e9c",
+        "3ea093d7-35da-4f29-9394-1816debb68ac",
+        "d427446a-e331-4f31-8db0-70d9bcb69ecb",
+        "2fbc62da-299b-4405-9db2-23c2a880bd2e",
+        "17f53cd5-e791-44b4-aa36-ebb4c51f8054",
+        "e66d668c-a2f2-4ea0-8066-51a47601f09b",
+        "3364d59e-b22d-4874-8442-3bc7f4895e9e",
+        "6624c55e-361e-439f-bc09-154d133057e7"
+      ],
+      "settings": {
+        "title": "Glow Hard or Go Home",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "16345652868e984bad": {
+      "type": "drop-collage",
+      "blocks": {
+        "5eb00bc8-ebbf-43c7-92bd-6461d4c03882": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/IMG_9966_jpg.jpg"
+          }
+        },
+        "a1129492-e0f6-44aa-b634-7f68c2b93ec1": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/00_witch_better_have_my_candy_swatch.jpg"
+          }
+        },
+        "58d0a597-3a0f-4c88-b5f1-967d686d571c": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/IMG_9974_jpg.jpg"
+          }
+        },
+        "1d3586d8-abf9-495a-bfd9-39015115b291": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298322277_10108995271166304_1599927235194623689_n.jpg"
+          }
+        },
+        "6dc6c812-a396-4f3e-9f28-c8203d8c9321": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9952.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/witch-better-have-my-candy"
+          }
+        },
+        "f5cd2cb1-0f37-460b-8a3c-98c7630eb6d8": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9994_jpg.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/witch-better-have-my-candy"
+          }
+        },
+        "28ca2483-a94f-4b0b-9be7-301e6e2b310f": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9986_jpg.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/witch-better-have-my-candy"
+          }
+        },
+        "93c595fa-0ccd-4871-a79c-8efdc153bb91": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9990_jpg.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/witch-better-have-my-candy"
+          }
+        }
+      },
+      "block_order": [
+        "5eb00bc8-ebbf-43c7-92bd-6461d4c03882",
+        "a1129492-e0f6-44aa-b634-7f68c2b93ec1",
+        "58d0a597-3a0f-4c88-b5f1-967d686d571c",
+        "1d3586d8-abf9-495a-bfd9-39015115b291",
+        "6dc6c812-a396-4f3e-9f28-c8203d8c9321",
+        "f5cd2cb1-0f37-460b-8a3c-98c7630eb6d8",
+        "28ca2483-a94f-4b0b-9be7-301e6e2b310f",
+        "93c595fa-0ccd-4871-a79c-8efdc153bb91"
+      ],
+      "settings": {
+        "title": "Witch Better Have my Candy",
+        "subtitle": "Available Now!",
+        "link": "shopify:\/\/collections\/holiday-2021"
+      }
+    },
+    "16603243240c1ad9b2": {
+      "type": "drop-collage",
+      "blocks": {
+        "2574d7b2-6c99-4251-9546-4d5d43f06643": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5936.jpg"
+          }
+        },
+        "3ee96dc8-0191-4429-8fbb-1593ec2c3768": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6456.jpg"
+          }
+        },
+        "53dfc1d6-220d-4d73-b78c-e9c4763a93a8": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6164.jpg"
+          }
+        },
+        "3b60c9aa-384e-4819-9026-59e36258d669": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5960.jpg"
+          }
+        },
+        "b3ba1139-e24b-4e65-85d5-94f7f0b87c94": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5965.jpg",
+            "title": "Footie, Headwrap",
+            "link": "https:\/\/littlebumbums.com\/collections\/living-the-gourd-life"
+          }
+        },
+        "2db33f5c-5b26-45c7-9ee4-f8f2ba603e52": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6425.jpg",
+            "title": "Lovey",
+            "link": "https:\/\/littlebumbums.com\/collections\/living-the-gourd-life"
+          }
+        },
+        "c3128197-d9fc-4937-ae29-d3920b424f22": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6172.jpg",
+            "title": "Romper",
+            "link": "https:\/\/littlebumbums.com\/collections\/living-the-gourd-life"
+          }
+        },
+        "8a736b47-2e55-44c5-9cef-3ebb209f5ea5": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4146.jpg",
+            "title": "Bum Bum Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/living-the-gourd-life"
+          }
+        }
+      },
+      "block_order": [
+        "2574d7b2-6c99-4251-9546-4d5d43f06643",
+        "3ee96dc8-0191-4429-8fbb-1593ec2c3768",
+        "53dfc1d6-220d-4d73-b78c-e9c4763a93a8",
+        "3b60c9aa-384e-4819-9026-59e36258d669",
+        "b3ba1139-e24b-4e65-85d5-94f7f0b87c94",
+        "2db33f5c-5b26-45c7-9ee4-f8f2ba603e52",
+        "c3128197-d9fc-4937-ae29-d3920b424f22",
+        "8a736b47-2e55-44c5-9cef-3ebb209f5ea5"
+      ],
+      "settings": {
+        "title": "Living the Gourd Life",
+        "subtitle": "Available Now",
+        "link": "shopify:\/\/collections\/fall-2022"
+      }
+    },
+    "16604619646328dc79": {
+      "type": "drop-collage",
+      "blocks": {
+        "fa0d6648-3913-43e4-a5f8-36444b19d0fc": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5821.jpg"
+          }
+        },
+        "b722a23c-475b-4f33-aea4-28736933c4d0": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_4689.jpg"
+          }
+        },
+        "60794a45-651c-4477-b013-df5ca59ba852": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_4597.jpg"
+          }
+        },
+        "383aea83-8233-4d12-8a0e-245a833b56f7": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298574999_10108995271405824_8449686155444965536_n.jpg"
+          }
+        },
+        "c6cbbe66-b37c-4a43-8eee-0176138b7c83": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5834.jpg",
+            "title": "Footie",
+            "link": ""
+          }
+        },
+        "bdcafea0-9bb9-4dd5-a939-8fcde38a52be": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4681.jpg",
+            "title": "Plush Blanket",
+            "link": ""
+          }
+        },
+        "a48ba4e6-758d-445d-85ab-6f3ccace2f9e": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5325.jpg",
+            "title": "Ruffle Dress",
+            "link": ""
+          }
+        },
+        "66e8725b-44e4-422d-bffa-d0e9763d3fec": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4125.jpg",
+            "title": "Biggie Bow",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "fa0d6648-3913-43e4-a5f8-36444b19d0fc",
+        "b722a23c-475b-4f33-aea4-28736933c4d0",
+        "60794a45-651c-4477-b013-df5ca59ba852",
+        "383aea83-8233-4d12-8a0e-245a833b56f7",
+        "c6cbbe66-b37c-4a43-8eee-0176138b7c83",
+        "bdcafea0-9bb9-4dd5-a939-8fcde38a52be",
+        "a48ba4e6-758d-445d-85ab-6f3ccace2f9e",
+        "66e8725b-44e4-422d-bffa-d0e9763d3fec"
+      ],
+      "settings": {
+        "title": "Pumpkin To Talk About",
+        "subtitle": "Available now!",
+        "link": ""
+      }
+    },
+    "1660462463b6f4fd1d": {
+      "type": "drop-collage",
+      "blocks": {
+        "8a242f4e-7d73-47a1-a51e-2f624e71a2a2": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_4945.jpg"
+          }
+        },
+        "98e37f59-16b5-470c-b220-6d06e37f07a7": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_4648.jpg"
+          }
+        },
+        "50d1464e-faa4-4cff-87e1-62e1748930b4": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5763.jpg"
+          }
+        },
+        "0877582a-f67c-4b6f-86cf-720bf71f0a54": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298212111_10108995271530574_8349207899111747547_n.jpg"
+          }
+        },
+        "fb08e138-02cc-4984-949c-53afffa0fa7a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5776.jpg",
+            "title": "Lovey",
+            "link": "https:\/\/littlebumbums.com\/collections\/bat-chic-crazy"
+          }
+        },
+        "e4002d9b-43d5-4b88-8ad3-aa905ce05817": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5546.jpg",
+            "title": "Tutu Tulle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/bat-chic-crazy"
+          }
+        },
+        "a534f66a-b400-49c2-b7b0-1e75a5468c93": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5794.jpg",
+            "title": "Footie",
+            "link": "https:\/\/littlebumbums.com\/collections\/bat-chic-crazy"
+          }
+        },
+        "bb958610-6dba-4cb6-81be-ed579cb4e344": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4145.jpg",
+            "title": "Bum Bum Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/bat-chic-crazy"
+          }
+        }
+      },
+      "block_order": [
+        "8a242f4e-7d73-47a1-a51e-2f624e71a2a2",
+        "98e37f59-16b5-470c-b220-6d06e37f07a7",
+        "50d1464e-faa4-4cff-87e1-62e1748930b4",
+        "0877582a-f67c-4b6f-86cf-720bf71f0a54",
+        "fb08e138-02cc-4984-949c-53afffa0fa7a",
+        "e4002d9b-43d5-4b88-8ad3-aa905ce05817",
+        "a534f66a-b400-49c2-b7b0-1e75a5468c93",
+        "bb958610-6dba-4cb6-81be-ed579cb4e344"
+      ],
+      "settings": {
+        "title": "Bat Chic Crazy",
+        "subtitle": "Available now!",
+        "link": ""
+      }
+    },
+    "166046305215d7a4de": {
+      "type": "drop-collage",
+      "blocks": {
+        "55ed6f03-6fb6-4793-9848-afef5f63bee6": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_4708.jpg"
+          }
+        },
+        "e803ddc2-fa41-4a92-97d6-3c0c9ba4dc85": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_6115.jpg"
+          }
+        },
+        "8a44632b-71d5-4b4c-a1e4-8beecd8e5b72": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5027.jpg"
+          }
+        },
+        "3b97c9fe-2696-4f50-8a6f-86779c93d377": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298447595_10108995271869894_7116201682380808367_n.jpg"
+          }
+        },
+        "975b0869-ec48-4829-8a9f-3e4ad8336b8f": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4252.jpg",
+            "title": "Tutu Tulle Dress",
+            "link": "https:\/\/littlebumbums.com\/collections\/creepin-it-real"
+          }
+        },
+        "974052d5-ac6e-4f0e-8ddb-38258ca2c376": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_6034.jpg",
+            "title": "Romper",
+            "link": "https:\/\/littlebumbums.com\/collections\/creepin-it-real"
+          }
+        },
+        "898bef50-f3f8-482c-9b2a-14848671af98": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_5391_1.jpg",
+            "title": "Plush Blanket",
+            "link": "https:\/\/littlebumbums.com\/collections\/creepin-it-real"
+          }
+        },
+        "5d056c5f-8d3a-4fa1-b113-a0c2b0c11116": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC_4128.jpg",
+            "title": "Headwrap",
+            "link": "https:\/\/littlebumbums.com\/collections\/creepin-it-real"
+          }
+        }
+      },
+      "block_order": [
+        "55ed6f03-6fb6-4793-9848-afef5f63bee6",
+        "e803ddc2-fa41-4a92-97d6-3c0c9ba4dc85",
+        "8a44632b-71d5-4b4c-a1e4-8beecd8e5b72",
+        "3b97c9fe-2696-4f50-8a6f-86779c93d377",
+        "975b0869-ec48-4829-8a9f-3e4ad8336b8f",
+        "974052d5-ac6e-4f0e-8ddb-38258ca2c376",
+        "898bef50-f3f8-482c-9b2a-14848671af98",
+        "5d056c5f-8d3a-4fa1-b113-a0c2b0c11116"
+      ],
+      "settings": {
+        "title": "Creepin' It Real",
+        "subtitle": "Now available!",
+        "link": ""
+      }
+    },
+    "16339721125a4533c3": {
+      "type": "drop-header-no-countdown",
+      "disabled": true,
+      "settings": {
+        "headline": "Holiday Drop Part 2",
+        "announcement": "Launches OCTober 27th at 12:00pM PDT",
+        "subtext": "The second half of our Holiday collection drops next week!"
+      }
+    },
+    "16337204527af62f22": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "1657423436fb36a4b5": {
+      "type": "apps",
+      "settings": {
+      }
+    },
+    "16607077923458418c": {
+      "type": "drop-collage",
+      "blocks": {
+        "e20567fe-e6a2-4a1e-b2a3-04556b4cc9fa": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5134_c29fc9ff-c23f-41ea-b6e3-8a0e2ae7b0a0.jpg"
+          }
+        },
+        "e0f81538-5391-4d81-a563-4edcc6cb0531": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_1.jpg"
+          }
+        },
+        "8a8cbe90-a103-490c-ac5f-3e027a3cd35e": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/298226152_637251654490745_2522384399220728680_n.jpg"
+          }
+        },
+        "c74fd1f7-b275-4039-a96a-d9f489e05824": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_2b81e1ab-8556-4d11-bf6b-86ceb5e93ea8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e20567fe-e6a2-4a1e-b2a3-04556b4cc9fa",
+        "e0f81538-5391-4d81-a563-4edcc6cb0531",
+        "8a8cbe90-a103-490c-ac5f-3e027a3cd35e",
+        "c74fd1f7-b275-4039-a96a-d9f489e05824"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Killer King Test",
+        "subtitle": "Test",
+        "link": ""
+      }
+    },
+    "1660715662f8ca8966": {
+      "type": "drop-collage",
+      "blocks": {
+        "7c31a558-7eab-4887-a02a-d3b40be8fd26": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5146.jpg"
+          }
+        },
+        "8cea5716-ace1-493f-b20b-ff27a72be1f8": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_2b81e1ab-8556-4d11-bf6b-86ceb5e93ea8.jpg"
+          }
+        },
+        "2eea2349-813d-40c7-96e5-d0a9449e8803": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-08-16_at_6.00.44_PM_2.jpg"
+          }
+        },
+        "b55883f3-fe44-4c5d-892e-f603c3c6286f": {
+          "type": "hero",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/DSC_5134_c29fc9ff-c23f-41ea-b6e3-8a0e2ae7b0a0.jpg"
+          }
+        },
+        "4472df58-2a72-443e-aa1c-b54ef279651d": {
+          "type": "product",
+          "settings": {
+            "title": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "7c31a558-7eab-4887-a02a-d3b40be8fd26",
+        "8cea5716-ace1-493f-b20b-ff27a72be1f8",
+        "2eea2349-813d-40c7-96e5-d0a9449e8803",
+        "b55883f3-fe44-4c5d-892e-f603c3c6286f",
+        "4472df58-2a72-443e-aa1c-b54ef279651d"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Test Killer",
+        "subtitle": "Test",
+        "link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1633705289ae1a45df",
+    "16345657894229148f",
+    "16345664862ee722bc",
+    "1634566455a8a96e16",
+    "16337077997cc088dc",
+    "1634672523af40debc",
+    "16346749829d9cdaeb",
+    "1633718908cafa83ad",
+    "163456465653e7aebd",
+    "16345652868e984bad",
+    "16603243240c1ad9b2",
+    "16604619646328dc79",
+    "1660462463b6f4fd1d",
+    "166046305215d7a4de",
+    "16339721125a4533c3",
+    "16337204527af62f22",
+    "1657423436fb36a4b5",
+    "16607077923458418c",
+    "1660715662f8ca8966"
+  ]
+}

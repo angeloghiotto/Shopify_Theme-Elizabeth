@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "main": {
+      "type": "drop-header",
+      "settings": {
+        "headline": "Black friday is here!!",
+        "drop_live": "",
+        "announcement": "SAVE UP TO 50% OFF!",
+        "show_countdown": false,
+        "deadline": "13 October 2021 12:00:00 GMT-0700"
+      }
+    },
+    "1633705289ae1a45df": {
+      "type": "klaviyo-embed",
+      "disabled": true,
+      "settings": {
+        "klaviyo_embed": "<div class=\"klaviyo-form-R7a94X\"><\/div>"
+      }
+    },
+    "3cc66236-848d-427a-9b44-bc3c63b41c4f": {
+      "type": "collection-carousel",
+      "blocks": {
+        "8502e845-2c0b-43f1-81e9-6432b8db0e73": {
+          "type": "collection",
+          "settings": {
+            "collection": "footies"
+          }
+        },
+        "3e4a16be-11f7-46a0-acef-0a6aeb5aba8b": {
+          "type": "collection",
+          "settings": {
+            "collection": "rompers"
+          }
+        },
+        "44dc7adf-df7d-47c2-9a04-1daaf04b6b83": {
+          "type": "collection",
+          "settings": {
+            "collection": "pajamas-1"
+          }
+        },
+        "3c2ce082-a852-4a31-9d49-7d3425e6b9f9": {
+          "type": "collection",
+          "settings": {
+            "collection": "bum-bum-blankets"
+          }
+        },
+        "181a7b7c-a5ca-4f14-bd87-f2d7872cf7af": {
+          "type": "collection",
+          "settings": {
+            "collection": "adult-wear"
+          }
+        },
+        "e171b7d5-76f9-415a-8fa1-94c1645fce35": {
+          "type": "collection",
+          "settings": {
+            "collection": "baby-dresses"
+          }
+        },
+        "d700080e-4c30-4da9-9b69-b71d200dc95a": {
+          "type": "collection",
+          "settings": {
+            "collection": "basics"
+          }
+        },
+        "a4f7a264-9a0d-4ca9-a8d5-02732cc6bfaf": {
+          "type": "collection",
+          "settings": {
+            "collection": "bows"
+          }
+        },
+        "03158d02-28a9-45f8-beaa-1ae6d73dc68b": {
+          "type": "collection",
+          "settings": {
+            "collection": "loveys"
+          }
+        }
+      },
+      "block_order": [
+        "8502e845-2c0b-43f1-81e9-6432b8db0e73",
+        "3e4a16be-11f7-46a0-acef-0a6aeb5aba8b",
+        "44dc7adf-df7d-47c2-9a04-1daaf04b6b83",
+        "3c2ce082-a852-4a31-9d49-7d3425e6b9f9",
+        "181a7b7c-a5ca-4f14-bd87-f2d7872cf7af",
+        "e171b7d5-76f9-415a-8fa1-94c1645fce35",
+        "d700080e-4c30-4da9-9b69-b71d200dc95a",
+        "a4f7a264-9a0d-4ca9-a8d5-02732cc6bfaf",
+        "03158d02-28a9-45f8-beaa-1ae6d73dc68b"
+      ],
+      "settings": {
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1633705289ae1a45df",
+    "3cc66236-848d-427a-9b44-bc3c63b41c4f"
+  ]
+}
