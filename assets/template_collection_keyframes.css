@@ -1,0 +1,340 @@
+@keyframes overlay-on {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: .6
+    }
+}
+
+@keyframes overlay-off {
+    0% {
+        opacity: .6
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes full-overlay-on {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes full-overlay-off {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes modal-open {
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes modal-closing {
+    0% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.9)
+    }
+}
+
+@keyframes rise-up {
+    0% {
+        opacity: 1;
+        transform: translateY(120%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes rise-up-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-120%)
+    }
+}
+
+@keyframes paint-across {
+    0% {
+        opacity: 1;
+        -webkit-clip-path: polygon(0% 0%,0% 0%,0% 100%,0% 100%);
+        clip-path: polygon(0% 0%,0% 0%,0% 100%,0% 100%)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+        clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%)
+    }
+}
+
+@keyframes paint-across-small {
+    0% {
+        opacity: 1;
+        -webkit-clip-path: polygon(0% 0%,0% 0%,0% 100%,0% 100%);
+        clip-path: polygon(0% 0%,0% 0%,0% 100%,0% 100%)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+        clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%)
+    }
+}
+
+@keyframes paint-across-out {
+    0% {
+        opacity: 1;
+        -webkit-clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+        clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-clip-path: polygon(100% 0%,100% 0%,100% 100%,100% 100%);
+        clip-path: polygon(100% 0%,100% 0%,100% 100%,100% 100%)
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade-in-small {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes zoom-fade {
+    0% {
+        opacity: 0;
+        transform: scale(1.3)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes zoom-fade-password {
+    0% {
+        opacity: 0;
+        transform: scale(1.4)
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2)
+    }
+}
+
+@keyframes zoom-fade-small {
+    0% {
+        opacity: 0;
+        transform: scale(1.1)
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    12% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.03)
+    }
+}
+
+@keyframes kenburns {
+    0% {
+        opacity: 0;
+        transform: scale(1.8);
+        animation-timing-function: cubic-bezier(.12,.63,.6,.74)
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1.6);
+        animation-timing-function: linear
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes kenburns-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        animation-timing-function: ease-out
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0px
+    }
+
+    60% {
+        width: 100px;
+        margin-left: -50px
+    }
+
+    to {
+        margin-left: 50px;
+        width: 0px
+    }
+}
+
+.no-js .loading:after,.no-js .loading:before {
+    display: none
+}
+
+.loading:before {
+    background: rgba(255,255,255,.15);
+    animation: fade-in .5s forwards 0s
+}
+
+.loading:after {
+    animation: preloading .5s ease .3s infinite
+}
+
+.loading--delayed:before {
+    animation-delay: .8s!important;
+    animation-duration: 1s!important
+}
+
+.loading--delayed:after {
+    animation-delay: 1.3s!important
+}
+
+@keyframes preloading {
+    0% {
+        width: 0px;
+        opacity: 0
+    }
+
+    60% {
+        width: 100px;
+        margin-left: -50px;
+        opacity: 1
+    }
+
+    to {
+        margin-left: 50px;
+        width: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes slideshowBars {
+    0% {
+        width: 0%
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes grid-product__loading {
+    0% {
+        opacity: 0
+    }
+
+    60% {
+        opacity: .2
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes shine {
+    to {
+        left: -200%
+    }
+}
+

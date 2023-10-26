@@ -1,0 +1,368 @@
+@media only screen and (min-width: 1050px) {
+    .widescreen--one-whole {
+        width:100%
+    }
+
+    .widescreen--one-half {
+        width: 50%
+    }
+
+    .widescreen--one-third {
+        width: 33.33333%
+    }
+
+    .widescreen--two-thirds {
+        width: 66.66667%
+    }
+
+    .widescreen--one-quarter {
+        width: 25%
+    }
+
+    .widescreen--two-quarters {
+        width: 50%
+    }
+
+    .widescreen--three-quarters {
+        width: 75%
+    }
+
+    .widescreen--one-fifth {
+        width: 20%
+    }
+
+    .widescreen--two-fifths {
+        width: 40%
+    }
+
+    .widescreen--three-fifths {
+        width: 60%
+    }
+
+    .widescreen--four-fifths {
+        width: 80%
+    }
+
+    .widescreen--one-sixth {
+        width: 16.66667%
+    }
+
+    .widescreen--two-sixths {
+        width: 33.33333%
+    }
+
+    .widescreen--three-sixths {
+        width: 50%
+    }
+
+    .widescreen--four-sixths {
+        width: 66.66667%
+    }
+
+    .widescreen--five-sixths {
+        width: 83.33333%
+    }
+
+    .widescreen--one-eighth {
+        width: 12.5%
+    }
+
+    .widescreen--two-eighths {
+        width: 25%
+    }
+
+    .widescreen--three-eighths {
+        width: 37.5%
+    }
+
+    .widescreen--four-eighths {
+        width: 50%
+    }
+
+    .widescreen--five-eighths {
+        width: 62.5%
+    }
+
+    .widescreen--six-eighths {
+        width: 75%
+    }
+
+    .widescreen--seven-eighths {
+        width: 87.5%
+    }
+
+    .widescreen--one-tenth {
+        width: 10%
+    }
+
+    .widescreen--two-tenths {
+        width: 20%
+    }
+
+    .widescreen--three-tenths {
+        width: 30%
+    }
+
+    .widescreen--four-tenths {
+        width: 40%
+    }
+
+    .widescreen--five-tenths {
+        width: 50%
+    }
+
+    .widescreen--six-tenths {
+        width: 60%
+    }
+
+    .widescreen--seven-tenths {
+        width: 70%
+    }
+
+    .widescreen--eight-tenths {
+        width: 80%
+    }
+
+    .widescreen--nine-tenths {
+        width: 90%
+    }
+
+    .widescreen--one-twelfth {
+        width: 8.33333%
+    }
+
+    .widescreen--two-twelfths {
+        width: 16.66667%
+    }
+
+    .widescreen--three-twelfths {
+        width: 25%
+    }
+
+    .widescreen--four-twelfths {
+        width: 33.33333%
+    }
+
+    .widescreen--five-twelfths {
+        width: 41.66667%
+    }
+
+    .widescreen--six-twelfths {
+        width: 50%
+    }
+
+    .widescreen--seven-twelfths {
+        width: 58.33333%
+    }
+
+    .widescreen--eight-twelfths {
+        width: 66.66667%
+    }
+
+    .widescreen--nine-twelfths {
+        width: 75%
+    }
+
+    .widescreen--ten-twelfths {
+        width: 83.33333%
+    }
+
+    .widescreen--eleven-twelfths {
+        width: 91.66667%
+    }
+
+    .grid--uniform .widescreen--one-half:nth-of-type(2n+1),.grid--uniform .widescreen--one-third:nth-of-type(3n+1),.grid--uniform .widescreen--one-quarter:nth-of-type(4n+1),.grid--uniform .widescreen--one-fifth:nth-of-type(5n+1),.grid--uniform .widescreen--one-sixth:nth-of-type(6n+1),.grid--uniform .widescreen--two-sixths:nth-of-type(3n+1),.grid--uniform .widescreen--three-sixths:nth-of-type(2n+1),.grid--uniform .widescreen--one-eighth:nth-of-type(8n+1),.grid--uniform .widescreen--two-eighths:nth-of-type(4n+1),.grid--uniform .widescreen--four-eighths:nth-of-type(2n+1),.grid--uniform .widescreen--five-tenths:nth-of-type(2n+1),.grid--uniform .widescreen--one-twelfth:nth-of-type(12n+1),.grid--uniform .widescreen--two-twelfths:nth-of-type(6n+1),.grid--uniform .widescreen--three-twelfths:nth-of-type(4n+1),.grid--uniform .widescreen--four-twelfths:nth-of-type(3n+1),.grid--uniform .widescreen--six-twelfths:nth-of-type(2n+1) {
+        clear: both
+    }
+
+    .widescreen--show {
+        display:block!important
+    }
+
+    .widescreen--hide {
+        display: none!important
+    }
+
+    .widescreen--text-left {
+        text-align: left!important
+    }
+
+    .widescreen--text-right {
+        text-align: right!important
+    }
+
+    .widescreen--text-center {
+        text-align: center!important
+    }
+
+    .widescreen--push-one-half {
+        left:50%
+    }
+
+    .widescreen--push-one-third {
+        left: 33.33333%
+    }
+
+    .widescreen--push-two-thirds {
+        left: 66.66667%
+    }
+
+    .widescreen--push-one-quarter {
+        left: 25%
+    }
+
+    .widescreen--push-two-quarters {
+        left: 50%
+    }
+
+    .widescreen--push-three-quarters {
+        left: 75%
+    }
+
+    .widescreen--push-one-fifth {
+        left: 20%
+    }
+
+    .widescreen--push-two-fifths {
+        left: 40%
+    }
+
+    .widescreen--push-three-fifths {
+        left: 60%
+    }
+
+    .widescreen--push-four-fifths {
+        left: 80%
+    }
+
+    .widescreen--push-one-sixth {
+        left: 16.66667%
+    }
+
+    .widescreen--push-two-sixths {
+        left: 33.33333%
+    }
+
+    .widescreen--push-three-sixths {
+        left: 50%
+    }
+
+    .widescreen--push-four-sixths {
+        left: 66.66667%
+    }
+
+    .widescreen--push-five-sixths {
+        left: 83.33333%
+    }
+
+    .widescreen--push-one-eighth {
+        left: 12.5%
+    }
+
+    .widescreen--push-two-eighths {
+        left: 25%
+    }
+
+    .widescreen--push-three-eighths {
+        left: 37.5%
+    }
+
+    .widescreen--push-four-eighths {
+        left: 50%
+    }
+
+    .widescreen--push-five-eighths {
+        left: 62.5%
+    }
+
+    .widescreen--push-six-eighths {
+        left: 75%
+    }
+
+    .widescreen--push-seven-eighths {
+        left: 87.5%
+    }
+
+    .widescreen--push-one-tenth {
+        left: 10%
+    }
+
+    .widescreen--push-two-tenths {
+        left: 20%
+    }
+
+    .widescreen--push-three-tenths {
+        left: 30%
+    }
+
+    .widescreen--push-four-tenths {
+        left: 40%
+    }
+
+    .widescreen--push-five-tenths {
+        left: 50%
+    }
+
+    .widescreen--push-six-tenths {
+        left: 60%
+    }
+
+    .widescreen--push-seven-tenths {
+        left: 70%
+    }
+
+    .widescreen--push-eight-tenths {
+        left: 80%
+    }
+
+    .widescreen--push-nine-tenths {
+        left: 90%
+    }
+
+    .widescreen--push-one-twelfth {
+        left: 8.33333%
+    }
+
+    .widescreen--push-two-twelfths {
+        left: 16.66667%
+    }
+
+    .widescreen--push-three-twelfths {
+        left: 25%
+    }
+
+    .widescreen--push-four-twelfths {
+        left: 33.33333%
+    }
+
+    .widescreen--push-five-twelfths {
+        left: 41.66667%
+    }
+
+    .widescreen--push-six-twelfths {
+        left: 50%
+    }
+
+    .widescreen--push-seven-twelfths {
+        left: 58.33333%
+    }
+
+    .widescreen--push-eight-twelfths {
+        left: 66.66667%
+    }
+
+    .widescreen--push-nine-twelfths {
+        left: 75%
+    }
+
+    .widescreen--push-ten-twelfths {
+        left: 83.33333%
+    }
+
+    .widescreen--push-eleven-twelfths {
+        left: 91.66667%
+    }
+
+    
+
+}

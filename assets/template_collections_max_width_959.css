@@ -1,0 +1,37 @@
+@media only screen and (max-width: 959px) {
+    .medium-down--show {
+        display:block!important
+    }
+
+    .medium-down--hide {
+        display: none!important
+    }
+
+    .medium-down--text-left {
+        text-align: left!important
+    }
+
+    .medium-down--text-right {
+        text-align: right!important
+    }
+
+    .medium-down--text-center {
+        text-align: center!important
+    }
+    
+    input,textarea,select {
+        font-size:16px!important
+    }
+
+    .site-nav__link {
+        padding:7.5px
+    }
+
+    .header-layout--center .site-nav__link {
+        padding-left: 2px;
+        padding-right: 2px
+    }
+
+    
+
+}
