@@ -260,14 +260,14 @@
                     title: '{{ product.title | escape }} {{ product.selected_or_first_available_variant.title | escape }}',
                     url: '{{ shop.url }}{{ product.selected_or_first_available_variant.url }}'
                 });">Add to Babylist</a>
-                <a class="swym-button swym-add-to-wishlist btn"
+                <button class="swym-button swym-add-to-wishlist btn"
                 data-with-epi="true"
                 data-swaction="addToWishlist"
                 data-product-id="{{ product.id }}"
                 data-variant-id="{{ product.variants[0].id }}"
                 data-product-url="{{ shop.url }}{{ product.url }}">
                   Add to wishlist
-                </a>
+                </button>
             <div class="payment-options__container">
               <p class="payment-options" style="color: #707070!important;">4 interest-free payments of <strong>{{ product.price | divided_by: 4 | money }}</strong> with </p>
               <p class="payment-options-2">
