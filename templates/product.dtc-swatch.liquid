@@ -1,0 +1,112 @@
+<div class="callout-overlay"></div>
+
+{% section 'product-template' %}
+
+{% section 'product-recommendations' %}
+{% section 'recently-viewed' %}
+
+{% if collection %}
+  <div class="text-center page-content page-content--bottom">
+    <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  };
+  
+  
+</script>
+
+<script>
+  let calloutBtn = document.querySelector('.callout-text');
+  let calloutOverlay = document.querySelector('.callout-overlay');
+  let calloutPopup = document.querySelector('.callout-popup');
+  let calloutPopupClose = document.querySelector('.callout-popup_close');
+  calloutPopupClose.addEventListener("click", function() {
+    calloutOverlay.classList.toggle('show');
+    calloutPopup.classList.toggle('show');
+  })
+
+  calloutOverlay.addEventListener("click", function() {
+    calloutOverlay.classList.toggle('show');
+    calloutPopup.classList.toggle('show');
+  })
+
+  calloutBtn.addEventListener("click", function() {
+    calloutOverlay.classList.toggle('show');
+    calloutPopup.classList.toggle('show');
+  })
+</script>
+
+<style>
+  form.product-single__form {
+    visibility: visible !important;
+  }
+</style>
+
+
+<script src="https://widget.sezzle.com/v1/javascript/price-widget?uuid=48c223fb-2741-443c-bd20-607598afa5f9"></script>
+
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+<script text="text/javascript">
+    var _learnq = _learnq || [];
+ 
+    var classname = document.getElementsByClassName("btn btn--full add-to-cart");
+ 
+   var addToCart = function() {
+        _learnq.push(['track', 'Added to Cart', item]);
+    };
+ 
+    for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', addToCart, false);
+    }
+ 
+</script>
+{% comment %}
+<!--Start Stamped.io Auto Installation--><div id="stamped-main-widget" class="stamped-main-widget" data-widget-style="standard" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}" data-product-type="{{product.type}}" data-widget-language="{{shop.locale}}"></div><!--End Stamped.io Auto Installation-->
+
+{% endcomment %}
+
+{% section 'sezzle-widget' %}
+
+{% comment %}  {% endcomment %}
+
+<div data-rebuy-id="79153" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
