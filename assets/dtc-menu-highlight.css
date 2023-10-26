@@ -1,0 +1,117 @@
+.dtc-highlight-btns{
+    width: 100%;
+    border-top: 2px solid black ;
+    display: none !important;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 170px;
+}
+
+.variant-navigation-lbb-menu{
+    display: block !important;
+}
+
+.dtc-topmenu-variant{
+    display: none !important;
+}
+
+.collapsible-trigger__icon .icon {
+    margin-left: -2px;
+}
+
+.black-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white !important;
+    height: 50px;
+    width: 90%;
+}
+
+.white-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    border: 2px solid black;
+    height: 50px;
+    width: 90%;
+
+}
+
+.bottom-span{
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.dtc-drawer__close-button{
+    margin-left: -550px;
+    background: none !important;
+    margin-top: -10px;
+}
+
+.dtc-drawer__close-button {
+    position: relative;
+    height: 100%;
+    padding:0 20px;
+    padding:0 var(--drawer-gutter);
+    color: inherit
+}
+
+.dtc-drawer__close-button:active {
+    background-color:var(--colorDrawersDim);
+}
+
+.dtc-drawer__close-button .icon {
+    height: 28px;
+    width: 28px
+}
+
+
+.value-nav{
+    display: flex;
+    margin-left: -255px;
+    margin-top: -6px;
+}
+
+.value-step{
+    display: flex;
+    gap: 5px;
+}
+
+.value-step-2{
+    display: flex;
+    gap: 5px;
+    padding-right: 15px;
+}
+
+
+.value-step > p{
+    font-size: 11px;
+}
+
+.value-step > img{
+    margin-top: -15px;
+}
+
+.value-step-2 > p{
+    font-size: 11px;
+}
+
+.value-step-2 > img{
+    margin-top: -15px;
+}
+
+.dtc-topmenu-variant{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}

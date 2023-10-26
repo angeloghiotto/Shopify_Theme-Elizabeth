@@ -1,0 +1,68 @@
+    .collection_box{
+background: url(https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Group_44.png?v=1651702486);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    padding: 0;
+    float: left;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left:10px;
+     padding-right:10px;
+    flex-direction: column; 
+    }
+      
+      .collection_box h1{
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: rgba(180, 125, 158, 1);
+        font-weight: 600;
+        line-height: 20px;
+        font-family: Futura,sans-serif;
+        margin-bottom:0px;
+
+      }
+    
+    
+    .collection_box img{
+	  max-width: 15px;
+      margin: 0 auto;
+    }
+    
+    .collection_box p{
+      font-size:12px;
+      font-family: Futura,sans-serif;
+      color:rgba(56, 39, 87, 1);
+      padding-left: 10px;
+      padding-right: 10px;
+      line-height: 15px;
+      margin-bottom:0;
+    }
+    
+    .grid-item-box{
+    	padding-left:5px;
+      	padding-right:5px;
+    }
+    .collection_box_title{
+
+
+      
+    }
+    
+    
+    .collection_box_image_container{
+    margin-top: 25px;
+    }
+    
+    .collection_box_text{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    }
+    
+
+     
+   
+    

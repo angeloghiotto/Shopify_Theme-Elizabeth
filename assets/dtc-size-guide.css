@@ -1,0 +1,143 @@
+/* .dtc-size{
+    display: none;
+  } */
+  .prod-img-size{
+    border-radius: 150px;
+  }
+
+  /* .size-toggle{
+    display: none;
+  } */
+
+    .dtc-size{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .size-img{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .dtc-hide-txt{
+      display: none;
+    }
+
+
+    .sel-div{
+        display: flex;
+        flex-direction: column;
+        margin-top: -15px;
+    }
+
+    .box-sel-div{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    #box-sel-1, #box-sel-2, #box-sel-3, #box-sel-4, #box-sel-5{
+        width: 60px;
+        height: 6px;
+        background: #d9d9d9;
+    }
+
+
+    #box-tog-1, #box-tog-2, #box-tog-3, #box-tog-4, #box-tog-5{
+      width: 60px;
+      height: 6px;
+      background: #d9d9d9;
+  }
+
+    .runs-div{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+
+    }
+
+    .customer-say{
+      font-family: 'Avenir Next';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px; 
+      color: #000000;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .runs-div > span{
+      font-family: 'Avenir Next';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px; 
+      color: #000000;
+      text-transform: none;
+      letter-spacing: 0;
+    } 
+
+    #dtc-filler{
+      text-decoration: underline;
+    }
+
+    #dtc-filler-tog{
+      text-decoration: underline;
+    }
+    .size-toggle{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-left: 1px solid #ececec;
+      border-right: 1px solid #ececec;
+      max-width: 100%;
+
+    }
+
+    .still-in{
+      display: flex;
+      justify-content: center;
+      max-width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .still-in > span{
+      font-style: normal;
+      font-size: 12.6px;
+      line-height: 20px;
+      color: #000000;
+      text-transform: none;
+    }
+
+    @media (max-width:714px){
+      .still-in{
+        float: right;
+        max-width: 70%;
+      }
+    }
+
+
+    @media (max-width:375px){
+      #box-tog-1, #box-tog-2, #box-tog-3, #box-tog-4, #box-tog-5{
+        width: 40px;
+        height: 4px;
+      }
+  }
+
+
+  @media (max-width:300px){
+    .customer-say{ 
+        font-size: 14px;
+    }
+}

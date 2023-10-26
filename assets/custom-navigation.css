@@ -1,0 +1,340 @@
+.dtc_mobile_navigation a {
+  background: none !important;
+}
+.dtc_mobile_navigation a:hover {
+  background: none;
+}
+
+.dtc_submenu {
+  display: none;
+  padding-bottom: 30px;
+}
+.dtc_menu_active {
+  display: block !important;
+  padding: 0 !important;
+}
+.dtc_mobile_navigation {
+  height: auto;
+  padding: 10px;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+#shop_all_dtc {
+  color: white;
+  text-transform: uppercase;
+}
+.dtc_menu_active > a:first-child {
+  display: none !important;
+}
+.menu_item {
+  height: 90px;
+  background: #f4f4f4;
+  margin-bottom: 12px;
+  padding: 0 18px;
+}
+.menu_item a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.mobile_menu_header {
+  display: none;
+}
+.dtc_mobile_menu_b1 {
+  height: 55px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 90%;
+}
+.dtc_shop_all {
+  background: #c38ba7;
+  color: white;
+  height: 45px;
+  display: grid;
+  align-items: center;
+  padding-left: 15px;
+  margin-bottom: 12px;
+}
+
+.dtc_mobile_menu_back {
+}
+
+.menu_item {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.girl_footies {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_footie.png?v=1652717732");
+}
+.girl_rompers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_romper.png?v=1652717732");
+}
+.girl_headwraps {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_headwraps.png?v=1652717732");
+}
+.girl_dressers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_dresses.png?v=1652717732");
+}
+.girl_jogger_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_jogger_sets.png?v=1652717732");
+}
+.girl_esssentials {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/girl_-_essentials.png?v=1652717732");
+}
+.boy_essentials {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/boy_-_essentials.png?v=1652717482");
+}
+.boy_jogger_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/boy_-_jogger_sets.png?v=1652717482");
+}
+.boy_rompers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/boy_-_rompers.png?v=1652717482");
+}
+.boy_footie {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/boy_-_footies.png?v=1652717482");
+}
+.toddler_essentials {
+  background-image: url("");
+}
+.pajama_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Todder_-_Pajama_sets.png?v=1652717242");
+}
+.jogger_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Todder_-_Jogger_sets.png?v=1652717242");
+}
+.toddler_dressers_rompers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Dresses.png?v=1653999725");
+}
+.swaddle_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/baby_-_swaddle_sets.png?v=1652717056");
+}
+.beanies {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/baby_-_beanies.png?v=1652717056");
+}
+.knotted_gowns {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/baby_-_knotted_gowns.png?v=1652717056");
+}
+.solid_two_piece_sets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/baby_-_solid_two_piece_sets.png?v=1652717056");
+}
+.mens_boxers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mens_boxers.png?v=1652716762");
+}
+.mens_loungewear {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mens_loungewear.png?v=1652716762");
+}
+.mama_dressers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mama_dresses___rompers.png?v=1652716762");
+}
+.mama_jogger {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mama_jogger_sets.png?v=1652716762");
+}
+.mama_tops {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mama_tops.png?v=1652716762");
+}
+.mama_loungewear {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mama_loungewear.png?v=1652716762");
+}
+.mama_robs {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/adult_-_mama_robes.png?v=1652716762");
+}
+.accesories_socks {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_socks.png?v=1652715486");
+}
+.accesories_tights {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_tights.png?v=1652715486");
+}
+.accesories_cashmire_shirt {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_cashmere_shirt.png?v=1652715486");
+}
+.accesories_ribbed_leggings {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_ribbed_leggings.png?v=1652715486");
+}
+.accesories_cottom_bloomers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_cotton_bloomers.png?v=1652715486");
+}
+.accesories_swaters {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/basics_-_sweaters.png?v=1652715486");
+}
+.accesores_headwraps_and_bows {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/accessories-headwrapsandbows.png?v=1652714396");
+}
+.accesores_lovey {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/accessories_-_lovey.png?v=1652731907");
+}
+.accesores_beanies {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/accessories-beanies.png?v=1652714396");
+}
+.swaddles_blankets {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/accessories-swaddlesblankets.png?v=1652714396");
+}
+.new_collections {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/New_Collections.png?v=1652714455");
+}
+
+.best_sellers {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/best_sellers_3.png?v=1652816199");
+}
+.baby_girl {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Baby_Girl.png?v=1652714455");
+}
+
+.baby_boy {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/baby_boy_1.png?v=1652816199");
+}
+.toddler {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Toddler.png?v=1652714455");
+}
+
+.newborn {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Newborn.png?v=1652714455");
+}
+.mom_and_dad {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Mom___dad.png?v=1652714455");
+}
+
+.blankets_and_accesories {
+  background-image: url("https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Blankets___Accessories.png?v=1652714455");
+}
+
+.dtc_mobile_menu_back img {
+  max-width: 80%;
+  margin-left: 15px;
+}
+
+.dtc_mobile_collection_name {
+  text-align: center;
+  margin-right: 10%;
+  text-transform: uppercase;
+}
+
+.accordion .menu_item {
+  display: block;
+}
+
+.accordion_item .accordion_menu_item {
+  height: 90px;
+  background: #f4f4f4;
+  margin-bottom: 12px;
+}
+
+.accordion_content {
+  display: none;
+  opacity: 0;
+  padding-bottom: 20px;
+  transition: opacity 1s ease-in-out;
+}
+
+.accordion_item {
+  background-image: none;
+  position: relative;
+}
+
+.accordion_item_image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 30px;
+  top: 30px;
+  right: 30px;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+  -o-transform: rotate(180deg); /* Opera */
+}
+
+#NavDrawer .drawer__fixed-header {
+  height: 70px;
+  overflow: visible;
+  position: absolute;
+  right: 0px;
+  top: -11px;
+  width: 30px;
+}
+
+#NavDrawer > .drawer__title {
+  display: none;
+}
+#NavDrawer > .drawer {
+  overflow: initial !important;
+}
+
+#NavDrawer > .drawer__close {
+  height: 52px;
+  width: 52px;
+  background: #c4c4c4;
+}
+
+ #NavDrawer > .drawer__header {
+  border: none !important;
+}
+
+#NavDrawer {
+overflow:initial;
+}
+
+
+#NavDrawer .drawer__header {
+	border:none;
+}
+
+
+#NavDrawer  .drawer__close button{
+background:#C4C4C4;
+}
+
+
+
+
+
+
+
+
+
+
+#NavDrawer2 .drawer__fixed-header {
+  height: 70px;
+  overflow: visible;
+  position: absolute;
+  right: 0px;
+  top: -11px;
+  width: 30px;
+}
+
+#NavDrawer2 > .drawer__title {
+  display: none;
+}
+#NavDrawer2 > .drawer {
+  overflow: initial !important;
+}
+
+#NavDrawer2 > .drawer__close {
+  height: 52px;
+  width: 52px;
+  background: #c4c4c4;
+}
+
+ #NavDrawer2 > .drawer__header {
+  border: none !important;
+}
+
+#NavDrawer2 {
+overflow:initial;
+}
+
+
+#NavDrawer2 .drawer__header {
+	border:none;
+}
+
+
+#NavDrawer2  .drawer__close button{
+background:#C4C4C4;
+}

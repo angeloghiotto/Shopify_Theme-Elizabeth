@@ -1,0 +1,190 @@
+html body .product-single__meta .product-single__title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    letter-spacing: normal;
+}
+.oke-sr-count{
+    font-family: 'Futura';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color:#707070;
+    letter-spacing: 0.34px;
+    text-decoration: underline;
+}
+.imp_note{
+    display:none;
+}
+.oke-stars-foreground > svg , .oke-stars-background > svg{
+    height:12.5px;
+}
+#star-default--filled{
+    fill:#FFA62B;
+}
+.product__price {
+    font-weight:700;
+    font-size: 18px;
+    letter-spacing: 0.34px;
+    color:#000;
+}
+#dtc-shop-pay p {
+    margin:0;
+    font-size:16px;
+    margin-bottom:5px;
+}
+.dtc-shop-pay-logo{
+    width: 63px;
+}
+
+#dtc-shop-pay .shopify-installments__learn-more{
+    display:none;
+}
+.shopify-installments__content{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.shopify-installments__content b {
+ font-weight: 400;
+}
+
+html .sezzle-shopify-info-button .sezzle-button-text{
+    font-size:16px !important;
+}
+
+
+.variant-input-wrap label{
+    position: relative;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    padding: 0.275rem;
+    font-size: .70rem!important;
+    line-height: 1rem!important;
+    text-transform: uppercase;
+    letter-spacing: 0em!important;
+    width: 98%;
+    text-align: center;
+}
+
+@media (max-width: 769px){
+  .variant-input-wrap label{
+     width: 105px;
+  }
+}
+
+.sezzle-logo{
+    width:63px !important;
+    height: auto !important;
+}
+#togglePrints{
+    text-decoration: underline;
+    font-size:14px;
+    letter-spacing: .34px;
+    color:#000;
+    display:none;
+    margin-top: -13px;
+}
+.size-information{
+    float:right;
+    display: flex;
+    align-items: flex-start;
+    gap:6px;
+    cursor:pointer;
+    z-index: 20;
+}
+@media (max-width: 769px){
+  .size-information{
+     position: absolute;
+  }
+}
+.size-information .size-text{
+    letter-spacing: .025em !important;
+    font-size: 13.6px !important;
+    color: #707070 !important;
+// text-transform: capitalize;
+//    letter-spacing: 0.34px;
+}
+.product__quantity--button{
+    display:none;
+}
+.product-assets{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.product-assets > .callout-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color:#000;
+    text-decoration:none;
+    text-transform:capitalize;
+    font-size:16px;
+}
+.product-assets--returns-info {
+    display:flex;
+    align-items:center;   
+}
+.product-assets--returns-info p {
+    margin:0;
+    font-size:16px;
+} 
+.product-assets img{
+    margin-right:8px;
+}
+
+.template-product .add-to-cart {
+    height:56px;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.template-product .add-to-cart > span{
+    font-weight:100;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.template-product .variant__label{
+
+    letter-spacing: .025em !important;
+    font-size: 13.6px !important;
+    color: #707070 !important;
+   text-transform: uppercase; 
+//    font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) {
+    .shopify-installments__content{
+        display:block;
+    }
+    #dtc-shop-pay p {
+        font-size:13px;
+    }
+    html .sezzle-shopify-info-button .sezzle-button-text{
+        font-size:13px !important;
+    }
+    .dtc-shop-pay-logo {
+        position: absolute;
+        margin-left: 7px;
+    }
+    .sezzle-shopify-info-button .sezzle-checkout-button-wrapper .sezzle-button-text .sezzle-logo{
+        height:auto !important;
+    }
+    .template-product .size-text{
+        position:initial;
+    }
+    .product-assets{
+        flex-direction: column;
+    }
+    .product-assets--divider{
+        display:none;
+    }
+}

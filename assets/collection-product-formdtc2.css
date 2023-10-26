@@ -1,0 +1,127 @@
+.addToCart__popup {
+  display: none;
+}
+
+.buy-now__collection {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+
+  .variant-wrapper {
+    width: 100%;
+  }
+  
+  .quantity-add {
+    width: 100%;
+  }
+
+  .buy-now__collection {
+    display: block;
+    padding-top: 8px;
+  }
+
+  .sticky-collections__modal {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0);
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 20%;
+    z-index: 10000;
+    height: 100%;
+  }
+
+  .close-variant-sticky-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    right: 5px;
+    top: -17px;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #000000;
+  }
+
+  .cart-button {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    height: 45px;
+  }
+
+  .addToCart__popup {
+    display: block;
+  }
+  
+  .quick-add-form {
+    left: 4.5%;
+    right: 0;
+    background-color: #ffffff;
+    margin: 0 -17px;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999999999;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+  }
+
+  .quick-add-form.dtc-variant{
+    background-color: #f3f3f3;
+  }
+
+  .quick-add-form.dtc-variant .quantity-add{
+    display: none;
+  }
+
+  .quick-add-form.dtc-variant .variant__label{
+    padding: .5rem 0;
+  }
+
+  .pop-over__slider{
+    display: none;
+    margin: 1rem 3rem!important;
+  }
+
+  .pop-over__slider.slick-initialized{
+    display: block;
+  }
+
+  .pop-over__slider .slick-slide .image-wrap{
+    height: 0!important;
+    padding-bottom: 100%!important;
+  }
+
+  .pop-over__slider .slick-slide img{
+    height: auto!important;
+    border-radius: 0!important;
+  }
+
+  .pop-over__slider .slick-slide .product__photo-zoom{
+    color: var(--colorBtnPrimary);
+    background-color: var(--colorBtnPrimaryText);
+    padding: 6px!important;
+    min-width: auto!important;
+  }
+
+  .pop-over__slider .slick-dots{
+    bottom: 8px!important;
+  }
+
+  .pop-over__slider .slick-dots li{
+    background-color: var(--colorBtnPrimaryText)!important;
+    border-radius: 50%;
+  }
+
+  .pop-over__slider .slick-dots li.slick-active{
+    background-color: var(--colorBtnPrimary)!important;
+  }
+
+
+}

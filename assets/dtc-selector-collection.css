@@ -1,0 +1,238 @@
+        .dtc-selector-section{
+            display: none;
+        }
+        .original-featured{
+            display: block;
+        }
+        
+        .dtc-swatch-collection{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .inner-swatch{
+          display: flex;
+          max-width: 90%;
+        }
+
+        .swatch-collection{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 10px;
+            gap: 10px;
+            width: 166.67px;
+            height: 45px;
+            font-family: 'Futura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 15px;
+            letter-spacing: 0.15em;
+            color: #000;
+            transition: color .25s, background .25s;
+          border: 1px solid #000;
+
+        }
+
+        #button-1{
+          border-right: none;
+      }
+
+        #button-5{
+            border-left: none;
+        }
+
+
+        .border-left{
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+        .border-right{
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+
+        .dtc-products-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .dtc-view-all{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+        }
+
+        .dtc-view-all-btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 99px;
+            height: 36px;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 100px;
+            font-family: 'Futura';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.15em;
+            color: #000000;
+        }
+
+        #button-1{
+            background: #F6F2EB;
+        }
+
+        .dtc-grid-title{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            color: #000000;
+            height: 37px;
+            margin-bottom: 15px;
+
+        }
+
+        @media (min-width:1090px) {
+            
+
+        .dtc-selector-grid{
+            height: 435px !important;
+      }
+
+      html .dtc-selector-grid .image-wrap{
+        height: 300px !important;
+      }
+
+      html .dtc-selector-grid img{
+        height: 300px !important;
+      }
+      .dtc-selector-section .grid__item__dtc .grid-product__secondary-image{
+        max-height: 302px !important;
+      }
+    }
+
+
+    @media (max-width:1130px) {
+      .dtc-products-container {
+              grid-template-columns: 1fr 1fr;
+              justify-items: center; 
+              align-items: center; 
+              width: 100%;
+              gap: 10px;
+              margin-bottom: 10px;
+              margin-left: 17px;
+              margin-right: 17px;
+            }
+              .dtc-selector-grid{
+                    width: 100% !important ;
+                    margin-left: 17px;
+                    margin-right: 17px;
+              }
+
+                    
+      .dtc-grid-title{
+        font-family: 'Futura';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        color: #000000; 
+      }
+
+
+              .dtc-view-all{
+                margin-top: 15px;
+    
+            }
+
+            .dtc-selector-section .grid__item__dtc{
+
+                max-height: 305px;
+            }
+
+            html .dtc-selector-grid .image-wrap{
+              height: 175px !important;
+            }
+      
+            html .dtc-selector-grid img{
+              height: 175px !important;
+            }
+            .dtc-selector-section .grid__item__dtc .grid-product__secondary-image{
+              max-height: 177px !important;
+            }
+            .dtc-product-reviews {
+              height: auto;
+              width: 90%;
+          }
+
+        .dtc-quick .quick-add-button{
+            display: flex;
+        }
+          }
+
+          
+          @media (min-width:768px) and (max-width:1130px) {
+            
+            html .dtc-selector-grid .image-wrap{
+              height: 310px !important;
+            }
+      
+            html .dtc-selector-grid img{
+              height: 310px !important;
+            }
+            .dtc-selector-section .grid__item__dtc .grid-product__secondary-image{
+              max-height: 310px !important;
+            }
+            .dtc-selector-section .grid__item__dtc{
+              max-height: none !important;
+              height: 440px;
+          }
+          .grid__item__dtc .quick-add-button, .grid__item__dtc .quick-add-single{
+            margin-bottom: 10px;
+          }
+          }
+
+          @media (width:1024px) {
+            
+            html .dtc-selector-grid .image-wrap{
+              height: 340px !important;
+            }
+      
+            html .dtc-selector-grid img{
+              height: 340px !important;
+            }
+            .dtc-selector-section .grid__item__dtc .grid-product__secondary-image{
+              max-height: 340px !important;
+            }
+            .dtc-selector-section .grid__item__dtc{
+              max-height: none !important;
+              height: 470px;
+          }
+          .grid__item__dtc .quick-add-button, .grid__item__dtc .quick-add-single{
+            margin-bottom: 10px;
+          }
+          }

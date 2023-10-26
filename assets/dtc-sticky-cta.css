@@ -1,0 +1,110 @@
+.dtc-sitcky-form {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  background-color: #fff;
+  z-index: 999999;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #ececec;
+  z-index: 9999999999999999999;
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+.dtc-sitcky-form .product-single__form .size-information{
+  display: none;
+}
+
+html .dtc-sitcky-form .add-to-cart {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+html .dtc-sitcky-form form {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.js-drawer-open .dtc-sitcky-form {
+  display: none;
+}
+
+.dtc-sitcky-form .add-to-cart {
+  display: none;
+}
+.stop-scrolling {
+  height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
+.sticky-atc-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: 99999999;
+  height: 100%;
+  display: none;
+}
+
+.close-variant-sticky-form {
+  position: absolute;
+  border-radius: 100%;
+  background-color: #fbfbfb;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  border-radius: 100%;
+  right: 5px;
+  top: -27px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background: black;
+  color: white;
+  display: none;
+}
+
+.dtc-sitcky-form .product__quantity {
+  display: none;
+}
+.fake-add-to-cart-button {
+  display: none;
+}
+
+.dtc-sitcky-form .fake-add-to-cart-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes slideUp {
+  0%,
+  20% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  30%,
+  60% {
+    transform: translateY(50%);
+    opacity: 0.4;
+  }
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

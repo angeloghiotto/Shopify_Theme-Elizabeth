@@ -1,0 +1,17 @@
+@media screen and (max-width: 750px) {
+
+.variant-input-wrap{
+    display: flex;
+    overflow: auto;
+    margin-bottom: 2rem;
+  }
+
+  .variant-input-wrap div{
+    flex-shrink: 0;
+  }
+
+  .variant-input-wrap div label{
+    margin-top: 1rem;
+  }
+
+}

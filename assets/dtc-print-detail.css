@@ -1,0 +1,97 @@
+.dtc-print-detail{
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 100px;
+    z-index: 999;
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #1C1D1D;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+
+.slick-slider .dtc-print-detail{
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+
+.slick-slider .slick-active .dtc-print-detail{
+    opacity: 1;
+}
+
+.dtc-print-detail-mobile{
+    display: none !important;
+}
+
+.thumb-img{
+    animation: fade-in 3.5s cubic-bezier(.26,.54,.32,1) 0s forwards;
+}
+
+.product-dtc-print-detail .product__main-photos .slick-list {
+    min-height: 505px;
+}
+
+.template-product .product__main-photos .slick-list {
+    min-height: 505px;
+}
+
+
+@media (max-width:768px) {
+    .dtc-print-detail-mobile{
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 10px;
+        position: absolute;
+        background: #FFFFFF;
+        border: 1px solid black;
+        border-radius: 100px;
+        z-index: 999;
+        font-family: 'Futura';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: 0.05em;
+        color: #1C1D1D;
+        margin-top: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .product-dtc-print-detail .product__main-photos .slick-list {
+        min-height: 312px;
+    }
+
+    .template-product .product__main-photos .slick-list {
+        min-height: 350px;
+    }
+
+
+    .dtc-print-detail{
+        display: none !important;
+    }
+
+    .slick-slider .dtc-print-detail-mobile{
+        opacity: 0;
+        transition: opacity .5s ease-out;
+    }
+
+    .slick-slider .slick-active .dtc-print-detail-mobile{
+        opacity: 1;
+    }
+}
+

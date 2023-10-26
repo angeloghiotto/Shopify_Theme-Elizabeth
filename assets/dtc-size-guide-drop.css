@@ -1,0 +1,155 @@
+ /* .new-class-size{
+    display: none;
+  } */
+  .new-prod-img-size{
+    border-radius: 150px;
+  }
+
+  /* .new-size-toggle{
+    display: none;
+  } */
+
+  .new-class-size{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-size-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .new-dtc-hide-txt{
+    display: none;
+  }
+
+  div.new-size-table-pdp > div:nth-child(2) {
+    z-index: 1 !important;
+    margin-bottom: 10px;
+  }
+
+  .new-sel-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+  }
+
+  .new-box-sel-div{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+  }
+
+  #new-box-sel-1,
+  #new-box-sel-2,
+  #new-box-sel-3,
+  #new-box-sel-4,
+  #new-box-sel-5{
+    width: 60px;
+    height: 6px;
+    background: #d9d9d9;
+  }
+
+  #new-box-tog-1,
+  #new-box-tog-2,
+  #new-box-tog-3,
+  #new-box-tog-4,
+  #new-box-tog-5{
+    width: 60px;
+    height: 6px;
+    background: #d9d9d9;
+  }
+
+  .new-runs-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .new-customer-say{
+    font-family: 'Avenir Next';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .new-runs-div > span{
+    font-family: 'Avenir Next';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  #new-dtc-filler{
+    text-decoration: underline;
+    margin-left: 3px;
+  }
+
+  #new-dtc-filler-tog{
+    text-decoration: underline;
+  }
+  .new-size-toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    max-width: 100%;
+  }
+
+  .new-still-in{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .new-still-in > span{
+    font-style: normal;
+    font-size: 12.6px;
+    line-height: 20px;
+    color: #000000;
+    text-transform: none;
+  }
+
+  @media (max-width:714px){
+    .new-still-in{
+      float: right;
+      max-width: 70%;
+    }
+  }
+
+  @media (max-width:375px){
+    #new-box-tog-1,
+    #new-box-tog-2,
+    #new-box-tog-3,
+    #new-box-tog-4,
+    #new-box-tog-5{
+      width: 40px;
+      height: 4px;
+    }
+  }
+
+  @media (max-width:300px){
+    .new-customer-say{
+      font-size: 14px;
+    }
+  }

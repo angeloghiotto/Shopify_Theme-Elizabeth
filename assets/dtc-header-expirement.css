@@ -1,0 +1,116 @@
+
+    .dtc-header-flex-desktop{
+        display:grid;
+        grid-template-columns: 370px auto;
+        height:135px;
+        align-items:center;
+    }
+
+    .dtc-header-expirement {
+        display:none;
+        background: #F3F3F3;
+        background-position: top right;
+        height: 322px;
+        background-repeat: no-repeat;
+        align-items: flex-end;
+        /* background-size: cover; */
+        background-image: url(https://cdn.shopify.com/s/files/1/0350/5061/9020/files/5_Kids_3.png?v=1661963047);
+    }
+
+    .dtc-header-expirement .page-width{
+        /* background: rgba(255, 255, 255, 0.92);
+        width:100%;
+        max-width:none; */
+    }
+
+
+    
+    .dtc-header-expirement h3{
+        font-size:25px;
+        font-weight:700;
+        text-transform: none;
+        line-height:24px;
+        max-width:300px;
+        line-height:32.5px;
+    }
+    
+    
+    
+    .header-dtc-ratings{
+        font-size:11px;
+        display:flex;
+    }
+    
+    .dtc-header-expirement ul{
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        margin-top:20px;
+        display:flex;
+        justify-content:space-evenly;
+    }
+    
+    .dtc-header-expirement ul li {
+        display:flex;
+        align-items:center;
+        grid-template-columns:20px auto;
+        flex-direction: column;
+    
+    }
+    
+    .dtc-header-expirement ul li img {
+        width: 15px;
+        display:block;
+    }
+
+
+
+@media screen and (max-width: 768px) {
+
+    .dtc-header-expirment-image{
+        display:none;
+    }
+
+    .dtc-header-flex-desktop{
+        display:block;
+    }
+
+    .dtc-header-expirement h3 {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: none;
+        max-width: 231px;
+        line-height: 24px;
+    }
+
+
+        .dtc-header-expirement {
+            background-image: url(https://cdn.shopify.com/s/files/1/0350/5061/9020/files/header-mobile-bg.jpg?v=1661956227);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 222px;
+            display: block;
+            background-size: contain;
+            display:block;
+        }
+    }
+
+    .dtc-header-expirement ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+    display: block;
+    justify-content: space-evenly;
+    }
+    .dtc-header-expirement ul li {
+        display:grid;
+    }
+
+    .dtc-header-expirement ul li img{
+        display:initial;
+    }
+
+
+
+}
