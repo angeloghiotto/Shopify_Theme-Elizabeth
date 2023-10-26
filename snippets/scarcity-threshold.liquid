@@ -1,0 +1,104 @@
+{% if product.available %}
+  {% assign inventory_remaining = 50 %}
+  {% for variant in product.variants %}
+	{% if variant.inventory_quantity > 0 %}
+      {% if variant.inventory_quantity <= inventory_remaining %}
+        {% assign inventory_remaining = variant.inventory_quantity %}
+      {% endif %}
+	{% endif %}
+  {% endfor %}
+
+{% unless product.tags contains 'hide-stock-limit' %}
+  {% if inventory_remaining > 0 %}
+    <div class="inventory-threshold">
+      <span>Only {{ inventory_remaining }} Left In Stock 😱</span>
+      <div class="progress" >
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: {{ inventory_remaining | times: 2 }}%;"></div>
+      </div>
+    </div>
+  {% endif%}
+{% endunless %}
+<style>
+.inventory-threshold {
+  background: #C38CA7;
+  padding: 12px 16px;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-items: center;
+  margin: -4px -17px 12px;
+  display: none;
+}
+
+/* div.inventory-threshold:nth-of-type(1) {
+  display: flex;
+}
+
+div.inventory-threshold:nth-of-type(3) {
+  display: none;
+} */
+
+.inventory-threshold span {
+  display: inline-block;
+  flex: 1 0 auto;
+  width: auto;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+@keyframes progress-bar-stripes {
+  0% { background-position-x: 10px; }
+}
+
+.progress {
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  font-size: 16px;
+  background-color: #E1C6D3;
+  border-radius: 10px;
+  width: 100%;
+  flex: 2 1 auto;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: White;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #F3E8ED;
+  transition: width .6s ease;
+  border-radius:10px;
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255,255,255) 25%, transparent 25%, transparent 50%, rgba(255,255,255) 50%, rgba(255,255,255) 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
+}
+
+.progress-bar-animated {
+  animation: 1s linear infinite progress-bar-stripes;
+}
+
+@media (min-width: 764px) {
+/* 
+  div.inventory-threshold:nth-of-type(1) {
+    display: none;
+  }
+
+  div.inventory-threshold:nth-of-type(3) {
+    display: flex;
+  } */
+  
+  div.inventory-threshold {
+    margin: 0;
+  }
+}
+
+
+</style>
+{% endif %}

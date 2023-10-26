@@ -1,0 +1,36 @@
+<style>
+  .stretch-video__container {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .stretch-video__header {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 43px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .stretch-video__video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .stretch-video__header {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div class="stretch-video__container">
+  <!--<h1 class="stretch-video__header">{{ section.settings.header }}</h1> -->
+  <img src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/Maximize_The_Wear_With_Bamboo.gif?v=1696624735" loading="lazy" width=400px />
+  <video class="stretch-video__video" muted autoplay loop playsinline>
+    <source src="{{ section.settings.video_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>

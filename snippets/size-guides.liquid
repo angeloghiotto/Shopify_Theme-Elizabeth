@@ -1,0 +1,138 @@
+{% assign product_type = product.type | handleize %}
+{% assign size_guide_handle = 'size-guide-' | append: product_type %}
+
+{% if pages[size_guide_handle] != blank %}
+
+  <span class="size-text">View Size Guide</span>
+  <div class="size-popup">
+    <div class="size-popup_title-container">
+      <span class="size-popup_title">Size Guide</span>
+      <span class="size-popup_close">{% render 'close' %}</span>
+    </div>
+    {{ pages[size_guide_handle].content }}
+  </div>
+  <style>
+
+    .product-single__form {
+      margin-top: 0px;
+    }
+
+    .size-popup {
+      z-index: 999;
+      background: white;
+      height: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      bottom: 0;
+      overflow: hidden;
+      padding: 0 18px;
+      -webkit-transition: height .3s ease-in-out;
+      -o-transition: height .3s ease-in-out;
+      transition: height .3s ease-in-out;
+    }
+
+    .size-text {
+      float: right;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      -webkit-text-decoration-line: underline;
+              text-decoration-line: underline;
+      color: #B77B9C;
+      display: inline-block;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      width: auto;
+      text-transform: uppercase;
+    }
+
+    .size-popup_close {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .size-text svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .size-popup_title-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
+      margin-bottom: 12px;
+    }
+    .size-popup a {
+      text-decoration: underline;
+    }
+
+    .size-popup_title {
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    .size-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom:0;
+      right: 0;
+      left: 0;
+      z-index: 99;
+      background: #0000002e;
+    }
+
+    .size-overlay.show {
+      display: block;
+    }
+
+    .size-popup.show {
+      height: 70vh;
+      overflow-y: scroll;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    
+    .product__price {
+      margin-right: 0;
+    }
+  </style>
+
+<script>
+    let sizeBtn = document.querySelector('.size-text');
+    let sizeOverlay = document.querySelector('.callout-overlay');
+    let sizePopup = document.querySelector('.size-popup');
+    let sizePopupClose = document.querySelector('.size-popup_close');
+    
+    sizePopupClose.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+    })
+
+    sizeOverlay.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+    })
+
+    sizeBtn.addEventListener("click", function() {
+      sizeOverlay.classList.toggle('show');
+      sizePopup.classList.toggle('show');
+    })
+</script>
+
+{% endif %}

@@ -1,0 +1,104 @@
+<style>
+  @media screen and (max-width: 768px) {
+    .hidden-mobile {
+      display: none;
+    }
+  }
+</style>
+
+{% section 'collection-header' %}
+
+<div id="CollectionAjaxResult" class="collection-content">
+  <div id="CollectionAjaxContent">
+    <div class="page-width">
+      <div class="grid">
+        <div class="grid__item medium-up--one-fifth grid__item--sidebar hidden-mobile hide-sidebar">
+          {% section 'collection-sidebar' %}
+        </div>
+        
+        <div class="dtc-new-filters">
+          <div class="rte">
+            {{ collection.description }}
+          </div>
+
+          {% section 'dtc-new-filters' %}
+        </div>
+      
+        <div class="grid__item medium-up--four-fifths grid__item--content">
+          {% section 'collection-promotions' %}
+
+          <div class="collection-grid__wrapper">
+            <div class="rte hidden-mobile">
+              {{ collection.description }}
+            </div>
+          
+            {% section 'dtc-slider-section-2' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  let isAnimating = false;
+
+  applyLinkListeners();
+
+  function applyLinkListeners() {
+    document.querySelectorAll('.test-link').forEach(function(link) {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        let newUrl = e.target.href;
+
+        if (isAnimating === true) 
+          return;
+
+        isAnimating = true;
+
+        updateScroll(true);
+        history.pushState({}, '', newUrl);
+        $('.collection-grid__wrapper').addClass('unload');
+        getNewCollectionContentTest(newUrl);
+      })
+    })
+  }
+
+  function getNewCollectionContentTest(url) {
+    url = url + '?view=ajax';
+
+    $('#CollectionAjaxResult').load(url + ' #CollectionAjaxContent', function() {
+      isAnimating = false;
+      theme.reinitSection('collection-template');
+      theme.collectionTemplate.reinit();
+      applyLinkListeners();
+    }.bind(this));
+  }
+
+  function updateScroll(animate) {
+    var scrollTo;
+
+    if (theme.config.bpSmall) {
+      // 60 is ~ height of sticky filters
+      scrollTo = $('[data-scroll-to]').offset().top - 60;
+    } else {
+      scrollTo = $('#CollectionAjaxResult').offset().top + 1;
+    }
+
+    if (theme.config.stickyHeader) {
+      var heightOfStickyNav = $('.site-header').outerHeight(true);
+      scrollTo = scrollTo - heightOfStickyNav;
+    }
+
+    if (animate) {
+      $('html, body').animate({ scrollTop: scrollTo }, 300);
+    } else {
+      $('html, body').scrollTop(scrollTo);
+    }
+  }
+</script>
+
+
+
+

@@ -1,0 +1,63 @@
+<meta name="viewport" content="height=device-height,minimum-scale=1,initial-scale=1">
+<style>
+  .iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483642;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  .close:hover {
+    opacity: 0.8;
+  }
+  .close {
+    cursor: pointer;
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2147483647;
+  }
+  .close a {
+    border-bottom: none !important;
+    color: white;
+  }
+</style>
+
+{% layout none %}
+<div class="close" id="closeButton" >
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 1.81286L16.1871 0L9 7.18714L1.81286 0L0 1.81286L7.18714 9L0 16.1871L1.81286 18L9 10.8129L16.1871 18L18 16.1871L10.8129 9L18 1.81286Z" fill="white"></path>
+  </svg>
+</div>
+<iframe id="onceEmbed" class="iframe"></iframe>
+<script>
+  const url = new URL(window.location.href);
+  const storyID = url.searchParams.get('id');
+  const iframe = document.getElementById('onceEmbed');
+  iframe.src = `https://play.once.app/${storyID}`;
+  document.getElementById('closeButton').onclick = function() {
+    window.location.href = window.location.href.match(/.+?(?=pages)/)[0];
+  };
+  const handleStoryEndMessage = (event) => {
+    if (event.origin === 'https://play.once.app') {
+      if (event.data.action === 'ADD_TO_CART') {
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: event.data.variantID, quantity: 1 }] }),
+        });
+      }
+      if (event.data.action === 'UPDATE_CART') {
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ updates: { [event.data.variantID]: event.data.quantity } }),
+        });
+      }
+    }
+  };
+  window.addEventListener('message', handleStoryEndMessage, false);
+</script>
