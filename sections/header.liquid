@@ -21,7 +21,9 @@ section.settings.main_menu_alignment == 'center' %}
   {% include 'dtc-drawer-menu' %}
 </div>
 
-
+<a href="#swym-wishlist" class="swym-wishlist">
+  <i aria-hidden="true" focusable="false" role="presentation" class="fa fa-heart"></i>
+</a>
 {% include 'cart-drawer' %}
 
 {%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
