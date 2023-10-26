@@ -187,7 +187,7 @@
                   <p><span>{{ productCouponPrice | money }}</span>{% if product.metafields.product.discount_text.value != blank %} {{ product.metafields.product.discount_text.value }}{% endif %}</p>
                 </div>
               {% endif %}
-              
+            
             {% if product.tags contains 'rtly-non-returnable' %}
               <span class="final-sales" style="margin-left:0px;">ALL SALES ARE FINAL</span>
               {% endif %}
@@ -253,7 +253,16 @@
             {% endcomment %}
             
             {% include 'dtc-sticky-atc-with-form', product: product %}
-          
+            <a id="AddToBabylist" class="btn" style="margin-bottom: 10px; width: 300px" 
+                href="javascript: bl.addToRegistry({
+                                images: '{{ product.featured_image.src | img_url: "800x" }}',
+                    price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+                    title: '{{ product.title | escape }} {{ product.selected_or_first_available_variant.title | escape }}',
+                    url: '{{ shop.url }}{{ product.selected_or_first_available_variant.url }}'
+                });">Add to Babylist</a>
+                <a href="#swym-wishlist" class="swym-wishlist">
+                  <i aria-hidden="true" focusable="false" role="presentation" class="fa fa-heart">a</i>
+                </a>
             <div class="payment-options__container">
               <p class="payment-options" style="color: #707070!important;">4 interest-free payments of <strong>{{ product.price | divided_by: 4 | money }}</strong> with </p>
               <p class="payment-options-2">
