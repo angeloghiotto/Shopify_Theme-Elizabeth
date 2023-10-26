@@ -135,6 +135,7 @@
           "1524770014057": {
             "type": "logo",
             "settings": {
+              "logo": "shopify:\/\/shop_images\/Bums_Roses_Logotype_1.png",
               "desktop_logo_width": 400,
               "mobile_logo_width": 200
             }
@@ -194,7 +195,7 @@
 
         ],
         "settings": {
-          "main_menu_link_list": "",
+          "main_menu_link_list": "test",
           "mega_menu_images": true,
           "main_menu_alignment": "center",
           "header_style": "sticky",
@@ -225,7 +226,7 @@
             "type": "menu",
             "settings": {
               "show_footer_title": false,
-              "menu": "",
+              "menu": "footer-1",
               "container_width": 30
             }
           },
@@ -233,13 +234,14 @@
             "type": "menu",
             "settings": {
               "show_footer_title": false,
-              "menu": "",
+              "menu": "footer-3",
               "container_width": 30
             }
           },
           "1494301487048": {
             "type": "logo_social",
             "settings": {
+              "logo": "shopify:\/\/shop_images\/Bums_Roses_Logo-min.png",
               "desktop_logo_height": 50,
               "container_width": 95
             }
@@ -1069,22 +1071,28 @@
           "73f390e0-ca1a-4bc8-ab57-4b7d9014fd4a": {
             "type": "slide",
             "settings": {
+              "profile_image": "shopify:\/\/shop_images\/1a.png",
               "name": "Missy Binns",
-              "review_description": "“We love how well our Bums & Roses ruffles hold their shape, even through the wash! They far beat our any of the other bamboo brands 🎀🐷🎀”"
+              "review_description": "“We love how well our Bums & Roses ruffles hold their shape, even through the wash! They far beat our any of the other bamboo brands 🎀🐷🎀”",
+              "review_image": "shopify:\/\/shop_images\/Image_38856873-4861-48d9-b83b-7da27c767c8b.png"
             }
           },
           "cf016b3e-75bf-4d26-a2a0-774996245dc0": {
             "type": "slide",
             "settings": {
+              "profile_image": "shopify:\/\/shop_images\/2a.png",
               "name": "Krista Giesseman",
-              "review_description": "“Going through ALL of the emotions this morning. I can’t believe I almost missed this one. All of the up close details are SO GOOD! 💛”"
+              "review_description": "“Going through ALL of the emotions this morning. I can’t believe I almost missed this one. All of the up close details are SO GOOD! 💛”",
+              "review_image": "shopify:\/\/shop_images\/Image-1.png"
             }
           },
           "2a7968fa-2583-49ec-9cb7-77c39d5d2249": {
             "type": "slide",
             "settings": {
+              "profile_image": "shopify:\/\/shop_images\/3a.png",
               "name": "Kari Mohnike",
-              "review_description": "“Celebrated our 7th birthday in Bums & Roses! So cute, soft, and BREATHABLE. Felt and looked beautiful! 💕💗”"
+              "review_description": "“Celebrated our 7th birthday in Bums & Roses! So cute, soft, and BREATHABLE. Felt and looked beautiful! 💕💗”",
+              "review_image": "shopify:\/\/shop_images\/Image-2.png"
             }
           }
         },
@@ -1152,6 +1160,8 @@
               "link_text_2": "",
               "color_accent": "#b2111f",
               "text_align": "vertical-center horizontal-left",
+              "image": "shopify:\/\/shop_images\/Screenshot_2023-09-27_at_9.05.30_AM.png",
+              "mobile_image": "shopify:\/\/shop_images\/101web_1_copy_-_3.4.jpg",
               "focal_point": "center center"
             }
           },
@@ -1169,6 +1179,8 @@
               "link_text_2": "",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/09.13_-_SLIDER_-_DESKTOP_-_Shop_Now.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/SLIDER_-_MOBILE_-_Shop_Now.gif",
               "focal_point": "center center"
             }
           }
@@ -1191,6 +1203,7 @@
       "a04c8ed7-eb06-4de2-b08e-fdec5dcb8d34": {
         "type": "text-and-image",
         "settings": {
+          "image": "shopify:\/\/shop_images\/Group_9.png",
           "image_width": 100,
           "subtitle": "",
           "title": "",
@@ -1371,6 +1384,7 @@
 
         ],
         "settings": {
+          "logo": "shopify:\/\/shop_images\/Bums-_-Roses-Logo-Google-Dimension.png",
           "title": "OUR NEWEST BLANKETS | 04-26-2023",
           "description": "<p>Early Access starts at 11am PST, check your email for password if you are Rewards level 3-4, or <strong>come back at 12pm PST | 3pm EST<\/strong><\/p>",
           "placeholder_text": "Enter password",
@@ -1444,7 +1458,9 @@
           "hero_button_text": "SHOP NOW",
           "hero_button_background_color": "#000000",
           "hero_button_text_color": "#ffffff",
-          "show_image_only": false
+          "show_image_only": false,
+          "desktop_hero_image": "shopify:\/\/shop_images\/SLIDER_-_DESKTOP_-_Shop_Now.jpg",
+          "mobile_hero_image": "shopify:\/\/shop_images\/SLIDER_-_MOBILE_-_Shop_Now.jpg"
         }
       },
       "835e6ac5-15e3-41fa-a257-b64eb042000d": {
@@ -1498,6 +1514,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_snow_ho_ho.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1519,6 +1536,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_up_to_snow_good.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1540,6 +1558,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_checkmate.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1561,6 +1580,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_deer_santa.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1582,6 +1602,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_baking_spirits_bright.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1603,6 +1624,7 @@
               "cta_link1": "",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/print_detail_jingle_bells_ddb11a0e-089b-41ce-8f0a-1de6c38be65d.png",
               "video_url": "",
               "width": "33",
               "height": 640,
@@ -1660,6 +1682,7 @@
               "cta_link1": "https:\/\/bumsandroses.com\/collections\/halloween-2023",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/DSC_4252_2_1800x1800_2bb37fef-62db-409e-931e-c0c3ec424625.webp",
               "video_url": "",
               "width": "100",
               "height": 500,
@@ -1681,6 +1704,7 @@
               "cta_link1": "https:\/\/bumsandroses.com\/collections\/",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/86web_b827b5b6-05dc-4e51-82e4-07db08d13f34.jpg",
               "video_url": "",
               "width": "100",
               "height": 600,
@@ -1801,6 +1825,7 @@
               "cta_link1": "https:\/\/bumsandroses.com\/collections\/girl",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/Copy_of_40web_copy.jpg",
               "video_url": "",
               "width": "33",
               "height": 600,
@@ -1822,6 +1847,7 @@
               "cta_link1": "shopify:\/\/collections\/edgy-graphics",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/220web_1.jpg",
               "video_url": "",
               "width": "33",
               "height": 600,
@@ -1843,6 +1869,7 @@
               "cta_link1": "https:\/\/bumsandroses.com\/collections\/boy",
               "cta_text2": "",
               "cta_link2": "",
+              "image": "shopify:\/\/shop_images\/CopyofCopyof20web_999d8029-5236-400b-86b8-c6e084e9bbc3.jpg",
               "video_url": "",
               "width": "33",
               "height": 600,
@@ -1887,15 +1914,7 @@
       "4f882498-ce55-44c7-b68c-d43cc1b3e8da",
       "16586063586830e1c1",
       "835e6ac5-15e3-41fa-a257-b64eb042000d"
-    ],
-    "blocks": {
-      "5946647744298494267": {
-        "type": "shopify:\/\/apps\/wishlist-plus\/blocks\/wishlist-app-embed\/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Modern": {
