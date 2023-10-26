@@ -1,0 +1,136 @@
+<style>
+  .callout-popup {
+    z-index: 999;
+    background: white;
+    height: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    -webkit-transition: height .3s ease-in-out;
+    -o-transition: height .3s ease-in-out;
+    transition: height .3s ease-in-out;
+  }
+  .callout-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.34px;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    color: #D12837;
+    display: inline-block;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: auto;
+    text-transform: uppercase;
+    margin-left: 10px;
+  }
+  .final-sales{
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.34px;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    display: inline-block;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start !important;
+    width: auto;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .callout-popup_close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .callout-text svg {
+    width: 16px;
+    height: 16px;
+  }
+  .callout-popup_title-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 12px;
+  }
+  .callout-popup a {
+    text-decoration: underline;
+  }
+  .callout-popup_title {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .callout-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background: #0000002e;
+  }
+  .callout-overlay.show {
+    display: block;
+  }
+  .callout-popup.show {
+    height: 70vh;
+    overflow-y: scroll;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .product__price {
+    margin-right: 0;
+  }
+  @media (max-width:768px){
+    .callout-text{
+      font-size: 12px;
+      margin-left: 6px;
+      margin-top: 4px;
+    }
+    .final-sales{
+      margin-top: 0px;
+    }
+  }
+</style> 
+
+<div class="callout-text">
+  {% if template == 'product.dtc-pdp-info' or template == 'product.dtc-new-pdp' or template == 'product' or template == 'product' %}
+  <!--  <img src="https://cdn.shopify.com/s/files/1/0350/5061/9020/files/truck.svg?v=1686667570"/> -->
+    <p style="letter-spacing: .025em !important; font-size: 13.6px !important; color: #707070 !important;">Free U.S. Shipping & Returns on Orders $50+</p>
+  {% else %}
+    <span>{{ section.settings.callout | replace: '*', ''  }}</span>
+  {% endif %}
+
+  {% unless product.tags contains 'rtly-non-returnable' %}
+    <div class="callout-popup">
+      <div class="callout-popup_title-container">
+        <span class="callout-popup_title">{{ section.settings.callout | replace: '*', '' }}</span>
+        <span class="callout-popup_close">{% render 'close' %}</span>
+      </div>
+      {{ section.settings.callout_content }}
+    </div>
+  {% endunless %}
+</div>

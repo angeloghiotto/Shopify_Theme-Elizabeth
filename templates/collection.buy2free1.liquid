@@ -1,0 +1,77 @@
+<div class="buy2free1_template">
+
+  {% section 'buy2free1-template-header' %}
+  
+  {% section 'buy2free1-template-complete' %}
+  
+  
+  <script>
+    
+    var discountItems = [];
+    
+
+    {% for item in cart.items reversed  %}
+    
+    {% assign isDiscountCollection = false %}
+    {% for item_collection in item.product.collections %}
+    	{% if item_collection.handle == collection.handle %}
+    		{% assign isDiscountCollection = true %}
+    	{% endif %}
+    {% endfor %}
+    
+    
+    {% if isDiscountCollection == true %}
+    {% for i in (1..item.quantity) %}
+      var itemJson = {{item | json}};
+      var discountItem = {
+        "image_url": itemJson.featured_image.url,
+        "variant_id": itemJson.variant_id,
+        "quantity": itemJson.quantity
+        
+      };
+
+      if ( discountItems.length <= 2 ){
+        discountItems.push(discountItem);
+      }
+      else{
+        discountItems.splice(2, 1);
+        discountItems.push(discountItem);
+      }
+    {% endfor %}
+    {% endif %}
+    
+    
+    {% endfor %}
+  </script>
+  
+  
+  
+
+<div id="CollectionAjaxResult" class="collection-content">
+  <div id="CollectionAjaxContent">
+    <div class="page-width">
+      <div class="grid">
+        
+        
+        <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+          {% section 'collection-sidebar' %}  
+        </div>
+        
+        
+        <div class="grid__item medium-up--four-fifths grid__item--content">
+          {% section 'collection-promotions' %}
+          <div class="collection-grid__wrapper">
+            {% section 'collection-buydiscount-template' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+</div>
+
+<script src="{{ 'buy2free1.js' | asset_url }}" defer="defer"></script>

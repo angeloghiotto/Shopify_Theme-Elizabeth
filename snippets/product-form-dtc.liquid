@@ -1,0 +1,94 @@
+{% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
+
+  {% form 'product', product, id: form_id, class: 'product-single__form' %}
+    {% if content_for_header contains '.mageworx.com\/groupedproducts\/source.js?' and product.tags contains 'mw_grouped_product' %}
+      <div class="mw-gp-container"></div>
+    {% endif %}
+ 
+      {% for option in samePrintProducts.options_with_values %}
+        {% if theme == 'product' %}
+          {% include 'variant-button', section_id: section_id, option_drop: option %}
+        {% else %}
+          {% render 'product-picker-dropdown', section_id: section_id, samePrintProducts: samePrintProducts %}
+        {% endif %}
+      {% endfor %}
+    
+    {% if product.has_only_default_variant %}
+      <div 
+        class="quick-add-single"
+      >+ QUICK ADD</div>
+    {% endif %}
+  
+    <input
+      type="hidden"
+      name="properties[no_scarcity_hint]"
+      value="{{ product.metafields.dtc.no_scarcity_hint }}"
+    />
+  
+    <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js" style="display:none;">
+      <option value="">Select option.</option>
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <option {% if variant == product.selected_or_first_available_variant %}
+            {% assign current_variant = variant %}
+            data-size='{{ variant.title }}'
+            data-color='{{ variant.title }}'      
+            selected="selected" {% endif %}
+            value="{{ variant.id }}">
+            
+            {{ variant.title }} - {{ variant.price}} 
+          </option>
+        {% else %}
+          <option disabled="disabled">
+            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  
+    {% if product.options.size > 1 %}
+      <button
+        type="submit"
+        name="add"
+        id="AddToCart-{{ section_id }}"
+        class="btn btn--full add-to-cart collection-add-to-cart"
+        {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span id="AddToCartText-{{ section_id }}">
+          {% if current_variant.available %}
+              Add to cart
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
+        </span>
+      </button>
+    
+    {% else %}
+      <button
+        type="submit"
+        name="add"
+        id="AddToCart-{{ section_id }}"
+        class="btn btn--full add-to-cart hide-me"
+        {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span id="AddToCartText-{{ section_id }}">
+          {% if current_variant.available %}
+              Add product with one option
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
+        </span>
+      </button>
+  
+    {% endif %}
+  
+  
+  
+    <div id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true">
+      {{ product.variants | json }}
+    </div>
+    {% if product.options.size > 1 %}
+      <div id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true">
+        {{ current_variant | json }}
+      </div>
+    {% endif %}
+  {% endform %}
+  

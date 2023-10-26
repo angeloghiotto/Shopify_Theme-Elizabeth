@@ -1,0 +1,39 @@
+<div class="size-changer-div variant-wrapper variant-wrapper--{{ settings.variant_type }} js">
+  <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless settings.variant_labels_enable %} hidden-label{% endunless %}"
+    for="SingleOptionSelector-{{ section_id }}-option-{{ forloop.index0 }}">
+    <b>{{ option.name }}</b> :
+  </label>
+  <div class="variant-input-wrap" data-index="option{{ forloop.index }}">
+    <select
+      class="variant__input-{{ section_id }} dtc-select-1"
+      id="SingleOptionSelector-{{ section_id }}-option-{{ forloop.index0 }}"
+      data-section-id="{{section_id}}"
+      data-index="option{{ forloop.index }}"
+      onchange="submitQuickAddToCart(event)"
+    >
+      <option value="">Select option.</option>
+      {% for value in option.values %}
+        {%- assign variant_label_state = true -%}
+        {% if product.options.size == 1 %}
+          {% unless product.variants[forloop.index0].available %}
+            {%- assign variant_label_state = false -%}
+          {% endunless %}
+        {% endif %}
+        <option
+          {% if product.options.size == 1 %}
+          data-variant="{{product.variants[forloop.index0].id}}"
+          {% endif %}
+          value="{{ value | escape }}"
+
+          {% unless variant_label_state %} disabled="disabled"{% endunless %}
+          name="{{ option.name }}"
+          class="variant-input"
+          data-index="option{{ forloop.index }}">
+          {{ value }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+	
