@@ -1914,15 +1914,7 @@
       "4f882498-ce55-44c7-b68c-d43cc1b3e8da",
       "16586063586830e1c1",
       "835e6ac5-15e3-41fa-a257-b64eb042000d"
-    ],
-    "blocks": {
-      "5946647744298494267": {
-        "type": "shopify:\/\/apps\/wishlist-plus\/blocks\/wishlist-app-embed\/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Modern": {

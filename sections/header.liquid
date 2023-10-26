@@ -21,9 +21,6 @@ section.settings.main_menu_alignment == 'center' %}
   {% include 'dtc-drawer-menu' %}
 </div>
 
-<a href="#swym-wishlist" class="swym-wishlist">
-  Whishlist
-</a>
 {% include 'cart-drawer' %}
 
 {%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
@@ -279,7 +276,6 @@ section.settings.main_menu_alignment == 'center' %}
               {% include 'header-icons' %}
             </div>
           </div>
-
           {% if section.settings.main_menu_alignment == 'center' %}
             <div class="text-center dtc-new-menu">
               {% include 'dtc-desktop-nav' %}
