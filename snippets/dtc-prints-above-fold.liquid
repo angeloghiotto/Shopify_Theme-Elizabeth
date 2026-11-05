@@ -83,7 +83,7 @@
 
 
 
-    {% if c.handle == "footie-swatches" or c.handle == "romper-swatches" or c.handle == "tutu" or c.handle == "blanket" or c.handle == "pajamas-1" or c.handle == "baby-dresses" or c.handle== "quilted-collection" or c.handle == "mom-romper" or c.handle == "mama-pants" or c.handle == "womens-short-sleeve-romper" or c.handle == "shortie-romper-swatches" or c.handle == "bubble-romper-swatches" or c.handle =="headwrap-swatch" or c.handle=="swaddle-headwrap-swatch" or c.handle=="biggie-bow-swatch" or c.handle=="backless-romper-swatch" or c.handle=="jogger-set-swatch" or c.handle=="girls-dress-swatch" or c.handle=="mama-jogger-sweatpants-swatch" or c.handle=="hat-swatch" or c.handle=="lovey-swatch" or c.handle=="womens-collar-shirt-shorts-set-swatch"%}
+    {% if c.handle == "footie-swatches" or c.handle == "romper-swatches" or c.handle == "tutu" or c.handle == "blanket" or c.handle == "pajamas-1" or c.handle == "baby-dresses" or c.handle or c.handle == "mom-romper" or c.handle == "mama-pants" or c.handle == "womens-short-sleeve-romper" or c.handle == "shortie-romper-swatches" or c.handle == "bubble-romper-swatches" or c.handle == "headwrap-swatch" or c.handle.swaddle-headwrap-swatch or c.handle.biggie-bow-swatch or c.handle.backless-romper-swatch or c.handle.jogger-set-swatch or c.handle.girls-dress-swatch or c.handle.mama-jogger-sweatpants-swatch or c.handle.hat-swatch or c.handle.lovey-swatch or c.handle.womens-collar-shirt-shorts-set-swatch %}
     <div class="dtc-sbp-above-fold">
       <label class="variant__label">Other Best Selling 
       {%if best_selling_label %}
@@ -111,4 +111,27 @@
     {% endif %}
   {% endfor %}
   
-  
+  {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% if c.handle == "footie-swatches" or c.handle == "romper-swatches" or c.handle
+    == "tutu" or c.handle == "blanket" or c.handle == "pajamas-1" or c.handle == "baby-dresses"
+    or c.handle== "quilted-collection" or c.handle == "mom-romper" or c.handle ==
+    "mama-pants" or c.handle == "womens-short-sleeve-romper" or c.handle == "shortie-romper-swatches"
+    or c.handle == "bubble-romper-swatches" or c.handle =="headwrap-swatch" or c.handle=="swaddle-headwrap-swatch"
+    or c.handle=="biggie-bow-swatch" or c.handle=="backless-romper-swatch" or c.handle=="jogger-set-swatch"
+    or c.handle=="girls-dress-swatch" or c.handle=="mama-jogger-sweatpants-swatch"
+    or c.handle=="hat-swatch" or c.handle=="lovey-swatch" or c.handle=="womens-collar-shirt-shorts-set-swatch"%}'
+  to: '{% if c.handle == "footie-swatches" or c.handle == "romper-swatches" or c.handle
+    == "tutu" or c.handle == "blanket" or c.handle == "pajamas-1" or c.handle == "baby-dresses"
+    or c.handle or c.handle == "mom-romper" or c.handle == "mama-pants" or c.handle
+    == "womens-short-sleeve-romper" or c.handle == "shortie-romper-swatches" or c.handle
+    == "bubble-romper-swatches" or c.handle == "headwrap-swatch" or c.handle.swaddle-headwrap-swatch
+    or c.handle.biggie-bow-swatch or c.handle.backless-romper-swatch or c.handle.jogger-set-swatch
+    or c.handle.girls-dress-swatch or c.handle.mama-jogger-sweatpants-swatch or c.handle.hat-swatch
+    or c.handle.lovey-swatch or c.handle.womens-collar-shirt-shorts-set-swatch %}'
+  position: 1971..2674
+{%- endcomment -%}

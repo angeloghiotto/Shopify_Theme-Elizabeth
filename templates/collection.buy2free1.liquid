@@ -10,7 +10,7 @@
     var discountItems = [];
     
 
-    {% for item in cart.items reversed  %}
+    {% for item in cart.items reversed %}
     
     {% assign isDiscountCollection = false %}
     {% for item_collection in item.product.collections %}
@@ -75,3 +75,13 @@
 </div>
 
 <script src="{{ 'buy2free1.js' | asset_url }}" defer="defer"></script>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% for item in cart.items reversed  %}"
+  to: "{% for item in cart.items reversed %}"
+  position: 187..224
+{% endcomment %}
